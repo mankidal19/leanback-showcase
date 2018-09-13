@@ -16,7 +16,7 @@
 
 package android.support.v17.leanback.supportleanbackshowcase.app.room.controller.search;
 
-import android.arch.lifecycle.LifecycleActivity;
+//import android.arch.lifecycle.LifecycleActivity;
 import android.arch.lifecycle.LifecycleRegistry;
 import android.arch.lifecycle.LifecycleRegistryOwner;
 import android.content.Intent;
@@ -36,7 +36,7 @@ import javax.inject.Inject;
 /**
  * Extend from LifecycleActivity so this activity can be used as the owner of lifecycle event
  */
-public class SearchActivity extends LifecycleActivity implements HasSupportFragmentInjector{
+public class SearchActivity extends FragmentActivity implements HasSupportFragmentInjector{
 
     private static final String TAG = "SearchActivity";
     private static final boolean DEBUG = false;
