@@ -1,28 +1,17 @@
-/*
- * Copyright (C) 2015 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- * in compliance with the License. You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
- */
-
-package android.support.v17.leanback.supportleanbackshowcase.app.page;
+package nurulaiman.sony;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.os.Bundle;
+import android.app.Fragment;
 import android.os.Handler;
 import android.support.v17.leanback.app.BackgroundManager;
 import android.support.v17.leanback.app.BrowseFragment;
 import android.support.v17.leanback.app.RowsFragment;
 import android.support.v17.leanback.supportleanbackshowcase.R;
 import android.support.v17.leanback.supportleanbackshowcase.app.details.ShadowRowPresenterSelector;
+import android.support.v17.leanback.supportleanbackshowcase.app.page.GridFragment;
+import android.support.v17.leanback.supportleanbackshowcase.app.page.PageAndListRowFragment;
+import android.support.v17.leanback.supportleanbackshowcase.app.page.SettingsIconPresenter;
 import android.support.v17.leanback.supportleanbackshowcase.cards.presenters.CardPresenterSelector;
 import android.support.v17.leanback.supportleanbackshowcase.models.Card;
 import android.support.v17.leanback.supportleanbackshowcase.models.CardRow;
@@ -47,21 +36,26 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 import android.widget.Toast;
+
 import com.google.gson.Gson;
 
-/**
- * Sample {@link BrowseFragment} implementation showcasing the use of {@link PageRow} and
- * {@link ListRow}.
- */
-public class PageAndListRowFragment extends BrowseFragment {
+
+public class MainBrowseFragment extends BrowseFragment {
     private static final long HEADER_ID_1 = 1;
-    private static final String HEADER_NAME_1 = "Page Fragment";
+    private static final String HEADER_NAME_1 = "HOME";
     private static final long HEADER_ID_2 = 2;
-    private static final String HEADER_NAME_2 = "Rows Fragment";
+    private static final String HEADER_NAME_2 = "LIVE BROADCASTS";
     private static final long HEADER_ID_3 = 3;
-    private static final String HEADER_NAME_3 = "Settings Fragment";
+    private static final String HEADER_NAME_3 = "TV SHOWS";
     private static final long HEADER_ID_4 = 4;
-    private static final String HEADER_NAME_4 = "User agreement Fragment";
+    private static final String HEADER_NAME_4 = "MOVIES";
+
+    private static final long HEADER_ID_5 = 5;
+    private static final String HEADER_NAME_5 = "Login/Sign Up";
+    private static final long HEADER_ID_6 = 6;
+    private static final String HEADER_NAME_6 = "Settings";
+
+
     private BackgroundManager mBackgroundManager;
 
     private ArrayObjectAdapter mRowsAdapter;
@@ -81,7 +75,7 @@ public class PageAndListRowFragment extends BrowseFragment {
         setHeadersState(HEADERS_ENABLED);
         setHeadersTransitionOnBackEnabled(true);
         setBrandColor(getResources().getColor(R.color.fastlane_background));
-        setTitle("Title goes here");
+        setTitle("YouTube OpApp");
         setOnSearchClickedListener(new View.OnClickListener() {
 
             @Override
@@ -124,12 +118,20 @@ public class PageAndListRowFragment extends BrowseFragment {
         HeaderItem headerItem4 = new HeaderItem(HEADER_ID_4, HEADER_NAME_4);
         PageRow pageRow4 = new PageRow(headerItem4);
         mRowsAdapter.add(pageRow4);
+
+        HeaderItem headerItem5 = new HeaderItem(HEADER_ID_5, HEADER_NAME_5);
+        PageRow pageRow5 = new PageRow(headerItem5);
+        mRowsAdapter.add(pageRow5);
+
+        HeaderItem headerItem6 = new HeaderItem(HEADER_ID_6, HEADER_NAME_6);
+        PageRow pageRow6 = new PageRow(headerItem6);
+        mRowsAdapter.add(pageRow6);
     }
 
-    public static class PageRowFragmentFactory extends BrowseFragment.FragmentFactory {
+    private static class PageRowFragmentFactory extends BrowseFragment.FragmentFactory {
         private final BackgroundManager mBackgroundManager;
 
-        public PageRowFragmentFactory(BackgroundManager backgroundManager) {
+        PageRowFragmentFactory(BackgroundManager backgroundManager) {
             this.mBackgroundManager = backgroundManager;
         }
 
@@ -137,23 +139,33 @@ public class PageAndListRowFragment extends BrowseFragment {
         public Fragment createFragment(Object rowObj) {
             Row row = (Row)rowObj;
             mBackgroundManager.setDrawable(null);
-            if (row.getHeaderItem().getId() == HEADER_ID_1) {
-                return new SampleFragmentA();
-            } else if (row.getHeaderItem().getId() == HEADER_ID_2) {
-                return new SampleFragmentB();
-            } else if (row.getHeaderItem().getId() == HEADER_ID_3) {
-                return new SettingsFragment();
-            } else if (row.getHeaderItem().getId() == HEADER_ID_4) {
-                return new WebViewFragment();
+
+            if(row.getHeaderItem().getId() == HEADER_ID_5){
+                return new MainBrowseFragment.FragmentLoginSignUp();
+            }
+            else if(row.getHeaderItem().getId() == HEADER_ID_6){
+                return new MainBrowseFragment.SettingsFragment();
+            }
+            else if(row.getHeaderItem().getId() == HEADER_ID_1){
+                return new MainBrowseFragment.FragmentHome();
+            }
+            else if(row.getHeaderItem().getId() == HEADER_ID_2){
+                return new MainBrowseFragment.FragmentLiveBroadcast();
+            }
+            else if(row.getHeaderItem().getId() == HEADER_ID_3){
+                return new MainBrowseFragment.FragmentTvShow();
+            }
+            else if(row.getHeaderItem().getId() == HEADER_ID_4){
+                return new MainBrowseFragment.FragmentMovie();
             }
 
             throw new IllegalArgumentException(String.format("Invalid row %s", rowObj));
         }
     }
 
-    public static class PageFragmentAdapterImpl extends MainFragmentAdapter<SampleFragmentA> {
+    public static class PageFragmentAdapterImpl extends MainFragmentAdapter<PageAndListRowFragment.SampleFragmentA> {
 
-        public PageFragmentAdapterImpl(SampleFragmentA fragment) {
+        public PageFragmentAdapterImpl(PageAndListRowFragment.SampleFragmentA fragment) {
             super(fragment);
         }
     }
@@ -161,7 +173,7 @@ public class PageAndListRowFragment extends BrowseFragment {
     /**
      * Simple page fragment implementation.
      */
-    public static class SampleFragmentA extends GridFragment {
+    public static class FragmentLoginSignUp extends GridFragment {
         private static final int COLUMNS = 4;
         private final int ZOOM_FACTOR = FocusHighlight.ZOOM_FACTOR_SMALL;
         private ArrayObjectAdapter mAdapter;
@@ -207,13 +219,59 @@ public class PageAndListRowFragment extends BrowseFragment {
         }
     }
 
+    public static class FragmentLiveBroadcast extends GridFragment {
+        private static final int COLUMNS = 3;
+        private final int ZOOM_FACTOR = FocusHighlight.ZOOM_FACTOR_SMALL;
+        private ArrayObjectAdapter mAdapter;
+
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setupAdapter();
+            loadData();
+            getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
+        }
+
+
+        private void setupAdapter() {
+            VerticalGridPresenter presenter = new VerticalGridPresenter(ZOOM_FACTOR);
+            presenter.setNumberOfColumns(COLUMNS);
+            setGridPresenter(presenter);
+
+            CardPresenterSelector cardPresenter = new CardPresenterSelector(getActivity());
+            mAdapter = new ArrayObjectAdapter(cardPresenter);
+            setAdapter(mAdapter);
+
+            setOnItemViewClickedListener(new OnItemViewClickedListener() {
+                @Override
+                public void onItemClicked(
+                        Presenter.ViewHolder itemViewHolder,
+                        Object item,
+                        RowPresenter.ViewHolder rowViewHolder,
+                        Row row) {
+                    Card card = (Card)item;
+                    Toast.makeText(getActivity(),
+                            "Clicked on "+card.getTitle(),
+                            Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+
+        private void loadData() {
+            String json = Utils.inputStreamToString(getResources().openRawResource(
+                    R.raw.grid_live_broadcast));
+            CardRow cardRow = new Gson().fromJson(json, CardRow.class);
+            mAdapter.addAll(0, cardRow.getCards());
+        }
+    }
+
     /**
      * Page fragment embeds a rows fragment.
      */
-    public static class SampleFragmentB extends RowsFragment {
+    public static class FragmentHome extends RowsFragment {
         private final ArrayObjectAdapter mRowsAdapter;
 
-        public SampleFragmentB() {
+        public FragmentHome() {
             mRowsAdapter = new ArrayObjectAdapter(new ShadowRowPresenterSelector());
 
             setAdapter(mRowsAdapter);
@@ -238,14 +296,114 @@ public class PageAndListRowFragment extends BrowseFragment {
         }
 
         private void createRows() {
-                String json = Utils.inputStreamToString(getResources().openRawResource(
-                        R.raw.page_row_example));
-                CardRow[] rows = new Gson().fromJson(json, CardRow[].class);
-                for (CardRow row : rows) {
-                    if (row.getType() == CardRow.TYPE_DEFAULT) {
-                        mRowsAdapter.add(createCardRow(row));
-                    }
+            String json = Utils.inputStreamToString(getResources().openRawResource(
+                    R.raw.home_browse_row));
+            CardRow[] rows = new Gson().fromJson(json, CardRow[].class);
+            for (CardRow row : rows) {
+                if (row.getType() == CardRow.TYPE_DEFAULT) {
+                    mRowsAdapter.add(createCardRow(row));
                 }
+            }
+        }
+
+        private Row createCardRow(CardRow cardRow) {
+            PresenterSelector presenterSelector = new CardPresenterSelector(getActivity());
+            ArrayObjectAdapter adapter = new ArrayObjectAdapter(presenterSelector);
+            for (Card card : cardRow.getCards()) {
+                adapter.add(card);
+            }
+
+            HeaderItem headerItem = new HeaderItem(cardRow.getTitle());
+            return new CardListRow(headerItem, adapter, cardRow);
+        }
+    }
+
+    public static class FragmentTvShow extends RowsFragment {
+        private final ArrayObjectAdapter mRowsAdapter;
+
+        public FragmentTvShow() {
+            mRowsAdapter = new ArrayObjectAdapter(new ShadowRowPresenterSelector());
+
+            setAdapter(mRowsAdapter);
+            setOnItemViewClickedListener(new OnItemViewClickedListener() {
+                @Override
+                public void onItemClicked(
+                        Presenter.ViewHolder itemViewHolder,
+                        Object item,
+                        RowPresenter.ViewHolder rowViewHolder,
+                        Row row) {
+                    Toast.makeText(getActivity(), "Implement click handler", Toast.LENGTH_SHORT)
+                            .show();
+                }
+            });
+        }
+
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            createRows();
+            getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
+        }
+
+        private void createRows() {
+            String json = Utils.inputStreamToString(getResources().openRawResource(
+                    R.raw.home_browse_row));
+            CardRow[] rows = new Gson().fromJson(json, CardRow[].class);
+            for (CardRow row : rows) {
+                if (row.getType() == CardRow.TYPE_DEFAULT) {
+                    mRowsAdapter.add(createCardRow(row));
+                }
+            }
+        }
+
+        private Row createCardRow(CardRow cardRow) {
+            PresenterSelector presenterSelector = new CardPresenterSelector(getActivity());
+            ArrayObjectAdapter adapter = new ArrayObjectAdapter(presenterSelector);
+            for (Card card : cardRow.getCards()) {
+                adapter.add(card);
+            }
+
+            HeaderItem headerItem = new HeaderItem(cardRow.getTitle());
+            return new CardListRow(headerItem, adapter, cardRow);
+        }
+    }
+
+    public static class FragmentMovie extends RowsFragment {
+        private final ArrayObjectAdapter mRowsAdapter;
+
+        public FragmentMovie() {
+            mRowsAdapter = new ArrayObjectAdapter(new ShadowRowPresenterSelector());
+
+            setAdapter(mRowsAdapter);
+            setOnItemViewClickedListener(new OnItemViewClickedListener() {
+                @Override
+                public void onItemClicked(
+                        Presenter.ViewHolder itemViewHolder,
+                        Object item,
+                        RowPresenter.ViewHolder rowViewHolder,
+                        Row row) {
+                    Toast.makeText(getActivity(), "Implement click handler", Toast.LENGTH_SHORT)
+                            .show();
+                }
+            });
+        }
+
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            createRows();
+            getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
+        }
+
+        private void createRows() {
+            String json = Utils.inputStreamToString(getResources().openRawResource(
+                    R.raw.home_browse_row));
+            CardRow[] rows = new Gson().fromJson(json, CardRow[].class);
+            for (CardRow row : rows) {
+                if (row.getType() == CardRow.TYPE_DEFAULT) {
+                    mRowsAdapter.add(createCardRow(row));
+                }
+            }
         }
 
         private Row createCardRow(CardRow cardRow) {

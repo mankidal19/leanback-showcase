@@ -1,0 +1,163 @@
+[
+  {
+    "title": "Recently Played",
+    "cards": [
+      {
+        "type": "GAME",
+        "title": "Crazy One",
+        "description": "Purchased",
+        "localImageResource": "game_crazy_one",
+        "footerIconLocalImageResource": "ic_installed"
+      },
+      {
+        "type": "GAME",
+        "title": "Cursed",
+        "description": "Purchased",
+        "localImageResource": "game_cursed",
+        "footerIconLocalImageResource": "ic_installed"
+      },
+      {
+        "type": "GAME",
+        "title": "fairy",
+        "description": "Purchased",
+        "localImageResource": "game_fairy",
+        "footerIconLocalImageResource": "ic_installed"
+      },
+      {
+        "type": "GAME",
+        "title": "Hear The Roar",
+        "description": "Purchased",
+        "localImageResource": "game_hear_the_roar",
+        "footerIconLocalImageResource": "ic_installed"
+      },
+      {
+        "type": "GAME",
+        "title": "Silence",
+        "description": "Purchased",
+        "localImageResource": "game_silence",
+        "footerIconLocalImageResource": "ic_installed"
+      }
+    ]
+  },
+  {
+    "title": "Popular Live Broadcasts",
+    "cards": [
+      {
+        "type": "GAME",
+        "title": "Crazy One",
+        "description": "Purchased",
+        "localImageResource": "game_crazy_one",
+        "footerIconLocalImageResource": "ic_installed"
+      },
+      {
+        "type": "GAME",
+        "title": "Cursed",
+        "description": "Purchased",
+        "localImageResource": "game_cursed",
+        "footerIconLocalImageResource": "ic_installed"
+      },
+      {
+        "type": "GAME",
+        "title": "fairy",
+        "description": "Purchased",
+        "localImageResource": "game_fairy",
+        "footerIconLocalImageResource": "ic_installed"
+      },
+      {
+        "type": "GAME",
+        "title": "Hear The Roar",
+        "description": "Purchased",
+        "localImageResource": "game_hear_the_roar",
+        "footerIconLocalImageResource": "ic_installed"
+      },
+      {
+        "type": "GAME",
+        "title": "Silence",
+        "description": "Purchased",
+        "localImageResource": "game_silence",
+        "footerIconLocalImageResource": "ic_installed"
+      }
+    ]
+  },
+
+  {
+    "title": "Watch List",
+    "cards": [
+      {
+        "type": "GAME",
+        "title": "Crazy One",
+        "description": "Purchased",
+        "localImageResource": "game_crazy_one",
+        "footerIconLocalImageResource": "ic_installed"
+      },
+      {
+        "type": "GAME",
+        "title": "Cursed",
+        "description": "Purchased",
+        "localImageResource": "game_cursed",
+        "footerIconLocalImageResource": "ic_installed"
+      },
+      {
+        "type": "GAME",
+        "title": "fairy",
+        "description": "Purchased",
+        "localImageResource": "game_fairy",
+        "footerIconLocalImageResource": "ic_installed"
+      },
+      {
+        "type": "GAME",
+        "title": "Hear The Roar",
+        "description": "Purchased",
+        "localImageResource": "game_hear_the_roar",
+        "footerIconLocalImageResource": "ic_installed"
+      },
+      {
+        "type": "GAME",
+        "title": "Silence",
+        "description": "Purchased",
+        "localImageResource": "game_silence",
+        "footerIconLocalImageResource": "ic_installed"
+      }
+    ]
+  },
+  {
+    "title": "Recorded Shows",
+    "cards": [
+      {
+        "type": "GAME",
+        "title": "Crazy One",
+        "description": "Purchased",
+        "localImageResource": "game_crazy_one",
+        "footerIconLocalImageResource": "ic_installed"
+      },
+      {
+        "type": "GAME",
+        "title": "Cursed",
+        "description": "Purchased",
+        "localImageResource": "game_cursed",
+        "footerIconLocalImageResource": "ic_installed"
+      },
+      {
+        "type": "GAME",
+        "title": "fairy",
+        "description": "Purchased",
+        "localImageResource": "game_fairy",
+        "footerIconLocalImageResource": "ic_installed"
+      },
+      {
+        "type": "GAME",
+        "title": "Hear The Roar",
+        "description": "Purchased",
+        "localImageResource": "game_hear_the_roar",
+        "footerIconLocalImageResource": "ic_installed"
+      },
+      {
+        "type": "GAME",
+        "title": "Silence",
+        "description": "Purchased",
+        "localImageResource": "game_silence",
+        "footerIconLocalImageResource": "ic_installed"
+      }
+    ]
+  }
+]
