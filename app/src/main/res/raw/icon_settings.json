@@ -1,0 +1,21 @@
+{
+  "title": "Icon",
+  "cards": [
+
+      {
+        "type": "ICON",
+        "title": "Key Shortcuts",
+        "localImageResource": "icon_04"
+      },
+      {
+        "type": "ICON",
+        "title": "History & Data",
+        "localImageResource": "ic_history"
+      },
+      {
+        "type": "ICON",
+        "title": "Voice",
+        "localImageResource": "ic_terms"
+      }
+    ]
+}
