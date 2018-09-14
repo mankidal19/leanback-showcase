@@ -21,14 +21,14 @@
         "title": "The Fairy",
         "description": "$3.99",
         "footerIconLocalImageResource": "stars_red",
-        "localImageResource": "card_image_movie_03"
+        "localImageResource": "game_fairy"
       },
       {
         "type": "DEFAULT",
         "title": "Cursed",
         "description": "$3.99",
         "footerIconLocalImageResource": "stars_red",
-        "localImageResource": "card_image_movie_04"
+        "localImageResource": "game_cursed"
       },
       {
         "type": "DEFAULT",
@@ -101,14 +101,14 @@
         "title": "The Fairy",
         "description": "$3.99",
         "footerIconLocalImageResource": "stars_red",
-        "localImageResource": "card_image_movie_03"
+        "localImageResource": "game_fairy"
       },
       {
         "type": "DEFAULT",
         "title": "Cursed",
         "description": "$3.99",
         "footerIconLocalImageResource": "stars_red",
-        "localImageResource": "card_image_movie_04"
+        "localImageResource": "game_cursed"
       },
       {
         "type": "DEFAULT",

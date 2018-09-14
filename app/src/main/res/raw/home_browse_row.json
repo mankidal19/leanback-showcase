@@ -5,21 +5,21 @@
       {
         "type": "DEFAULT",
         "title": "Kang Deoksun's Love History | 강덕순 애정 변천사",
-        "description": "Everyone knows who Yun Bonggil is but not Lee Hwarim, who accompanied him. We know of the Korean Provisional Government, but we don’t know of Jeong Jeonghwa who took care of things inside Korea. We are unfamiliar with their names, but they were female independence activists who really existed. Just because their achievements weren’t recognized and they went different paths, they are being forgotten. This drama depicts the traces of these women. Cast: Kim Sohye, Oh Seungyoon",
+        "description": "Played until 10:13",
         "localImageResource": "kang_love",
         "footerIconLocalImageResource": "ic_installed"
       },
       {
         "type": "DEFAULT",
         "title": "Cursed",
-        "description": "Played until 50:32.",
+        "description": "Played until 50:32",
         "footerIconLocalImageResource": "stars_red",
-        "localImageResource": "card_image_movie_04"
+        "localImageResource": "game_cursed"
       },
       {
         "type": "DEFAULT",
         "title": "Mobile Suit Gundam SEED",
-        "description": "Episode 102.",
+        "description": "Episode 2",
         "localImageResource": "gundam_seed",
         "footerIconLocalImageResource": "ic_installed"
       },
@@ -33,7 +33,7 @@
       {
         "type": "DEFAULT",
         "title": "Best Shot",
-        "description": "Episode 1.",
+        "description": "Episode 1",
         "localImageResource": "best_shot",
         "footerIconLocalImageResource": "ic_installed"
       }
