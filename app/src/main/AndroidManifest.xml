@@ -185,6 +185,12 @@
             android:theme="@style/Theme.Example.Leanback.CustomTitle">
 
         </activity>
+
+        <activity android:name="nurulaiman.sony.ChannelListActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Example.Leanback.CustomTitle">
+
+        </activity>
     </application>
 
 </manifest>
