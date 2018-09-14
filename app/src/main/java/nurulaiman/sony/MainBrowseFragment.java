@@ -173,51 +173,7 @@ public class MainBrowseFragment extends BrowseFragment {
     /**
      * Simple page fragment implementation.
      */
-    public static class FragmentLoginSignUp extends GridFragment {
-        private static final int COLUMNS = 4;
-        private final int ZOOM_FACTOR = FocusHighlight.ZOOM_FACTOR_SMALL;
-        private ArrayObjectAdapter mAdapter;
 
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setupAdapter();
-            loadData();
-            getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
-        }
-
-
-        private void setupAdapter() {
-            VerticalGridPresenter presenter = new VerticalGridPresenter(ZOOM_FACTOR);
-            presenter.setNumberOfColumns(COLUMNS);
-            setGridPresenter(presenter);
-
-            CardPresenterSelector cardPresenter = new CardPresenterSelector(getActivity());
-            mAdapter = new ArrayObjectAdapter(cardPresenter);
-            setAdapter(mAdapter);
-
-            setOnItemViewClickedListener(new OnItemViewClickedListener() {
-                @Override
-                public void onItemClicked(
-                        Presenter.ViewHolder itemViewHolder,
-                        Object item,
-                        RowPresenter.ViewHolder rowViewHolder,
-                        Row row) {
-                    Card card = (Card)item;
-                    Toast.makeText(getActivity(),
-                            "Clicked on "+card.getTitle(),
-                            Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
-
-        private void loadData() {
-            String json = Utils.inputStreamToString(getResources().openRawResource(
-                    R.raw.grid_example));
-            CardRow cardRow = new Gson().fromJson(json, CardRow.class);
-            mAdapter.addAll(0, cardRow.getCards());
-        }
-    }
 
     public static class FragmentLiveBroadcast extends GridFragment {
         private static final int COLUMNS = 3;
@@ -347,7 +303,7 @@ public class MainBrowseFragment extends BrowseFragment {
 
         private void createRows() {
             String json = Utils.inputStreamToString(getResources().openRawResource(
-                    R.raw.home_browse_row));
+                    R.raw.tvshow_browse_row));
             CardRow[] rows = new Gson().fromJson(json, CardRow[].class);
             for (CardRow row : rows) {
                 if (row.getType() == CardRow.TYPE_DEFAULT) {
@@ -423,7 +379,7 @@ public class MainBrowseFragment extends BrowseFragment {
 
         public SettingsFragment() {
             ListRowPresenter selector = new ListRowPresenter();
-            selector.setNumRows(2);
+            selector.setNumRows(1);
             mRowsAdapter = new ArrayObjectAdapter(selector);
             setAdapter(mRowsAdapter);
         }
@@ -442,7 +398,7 @@ public class MainBrowseFragment extends BrowseFragment {
         private void loadData() {
             if (isAdded()) {
                 String json = Utils.inputStreamToString(getResources().openRawResource(
-                        R.raw.icon_example));
+                        R.raw.icon_settings));
                 CardRow cardRow = new Gson().fromJson(json, CardRow.class);
                 mRowsAdapter.add(createCardRow(cardRow));
                 getMainFragmentAdapter().getFragmentHost().notifyDataReady(
@@ -462,7 +418,7 @@ public class MainBrowseFragment extends BrowseFragment {
         }
     }
 
-    public static class WebViewFragment extends Fragment implements MainFragmentAdapterProvider {
+    public static class FragmentLoginSignUp extends Fragment implements MainFragmentAdapterProvider {
         private MainFragmentAdapter mMainFragmentAdapter = new MainFragmentAdapter(this);
         private WebView mWebview;
 
@@ -495,7 +451,7 @@ public class MainBrowseFragment extends BrowseFragment {
         @Override
         public void onResume() {
             super.onResume();
-            mWebview.loadUrl("https://www.google.com/policies/terms");
+            mWebview.loadUrl("https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Fnext%3D%252Faccount%26action_handle_signin%3Dtrue%26feature%3Dredirect_login%26hl%3Den%26app%3Ddesktop&hl=en&service=youtube&flowName=GlifWebSignIn&flowEntry=ServiceLogin");
             getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
         }
     }

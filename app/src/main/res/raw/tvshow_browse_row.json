@@ -3,38 +3,38 @@
     "title": "Entertainment",
     "cards": [
       {
-        "type": "GAME",
-        "title": "Crazy One",
-        "description": "Purchased",
-        "localImageResource": "game_crazy_one",
+        "type": "DEFAULT",
+        "title": "After School Club",
+        "description": "After School Club, often shortened to ASC, is a South Korean internet-based live-music request television talk show co-hosted by Park Jimin, Seungmin and Heejun.",
+        "localImageResource": "asc_club",
         "footerIconLocalImageResource": "ic_installed"
       },
       {
-        "type": "GAME",
-        "title": "Cursed",
-        "description": "Purchased",
-        "localImageResource": "game_cursed",
+        "type": "DEFAULT",
+        "title": "Big Stage",
+        "description": "New singing program from Astro.",
+        "localImageResource": "big_stage",
         "footerIconLocalImageResource": "ic_installed"
       },
       {
-        "type": "GAME",
-        "title": "fairy",
-        "description": "Purchased",
-        "localImageResource": "game_fairy",
+        "type": "DEFAULT",
+        "title": "I Can See Your Voice (Malaysia)",
+        "description": "A local spin-off version from Korea's famous variety show.",
+        "localImageResource": "icsyv",
         "footerIconLocalImageResource": "ic_installed"
       },
       {
-        "type": "GAME",
-        "title": "Hear The Roar",
-        "description": "Purchased",
-        "localImageResource": "game_hear_the_roar",
+        "type": "DEFAULT",
+        "title": "Music Bank",
+        "description": "Music Bank is a South Korean music program which airs every Friday at 17:00 KST on KBS2.",
+        "localImageResource": "music_bank",
         "footerIconLocalImageResource": "ic_installed"
       },
       {
-        "type": "GAME",
-        "title": "Silence",
-        "description": "Purchased",
-        "localImageResource": "game_silence",
+        "type": "DEFAULT",
+        "title": "The Return of Superman",
+        "description": "The Return of Superman is a South Korean reality-variety show that airs on KBS2.",
+        "localImageResource": "tros",
         "footerIconLocalImageResource": "ic_installed"
       }
     ]
@@ -43,38 +43,38 @@
     "title": "Anime & Cartoons",
     "cards": [
       {
-        "type": "GAME",
-        "title": "Crazy One",
-        "description": "Purchased",
-        "localImageResource": "game_crazy_one",
+        "type": "DEFAULT",
+        "title": "Gundam Build Fighters",
+        "description": "Gundam Build Fighters is a 2013 Japanese science fiction anime television series based on Sunrise's long-running Gundam franchise. ",
+        "localImageResource": "gbf",
         "footerIconLocalImageResource": "ic_installed"
       },
       {
-        "type": "GAME",
-        "title": "Cursed",
-        "description": "Purchased",
-        "localImageResource": "game_cursed",
+        "type": "DEFAULT",
+        "title": "Mobile Suit Gundam SEED",
+        "description": "Mobile Suit Gundam SEED is an anime series developed by Sunrise and directed by Mitsuo Fukuda.",
+        "localImageResource": "gundam_seed",
         "footerIconLocalImageResource": "ic_installed"
       },
       {
-        "type": "GAME",
-        "title": "fairy",
-        "description": "Purchased",
-        "localImageResource": "game_fairy",
+        "type": "DEFAULT",
+        "title": "Mr Bean the Animated Series",
+        "description": "Following the animated adventures of the clueless yet brilliant Mr Bean and his faithful sidekick Teddy.",
+        "localImageResource": "mr_bean_animated",
         "footerIconLocalImageResource": "ic_installed"
       },
       {
-        "type": "GAME",
-        "title": "Hear The Roar",
-        "description": "Purchased",
-        "localImageResource": "game_hear_the_roar",
+        "type": "DEFAULT",
+        "title": "Tom & Jerry",
+        "description": "Centers on a rivalry between its two title characters, Tom, a cat, and Jerry, a mouse.",
+        "localImageResource": "tom_jerry",
         "footerIconLocalImageResource": "ic_installed"
       },
       {
-        "type": "GAME",
-        "title": "Silence",
-        "description": "Purchased",
-        "localImageResource": "game_silence",
+        "type": "DEFAULT",
+        "title": "Upin & Ipin",
+        "description": "Curious and fun-loving 5-year-old twin brothers Upin and Ipin learn and explore new things.",
+        "localImageResource": "upin_ipin",
         "footerIconLocalImageResource": "ic_installed"
       }
     ]
@@ -83,38 +83,38 @@
     "title": "News",
     "cards": [
       {
-        "type": "GAME",
-        "title": "Crazy One",
-        "description": "Purchased",
-        "localImageResource": "game_crazy_one",
+        "type": "DEFAULT",
+        "title": "Al Jazeera News",
+        "description": "Al Jazeera, also known as JSC, is a state-funded broadcaster in Doha, Qatar, owned by the Al Jazeera Media Network.",
+        "localImageResource": "aljazeera_news",
         "footerIconLocalImageResource": "ic_installed"
       },
       {
-        "type": "GAME",
-        "title": "Cursed",
-        "description": "Purchased",
-        "localImageResource": "game_cursed",
+        "type": "DEFAULT",
+        "title": "Arirang News",
+        "description": "Arirang TV is a global, English-language television network based in Seoul, South Korea.",
+        "localImageResource": "arirang_news",
         "footerIconLocalImageResource": "ic_installed"
       },
       {
-        "type": "GAME",
-        "title": "fairy",
-        "description": "Purchased",
-        "localImageResource": "game_fairy",
+        "type": "DEFAULT",
+        "title": "Buletin Awani",
+        "description": "Astro Awani is the in-house rolling television news and current affairs channel providing 24-hour news coverage including news in Malay.",
+        "localImageResource": "buletin_awani",
         "footerIconLocalImageResource": "ic_installed"
       },
       {
-        "type": "GAME",
-        "title": "Hear The Roar",
-        "description": "Purchased",
-        "localImageResource": "game_hear_the_roar",
+        "type": "DEFAULT",
+        "title": "Euronews",
+        "description": "PurchasedEuronews is a multilingual news media service, headquartered in Lyon, France.",
+        "localImageResource": "euro_news",
         "footerIconLocalImageResource": "ic_installed"
       },
       {
-        "type": "GAME",
-        "title": "Silence",
-        "description": "Purchased",
-        "localImageResource": "game_silence",
+        "type": "DEFAULT",
+        "title": "KBS News",
+        "description": "KBS Nine O'Clock News is the flagship newscast that airs on KBS1 every night at 9:00pm KST.",
+        "localImageResource": "kbs_news",
         "footerIconLocalImageResource": "ic_installed"
       }
     ]
@@ -124,38 +124,39 @@
     "title": "Sports",
     "cards": [
       {
-        "type": "GAME",
-        "title": "Crazy One",
-        "description": "Purchased",
-        "localImageResource": "game_crazy_one",
+        "type": "DEFAULT",
+        "title": "2018 All England Open",
+        "description": "The 2018 All England Open, officially YONEX All England Open 2018 was a badminton tournament which took place at Arena Birmingham in England from 14 to 18 March 2018 and had a total purse of $1,000,000.",
+        "localImageResource": "all_england",
+        "footerIconLocalImageResource": "ic_installed"
+      }
+    ,
+      {
+        "type": "DEFAULT",
+        "title": "2019 FIBA Basketball World Cup Qualifiers",
+        "description": "Process to determine the teams that will participate at the 2019 FIBA Basketball World Cup.",
+        "localImageResource": "fiba_basketball",
         "footerIconLocalImageResource": "ic_installed"
       },
       {
-        "type": "GAME",
-        "title": "Cursed",
-        "description": "Purchased",
-        "localImageResource": "game_cursed",
+        "type": "DEFAULT",
+        "title": "Asian Netball Championships 2018",
+        "description": "The Asian Netball Championship is a netball competition held every two years with teams from across Asia competing.",
+        "localImageResource": "asian_netball",
         "footerIconLocalImageResource": "ic_installed"
       },
       {
-        "type": "GAME",
-        "title": "fairy",
-        "description": "Purchased",
-        "localImageResource": "game_fairy",
+        "type": "DEFAULT",
+        "title": "Best Shot",
+        "description": "'Best Shot,' a documentary series co-produced by Lebron James about an inner city basketball team, is available on the NBA YouTube channel.",
+        "localImageResource": "best_shot",
         "footerIconLocalImageResource": "ic_installed"
       },
       {
-        "type": "GAME",
-        "title": "Hear The Roar",
-        "description": "Purchased",
-        "localImageResource": "game_hear_the_roar",
-        "footerIconLocalImageResource": "ic_installed"
-      },
-      {
-        "type": "GAME",
-        "title": "Silence",
-        "description": "Purchased",
-        "localImageResource": "game_silence",
+        "type": "DEFAULT",
+        "title": "Chelsea Films",
+        "description": "Get to know Chelsea like no one ever did before.",
+        "localImageResource": "chelsea_film",
         "footerIconLocalImageResource": "ic_installed"
       }
     ]
