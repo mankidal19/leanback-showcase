@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 The Android Open Source Project
+ * Copyright (C) 2015 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -12,28 +12,29 @@
  * the License.
  */
 
-package android.support.v17.leanback.supportleanbackshowcase.app;
+package nurulaiman.sony;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.os.Bundle;
+import android.support.v17.leanback.app.DetailsFragment;
 import android.support.v17.leanback.supportleanbackshowcase.R;
+import android.support.v17.leanback.supportleanbackshowcase.app.details.DetailViewExampleFragment;
 
-/*
- * MainActivity class that loads MainFragment
+/**
+ * Contains a {@link DetailsFragment} in order to display more details for a given card.
  */
-public class MainActivity extends Activity {
+public class DetailViewLiveBroadcastActivity extends Activity {
 
-    /**
-     * Called when the activity is first created.
-     */
-    @Override public void onCreate(Bundle savedInstanceState) {
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_detail_example);
+
         if (savedInstanceState == null) {
-            MainFragment fragment = new MainFragment();
-            getFragmentManager().beginTransaction().replace(R.id.fragmentContainer, fragment)
-                                .commit();
+            DetailViewLiveBroadcastFragment fragment = new DetailViewLiveBroadcastFragment();
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.details_fragment, fragment)
+                    .commit();
         }
     }
 }

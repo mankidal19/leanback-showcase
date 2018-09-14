@@ -1,0 +1,30 @@
+{
+  "title": "Al Jazeera News (English)",
+  "description": "News Channel",
+  "year":"2018",
+  "text": "At Al Jazeera English, we focus on people and events that affect people's lives.",
+  "localImageResource": "aljazeera",
+  "trailerUrl": "https://storage.googleapis.com/android-tv/Sample videos/Google+/Google+_ Sharing but like real life.mp4",
+  "videoUrl": "https://storage.googleapis.com/android-tv/Sample videos/April Fool's 2013/Explore Treasure Mode with Google Maps.mp4",
+
+  "recommended": [
+    {
+      "type": "DEFAULT",
+      "title": "Arirang TV World",
+      "description": "Arirang TV/Radio is a public service agency that spreads the uniqueness of Korea to the world through cutting-edge broadcasting.",
+      "localImageResource": "arirang"
+    },
+    {
+      "type": "DEFAULT",
+      "title": "Euronews English",
+      "description": "Euronews: the most watched news channel in Europe.",
+      "localImageResource": "euronews"
+    },
+    {
+      "type": "DEFAULT",
+      "title": "KBSWorld 24",
+      "description": "700만 해외동포와 함께 하는 KBS World 24!!! ",
+      "localImageResource": "kbsworld"
+    }
+  ]
+}

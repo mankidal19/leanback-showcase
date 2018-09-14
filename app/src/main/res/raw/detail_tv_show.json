@@ -1,0 +1,57 @@
+{
+  "title": "The Return of Superman",
+  "description": "Lee Dong-gook, Sam Hammington, Ko Ji-yong",
+  "year": 2018,
+  "text": "The Return of Superman (Hangul: 슈퍼맨이 돌아왔다; also known as Superman Is Back) is a South Korean reality-variety show that airs on KBS2.\n\nCelebrity dads are left to care of their kids alone for 48 hours without the help of anyone, while their wives leave the home to enjoy some relaxing time off.[2] The wives are shown leaving the home before the 48 hours begins and coming back to greet their family once the 48 hours have ended. During the 48 hours the dads and children are either doing a task the wives have written out for the dads to complete, or the dads are exploring new activities with their kids. Occasionally celebrity friends of the dads will stop by to interact with the kids.",
+  "localImageResource": "tros",
+  "trailerUrl": "https://storage.googleapis.com/android-tv/Sample videos/Google+/Google+_ Sharing but like real life.mp4",
+  "videoUrl": "https://storage.googleapis.com/android-tv/Sample videos/April Fool's 2013/Explore Treasure Mode with Google Maps.mp4",
+  "characters": [
+    {
+      "type": "CHARACTER",
+      "title": "Lee Dong-gook",
+      "localImageResource": "face_01"
+    },
+    {
+      "type": "CHARACTER",
+      "title": "Sam Hammington",
+      "localImageResource": "face_08"
+    },
+    {
+      "type": "CHARACTER",
+      "title": "Ko Ji-yong",
+      "localImageResource": "face_02"
+    }
+  ],
+  "recommended": [
+    {
+      "type": "DEFAULT",
+      "title": "[EP 02] The Return of Superman",
+      "description": "The Return of Superman is a South Korean reality-variety show that airs on KBS2.",
+      "localImageResource": "tros",
+      "footerIconLocalImageResource": "ic_installed"
+    },
+    {
+      "type": "DEFAULT",
+      "title": "[EP 03] The Return of Superman",
+      "description": "The Return of Superman is a South Korean reality-variety show that airs on KBS2.",
+      "localImageResource": "tros",
+      "footerIconLocalImageResource": "ic_installed"
+    },
+    {
+      "type": "DEFAULT",
+      "title": "[EP 04] The Return of Superman",
+      "description": "The Return of Superman is a South Korean reality-variety show that airs on KBS2.",
+      "localImageResource": "tros",
+      "footerIconLocalImageResource": "ic_installed"
+    },
+    {
+      "type": "DEFAULT",
+      "title": "[EP 05] The Return of Superman",
+      "description": "The Return of Superman is a South Korean reality-variety show that airs on KBS2.",
+      "localImageResource": "tros",
+      "footerIconLocalImageResource": "ic_installed"
+    }
+
+  ]
+}

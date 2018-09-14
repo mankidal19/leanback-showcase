@@ -21,7 +21,14 @@
     <string name="card_examples_title">Card Examples</string>
     <string name="channel_publish_title">Channel Publish</string>
     <string name="livedata">Live Data Fragment</string>
+
     <string name="detail_view_title">JINGJIANG LI JINGJIANG LI</string>
+
+    <!--For detail view-->
+    <string name="detail_view_live_broadcast">LIVE BROADCASTS</string>
+    <string name="detail_view_tv_show">TV SHOWS</string>
+    <string name="detail_view_movie">MOVIES</string>
+
     <string name="action_cicked">Action clicked. Implement your own handler.</string>
     <string name="grid_example_title">Image Grid Example</string>
     <string name="video_grid_example_title">Video Grid Example</string>
@@ -41,6 +48,8 @@
     <string name="action_wishlist">Add to wishlist</string>
     <string name="action_related">Related</string>
     <string name="header_related">Related Items</string>
+    <string name="header_casts">Casts</string>
+
     <string name="header_recommended">Recommended</string>
 
     <!-- Page/List Row -->
@@ -107,6 +116,10 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="action_recommeded">RECOMMENDED</string>
+    <string name="action_watchlist">ADD TO WATCH LIST</string>
+    <string name="action_sub_audio">SUBTITLES / AUDIO</string>
+    <string name="action_other_ep">OTHER EPISODES</string>
 
 
 </resources>

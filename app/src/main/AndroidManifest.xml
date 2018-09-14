@@ -41,13 +41,13 @@
             android:logo="@mipmap/app_banner_sample_app"
             android:screenOrientation="landscape">
 
-            <!--
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER"/>
             </intent-filter>
-            -->
+
         </activity>
         <activity
             android:name=".app.page.PageAndListRowActivity"
@@ -167,11 +167,23 @@
         <activity android:name="nurulaiman.sony.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.Example.Leanback.CustomTitle">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
-            </intent-filter>
+        </activity>
+        <activity android:name="nurulaiman.sony.DetailViewLiveBroadcastActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Example.Leanback.CustomTitle">
+
+        </activity>
+        <activity android:name="nurulaiman.sony.DetailViewMovieActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Example.Leanback.CustomTitle">
+
+        </activity>
+
+        <activity android:name="nurulaiman.sony.DetailViewTvShowActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Example.Leanback.CustomTitle">
+
         </activity>
     </application>
 
