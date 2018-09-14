@@ -3,39 +3,39 @@
     "title": "New",
     "cards": [
       {
-        "type": "MOVIE",
-        "title": "Crazy One",
-        "description": "Purchased",
-        "localImageResource": "game_crazy_one",
-        "footerIconLocalImageResource": "ic_installed"
+        "type": "DEFAULT",
+        "description": "$3.99",
+        "title": "Deep Into The Deep Sleep",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_01"
       },
       {
-        "type": "MOVIE",
+        "type": "DEFAULT",
+        "title": "We",
+        "description": "$3.99",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_02"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "The Fairy",
+        "description": "$3.99",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_03"
+      },
+      {
+        "type": "DEFAULT",
         "title": "Cursed",
-        "description": "Purchased",
-        "localImageResource": "game_cursed",
-        "footerIconLocalImageResource": "ic_installed"
+        "description": "$3.99",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_04"
       },
       {
-        "type": "MOVIE",
-        "title": "fairy",
-        "description": "Purchased",
-        "localImageResource": "game_fairy",
-        "footerIconLocalImageResource": "ic_installed"
-      },
-      {
-        "type": "MOVIE",
-        "title": "Hear The Roar",
-        "description": "Purchased",
-        "localImageResource": "game_hear_the_roar",
-        "footerIconLocalImageResource": "ic_installed"
-      },
-      {
-        "type": "MOVIE",
-        "title": "Silence",
-        "description": "Purchased",
-        "localImageResource": "game_silence",
-        "footerIconLocalImageResource": "ic_installed"
+        "type": "DEFAULT",
+        "title": "My Crazy One",
+        "description": "$3.99",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_05"
       }
     ]
   },
@@ -43,79 +43,107 @@
     "title": "Monthly Top Picks",
     "cards": [
       {
-        "type": "MOVIE",
-        "title": "Crazy One",
-        "description": "Purchased",
-        "localImageResource": "game_crazy_one",
-        "footerIconLocalImageResource": "ic_installed"
+        "type": "DEFAULT",
+        "title": "My Crazy One",
+        "description": "$3.99",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_05"
       },
       {
-        "type": "MOVIE",
-        "title": "Cursed",
-        "description": "Purchased",
-        "localImageResource": "game_cursed",
-        "footerIconLocalImageResource": "ic_installed"
+        "type": "DEFAULT",
+        "title": "Gone",
+        "description": "$3.99",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_06"
       },
       {
-        "type": "MOVIE",
-        "title": "fairy",
-        "description": "Purchased",
-        "localImageResource": "game_fairy",
-        "footerIconLocalImageResource": "ic_installed"
+        "type": "DEFAULT",
+        "title": "A Cold Night To Stay",
+        "description": "$3.99",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_07"
       },
       {
-        "type": "MOVIE",
+        "type": "DEFAULT",
+        "description": "$3.99",
+        "title": "The Silence",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_08"
+      },
+      {
+        "type": "DEFAULT",
         "title": "Hear The Roar",
-        "description": "Purchased",
-        "localImageResource": "game_hear_the_roar",
-        "footerIconLocalImageResource": "ic_installed"
-      },
-      {
-        "type": "MOVIE",
-        "title": "Silence",
-        "description": "Purchased",
-        "localImageResource": "game_silence",
-        "footerIconLocalImageResource": "ic_installed"
+        "description": "$3.99",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_09"
       }
     ]
   },
   {
-    "title": "Malay Black & White",
+    "title": "English Movies",
     "cards": [
       {
-        "type": "GAME",
-        "title": "Crazy One",
-        "description": "Purchased",
-        "localImageResource": "game_crazy_one",
-        "footerIconLocalImageResource": "ic_installed"
+        "type": "DEFAULT",
+        "description": "$3.99",
+        "title": "Deep Into The Deep Sleep",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_01"
       },
       {
-        "type": "GAME",
+        "type": "DEFAULT",
+        "title": "We",
+        "description": "$3.99",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_02"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "The Fairy",
+        "description": "$3.99",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_03"
+      },
+      {
+        "type": "DEFAULT",
         "title": "Cursed",
-        "description": "Purchased",
-        "localImageResource": "game_cursed",
-        "footerIconLocalImageResource": "ic_installed"
+        "description": "$3.99",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_04"
       },
       {
-        "type": "MOVIE",
-        "title": "fairy",
-        "description": "Purchased",
-        "localImageResource": "game_fairy",
-        "footerIconLocalImageResource": "ic_installed"
+        "type": "DEFAULT",
+        "title": "My Crazy One",
+        "description": "$3.99",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_05"
       },
       {
-        "type": "MOVIE",
+        "type": "DEFAULT",
+        "title": "Gone",
+        "description": "$3.99",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_06"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "A Cold Night To Stay",
+        "description": "$3.99",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_07"
+      },
+      {
+        "type": "DEFAULT",
+        "description": "$3.99",
+        "title": "The Silence",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_08"
+      },
+      {
+        "type": "DEFAULT",
         "title": "Hear The Roar",
-        "description": "Purchased",
-        "localImageResource": "game_hear_the_roar",
-        "footerIconLocalImageResource": "ic_installed"
-      },
-      {
-        "type": "MOVIE",
-        "title": "Silence",
-        "description": "Purchased",
-        "localImageResource": "game_silence",
-        "footerIconLocalImageResource": "ic_installed"
+        "description": "$3.99",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_09"
       }
     ]
   },
@@ -124,38 +152,38 @@
     "title": "K-Movie",
     "cards": [
       {
-        "type": "MOVIE",
-        "title": "Crazy One",
-        "description": "Purchased",
-        "localImageResource": "game_crazy_one",
+        "type": "DEFAULT",
+        "title": "If We Were a Season | 우리가 계절이라면",
+        "description": "Two high school students were born and raised together as neighbors. This boy and girl are more like a married couple. They don’t say it, but they are precious to each other. Then one day, a new student appears. Unlike these two who don’t express their hearts, he’s brave and bold in expressing his feelings. He was enough to shake up the relationship of these two students. It was when everything was yet immature and clumsy. Let’s think about our forgotten past. Cast: Chae Soobin, Jang Dongyoon, Jinyoung",
+        "localImageResource": "if_we",
         "footerIconLocalImageResource": "ic_installed"
       },
       {
-        "type": "MOVIE",
-        "title": "Cursed",
-        "description": "Purchased",
-        "localImageResource": "game_cursed",
+        "type": "DEFAULT",
+        "title": "My Happy Home | 즐거운 나의 집",
+        "description": "Genius scientist Sejeong lives with her cyborg husband Sungmin. She erased Sungmin’s memories and inputted new customized memories and information of her choosing, so she is able to enjoy a blissful marriage. Then someone Sejeong and Sungmin knew before he became a cyborg starts coming to their home. This person tries to correct Sungmin’s distorted memories while Sejeong tries to stop her. Sungmin, in the meantime, starts lying like a human being. What happened before Sungmin was turned into a cyborg? Cast: Son Yeo-eun, Lee Sangyeob, Kim Myungsoo, Lee Ilhwa, Park Hana, Lim Jikyu, Song Yoona, Ok Taecyeon",
+        "localImageResource": "happy_home",
         "footerIconLocalImageResource": "ic_installed"
       },
       {
-        "type": "MOVIE",
-        "title": "fairy",
-        "description": "Purchased",
-        "localImageResource": "game_fairy",
+        "type": "DEFAULT",
+        "title": "Don't Worry, I'm a Ghost | 걱정마세요, 귀신입니다",
+        "description": " A man wakes up at the hospital following an accident. He can’t remember his name, his family or where he lives. He learns his name and address from the police who ran his fingerprints and goes to his house. He sleeps an uncomfortable sleep and finds a girl looking at him when he wakes up. She says she’s a ghost. Lee Mungi thinks he’s seeing things due to aftereffects of the accident but finds her picture at her funeral. Her name was Kim Yeonhwa and he wants to know why she came to him. He asks her if she wants him to find the suspect and get revenge. But she says the police can do that and tells him he has a more important job to do. She tells him the reason she came to him is in his lost memories. Cast: Bong Tae-gyu, Park Shin-hye, Lee Ha-yool, Park Seo-yeon",
+        "localImageResource": "dont_worry",
         "footerIconLocalImageResource": "ic_installed"
       },
       {
-        "type": "MOVIE",
-        "title": "Hear The Roar",
-        "description": "Purchased",
-        "localImageResource": "game_hear_the_roar",
+        "type": "DEFAULT",
+        "title": "Kang Deoksun's Love History | 강덕순 애정 변천사",
+        "description": "Everyone knows who Yun Bonggil is but not Lee Hwarim, who accompanied him. We know of the Korean Provisional Government, but we don’t know of Jeong Jeonghwa who took care of things inside Korea. We are unfamiliar with their names, but they were female independence activists who really existed. Just because their achievements weren’t recognized and they went different paths, they are being forgotten. This drama depicts the traces of these women. Cast: Kim Sohye, Oh Seungyoon",
+        "localImageResource": "kang_love",
         "footerIconLocalImageResource": "ic_installed"
       },
       {
-        "type": "MOVIE",
-        "title": "Silence",
-        "description": "Purchased",
-        "localImageResource": "game_silence",
+        "type": "DEFAULT",
+        "title": "Middle School Student A | 중학생 A양",
+        "description": "Haejun has been no. 1 in his middle school in Gangbuk, but his family moves to Daechi to go to a better high school. Eunseo has always been no. 1 in her school but Haejun takes her place as soon as he enters the new school. The students including Eunseo, Nayeon decide to shake Haejun up and try to drop his rank. Taejun develops feelings for Eunseo and gets attacked by the other students. Cast : Lee Yuleum, Gwag Dongyeon,Lee Hanna, Kim Beomjoon",
+        "localImageResource": "middle_school",
         "footerIconLocalImageResource": "ic_installed"
       }
     ]

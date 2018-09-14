@@ -3,38 +3,38 @@
     "title": "Recently Played",
     "cards": [
       {
-        "type": "GAME",
-        "title": "Crazy One",
-        "description": "Purchased",
-        "localImageResource": "game_crazy_one",
+        "type": "DEFAULT",
+        "title": "Kang Deoksun's Love History | 강덕순 애정 변천사",
+        "description": "Everyone knows who Yun Bonggil is but not Lee Hwarim, who accompanied him. We know of the Korean Provisional Government, but we don’t know of Jeong Jeonghwa who took care of things inside Korea. We are unfamiliar with their names, but they were female independence activists who really existed. Just because their achievements weren’t recognized and they went different paths, they are being forgotten. This drama depicts the traces of these women. Cast: Kim Sohye, Oh Seungyoon",
+        "localImageResource": "kang_love",
         "footerIconLocalImageResource": "ic_installed"
       },
       {
-        "type": "GAME",
+        "type": "DEFAULT",
         "title": "Cursed",
-        "description": "Purchased",
-        "localImageResource": "game_cursed",
+        "description": "Played until 50:32.",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_04"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Mobile Suit Gundam SEED",
+        "description": "Episode 102.",
+        "localImageResource": "gundam_seed",
         "footerIconLocalImageResource": "ic_installed"
       },
       {
-        "type": "GAME",
-        "title": "fairy",
-        "description": "Purchased",
-        "localImageResource": "game_fairy",
+        "type": "DEFAULT",
+        "title": "Asian Netball Championships 2018",
+        "description": "Singapore vs Malaysia",
+        "localImageResource": "asian_netball",
         "footerIconLocalImageResource": "ic_installed"
       },
       {
-        "type": "GAME",
-        "title": "Hear The Roar",
-        "description": "Purchased",
-        "localImageResource": "game_hear_the_roar",
-        "footerIconLocalImageResource": "ic_installed"
-      },
-      {
-        "type": "GAME",
-        "title": "Silence",
-        "description": "Purchased",
-        "localImageResource": "game_silence",
+        "type": "DEFAULT",
+        "title": "Best Shot",
+        "description": "Episode 1.",
+        "localImageResource": "best_shot",
         "footerIconLocalImageResource": "ic_installed"
       }
     ]
@@ -43,39 +43,35 @@
     "title": "Popular Live Broadcasts",
     "cards": [
       {
-        "type": "GAME",
-        "title": "Crazy One",
-        "description": "Purchased",
-        "localImageResource": "game_crazy_one",
-        "footerIconLocalImageResource": "ic_installed"
+        "type": "DEFAULT",
+        "title": "KBSWorld 24",
+        "description": "700만 해외동포와 함께 하는 KBS World 24!!! ",
+        "localImageResource": "kbsworld"
       },
       {
-        "type": "GAME",
-        "title": "Cursed",
-        "description": "Purchased",
-        "localImageResource": "game_cursed",
-        "footerIconLocalImageResource": "ic_installed"
+        "type": "DEFAULT",
+        "title": "Mr Bean Cartoon Marathon",
+        "description": "Funny Episodes of Mr Bean the Animated Series 24/7",
+        "localImageResource": "mrbeanc"
       },
       {
-        "type": "GAME",
-        "title": "fairy",
-        "description": "Purchased",
-        "localImageResource": "game_fairy",
-        "footerIconLocalImageResource": "ic_installed"
+        "type": "DEFAULT",
+        "title": "Al Jazeera News (English)",
+        "description": "At Al Jazeera English, we focus on people and events that affect people's lives.",
+        "localImageResource": "aljazeera"
+
       },
       {
-        "type": "GAME",
-        "title": "Hear The Roar",
-        "description": "Purchased",
-        "localImageResource": "game_hear_the_roar",
-        "footerIconLocalImageResource": "ic_installed"
+        "type": "DEFAULT",
+        "title": "Arirang TV World",
+        "description": "Arirang TV/Radio is a public service agency that spreads the uniqueness of Korea to the world through cutting-edge broadcasting.",
+        "localImageResource": "arirang"
       },
       {
-        "type": "GAME",
-        "title": "Silence",
-        "description": "Purchased",
-        "localImageResource": "game_silence",
-        "footerIconLocalImageResource": "ic_installed"
+        "type": "DEFAULT",
+        "title": "Euronews English",
+        "description": "Euronews: the most watched news channel in Europe.",
+        "localImageResource": "euronews"
       }
     ]
   },
@@ -84,38 +80,52 @@
     "title": "Watch List",
     "cards": [
       {
-        "type": "GAME",
-        "title": "Crazy One",
-        "description": "Purchased",
-        "localImageResource": "game_crazy_one",
+        "type": "DEFAULT",
+        "title": "Mobile Suit Gundam SEED",
+        "description": "Mobile Suit Gundam SEED is an anime series developed by Sunrise and directed by Mitsuo Fukuda.",
+        "localImageResource": "gundam_seed",
         "footerIconLocalImageResource": "ic_installed"
       },
       {
-        "type": "GAME",
-        "title": "Cursed",
+        "type": "DEFAULT",
+        "title": "My Crazy One",
+        "description": "$3.99",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_05"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Gone",
         "description": "Purchased",
-        "localImageResource": "game_cursed",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_06"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "My Happy Home | 즐거운 나의 집",
+        "description": "Genius scientist Sejeong lives with her cyborg husband Sungmin. She erased Sungmin’s memories and inputted new customized memories and information of her choosing, so she is able to enjoy a blissful marriage. Then someone Sejeong and Sungmin knew before he became a cyborg starts coming to their home. This person tries to correct Sungmin’s distorted memories while Sejeong tries to stop her. Sungmin, in the meantime, starts lying like a human being. What happened before Sungmin was turned into a cyborg? Cast: Son Yeo-eun, Lee Sangyeob, Kim Myungsoo, Lee Ilhwa, Park Hana, Lim Jikyu, Song Yoona, Ok Taecyeon",
+        "localImageResource": "happy_home",
         "footerIconLocalImageResource": "ic_installed"
       },
       {
-        "type": "GAME",
-        "title": "fairy",
-        "description": "Purchased",
-        "localImageResource": "game_fairy",
+        "type": "DEFAULT",
+        "title": "Don't Worry, I'm a Ghost | 걱정마세요, 귀신입니다",
+        "description": " A man wakes up at the hospital following an accident. He can’t remember his name, his family or where he lives. He learns his name and address from the police who ran his fingerprints and goes to his house. He sleeps an uncomfortable sleep and finds a girl looking at him when he wakes up. She says she’s a ghost. Lee Mungi thinks he’s seeing things due to aftereffects of the accident but finds her picture at her funeral. Her name was Kim Yeonhwa and he wants to know why she came to him. He asks her if she wants him to find the suspect and get revenge. But she says the police can do that and tells him he has a more important job to do. She tells him the reason she came to him is in his lost memories. Cast: Bong Tae-gyu, Park Shin-hye, Lee Ha-yool, Park Seo-yeon",
+        "localImageResource": "dont_worry",
         "footerIconLocalImageResource": "ic_installed"
       },
       {
-        "type": "GAME",
-        "title": "Hear The Roar",
-        "description": "Purchased",
-        "localImageResource": "game_hear_the_roar",
+        "type": "DEFAULT",
+        "title": "Big Stage",
+        "description": "New singing program from Astro.",
+        "localImageResource": "big_stage",
         "footerIconLocalImageResource": "ic_installed"
       },
       {
-        "type": "GAME",
-        "title": "Silence",
-        "description": "Purchased",
-        "localImageResource": "game_silence",
+        "type": "DEFAULT",
+        "title": "I Can See Your Voice (Malaysia)",
+        "description": "A local spin-off version from Korea's famous variety show.",
+        "localImageResource": "icsyv",
         "footerIconLocalImageResource": "ic_installed"
       }
     ]
@@ -124,38 +134,17 @@
     "title": "Recorded Shows",
     "cards": [
       {
-        "type": "GAME",
-        "title": "Crazy One",
-        "description": "Purchased",
-        "localImageResource": "game_crazy_one",
+        "type": "DEFAULT",
+        "title": "Big Stage",
+        "description": "13/8/2018 - Episode 4",
+        "localImageResource": "big_stage",
         "footerIconLocalImageResource": "ic_installed"
       },
       {
-        "type": "GAME",
-        "title": "Cursed",
-        "description": "Purchased",
-        "localImageResource": "game_cursed",
-        "footerIconLocalImageResource": "ic_installed"
-      },
-      {
-        "type": "GAME",
-        "title": "fairy",
-        "description": "Purchased",
-        "localImageResource": "game_fairy",
-        "footerIconLocalImageResource": "ic_installed"
-      },
-      {
-        "type": "GAME",
-        "title": "Hear The Roar",
-        "description": "Purchased",
-        "localImageResource": "game_hear_the_roar",
-        "footerIconLocalImageResource": "ic_installed"
-      },
-      {
-        "type": "GAME",
-        "title": "Silence",
-        "description": "Purchased",
-        "localImageResource": "game_silence",
+        "type": "DEFAULT",
+        "title": "I Can See Your Voice (Malaysia)",
+        "description": "17/8/2018 - Episode 2",
+        "localImageResource": "icsyv",
         "footerIconLocalImageResource": "ic_installed"
       }
     ]

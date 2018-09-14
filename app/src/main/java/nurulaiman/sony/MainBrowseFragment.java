@@ -353,7 +353,7 @@ public class MainBrowseFragment extends BrowseFragment {
 
         private void createRows() {
             String json = Utils.inputStreamToString(getResources().openRawResource(
-                    R.raw.home_browse_row));
+                    R.raw.movie_browse_row));
             CardRow[] rows = new Gson().fromJson(json, CardRow[].class);
             for (CardRow row : rows) {
                 if (row.getType() == CardRow.TYPE_DEFAULT) {
