@@ -20,7 +20,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId 'com.example.android.persistence'
-        minSdkVersion 21
+        minSdkVersion 23
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -48,6 +48,10 @@ android {
     }
 
     buildToolsVersion '27.0.3'
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
 }
 
 dependencies {
@@ -99,4 +103,8 @@ dependencies {
 
     annotationProcessor "com.google.dagger:dagger-android-processor:2.11"
     annotationProcessor "com.google.dagger:dagger-compiler:2.11"
+
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:8.0.1'
+    implementation 'fr.bmartel:youtubetv:1.2'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
 }

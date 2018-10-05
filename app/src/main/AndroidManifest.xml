@@ -40,19 +40,16 @@
             android:label="@string/app_name"
             android:logo="@mipmap/app_banner_sample_app"
             android:screenOrientation="landscape">
-
-
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LEANBACK_LAUNCHER"/>
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".app.page.PageAndListRowActivity"
             android:exported="true"
-            android:theme="@style/Theme.Example.Leanback.CustomTitle"></activity>
+            android:theme="@style/Theme.Example.Leanback.CustomTitle" />
         <activity
             android:name=".app.wizard.WizardExampleActivity"
             android:exported="true"
@@ -77,11 +74,14 @@
             android:name=".app.cards.CardExampleActivity"
             android:exported="true"
             android:theme="@style/Theme.Example.LeanbackBrowse">
-            <!--<intent-filter>
+
+            <!--
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
+            -->
         </activity>
         <activity
             android:name=".app.grid.GridExampleActivity"
@@ -148,49 +148,47 @@
             android:name=".app.room.controller.overview.LiveDataRowsActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Example.LeanbackBrowse"></activity>
+            android:theme="@style/Theme.Example.LeanbackBrowse" />
         <activity
             android:name=".app.room.controller.detail.LiveDataDetailActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Example.LeanbackDetails"></activity>
+            android:theme="@style/Theme.Example.LeanbackDetails" />
         <activity
             android:name=".app.room.controller.search.SearchActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Leanback.Details.NoSharedElementTransition"></activity>
+            android:theme="@style/Theme.Leanback.Details.NoSharedElementTransition" />
 
         <service
             android:name=".app.media.MusicPlaybackService"
             android:exported="false" />
 
-        <activity android:name="nurulaiman.sony.MainActivity"
+        <activity
+            android:name="nurulaiman.sony.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.Example.Leanback.CustomTitle">
-
-        </activity>
-        <activity android:name="nurulaiman.sony.DetailViewLiveBroadcastActivity"
+            android:theme="@style/Theme.Example.Leanback.CustomTitle"></activity>
+        <activity
+            android:name="nurulaiman.sony.DetailViewLiveBroadcastActivity"
             android:exported="true"
-            android:theme="@style/Theme.Example.Leanback.CustomTitle">
-
-        </activity>
-        <activity android:name="nurulaiman.sony.DetailViewMovieActivity"
+            android:theme="@style/Theme.Example.Leanback.CustomTitle"></activity>
+        <activity
+            android:name="nurulaiman.sony.DetailViewMovieActivity"
             android:exported="true"
-            android:theme="@style/Theme.Example.Leanback.CustomTitle">
-
-        </activity>
-
-        <activity android:name="nurulaiman.sony.DetailViewTvShowActivity"
+            android:theme="@style/Theme.Example.Leanback.CustomTitle"></activity>
+        <activity
+            android:name="nurulaiman.sony.DetailViewTvShowActivity"
             android:exported="true"
-            android:theme="@style/Theme.Example.Leanback.CustomTitle">
-
-        </activity>
-
-        <activity android:name="nurulaiman.sony.ChannelListActivity"
+            android:theme="@style/Theme.Example.Leanback.CustomTitle"></activity>
+        <activity
+            android:name="nurulaiman.sony.ChannelListActivity"
             android:exported="true"
-            android:theme="@style/Theme.Example.Leanback.CustomTitle">
-
-        </activity>
+            android:theme="@style/Theme.Example.Leanback.CustomTitle"></activity>
+        <activity android:name="nurulaiman.sony.VideoPlaybackActivity"></activity>
+        <activity
+            android:name="nurulaiman.sony.LiveActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Example.Leanback.CustomTitle"></activity>
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
 package nurulaiman.sony;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.os.Handler;
@@ -44,16 +45,25 @@ public class MainBrowseFragment extends BrowseFragment {
     private static final long HEADER_ID_1 = 1;
     private static final String HEADER_NAME_1 = "HOME";
     private static final long HEADER_ID_2 = 2;
-    private static final String HEADER_NAME_2 = "LIVE BROADCASTS";
+    private static final String HEADER_NAME_2 = "LIVE TV";
     private static final long HEADER_ID_3 = 3;
-    private static final String HEADER_NAME_3 = "TV SHOWS";
+    private static final String HEADER_NAME_3 = "DRAMA SERIES";
     private static final long HEADER_ID_4 = 4;
-    private static final String HEADER_NAME_4 = "MOVIES";
-
+    private static final String HEADER_NAME_4 = "TV SHOW";
     private static final long HEADER_ID_5 = 5;
-    private static final String HEADER_NAME_5 = "Login/Sign Up";
+    private static final String HEADER_NAME_5 = "MOVIES";
     private static final long HEADER_ID_6 = 6;
-    private static final String HEADER_NAME_6 = "Settings";
+    private static final String HEADER_NAME_6 = "SPORTS";
+    private static final long HEADER_ID_7 = 7;
+    private static final String HEADER_NAME_7 = "CHILDREN";
+    private static final long HEADER_ID_8 = 8;
+    private static final String HEADER_NAME_8 = "VIP PACKAGES";
+
+
+    private static final long HEADER_ID_9 = 9;
+    private static final String HEADER_NAME_9 = "Login/Sign Up";
+    private static final long HEADER_ID_10 = 10;
+    private static final String HEADER_NAME_10 = "Settings";
 
 
     private BackgroundManager mBackgroundManager;
@@ -126,6 +136,23 @@ public class MainBrowseFragment extends BrowseFragment {
         HeaderItem headerItem6 = new HeaderItem(HEADER_ID_6, HEADER_NAME_6);
         PageRow pageRow6 = new PageRow(headerItem6);
         mRowsAdapter.add(pageRow6);
+
+        HeaderItem headerItem7 = new HeaderItem(HEADER_ID_7, HEADER_NAME_7);
+        PageRow pageRow7 = new PageRow(headerItem7);
+        mRowsAdapter.add(pageRow7);
+
+        HeaderItem headerItem8 = new HeaderItem(HEADER_ID_8, HEADER_NAME_8);
+        PageRow pageRow8 = new PageRow(headerItem8);
+        mRowsAdapter.add(pageRow8);
+
+        HeaderItem headerItem9 = new HeaderItem(HEADER_ID_9, HEADER_NAME_9);
+        PageRow pageRow9 = new PageRow(headerItem9);
+        mRowsAdapter.add(pageRow9);
+
+        HeaderItem headerItem10 = new HeaderItem(HEADER_ID_10, HEADER_NAME_10);
+        PageRow pageRow10 = new PageRow(headerItem10);
+        mRowsAdapter.add(pageRow10);
+
     }
 
     private static class PageRowFragmentFactory extends BrowseFragment.FragmentFactory {
@@ -140,10 +167,10 @@ public class MainBrowseFragment extends BrowseFragment {
             Row row = (Row)rowObj;
             mBackgroundManager.setDrawable(null);
 
-            if(row.getHeaderItem().getId() == HEADER_ID_5){
+            if(row.getHeaderItem().getId() == HEADER_ID_9){
                 return new MainBrowseFragment.FragmentLoginSignUp();
             }
-            else if(row.getHeaderItem().getId() == HEADER_ID_6){
+            else if(row.getHeaderItem().getId() == HEADER_ID_10){
                 return new MainBrowseFragment.SettingsFragment();
             }
             else if(row.getHeaderItem().getId() == HEADER_ID_1){
@@ -152,14 +179,20 @@ public class MainBrowseFragment extends BrowseFragment {
             else if(row.getHeaderItem().getId() == HEADER_ID_2){
                 return new MainBrowseFragment.FragmentLiveBroadcast();
             }
-            else if(row.getHeaderItem().getId() == HEADER_ID_3){
+            else if(row.getHeaderItem().getId() == HEADER_ID_4){
                 return new MainBrowseFragment.FragmentTvShow();
             }
-            else if(row.getHeaderItem().getId() == HEADER_ID_4){
+            else if(row.getHeaderItem().getId() == HEADER_ID_5){
                 return new MainBrowseFragment.FragmentMovie();
             }
 
-            throw new IllegalArgumentException(String.format("Invalid row %s", rowObj));
+            //DUMMY
+            else{
+                return new MainBrowseFragment.FragmentTvShow();
+
+            }
+
+            //throw new IllegalArgumentException(String.format("Invalid row %s", rowObj));
         }
     }
 
@@ -177,7 +210,7 @@ public class MainBrowseFragment extends BrowseFragment {
 
     public static class FragmentLiveBroadcast extends GridFragment {
         private static final int COLUMNS = 3;
-        private final int ZOOM_FACTOR = FocusHighlight.ZOOM_FACTOR_SMALL;
+        private final int ZOOM_FACTOR = FocusHighlight.ZOOM_FACTOR_MEDIUM;
         private ArrayObjectAdapter mAdapter;
 
         @Override
@@ -205,10 +238,16 @@ public class MainBrowseFragment extends BrowseFragment {
                         Object item,
                         RowPresenter.ViewHolder rowViewHolder,
                         Row row) {
+                    Intent intent;
+
                     Card card = (Card)item;
-                    Toast.makeText(getActivity(),
+                    /*Toast.makeText(getActivity(),
                             "Clicked on "+card.getTitle(),
-                            Toast.LENGTH_SHORT).show();
+                            Toast.LENGTH_SHORT).show();*/
+
+                    intent = new Intent(getContext(), LiveActivity.class);
+                    intent.putExtra("videoId",card.getVideoId());
+                    getContext().startActivity(intent);
                 }
             });
         }

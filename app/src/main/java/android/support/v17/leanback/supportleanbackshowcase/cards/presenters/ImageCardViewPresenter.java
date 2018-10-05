@@ -18,6 +18,7 @@ import android.content.Context;
 import android.support.v17.leanback.supportleanbackshowcase.R;
 import android.support.v17.leanback.supportleanbackshowcase.models.Card;
 import android.support.v17.leanback.widget.ImageCardView;
+import android.util.Log;
 import android.view.ContextThemeWrapper;
 
 import com.bumptech.glide.Glide;
@@ -29,12 +30,23 @@ import com.bumptech.glide.Glide;
  */
 public class ImageCardViewPresenter extends AbstractCardPresenter<ImageCardView> {
 
+    private Card.Type mType;
+
+    private String mVideoId;
+
     public ImageCardViewPresenter(Context context, int cardThemeResId) {
         super(new ContextThemeWrapper(context, cardThemeResId));
     }
 
     public ImageCardViewPresenter(Context context) {
         this(context, R.style.DefaultCardTheme);
+    }
+
+    public ImageCardViewPresenter(Context context, Card.Type type, String videoId) {
+        this(context, R.style.DefaultCardTheme);
+        mType = type;
+        mVideoId = videoId;
+        Log.i("video ID loaded:",videoId);
     }
 
     @Override

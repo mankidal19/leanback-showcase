@@ -42,6 +42,11 @@ public class Card {
     @SerializedName("width") private int mWidth;
     @SerializedName("height") private int mHeight;
 
+
+    //adding for video id
+    @SerializedName("videoId")
+    private String mVideoId;
+
     public String getTitle() {
         return mTitle;
     }
@@ -164,6 +169,10 @@ public class Card {
         return mFooterResource;
     }
 
+    public String getVideoId() {
+        return mVideoId;
+    }
+
     public enum Type {
 
         MOVIE_COMPLETE,
@@ -180,7 +189,8 @@ public class Card {
         TEXT,
         CHARACTER,
         GRID_SQUARE,
-        VIDEO_GRID
+        VIDEO_GRID,
+        LIVE_TV
 
     }
 

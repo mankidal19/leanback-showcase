@@ -12,7 +12,7 @@
  * the License.
  */
 
-package android.support.v17.leanback.supportleanbackshowcase.app.media;
+package nurulaiman.sony;
 
 import android.content.Context;
 import android.media.AudioManager;
@@ -22,16 +22,18 @@ import android.support.v17.leanback.app.VideoFragment;
 import android.support.v17.leanback.app.VideoFragmentGlueHost;
 import android.support.v17.leanback.media.MediaPlayerAdapter;
 import android.support.v17.leanback.media.PlaybackGlue;
-import android.support.v17.leanback.media.PlaybackTransportControlGlue;
+import android.support.v17.leanback.supportleanbackshowcase.app.media.MediaMetaData;
+import android.support.v17.leanback.supportleanbackshowcase.app.media.PlaybackSeekDiskDataProvider;
+import android.support.v17.leanback.supportleanbackshowcase.app.media.VideoExampleActivity;
+import nurulaiman.sony.VideoMediaPlayerGlue;
 import android.support.v17.leanback.widget.PlaybackControlsRow;
 import android.util.Log;
 
 
-public class VideoConsumptionExampleFragment extends VideoFragment {
+public class VideoPlaybackFragment extends VideoFragment {
 
-    /*private static final String URL = "https://storage.googleapis.com/android-tv/Sample videos/"
-            + "April Fool's 2013/Explore Treasure Mode with Google Maps.mp4";*/
-    private static final String URL = "https://r2---sn-30a7yn7k.googlevideo.com/videoplayback?id=o-AHu9Y_gnagGvdMomXk-NjaBOzORl4gzPyezpPEsunwnr&signature=4C6595F281EB43AC65D09C77C2534345458D5927.11DF5E299D73BEE074488C11CA9264C5B3F8FBAB&ms=au%2Conr&mv=m&mt=1537234155&pl=24&expire=1537255871&mn=sn-30a7yn7k%2Csn-npoe7n7y&mm=31%2C26&ip=27.131.46.34&requiressl=yes&ei=XlWgW7nvOIK0z7sPrP26QA&initcwndbps=548750&source=youtube&ipbits=0&lmt=1527446500433877&sparams=dur%2Cei%2Cgcr%2Cid%2Cinitcwndbps%2Cip%2Cipbits%2Citag%2Clmt%2Cmime%2Cmm%2Cmn%2Cms%2Cmv%2Cpl%2Cratebypass%2Crequiressl%2Csource%2Cexpire&gcr=my&fvip=2&dur=5415.125&ratebypass=yes&c=WEB&itag=22&key=yt6&mime=video%2Fmp4";
+    private static final String URL = "https://storage.googleapis.com/android-tv/Sample videos/"
+            + "April Fool's 2013/Explore Treasure Mode with Google Maps.mp4";
     public static final String TAG = "VideoConsumption";
     private VideoMediaPlayerGlue<MediaPlayerAdapter> mMediaPlayerGlue;
     final VideoFragmentGlueHost mHost = new VideoFragmentGlueHost(this);
@@ -82,8 +84,8 @@ public class VideoConsumptionExampleFragment extends VideoFragment {
             mMediaPlayerGlue.getPlayerAdapter().setDataSource(
                     Uri.parse(intentMetaData.getMediaSourcePath()));
         } else {
-            mMediaPlayerGlue.setTitle("Arirang TV World");
-            mMediaPlayerGlue.setSubtitle("Arirang TV/Radio is a public service agency that spreads the uniqueness of Korea to the world through cutting-edge broadcasting.");
+            mMediaPlayerGlue.setTitle("Diving with Sharks");
+            mMediaPlayerGlue.setSubtitle("A Googler");
             mMediaPlayerGlue.getPlayerAdapter().setDataSource(Uri.parse(URL));
         }
         PlaybackSeekDiskDataProvider.setDemoSeekProvider(mMediaPlayerGlue);

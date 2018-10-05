@@ -117,7 +117,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="action_recommeded">RECOMMENDED</string>
-    <string name="action_watchlist">ADD TO WATCH LIST</string>
+    <string name="action_favorite">FAVORITE</string>
     <string name="action_sub_audio">SUBTITLES / AUDIO</string>
     <string name="action_other_ep">OTHER EPISODES</string>
     <string name="dialog_channel_list_title">CHANNEL LIST</string>

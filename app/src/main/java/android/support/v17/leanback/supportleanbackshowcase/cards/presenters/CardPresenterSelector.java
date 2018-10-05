@@ -22,6 +22,7 @@ import android.support.v17.leanback.widget.Presenter;
 import android.support.v17.leanback.widget.PresenterSelector;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This PresenterSelector will decide what Presenter to use depending on a given card's type.
@@ -30,6 +31,10 @@ public class CardPresenterSelector extends PresenterSelector {
 
     private final Context mContext;
     private final HashMap<Card.Type, Presenter> presenters = new HashMap<Card.Type, Presenter>();
+
+    //presenters for live tv
+    private final HashMap<Map.Entry<Card.Type,String>, Presenter> presentersLive = new HashMap<Map.Entry<Card.Type,String>, Presenter>();
+
 
     public CardPresenterSelector(Context context) {
         mContext = context;
@@ -82,6 +87,9 @@ public class CardPresenterSelector extends PresenterSelector {
                     break;
                 case CHARACTER:
                     presenter = new CharacterCardPresenter(mContext);
+                    break;
+                case LIVE_TV:
+                    presenter = new ImageCardViewPresenter(mContext,card.getType(),card.getVideoId());
                     break;
                 default:
                     presenter = new ImageCardViewPresenter(mContext);

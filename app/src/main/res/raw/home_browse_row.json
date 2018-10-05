@@ -1,6 +1,6 @@
 [
   {
-    "title": "Recently Played",
+    "title": "Recommended",
     "cards": [
       {
         "type": "DEFAULT",
@@ -40,7 +40,7 @@
     ]
   },
   {
-    "title": "Popular Live Broadcasts",
+    "title": "Favorite",
     "cards": [
       {
         "type": "DEFAULT",
@@ -77,7 +77,7 @@
   },
 
   {
-    "title": "Watch List",
+    "title": "Popular Live TV",
     "cards": [
       {
         "type": "DEFAULT",

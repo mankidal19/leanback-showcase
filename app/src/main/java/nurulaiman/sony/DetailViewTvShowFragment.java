@@ -134,7 +134,7 @@ public class DetailViewTvShowFragment extends DetailsFragment implements OnItemV
         ArrayObjectAdapter actionAdapter = new ArrayObjectAdapter();
 
         mActionWatchNow = new Action(ACTION_WATCHNOW,"WATCH NOW");
-        mActionWatchList = new Action(ACTION_WATCHLIST, getString(R.string.action_watchlist));
+        mActionWatchList = new Action(ACTION_WATCHLIST, getString(R.string.action_favorite));
         mActionSubAudio = new Action((ACTION_SUB_AUDIO),getString(R.string.action_sub_audio));
         mActionOtherEp = new Action(ACTION_OTHER_EP,getString(R.string.action_other_ep));
 

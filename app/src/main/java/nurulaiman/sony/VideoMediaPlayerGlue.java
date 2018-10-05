@@ -13,7 +13,7 @@
  *
  */
 
-package android.support.v17.leanback.supportleanbackshowcase.app.media;
+package nurulaiman.sony;
 
 import android.app.Activity;
 import android.os.Handler;
@@ -30,23 +30,16 @@ import android.widget.Toast;
  */
 public class VideoMediaPlayerGlue<T extends PlayerAdapter> extends PlaybackTransportControlGlue<T> {
 
-   /* private PlaybackControlsRow.RepeatAction mRepeatAction;
-    private PlaybackControlsRow.ThumbsUpAction mThumbsUpAction;
-    private PlaybackControlsRow.ThumbsDownAction mThumbsDownAction;
-    private PlaybackControlsRow.PictureInPictureAction mPipAction;
-   */ private PlaybackControlsRow.ClosedCaptioningAction mClosedCaptioningAction;
-    private PlaybackControlsRow.FastForwardAction mFastForwardAction;
-    private PlaybackControlsRow.RewindAction mRewindAction;
-
-
+    //private PlaybackControlsRow.RepeatAction mRepeatAction;
+    //private PlaybackControlsRow.ThumbsUpAction mThumbsUpAction;
+    //private PlaybackControlsRow.ThumbsDownAction mThumbsDownAction;
+    //private PlaybackControlsRow.PictureInPictureAction mPipAction;
+    private PlaybackControlsRow.ClosedCaptioningAction mClosedCaptioningAction;
 
     public VideoMediaPlayerGlue(Activity context, T impl) {
         super(context, impl);
         mClosedCaptioningAction = new PlaybackControlsRow.ClosedCaptioningAction(context);
-        mRewindAction = new PlaybackControlsRow.RewindAction(context);
-        mFastForwardAction = new PlaybackControlsRow.FastForwardAction(context);
-
-        /*mThumbsUpAction = new PlaybackControlsRow.ThumbsUpAction(context);
+     /*   mThumbsUpAction = new PlaybackControlsRow.ThumbsUpAction(context);
         mThumbsUpAction.setIndex(PlaybackControlsRow.ThumbsUpAction.OUTLINE);
         mThumbsDownAction = new PlaybackControlsRow.ThumbsDownAction(context);
         mThumbsDownAction.setIndex(PlaybackControlsRow.ThumbsDownAction.OUTLINE);
@@ -54,24 +47,20 @@ public class VideoMediaPlayerGlue<T extends PlayerAdapter> extends PlaybackTrans
         mPipAction = new PlaybackControlsRow.PictureInPictureAction(context);*/
     }
 
-    @Override
+   /* @Override
     protected void onCreateSecondaryActions(ArrayObjectAdapter adapter) {
-        /*adapter.add(mThumbsUpAction);
+        adapter.add(mThumbsUpAction);
         adapter.add(mThumbsDownAction);
         if (android.os.Build.VERSION.SDK_INT > 23) {
             adapter.add(mPipAction);
-        }*/
-
-        adapter.add(mClosedCaptioningAction);
-    }
+        }
+    }*/
 
     @Override
     protected void onCreatePrimaryActions(ArrayObjectAdapter adapter) {
         super.onCreatePrimaryActions(adapter);
         //adapter.add(mRepeatAction);
-        //adapter.add(mClosedCaptioningAction);
-        adapter.add(mRewindAction);
-        adapter.add(mFastForwardAction);
+        adapter.add(mClosedCaptioningAction);
     }
 
     @Override
@@ -84,21 +73,21 @@ public class VideoMediaPlayerGlue<T extends PlayerAdapter> extends PlaybackTrans
     }
 
     private boolean shouldDispatchAction(Action action) {
-    /*    return action == mRepeatAction || action == mThumbsUpAction || action == mThumbsDownAction
-                || action == mPipAction || action == mClosedCaptioningAction;*/
+      //  return action == mRepeatAction || action == mThumbsUpAction || action == mThumbsDownAction
+        //        || action == mPipAction || action == mClosedCaptioningAction;
 
         return action == mClosedCaptioningAction;
     }
 
     private void dispatchAction(Action action) {
-        /*if (action == mPipAction) {
+      /*  if (action == mPipAction) {
             ((Activity) getContext()).enterPictureInPictureMode();
         } else {*/
             Toast.makeText(getContext(), action.toString(), Toast.LENGTH_SHORT).show();
             PlaybackControlsRow.MultiAction multiAction = (PlaybackControlsRow.MultiAction) action;
             multiAction.nextIndex();
             notifyActionChanged(multiAction);
-        //}
+        /*}*/
     }
 
     private void notifyActionChanged(PlaybackControlsRow.MultiAction action) {

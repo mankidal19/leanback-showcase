@@ -4,32 +4,37 @@
       "type": "DEFAULT",
       "title": "Al Jazeera News (English)",
       "description": "At Al Jazeera English, we focus on people and events that affect people's lives.",
-      "localImageResource": "aljazeera"
+      "localImageResource": "aljazeera",
+      "videoId":"FdtQ2ZgLbEs"
 
     },
     {
-      "type": "DEFAULT",
+      "type": "LIVE_TV",
       "title": "Arirang TV World",
       "description": "Arirang TV/Radio is a public service agency that spreads the uniqueness of Korea to the world through cutting-edge broadcasting.",
-      "localImageResource": "arirang"
+      "localImageResource": "arirang",
+      "videoId":"2LWt-dxd0v4"
     },
     {
-      "type": "DEFAULT",
+      "type": "LIVE_TV",
       "title": "Euronews English",
       "description": "Euronews: the most watched news channel in Europe.",
-      "localImageResource": "euronews"
+      "localImageResource": "euronews",
+      "videoId":"1rGQ-kbmg1g"
     },
     {
-      "type": "DEFAULT",
+      "type": "LIVE_TV",
       "title": "KBSWorld 24",
       "description": "700만 해외동포와 함께 하는 KBS World 24!!! ",
-      "localImageResource": "kbsworld"
+      "localImageResource": "kbsworld",
+      "videoId":"KkXq2sv6Tos"
     },
     {
-      "type": "DEFAULT",
+      "type": "LIVE_TV",
       "title": "Mr Bean Cartoon Marathon",
       "description": "Funny Episodes of Mr Bean the Animated Series 24/7",
-      "localImageResource": "mrbeanc"
+      "localImageResource": "mrbeanc",
+      "videoId":"Lvp-lSqHVKc"
     }
   ]
 }

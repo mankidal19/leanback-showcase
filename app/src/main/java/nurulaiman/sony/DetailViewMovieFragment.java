@@ -133,7 +133,7 @@ public class DetailViewMovieFragment extends DetailsFragment implements OnItemVi
         ArrayObjectAdapter actionAdapter = new ArrayObjectAdapter();
 
         mActionBuy = new Action(ACTION_BUY, getString(R.string.action_buy) + " " + data.getPrice());
-        mActionWatchList = new Action(ACTION_WATCHLIST, getString(R.string.action_watchlist));
+        mActionWatchList = new Action(ACTION_WATCHLIST, getString(R.string.action_favorite));
         mActionSubAudio = new Action(ACTION_SUB_AUDIO,getString(R.string.action_sub_audio));
         mActionRecommeded = new Action(ACTION_RECOMMEDED, getString(R.string.action_recommeded));
 
