@@ -48,7 +48,7 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 
-import nurulaiman.sony.activity.YoutubePlayerActivity;
+import nurulaiman.sony.activity.LiveActivity;
 
 /**
  * Displays a card with more details using a {@link DetailsFragment}.
@@ -193,11 +193,11 @@ public class DetailViewLiveBroadcastFragment extends DetailsFragment implements 
             setSelectedPosition(1);
         }
         else if(action.getId()==ACTION_WATCHNOW){
-            Intent intent = new Intent(getContext(), YoutubePlayerActivity.class);
+            Intent intent = new Intent(getContext(), LiveActivity.class);
             String videoId = getActivity().getIntent().getExtras().getString("videoId");
             intent.putExtra("videoId",videoId);
             startActivity(intent);
-            Log.d(TAG,"play live youtube video from details page");
+            Log.d(TAG,"play live youtube video from details page with");
         }
 
         else {

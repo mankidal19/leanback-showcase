@@ -63,9 +63,9 @@ public class LiveActivity extends FragmentActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        //if(youTubePlayerView !=null){
+        if(youTubePlayerView !=null){
             //youTubePlayerView.release();
-        //}
+        }
 
         Log.i("in Live Activity","onPause() is called");
 
@@ -112,8 +112,9 @@ public class LiveActivity extends FragmentActivity {
         else if(event.getKeyCode() == KeyEvent.KEYCODE_CHANNEL_UP){
             Log.i("KeyEvent","Channel up button pressed");
             handled=true;
-            intent.putExtra("videoId",getNextChannel());
             onDestroy();
+            intent.putExtra("videoId",getNextChannel());
+
             //youTubePlayerView.release();
 
             startActivity(intent);

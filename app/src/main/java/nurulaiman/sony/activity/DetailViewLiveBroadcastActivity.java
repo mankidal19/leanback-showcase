@@ -35,6 +35,7 @@ public class DetailViewLiveBroadcastActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_example);
 
+
         if (savedInstanceState == null) {
             DetailViewLiveBroadcastFragment fragment = new DetailViewLiveBroadcastFragment();
             getFragmentManager().beginTransaction()

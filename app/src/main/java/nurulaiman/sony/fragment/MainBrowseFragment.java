@@ -278,7 +278,7 @@ public class MainBrowseFragment extends BrowseFragment {
                             "Clicked on "+card.getTitle(),
                             Toast.LENGTH_SHORT).show();*/
 
-                    if(card.getTitle().contains("Al Jazeera")){
+                    if(card.getTitle().toLowerCase().contains("jazeera")){
                         intent = new Intent(getContext(), DetailViewLiveBroadcastActivity.class);
                         intent.putExtra("videoId",card.getVideoId());
                         startActivity(intent);

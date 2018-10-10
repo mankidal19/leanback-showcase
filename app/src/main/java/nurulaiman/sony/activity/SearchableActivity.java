@@ -76,7 +76,7 @@ public class SearchableActivity extends Activity {
                 if(selectedCard.isLive()){
 
                     //for sample live tv details page
-                    if(selectedCard.getTitle().contains("Al Jazeera English - LIVE")){
+                    if(selectedCard.getTitle().toLowerCase().contains("jazeera")){
                         Intent intent = new Intent(this, DetailViewLiveBroadcastActivity.class);
                         intent.putExtra("mediaId",id);
                         intent.putExtra("videoId",selectedCard.getVideoId());
