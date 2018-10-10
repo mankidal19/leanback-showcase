@@ -5,37 +5,52 @@
       {
         "type": "DEFAULT",
         "title": "After School Club",
-        "description": "After School Club, often shortened to ASC, is a South Korean internet-based live-music request television talk show co-hosted by Park Jimin, Seungmin and Heejun.",
+        "description": "After School Club, often shortened to ASC, is a South Korean internet-based live-music request television talk show co-hosted by Park Jimin, Seungmin and Heejun. [TV SHOW] [ENTERTAINMENT]",
         "localImageResource": "asc_club",
-        "footerIconLocalImageResource": "ic_installed"
+        "footerIconLocalImageResource": "ic_installed",
+        "id":0,
+        "live":false,
+        "videoId":"j92a1CAk0uU"
       },
       {
         "type": "DEFAULT",
         "title": "Big Stage",
-        "description": "New singing program from Astro.",
+        "description": "New singing program from Astro. [TV SHOW] [ENTERTAINMENT]",
         "localImageResource": "big_stage",
-        "footerIconLocalImageResource": "ic_installed"
+        "footerIconLocalImageResource": "ic_installed",
+        "id":1,
+        "live":false,
+        "videoId":"iD_i7enDjtY"
       },
       {
         "type": "DEFAULT",
         "title": "I Can See Your Voice (Malaysia)",
-        "description": "A local spin-off version from Korea's famous variety show.",
+        "description": "A local spin-off version from Korea's famous variety show. [TV SHOW] [ENTERTAINMENT]",
         "localImageResource": "icsyv",
-        "footerIconLocalImageResource": "ic_installed"
+        "footerIconLocalImageResource": "ic_installed",
+        "id":2,
+        "live":false,
+        "videoId":"FsLCzW6t2bc"
       },
       {
         "type": "DEFAULT",
         "title": "Music Bank",
-        "description": "Music Bank is a South Korean music program which airs every Friday at 17:00 KST on KBS2.",
+        "description": "Music Bank is a South Korean music program which airs every Friday at 17:00 KST on KBS2. [TV SHOW] [ENTERTAINMENT]",
         "localImageResource": "music_bank",
-        "footerIconLocalImageResource": "ic_installed"
+        "footerIconLocalImageResource": "ic_installed",
+        "id":3,
+        "live":false,
+        "videoId":"OE-EnnWODT4"
       },
       {
         "type": "DEFAULT",
         "title": "The Return of Superman",
-        "description": "The Return of Superman is a South Korean reality-variety show that airs on KBS2.",
+        "description": "The Return of Superman is a South Korean reality-variety show that airs on KBS2. [TV SHOW] [ENTERTAINMENT]",
         "localImageResource": "tros",
-        "footerIconLocalImageResource": "ic_installed"
+        "footerIconLocalImageResource": "ic_installed",
+        "id":4,
+        "live":false,
+        "videoId":"50eg9SXUDwA"
       }
     ]
   },
@@ -45,37 +60,52 @@
       {
         "type": "DEFAULT",
         "title": "Gundam Build Fighters",
-        "description": "Gundam Build Fighters is a 2013 Japanese science fiction anime television series based on Sunrise's long-running Gundam franchise. ",
+        "description": "Gundam Build Fighters is a 2013 Japanese science fiction anime television series based on Sunrise's long-running Gundam franchise. [TV SHOW] [ANIME & CARTOONS]",
         "localImageResource": "gbf",
-        "footerIconLocalImageResource": "ic_installed"
+        "footerIconLocalImageResource": "ic_installed",
+        "id":5,
+        "live":false,
+        "videoId":"R9H1u1zFVNc"
       },
       {
         "type": "DEFAULT",
         "title": "Mobile Suit Gundam SEED",
-        "description": "Mobile Suit Gundam SEED is an anime series developed by Sunrise and directed by Mitsuo Fukuda.",
+        "description": "Mobile Suit Gundam SEED is an anime series developed by Sunrise and directed by Mitsuo Fukuda. [TV SHOW] [ANIME & CARTOONS]",
         "localImageResource": "gundam_seed",
-        "footerIconLocalImageResource": "ic_installed"
+        "footerIconLocalImageResource": "ic_installed",
+        "id":6,
+        "live":false,
+        "videoId":"EWtuU5H6BdQ"
       },
       {
         "type": "DEFAULT",
         "title": "Mr Bean the Animated Series",
-        "description": "Following the animated adventures of the clueless yet brilliant Mr Bean and his faithful sidekick Teddy.",
+        "description": "Following the animated adventures of the clueless yet brilliant Mr Bean and his faithful sidekick Teddy. [TV SHOW] [ANIME & CARTOONS]",
         "localImageResource": "mr_bean_animated",
-        "footerIconLocalImageResource": "ic_installed"
+        "footerIconLocalImageResource": "ic_installed",
+        "id":7,
+        "live":false,
+        "videoId":"qfg4aSLxFcI"
       },
       {
         "type": "DEFAULT",
         "title": "Tom & Jerry",
-        "description": "Centers on a rivalry between its two title characters, Tom, a cat, and Jerry, a mouse.",
+        "description": "Centers on a rivalry between its two title characters, Tom, a cat, and Jerry, a mouse. [TV SHOW] [ANIME & CARTOONS]",
         "localImageResource": "tom_jerry",
-        "footerIconLocalImageResource": "ic_installed"
+        "footerIconLocalImageResource": "ic_installed",
+        "id":8,
+        "live":false,
+        "videoId":"cqyziA30whE"
       },
       {
         "type": "DEFAULT",
         "title": "Upin & Ipin",
-        "description": "Curious and fun-loving 5-year-old twin brothers Upin and Ipin learn and explore new things.",
+        "description": "Curious and fun-loving 5-year-old twin brothers Upin and Ipin learn and explore new things. [TV SHOW] [ANIME & CARTOONS]",
         "localImageResource": "upin_ipin",
-        "footerIconLocalImageResource": "ic_installed"
+        "footerIconLocalImageResource": "ic_installed",
+        "id":9,
+        "live":false,
+        "videoId":"E4R_e9bkLgg"
       }
     ]
   },
@@ -85,37 +115,52 @@
       {
         "type": "DEFAULT",
         "title": "Al Jazeera News",
-        "description": "Al Jazeera, also known as JSC, is a state-funded broadcaster in Doha, Qatar, owned by the Al Jazeera Media Network.",
+        "description": "Al Jazeera, also known as JSC, is a state-funded broadcaster in Doha, Qatar, owned by the Al Jazeera Media Network. [TV SHOW] [NEWS]",
         "localImageResource": "aljazeera_news",
-        "footerIconLocalImageResource": "ic_installed"
+        "footerIconLocalImageResource": "ic_installed",
+        "id":10,
+        "live":false,
+        "videoId":"qwKi5kZPME8"
       },
       {
         "type": "DEFAULT",
         "title": "Arirang News",
-        "description": "Arirang TV is a global, English-language television network based in Seoul, South Korea.",
+        "description": "Arirang TV is a global, English-language television network based in Seoul, South Korea. [TV SHOW] [NEWS]",
         "localImageResource": "arirang_news",
-        "footerIconLocalImageResource": "ic_installed"
+        "footerIconLocalImageResource": "ic_installed",
+        "id":11,
+        "live":false,
+        "videoId":"1ARLUNkn2kE"
       },
       {
         "type": "DEFAULT",
         "title": "Buletin Awani",
-        "description": "Astro Awani is the in-house rolling television news and current affairs channel providing 24-hour news coverage including news in Malay.",
+        "description": "Astro Awani is the in-house rolling television news and current affairs channel providing 24-hour news coverage including news in Malay. [TV SHOW] [NEWS]",
         "localImageResource": "buletin_awani",
-        "footerIconLocalImageResource": "ic_installed"
+        "footerIconLocalImageResource": "ic_installed",
+        "id":12,
+        "live":false,
+        "videoId":"sDOv5TurUJY"
       },
       {
         "type": "DEFAULT",
         "title": "Euronews",
-        "description": "PurchasedEuronews is a multilingual news media service, headquartered in Lyon, France.",
+        "description": "PurchasedEuronews is a multilingual news media service, headquartered in Lyon, France. [TV SHOW] [NEWS]",
         "localImageResource": "euro_news",
-        "footerIconLocalImageResource": "ic_installed"
+        "footerIconLocalImageResource": "ic_installed",
+        "id":13,
+        "live":false,
+        "videoId":"0BIm3FE5xfk"
       },
       {
         "type": "DEFAULT",
         "title": "KBS News",
-        "description": "KBS Nine O'Clock News is the flagship newscast that airs on KBS1 every night at 9:00pm KST.",
+        "description": "KBS Nine O'Clock News is the flagship newscast that airs on KBS1 every night at 9:00pm KST. [TV SHOW] [NEWS]",
         "localImageResource": "kbs_news",
-        "footerIconLocalImageResource": "ic_installed"
+        "footerIconLocalImageResource": "ic_installed",
+        "id":14,
+        "live":false,
+        "videoId":"zlds3jwi8sc"
       }
     ]
   },
@@ -126,38 +171,52 @@
       {
         "type": "DEFAULT",
         "title": "2018 All England Open",
-        "description": "The 2018 All England Open, officially YONEX All England Open 2018 was a badminton tournament which took place at Arena Birmingham in England from 14 to 18 March 2018 and had a total purse of $1,000,000.",
+        "description": "The 2018 All England Open, officially YONEX All England Open 2018 was a badminton tournament which took place at Arena Birmingham in England from 14 to 18 March 2018 and had a total purse of $1,000,000. [TV SHOW] [SPORTS]",
         "localImageResource": "all_england",
-        "footerIconLocalImageResource": "ic_installed"
-      }
-    ,
+        "footerIconLocalImageResource": "ic_installed",
+        "id": 15,
+        "live": false,
+        "videoId":"ge3g-GT9j00"
+      },
       {
         "type": "DEFAULT",
         "title": "2019 FIBA Basketball World Cup Qualifiers",
-        "description": "Process to determine the teams that will participate at the 2019 FIBA Basketball World Cup.",
+        "description": "Process to determine the teams that will participate at the 2019 FIBA Basketball World Cup. [TV SHOW] [SPORTS]",
         "localImageResource": "fiba_basketball",
-        "footerIconLocalImageResource": "ic_installed"
+        "footerIconLocalImageResource": "ic_installed",
+        "id":16,
+        "live":false,
+        "videoId":"XM0BYUt5cmM"
       },
       {
         "type": "DEFAULT",
         "title": "Asian Netball Championships 2018",
-        "description": "The Asian Netball Championship is a netball competition held every two years with teams from across Asia competing.",
+        "description": "The Asian Netball Championship is a netball competition held every two years with teams from across Asia competing. [TV SHOW] [SPORTS]",
         "localImageResource": "asian_netball",
-        "footerIconLocalImageResource": "ic_installed"
+        "footerIconLocalImageResource": "ic_installed",
+        "id":17,
+        "live":false,
+        "videoId":"48as9V-47Po"
       },
       {
         "type": "DEFAULT",
         "title": "Best Shot",
-        "description": "'Best Shot,' a documentary series co-produced by Lebron James about an inner city basketball team, is available on the NBA YouTube channel.",
+        "description": "'Best Shot,' a documentary series co-produced by Lebron James about an inner city basketball team, is available on the NBA YouTube channel. [TV SHOW] [SPORTS]",
         "localImageResource": "best_shot",
-        "footerIconLocalImageResource": "ic_installed"
+        "footerIconLocalImageResource": "ic_installed",
+        "id":18,
+        "live":false,
+        "videoId":"NdkLOwYYfpA"
       },
       {
         "type": "DEFAULT",
         "title": "Chelsea Films",
-        "description": "Get to know Chelsea like no one ever did before.",
+        "description": "Get to know Chelsea like no one ever did before. [TV SHOW] [SPORTS]",
         "localImageResource": "chelsea_film",
-        "footerIconLocalImageResource": "ic_installed"
+        "footerIconLocalImageResource": "ic_installed",
+        "id":19,
+        "live":false,
+        "videoId":"z8t4iylW-nM"
       }
     ]
   }

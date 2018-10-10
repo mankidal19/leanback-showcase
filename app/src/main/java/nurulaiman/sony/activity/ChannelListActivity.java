@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 The Android Open Source Project
+ * Copyright (C) 2014 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -12,28 +12,28 @@
  * the License.
  */
 
-package nurulaiman.sony;
+package nurulaiman.sony.activity;
 
 import android.app.Activity;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.v17.leanback.app.DetailsFragment;
-import android.support.v17.leanback.supportleanbackshowcase.R;
+import android.support.v17.leanback.app.GuidedStepFragment;
+
+import nurulaiman.sony.fragment.ChannelListFragment;
 
 /**
- * Contains a {@link DetailsFragment} in order to display more details for a given card.
+ * TODO: Javadoc
  */
-public class DetailViewTvShowActivity extends Activity {
+public class ChannelListActivity extends Activity {
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
+    @Override public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_example);
+        getWindow().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#21272A")));
 
         if (savedInstanceState == null) {
-            DetailViewTvShowFragment fragment = new DetailViewTvShowFragment();
-            getFragmentManager().beginTransaction()
-                    .replace(R.id.details_fragment, fragment)
-                    .commit();
+            GuidedStepFragment fragment = new ChannelListFragment();
+            GuidedStepFragment.addAsRoot(this, fragment, android.R.id.content);
         }
     }
 }

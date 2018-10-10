@@ -40,11 +40,14 @@
             android:label="@string/app_name"
             android:logo="@mipmap/app_banner_sample_app"
             android:screenOrientation="landscape">
+
+            <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
+            -->
         </activity>
         <activity
             android:name=".app.page.PageAndListRowActivity"
@@ -165,30 +168,76 @@
             android:exported="false" />
 
         <activity
-            android:name="nurulaiman.sony.MainActivity"
+            android:name="nurulaiman.sony.activity.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.Example.Leanback.CustomTitle"></activity>
+            android:theme="@style/Theme.Example.Leanback.CustomTitle">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.VOICE" />
+            </intent-filter>
+        </activity>
         <activity
-            android:name="nurulaiman.sony.DetailViewLiveBroadcastActivity"
+            android:name="nurulaiman.sony.activity.DetailViewLiveBroadcastActivity"
             android:exported="true"
-            android:theme="@style/Theme.Example.Leanback.CustomTitle"></activity>
+            android:theme="@style/Theme.Example.Leanback.CustomTitle" />
         <activity
-            android:name="nurulaiman.sony.DetailViewMovieActivity"
+            android:name="nurulaiman.sony.activity.DetailViewMovieActivity"
             android:exported="true"
-            android:theme="@style/Theme.Example.Leanback.CustomTitle"></activity>
+            android:theme="@style/Theme.Example.Leanback.CustomTitle" />
         <activity
-            android:name="nurulaiman.sony.DetailViewTvShowActivity"
+            android:name="nurulaiman.sony.activity.DetailViewTvShowActivity"
             android:exported="true"
-            android:theme="@style/Theme.Example.Leanback.CustomTitle"></activity>
+            android:theme="@style/Theme.Example.Leanback.CustomTitle" />
         <activity
-            android:name="nurulaiman.sony.ChannelListActivity"
+            android:name="nurulaiman.sony.activity.ChannelListActivity"
             android:exported="true"
-            android:theme="@style/Theme.Example.Leanback.CustomTitle"></activity>
-        <activity android:name="nurulaiman.sony.VideoPlaybackActivity"></activity>
+            android:theme="@style/Theme.Example.Leanback.CustomTitle" />
+        <activity android:name="nurulaiman.sony.VideoPlaybackActivity" />
         <activity
-            android:name="nurulaiman.sony.LiveActivity"
+            android:name="nurulaiman.sony.activity.LiveActivity"
             android:exported="true"
-            android:theme="@style/Theme.Example.Leanback.CustomTitle"></activity>
+            android:theme="@style/Theme.Example.Leanback.CustomTitle">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.VOICE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="nurulaiman.sony.activity.SearchableActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+
+        <provider
+            android:name="nurulaiman.sony.data.VideoContentProvider"
+            android:authorities="nurulaiman.sony"
+            android:exported="true"
+            tools:ignore="ExportedContentProvider" />
+
+        <activity android:name="nurulaiman.sony.activity.YoutubePlayerActivity"
+            android:theme="@style/Theme.Example.Leanback.CustomTitle">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.VOICE" />
+            </intent-filter>
+
+        </activity>
     </application>
 
 </manifest>

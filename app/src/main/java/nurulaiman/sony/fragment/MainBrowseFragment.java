@@ -1,10 +1,11 @@
-package nurulaiman.sony;
+package nurulaiman.sony.fragment;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.os.Handler;
+import android.os.Message;
 import android.support.v17.leanback.app.BackgroundManager;
 import android.support.v17.leanback.app.BrowseFragment;
 import android.support.v17.leanback.app.RowsFragment;
@@ -30,6 +31,7 @@ import android.support.v17.leanback.widget.PresenterSelector;
 import android.support.v17.leanback.widget.Row;
 import android.support.v17.leanback.widget.RowPresenter;
 import android.support.v17.leanback.widget.VerticalGridPresenter;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +42,16 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 
+//implement voice interaction
+import android.app.VoiceInteractor;
+import android.app.VoiceInteractor.PickOptionRequest;
+import android.app.VoiceInteractor.PickOptionRequest.Option;
+
+import nurulaiman.sony.activity.DetailViewLiveBroadcastActivity;
+import nurulaiman.sony.activity.DetailViewMovieActivity;
+import nurulaiman.sony.activity.DetailViewTvShowActivity;
+import nurulaiman.sony.activity.LiveActivity;
+import nurulaiman.sony.activity.YoutubePlayerActivity;
 
 public class MainBrowseFragment extends BrowseFragment {
     private static final long HEADER_ID_1 = 1;
@@ -65,6 +77,7 @@ public class MainBrowseFragment extends BrowseFragment {
     private static final long HEADER_ID_10 = 10;
     private static final String HEADER_NAME_10 = "Settings";
 
+    private static String TAG = "MainBrowseFragment";
 
     private BackgroundManager mBackgroundManager;
 
@@ -79,7 +92,27 @@ public class MainBrowseFragment extends BrowseFragment {
         mBackgroundManager.attach(getActivity().getWindow());
         getMainFragmentRegistry().registerFragment(PageRow.class,
                 new PageRowFragmentFactory(mBackgroundManager));
+
+
     }
+
+    // to add the voice interaction capabilities to MainBrowseFragment
+    public static MainBrowseFragment newInstance() {
+        Log.d(TAG, "newInstance: ");
+        MainBrowseFragment fragment = new MainBrowseFragment();
+        fragment.setRetainInstance(true);
+        return fragment;
+    }
+
+    //implement voice iteraction
+    @Override
+    public void onResume(){
+        super.onResume();
+
+    }
+
+
+
 
     private void setupUi() {
         setHeadersState(HEADERS_ENABLED);
@@ -245,9 +278,19 @@ public class MainBrowseFragment extends BrowseFragment {
                             "Clicked on "+card.getTitle(),
                             Toast.LENGTH_SHORT).show();*/
 
-                    intent = new Intent(getContext(), LiveActivity.class);
-                    intent.putExtra("videoId",card.getVideoId());
-                    getContext().startActivity(intent);
+                    if(card.getTitle().contains("Al Jazeera")){
+                        intent = new Intent(getContext(), DetailViewLiveBroadcastActivity.class);
+                        intent.putExtra("videoId",card.getVideoId());
+                        startActivity(intent);
+                        Log.d(TAG,"open sample live tv details page");
+                    }
+
+                    else{
+                        intent = new Intent(getContext(), LiveActivity.class);
+                        intent.putExtra("videoId",card.getVideoId());
+                        getContext().startActivity(intent);
+                    }
+
                 }
             });
         }
@@ -277,8 +320,14 @@ public class MainBrowseFragment extends BrowseFragment {
                         Object item,
                         RowPresenter.ViewHolder rowViewHolder,
                         Row row) {
-                    Toast.makeText(getActivity(), "Implement click handler", Toast.LENGTH_SHORT)
-                            .show();
+                    //.makeText(getActivity(), "Implement click handler", Toast.LENGTH_SHORT.show();
+                    Intent intent = new Intent(getContext(), YoutubePlayerActivity.class);
+                    Card selectedCard = (Card)item;
+
+
+                    intent.putExtra("videoId",selectedCard.getVideoId());
+                    startActivity(intent);
+                    Log.d(TAG,"play non-live youtube video");
                 }
             });
         }
@@ -327,8 +376,27 @@ public class MainBrowseFragment extends BrowseFragment {
                         Object item,
                         RowPresenter.ViewHolder rowViewHolder,
                         Row row) {
-                    Toast.makeText(getActivity(), "Implement click handler", Toast.LENGTH_SHORT)
-                            .show();
+                    /*Toast.makeText(getActivity(), "Implement click handler", Toast.LENGTH_SHORT)
+                            .show();*/
+                    Intent intent = null;
+                    Card selectedCard = (Card)item;
+
+                    if(selectedCard.getTitle().toLowerCase().contains("superman")){
+                        intent = new Intent(getContext(), DetailViewTvShowActivity.class);
+                        intent.putExtra("videoId",selectedCard.getVideoId());
+                        startActivity(intent);
+                        Log.d(TAG,"open sample tv show details page");
+                    }
+                    else{
+                        intent = new Intent(getContext(), YoutubePlayerActivity.class);
+                        intent.putExtra("videoId",selectedCard.getVideoId());
+                        startActivity(intent);
+                        Log.d(TAG,"play non-live youtube video");
+                    }
+
+
+
+
                 }
             });
         }
@@ -377,8 +445,28 @@ public class MainBrowseFragment extends BrowseFragment {
                         Object item,
                         RowPresenter.ViewHolder rowViewHolder,
                         Row row) {
-                    Toast.makeText(getActivity(), "Implement click handler", Toast.LENGTH_SHORT)
-                            .show();
+
+
+                    Intent intent = new Intent(getContext(), YoutubePlayerActivity.class);
+                    Card selectedCard = (Card)item;
+
+                    if(selectedCard.getDescription().toLowerCase().contains("korean")){
+                        intent.putExtra("videoId",selectedCard.getVideoId());
+                        startActivity(intent);
+                        Log.d(TAG,"play non-live youtube video");
+                    }
+                    else if(selectedCard.getTitle().toLowerCase().contains("gone")){
+                        intent = new Intent(getContext(), DetailViewMovieActivity.class);
+                        intent.putExtra("videoId",selectedCard.getVideoId());
+                        startActivity(intent);
+                        Log.d(TAG,"open sample movie details page");
+                    }
+                    else{
+                        Toast.makeText(getActivity(), "this is a dummy movie", Toast.LENGTH_SHORT)
+                                .show();
+                    }
+
+
                 }
             });
         }
@@ -492,6 +580,8 @@ public class MainBrowseFragment extends BrowseFragment {
             super.onResume();
             mWebview.loadUrl("https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Fnext%3D%252Faccount%26action_handle_signin%3Dtrue%26feature%3Dredirect_login%26hl%3Den%26app%3Ddesktop&hl=en&service=youtube&flowName=GlifWebSignIn&flowEntry=ServiceLogin");
             getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
+
+
         }
     }
 }

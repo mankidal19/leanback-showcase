@@ -12,13 +12,18 @@
  * the License.
  */
 
-package nurulaiman.sony;
+package nurulaiman.sony.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v17.leanback.app.DetailsFragment;
 import android.support.v17.leanback.supportleanbackshowcase.R;
 import android.support.v17.leanback.supportleanbackshowcase.app.details.DetailViewExampleFragment;
+import android.util.Log;
+import android.view.KeyEvent;
+
+import nurulaiman.sony.fragment.DetailViewLiveBroadcastFragment;
 
 /**
  * Contains a {@link DetailsFragment} in order to display more details for a given card.
@@ -36,5 +41,45 @@ public class DetailViewLiveBroadcastActivity extends Activity {
                     .replace(R.id.details_fragment, fragment)
                     .commit();
         }
+    }
+
+    @Override
+    public boolean onKeyDown(int KeyCode, KeyEvent event){
+
+        boolean handled = false;
+        //KeyCode = event.getKeyCode();
+        Intent intent = new Intent(this, LiveActivity.class);
+
+        Log.i("KeyEvent",KeyCode + " button pressed");
+
+
+        if(KeyCode == KeyEvent.KEYCODE_BACK){
+            Log.i("KeyEvent","Return button pressed");
+            handled=true;
+            intent = new Intent(this, MainActivity.class);
+            onDestroy();
+            startActivity(intent);
+
+        }
+
+        else if(KeyCode == KeyEvent.KEYCODE_ESCAPE){
+            Log.i("KeyEvent","Exit button pressed");
+            handled=true;
+            moveTaskToBack(true);
+            android.os.Process.killProcess(android.os.Process.myPid());
+            System.exit(1);
+
+        }
+
+
+        if(handled){
+
+            return handled;
+        }
+
+        else{
+            return super.onKeyDown(KeyCode, event);
+        }
+        //return handled;
     }
 }

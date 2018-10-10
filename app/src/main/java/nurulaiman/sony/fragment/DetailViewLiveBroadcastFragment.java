@@ -12,8 +12,9 @@
  * the License.
  */
 
-package nurulaiman.sony;
+package nurulaiman.sony.fragment;
 
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
@@ -40,32 +41,32 @@ import android.support.v17.leanback.widget.OnItemViewSelectedListener;
 import android.support.v17.leanback.widget.Presenter;
 import android.support.v17.leanback.widget.Row;
 import android.support.v17.leanback.widget.RowPresenter;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
 
+import nurulaiman.sony.activity.YoutubePlayerActivity;
+
 /**
  * Displays a card with more details using a {@link DetailsFragment}.
  */
-public class DetailViewTvShowFragment extends DetailsFragment implements OnItemViewClickedListener,
+public class DetailViewLiveBroadcastFragment extends DetailsFragment implements OnItemViewClickedListener,
         OnItemViewSelectedListener {
 
     public static final String TRANSITION_NAME = "t_for_transition";
     public static final String EXTRA_CARD = "card";
+    private static String TAG = "LiveBroadcastDetailsFragment";
 
     private static final long ACTION_WATCHNOW = 1;
-    private static final long ACTION_WATCHLIST = 2;
-    private static final long ACTION_OTHER_EP = 4;
-    private static final long ACTION_SUB_AUDIO = 3;
-
+    private static final long ACTION_RECORD = 2;
+    private static final long ACTION_RELATED = 3;
 
     private Action mActionWatchNow;
-    private Action mActionWatchList;
-    private Action mActionOtherEp;
-    private Action mActionSubAudio;
-
+    private Action mActionRecord;
+    private Action mActionRelated;
     private ArrayObjectAdapter mRowsAdapter;
     private final DetailsFragmentBackgroundController mDetailsBackground =
             new DetailsFragmentBackgroundController(this);
@@ -81,11 +82,12 @@ public class DetailViewTvShowFragment extends DetailsFragment implements OnItemV
         // Load the card we want to display from a JSON resource. This JSON data could come from
         // anywhere in a real world app, e.g. a server.
         String json = Utils
-                .inputStreamToString(getResources().openRawResource(R.raw.detail_tv_show));
+                .inputStreamToString(getResources().openRawResource(R.raw.detail_live_broadcast));
         DetailedCard data = new Gson().fromJson(json, DetailedCard.class);
 
         // Setup fragment
-        setTitle(getString(R.string.detail_view_tv_show));
+        setTitle(getString(R.string.detail_view_live_broadcast));
+
         FullWidthDetailsOverviewRowPresenter rowPresenter = new FullWidthDetailsOverviewRowPresenter(
                 new DetailsDescriptionPresenter(getActivity())) {
 
@@ -118,7 +120,7 @@ public class DetailViewTvShowFragment extends DetailsFragment implements OnItemV
         // Setup PresenterSelector to distinguish between the different rows.
         ClassPresenterSelector rowPresenterSelector = new ClassPresenterSelector();
         rowPresenterSelector.addClassPresenter(DetailsOverviewRow.class, rowPresenter);
-        rowPresenterSelector.addClassPresenter(CardListRow.class, shadowDisabledRowPresenter);
+        //rowPresenterSelector.addClassPresenter(CardListRow.class, shadowDisabledRowPresenter);
         rowPresenterSelector.addClassPresenter(ListRow.class, new ListRowPresenter());
         mRowsAdapter = new ArrayObjectAdapter(rowPresenterSelector);
 
@@ -133,30 +135,31 @@ public class DetailViewTvShowFragment extends DetailsFragment implements OnItemV
         detailsOverview.setImageDrawable(getResources().getDrawable(imageResId, null));
         ArrayObjectAdapter actionAdapter = new ArrayObjectAdapter();
 
-        mActionWatchNow = new Action(ACTION_WATCHNOW,"WATCH NOW");
-        mActionWatchList = new Action(ACTION_WATCHLIST, getString(R.string.action_favorite));
-        mActionSubAudio = new Action((ACTION_SUB_AUDIO),getString(R.string.action_sub_audio));
-        mActionOtherEp = new Action(ACTION_OTHER_EP,getString(R.string.action_other_ep));
+       /* mActionBuy = new Action(ACTION_BUY, getString(R.string.action_buy) + data.getPrice());
+        mActionWishList = new Action(ACTION_WISHLIST, getString(R.string.action_wishlist));*/
+        mActionRelated = new Action(ACTION_RELATED, getString(R.string.action_recommeded));
 
+       mActionWatchNow = new Action(ACTION_WATCHNOW,"WATCH NOW");
+       mActionRecord = new Action(ACTION_RECORD,"RECORD");
 
         actionAdapter.add(mActionWatchNow);
-        actionAdapter.add(mActionWatchList);
-        actionAdapter.add(mActionSubAudio);
-        actionAdapter.add(mActionOtherEp);
+        actionAdapter.add(mActionRecord);
+        actionAdapter.add(mActionRelated);
         detailsOverview.setActionsAdapter(actionAdapter);
         mRowsAdapter.add(detailsOverview);
 
         // Setup related row.
-        ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(
+  /*      ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(
                 new CardPresenterSelector(getActivity()));
+
         for (Card characterCard : data.getCharacters()) listRowAdapter.add(characterCard);
-        HeaderItem header = new HeaderItem(0, getString(R.string.header_casts));
-        mRowsAdapter.add(new CardListRow(header, listRowAdapter, null));
+        HeaderItem header = new HeaderItem(0, getString(R.string.header_related));
+        mRowsAdapter.add(new CardListRow(header, listRowAdapter, null));*/
 
         // Setup recommended row.
-        listRowAdapter = new ArrayObjectAdapter(new CardPresenterSelector(getActivity()));
+        ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(new CardPresenterSelector(getActivity()));
         for (Card card : data.getRecommended()) listRowAdapter.add(card);
-        header = new HeaderItem(1, "Other Episodes:");
+        HeaderItem header = new HeaderItem(0, "Related Broadcasts");
         mRowsAdapter.add(new ListRow(header, listRowAdapter));
 
         setAdapter(mRowsAdapter);
@@ -172,7 +175,7 @@ public class DetailViewTvShowFragment extends DetailsFragment implements OnItemV
     private void initializeBackground(DetailedCard data) {
         mDetailsBackground.enableParallax();
         mDetailsBackground.setCoverBitmap(BitmapFactory.decodeResource(getResources(),
-                R.drawable.tros_bg));
+                R.drawable.aljazeera_news));
     }
 
     private void setupEventListeners() {
@@ -186,9 +189,18 @@ public class DetailViewTvShowFragment extends DetailsFragment implements OnItemV
         if (!(item instanceof Action)) return;
         Action action = (Action) item;
 
-        if (action.getId() == ACTION_OTHER_EP) {
+        if (action.getId() == ACTION_RELATED) {
             setSelectedPosition(1);
-        } else {
+        }
+        else if(action.getId()==ACTION_WATCHNOW){
+            Intent intent = new Intent(getContext(), YoutubePlayerActivity.class);
+            String videoId = getActivity().getIntent().getExtras().getString("videoId");
+            intent.putExtra("videoId",videoId);
+            startActivity(intent);
+            Log.d(TAG,"play live youtube video from details page");
+        }
+
+        else {
             Toast.makeText(getActivity(), getString(R.string.action_cicked), Toast.LENGTH_LONG)
                     .show();
         }

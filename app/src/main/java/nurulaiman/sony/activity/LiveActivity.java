@@ -1,4 +1,4 @@
-package nurulaiman.sony;
+package nurulaiman.sony.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,8 +16,8 @@ import android.support.v17.leanback.supportleanbackshowcase.R;
 
 public class LiveActivity extends FragmentActivity {
 
-    //private final String liveVideoId = "zEeSa0KpyOY";
-    private String liveVideoId = null;
+    //default live TV
+    private String liveVideoId = "FdtQ2ZgLbEs";
     private YouTubePlayerView youTubePlayerView = null;
 
     //for channel up/down button
@@ -28,8 +28,18 @@ public class LiveActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_live);
-        initYouTubePlayerView();
+
         initChannelList();
+
+       /* if(getIntent().getExtras().getInt("mediaId") >=0){
+            int mediaId = getIntent().getExtras().getInt("mediaId");
+            liveVideoId = channelArrayList.get(mediaId);
+            Log.i("in Live Activity","video id: " + liveVideoId);
+        }*/
+
+
+        initYouTubePlayerView();
+
     }
 
     @Override
@@ -92,30 +102,44 @@ public class LiveActivity extends FragmentActivity {
         if(event.getKeyCode() == KeyEvent.KEYCODE_CHANNEL_DOWN){
             Log.i("KeyEvent","Channel down button pressed");
             handled=true;
-            //onDestroy();
+            onDestroy();
             //youTubePlayerView.release();
             intent.putExtra("videoId",getPrevChannel());
+
+            startActivity(intent);
         }
 
         else if(event.getKeyCode() == KeyEvent.KEYCODE_CHANNEL_UP){
             Log.i("KeyEvent","Channel up button pressed");
             handled=true;
             intent.putExtra("videoId",getNextChannel());
-            //onDestroy();
+            onDestroy();
             //youTubePlayerView.release();
+
+            startActivity(intent);
         }
 
-        else if(event.getKeyCode() == KeyEvent.KEYCODE_BACK || event.getKeyCode() == KeyEvent.KEYCODE_ESCAPE){
-            Log.i("KeyEvent","Return/Exit button pressed");
+        else if(event.getKeyCode() == KeyEvent.KEYCODE_BACK){
+            Log.i("KeyEvent","Return button pressed");
             handled=true;
             intent = new Intent(this, MainActivity.class);
+
+            onDestroy();
+            startActivity(intent);
+        }
+
+        else if(event.getKeyCode() == KeyEvent.KEYCODE_ESCAPE){
+            Log.i("KeyEvent","Exit button pressed");
+            handled=true;
+            moveTaskToBack(true);
+            android.os.Process.killProcess(android.os.Process.myPid());
+            System.exit(1);
 
         }
 
 
         if(handled){
-            onDestroy();
-            startActivity(intent);
+
 
             return handled;
         }
@@ -160,7 +184,7 @@ public class LiveActivity extends FragmentActivity {
     private void initChannelList(){
         channelArrayList.add("FdtQ2ZgLbEs");
         channelArrayList.add("2LWt-dxd0v4");
-        channelArrayList.add("1rGQ-kbmg1g");
+        channelArrayList.add("DrtjkQAa1lI");
         channelArrayList.add("KkXq2sv6Tos");
         channelArrayList.add("Lvp-lSqHVKc");
     }

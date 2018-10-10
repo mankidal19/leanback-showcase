@@ -1,0 +1,532 @@
+[
+  {
+    "title": "Entertainment",
+    "cards": [
+      {
+        "type": "DEFAULT",
+        "title": "After School Club",
+        "description": "After School Club, often shortened to ASC, is a South Korean internet-based live-music request television talk show co-hosted by Park Jimin, Seungmin and Heejun. [TV SHOW] [ENTERTAINMENT]",
+        "localImageResource": "asc_club",
+        "footerIconLocalImageResource": "ic_installed",
+        "id":0,
+        "live":false,
+        "videoId":"j92a1CAk0uU"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Big Stage",
+        "description": "New singing program from Astro. [TV SHOW] [ENTERTAINMENT]",
+        "localImageResource": "big_stage",
+        "footerIconLocalImageResource": "ic_installed",
+        "id":1,
+        "live":false,
+        "videoId":"iD_i7enDjtY"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "I Can See Your Voice (Malaysia)",
+        "description": "A local spin-off version from Korea's famous variety show. [TV SHOW] [ENTERTAINMENT]",
+        "localImageResource": "icsyv",
+        "footerIconLocalImageResource": "ic_installed",
+        "id":2,
+        "live":false,
+        "videoId":"FsLCzW6t2bc"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Music Bank",
+        "description": "Music Bank is a South Korean music program which airs every Friday at 17:00 KST on KBS2. [TV SHOW] [ENTERTAINMENT]",
+        "localImageResource": "music_bank",
+        "footerIconLocalImageResource": "ic_installed",
+        "id":3,
+        "live":false,
+        "videoId":"OE-EnnWODT4"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "The Return of Superman",
+        "description": "The Return of Superman is a South Korean reality-variety show that airs on KBS2. [TV SHOW] [ENTERTAINMENT]",
+        "localImageResource": "tros",
+        "footerIconLocalImageResource": "ic_installed",
+        "id":4,
+        "live":false,
+        "videoId":"50eg9SXUDwA"
+      }
+    ]
+  },
+  {
+    "title": "Anime & Cartoons",
+    "cards": [
+      {
+        "type": "DEFAULT",
+        "title": "Gundam Build Fighters",
+        "description": "Gundam Build Fighters is a 2013 Japanese science fiction anime television series based on Sunrise's long-running Gundam franchise. [TV SHOW] [ANIME & CARTOONS]",
+        "localImageResource": "gbf",
+        "footerIconLocalImageResource": "ic_installed",
+        "id":5,
+        "live":false,
+        "videoId":"R9H1u1zFVNc"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Mobile Suit Gundam SEED",
+        "description": "Mobile Suit Gundam SEED is an anime series developed by Sunrise and directed by Mitsuo Fukuda. [TV SHOW] [ANIME & CARTOONS]",
+        "localImageResource": "gundam_seed",
+        "footerIconLocalImageResource": "ic_installed",
+        "id":6,
+        "live":false,
+        "videoId":"EWtuU5H6BdQ"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Mr Bean the Animated Series",
+        "description": "Following the animated adventures of the clueless yet brilliant Mr. Bean and his faithful sidekick Teddy. [TV SHOW] [CARTOONS]",
+        "localImageResource": "mr_bean_animated",
+        "footerIconLocalImageResource": "ic_installed",
+        "id":7,
+        "live":false,
+        "videoId":"qfg4aSLxFcI"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Tom & Jerry",
+        "description": "Centers on a rivalry between its two title characters, Tom, a cat, and Jerry, a mouse. [TV SHOW] [CARTOONS]",
+        "localImageResource": "tom_jerry",
+        "footerIconLocalImageResource": "ic_installed",
+        "id":8,
+        "live":false,
+        "videoId":"cqyziA30whE"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Upin & Ipin",
+        "description": "Curious and fun-loving 5-year-old twin brothers Upin and Ipin learn and explore new things. [TV SHOW] [CARTOONS]",
+        "localImageResource": "upin_ipin",
+        "footerIconLocalImageResource": "ic_installed",
+        "id":9,
+        "live":false,
+        "videoId":"E4R_e9bkLgg"
+      }
+    ]
+  },
+  {
+    "title": "News",
+    "cards": [
+      {
+        "type": "DEFAULT",
+        "title": "Al Jazeera News",
+        "description": "Al Jazeera, also known as JSC, is a state-funded broadcaster in Doha, Qatar, owned by the Al Jazeera Media Network. [TV SHOW] [NEWS]",
+        "localImageResource": "aljazeera_news",
+        "footerIconLocalImageResource": "ic_installed",
+        "id":10,
+        "live":false,
+        "videoId":"qwKi5kZPME8"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Arirang News",
+        "description": "Arirang TV is a global, English-language television network based in Seoul, South Korea. [TV SHOW] [NEWS]",
+        "localImageResource": "arirang_news",
+        "footerIconLocalImageResource": "ic_installed",
+        "id":11,
+        "live":false,
+        "videoId":"1ARLUNkn2kE"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Buletin Awani",
+        "description": "Astro Awani is the in-house rolling television news and current affairs channel providing 24-hour news coverage including news in Malay. [TV SHOW] [NEWS]",
+        "localImageResource": "buletin_awani",
+        "footerIconLocalImageResource": "ic_installed",
+        "id":12,
+        "live":false,
+        "videoId":"sDOv5TurUJY"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Euronews",
+        "description": "PurchasedEuronews is a multilingual news media service, headquartered in Lyon, France. [TV SHOW] [NEWS]",
+        "localImageResource": "euro_news",
+        "footerIconLocalImageResource": "ic_installed",
+        "id":13,
+        "live":false,
+        "videoId":"0BIm3FE5xfk"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "KBS News",
+        "description": "KBS Nine O'Clock News is the flagship newscast that airs on KBS1 every night at 9:00pm KST. [TV SHOW] [NEWS]",
+        "localImageResource": "kbs_news",
+        "footerIconLocalImageResource": "ic_installed",
+        "id":14,
+        "live":false,
+        "videoId":"zlds3jwi8sc"
+      }
+    ]
+  },
+
+  {
+    "title": "Sports",
+    "cards": [
+      {
+        "type": "DEFAULT",
+        "title": "2018 All England Open",
+        "description": "The 2018 All England Open, officially YONEX All England Open 2018 was a badminton tournament which took place at Arena Birmingham in England from 14 to 18 March 2018 and had a total purse of $1,000,000. [TV SHOW] [SPORTS]",
+        "localImageResource": "all_england",
+        "footerIconLocalImageResource": "ic_installed",
+        "id": 15,
+        "live": false,
+        "videoId":"ge3g-GT9j00"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "2019 FIBA Basketball World Cup Qualifiers",
+        "description": "Process to determine the teams that will participate at the 2019 FIBA Basketball World Cup. [TV SHOW] [SPORTS]",
+        "localImageResource": "fiba_basketball",
+        "footerIconLocalImageResource": "ic_installed",
+        "id":16,
+        "live":false,
+        "videoId":"XM0BYUt5cmM"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Asian Netball Championships 2018",
+        "description": "The Asian Netball Championship is a netball competition held every two years with teams from across Asia competing. [TV SHOW] [SPORTS]",
+        "localImageResource": "asian_netball",
+        "footerIconLocalImageResource": "ic_installed",
+        "id":17,
+        "live":false,
+        "videoId":"48as9V-47Po"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Best Shot",
+        "description": "'Best Shot,' a documentary series co-produced by Lebron James about an inner city basketball team, is available on the NBA YouTube channel. [TV SHOW] [SPORTS]",
+        "localImageResource": "best_shot",
+        "footerIconLocalImageResource": "ic_installed",
+        "id":18,
+        "live":false,
+        "videoId":"NdkLOwYYfpA"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Chelsea Films",
+        "description": "Get to know Chelsea like no one ever did before. [TV SHOW] [SPORTS]",
+        "localImageResource": "chelsea_film",
+        "footerIconLocalImageResource": "ic_installed",
+        "id":19,
+        "live":false,
+        "videoId":"z8t4iylW-nM"
+      }
+    ]
+  },
+  {
+    "title": "New",
+    "cards": [
+      {
+        "type": "DEFAULT",
+        "description": "$3.99",
+        "title": "Deep Into The Deep Sleep",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_01",
+        "id":20,
+        "live":false
+      },
+      {
+        "type": "DEFAULT",
+        "title": "We",
+        "description": "$3.99",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_02",
+        "id":21,
+        "live":false
+      },
+      {
+        "type": "DEFAULT",
+        "title": "The Fairy",
+        "description": "$3.99",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "game_fairy",
+        "id":22,
+        "live":false
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Cursed",
+        "description": "$3.99",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "game_cursed",
+        "id":23,
+        "live":false
+      },
+      {
+        "type": "DEFAULT",
+        "title": "My Crazy One",
+        "description": "$3.99",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_05",
+        "id":24,
+        "live":false
+      }
+    ]
+  },
+  {
+    "title": "Monthly Top Picks",
+    "cards": [
+      {
+        "type": "DEFAULT",
+        "title": "My Crazy One",
+        "description": "$3.99",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_05",
+        "id":25,
+        "live":false
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Gone",
+        "description": "$3.99",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_06",
+        "id":26,
+        "live":false
+      },
+      {
+        "type": "DEFAULT",
+        "title": "A Cold Night To Stay",
+        "description": "$3.99",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_07",
+        "id":27,
+        "live":false
+      },
+      {
+        "type": "DEFAULT",
+        "description": "$3.99",
+        "title": "The Silence",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_08",
+        "id":28,
+        "live":false
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Hear The Roar",
+        "description": "$3.99",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_09",
+        "id":29,
+        "live":false
+      }
+    ]
+  },
+  {
+    "title": "English Movies",
+    "cards": [
+      {
+        "type": "DEFAULT",
+        "description": "$3.99 [MOVIE] [ENGLISH MOVIES]",
+        "title": "Deep Into The Deep Sleep",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_01",
+        "id":30,
+        "live":false
+      },
+      {
+        "type": "DEFAULT",
+        "title": "We",
+        "description": "$3.99 [MOVIE] [ENGLISH MOVIES]",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_02",
+        "id":31,
+        "live":false
+      },
+      {
+        "type": "DEFAULT",
+        "title": "The Fairy",
+        "description": "$3.99 [MOVIE] [ENGLISH MOVIES]",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "game_fairy",
+        "id":32,
+        "live":false
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Cursed",
+        "description": "$3.99 [MOVIE] [ENGLISH MOVIES]",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "game_cursed",
+        "id":33,
+        "live":false
+      },
+      {
+        "type": "DEFAULT",
+        "title": "My Crazy One",
+        "description": "$3.99 [MOVIE] [ENGLISH MOVIES]",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_05",
+        "id":34,
+        "live":false
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Gone",
+        "description": "$3.99 [MOVIE] [ENGLISH MOVIES]",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_06",
+        "id":35,
+        "live":false
+      },
+      {
+        "type": "DEFAULT",
+        "title": "A Cold Night To Stay",
+        "description": "$3.99 [MOVIE] [ENGLISH MOVIES]",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_07",
+        "id":36,
+        "live":false
+      },
+      {
+        "type": "DEFAULT",
+        "description": "$3.99 [MOVIE] [ENGLISH MOVIES]",
+        "title": "The Silence",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_08",
+        "id":37,
+        "live":false
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Hear The Roar",
+        "description": "$3.99 [MOVIE] [ENGLISH MOVIES]",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "card_image_movie_09",
+        "id":38,
+        "live":false
+      }
+    ]
+  },
+
+  {
+    "title": "K-Movie",
+    "cards": [
+      {
+        "type": "DEFAULT",
+        "title": "If We Were a Season | 우리가 계절이라면",
+        "description": "Two high school students were born and raised together as neighbors. This boy and girl are more like a married couple. They don’t say it, but they are precious to each other. Then one day, a new student appears. Unlike these two who don’t express their hearts, he’s brave and bold in expressing his feelings. He was enough to shake up the relationship of these two students. It was when everything was yet immature and clumsy. Let’s think about our forgotten past. Cast: Chae Soobin, Jang Dongyoon, Jinyoung. [MOVIE] [K-MOVIE] [KOREAN MOVIE]",
+        "localImageResource": "if_we",
+        "footerIconLocalImageResource":"ic_installed" ,
+        "videoId":"vZ7EMIH0oHw",
+        "id":39,
+        "live":false
+      },
+      {
+        "type": "DEFAULT",
+        "title": "My Happy Home | 즐거운 나의 집",
+        "description": "Genius scientist Sejeong lives with her cyborg husband Sungmin. She erased Sungmin’s memories and inputted new customized memories and information of her choosing, so she is able to enjoy a blissful marriage. Then someone Sejeong and Sungmin knew before he became a cyborg starts coming to their home. This person tries to correct Sungmin’s distorted memories while Sejeong tries to stop her. Sungmin, in the meantime, starts lying like a human being. What happened before Sungmin was turned into a cyborg? Cast: Son Yeo-eun, Lee Sangyeob, Kim Myungsoo, Lee Ilhwa, Park Hana, Lim Jikyu, Song Yoona, Ok Taecyeon. [MOVIE] [K-MOVIE] [KOREAN MOVIE]",
+        "localImageResource": "happy_home",
+        "footerIconLocalImageResource": "ic_installed",
+        "videoId":"mF_sBcqdEYI",
+        "id":40,
+        "live":false
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Don't Worry, I'm a Ghost | 걱정마세요, 귀신입니다",
+        "description": " A man wakes up at the hospital following an accident. He can’t remember his name, his family or where he lives. He learns his name and address from the police who ran his fingerprints and goes to his house. He sleeps an uncomfortable sleep and finds a girl looking at him when he wakes up. She says she’s a ghost. Lee Mungi thinks he’s seeing things due to aftereffects of the accident but finds her picture at her funeral. Her name was Kim Yeonhwa and he wants to know why she came to him. He asks her if she wants him to find the suspect and get revenge. But she says the police can do that and tells him he has a more important job to do. She tells him the reason she came to him is in his lost memories. Cast: Bong Tae-gyu, Park Shin-hye, Lee Ha-yool, Park Seo-yeon. [MOVIE] [K-MOVIE] [KOREAN MOVIE]",
+        "localImageResource": "dont_worry",
+        "footerIconLocalImageResource": "ic_installed",
+        "videoId":"aY704gPIeZY",
+        "id":41,
+        "live":false
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Kang Deoksun's Love History | 강덕순 애정 변천사",
+        "description": "Everyone knows who Yun Bonggil is but not Lee Hwarim, who accompanied him. We know of the Korean Provisional Government, but we don’t know of Jeong Jeonghwa who took care of things inside Korea. We are unfamiliar with their names, but they were female independence activists who really existed. Just because their achievements weren’t recognized and they went different paths, they are being forgotten. This drama depicts the traces of these women. Cast: Kim Sohye, Oh Seungyoon. [MOVIE] [K-MOVIE] [KOREAN MOVIE]",
+        "localImageResource": "kang_love",
+        "footerIconLocalImageResource": "ic_installed",
+        "videoId":"PIBdfdz98iU",
+        "id":42,
+        "live":false
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Middle School Student A | 중학생 A양",
+        "description": "Haejun has been no. 1 in his middle school in Gangbuk, but his family moves to Daechi to go to a better high school. Eunseo has always been no. 1 in her school but Haejun takes her place as soon as he enters the new school. The students including Eunseo, Nayeon decide to shake Haejun up and try to drop his rank. Taejun develops feelings for Eunseo and gets attacked by the other students. Cast : Lee Yuleum, Gwag Dongyeon,Lee Hanna, Kim Beomjoon. [MOVIE] [K-MOVIE] [KOREAN MOVIE]",
+        "localImageResource": "middle_school",
+        "footerIconLocalImageResource":"ic_installed",
+        "videoId":"7j7Wn0-9JJs",
+        "id":43,
+        "live":false
+      }
+    ]
+  },
+  {
+    "title":"Live TV",
+    "cards": [
+
+      {
+        "type": "YOUTUBETV_LIVE",
+        "title": "Al Jazeera English - LIVE",
+        "description": "At Al Jazeera English, we focus on people and events that affect people's lives. [LIVE TV]",
+        "localImageResource": "aljazeera",
+        "videoId":"FdtQ2ZgLbEs",
+        "id":44,
+        "live":true
+      },
+
+      {
+        "type": "YOUTUBETV_LIVE",
+        "title": "Arirang TV World - LIVE",
+        "description": "Arirang TV/Radio is a public service agency that spreads the uniqueness of Korea to the world through cutting-edge broadcasting. [LIVE TV]",
+        "localImageResource": "arirang",
+        "videoId":"2LWt-dxd0v4",
+        "id":45,
+        "live":true
+      },
+
+      {
+        "type": "YOUTUBETV_LIVE",
+        "title": "Best Bits of Bean - LIVE",
+        "description": "Livestream 24/7 Mr. Bean. [LIVE TV]",
+        "localImageResource": "mrbean",
+        "videoId":"Q1rNi_PP0YU",
+        "id":46,
+        "live":true
+      },
+
+      {
+        "type": "YOUTUBETV_LIVE",
+        "title": "Euronews English - LIVE",
+        "description": "Euronews: the most watched news channel in Europe Subscribe!  [LIVE TV]",
+        "localImageResource": "euronews",
+        "videoId":"DrtjkQAa1lI",
+        "id":47,
+        "live":true
+      },
+
+      {
+        "type": "YOUTUBETV_LIVE",
+        "title": "KBS World 24 - LIVE",
+        "description": "700만 해외동포와 함께 하는 KBS World 24!!!  [LIVE TV]",
+        "localImageResource": "kbsworld",
+        "videoId":"KkXq2sv6Tos",
+        "id":48,
+        "live":true
+      },
+
+      {
+        "type": "YOUTUBETV_LIVE",
+        "title": "Mr Bean Cartoon Marathon - LIVE",
+        "description": "Funny Episodes of Mr. Bean the Animated Series 24/7.  [LIVE TV]",
+        "localImageResource": "mrbeanc",
+        "videoId":"Lvp-lSqHVKc",
+        "id":49,
+        "live":true
+      }
+
+
+    ]
+  }
+]

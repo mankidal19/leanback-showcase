@@ -41,6 +41,7 @@ public class Card {
     @SerializedName("id") private int mId;
     @SerializedName("width") private int mWidth;
     @SerializedName("height") private int mHeight;
+    @SerializedName("live") private boolean mLive;
 
 
     //adding for video id
@@ -171,6 +172,10 @@ public class Card {
 
     public String getVideoId() {
         return mVideoId;
+    }
+
+    public boolean isLive() {
+        return mLive;
     }
 
     public enum Type {

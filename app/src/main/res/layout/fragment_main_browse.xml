@@ -4,7 +4,7 @@
 
     <fragment
         android:id="@+id/page_list_fragment"
-        android:name="nurulaiman.sony.MainBrowseFragment"
+        android:name="nurulaiman.sony.fragment.MainBrowseFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

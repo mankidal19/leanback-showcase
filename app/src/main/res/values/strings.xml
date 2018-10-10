@@ -13,7 +13,7 @@
   ~
   -->
 <resources>
-    <string name="app_name">ShowcaseApp</string>
+    <string name="app_name">Operator App</string>
     <string name="browse_title"><![CDATA[androidTV]]></string>
 
     <!-- Error messages -->
@@ -25,7 +25,7 @@
     <string name="detail_view_title">JINGJIANG LI JINGJIANG LI</string>
 
     <!--For detail view-->
-    <string name="detail_view_live_broadcast">LIVE BROADCASTS</string>
+    <string name="detail_view_live_broadcast">LIVE TV</string>
     <string name="detail_view_tv_show">TV SHOWS</string>
     <string name="detail_view_movie">MOVIES</string>
 
@@ -128,5 +128,8 @@
     <string name="dialog_example_button_channel4">4: KBSWorld 24</string>
     <string name="dialog_example_button_channel5">5: Mr Bean Cartoon Marathon</string>
 
+    <string name="search_hint">Search for Operator App</string>
+    <string name="search_label">Operator App</string>
+    <string name="settings_description">Assistant Operator Videos</string>
 
 </resources>

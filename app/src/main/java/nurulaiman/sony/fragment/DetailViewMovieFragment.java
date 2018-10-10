@@ -12,7 +12,7 @@
  * the License.
  */
 
-package nurulaiman.sony;
+package nurulaiman.sony.fragment;
 
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
