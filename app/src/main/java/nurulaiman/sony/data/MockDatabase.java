@@ -100,18 +100,52 @@ public class MockDatabase {
      * @param query Search string.
      * @return A list of movies that match the query string.
      */
+
     public List<Card> search(String query) {
         query = query.toLowerCase();
+
         List<Card> results = new ArrayList<>();
         for (Card c : getAllCard()) {
+
+
             if (c.getTitle().toLowerCase().contains(query)
                     || c.getDescription().toLowerCase().contains(query)) {
                 results.add(c);
             }
+
             Log.i("search card:",c.getTitle());
         }
 
         return results;
+    }
+
+    public Card searchCard(String query){
+        query = query.toLowerCase();
+
+       Card card = null;
+
+        for (Card c : getAllCard()) {
+
+
+            if(c.getVideoId()!=null){
+                if(c.getVideoId().toLowerCase().contains(query)){
+
+                    Log.i("found title for:",c.getVideoId());
+
+                    card = c;
+                    return card;
+
+
+                }
+
+            }
+
+
+
+        }
+
+        return card;
+
     }
 
     /**

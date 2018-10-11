@@ -281,6 +281,10 @@ public class MainBrowseFragment extends BrowseFragment {
                     if(card.getTitle().toLowerCase().contains("jazeera")){
                         intent = new Intent(getContext(), DetailViewLiveBroadcastActivity.class);
                         intent.putExtra("videoId",card.getVideoId());
+
+                        //to set video title
+                        intent.putExtra("videoTitle",card.getTitle());
+
                         startActivity(intent);
                         Log.d(TAG,"open sample live tv details page");
                     }
@@ -288,6 +292,11 @@ public class MainBrowseFragment extends BrowseFragment {
                     else{
                         intent = new Intent(getContext(), LiveActivity.class);
                         intent.putExtra("videoId",card.getVideoId());
+
+                        //to set video title
+                        intent.putExtra("videoTitle",card.getTitle());
+
+
                         getContext().startActivity(intent);
                     }
 

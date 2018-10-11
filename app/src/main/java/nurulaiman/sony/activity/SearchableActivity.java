@@ -80,6 +80,10 @@ public class SearchableActivity extends Activity {
                         Intent intent = new Intent(this, DetailViewLiveBroadcastActivity.class);
                         intent.putExtra("mediaId",id);
                         intent.putExtra("videoId",selectedCard.getVideoId());
+
+                        //to set video title
+                        intent.putExtra("videoTitle",selectedCard.getTitle());
+
                         startActivity(intent);
                         Log.d(TAG,"open sample live tv details page");
                     }
@@ -88,6 +92,10 @@ public class SearchableActivity extends Activity {
                         Intent intent = new Intent(this, LiveActivity.class);
                         intent.putExtra("mediaId",id);
                         intent.putExtra("videoId",selectedCard.getVideoId());
+
+                        //to set video title
+                        intent.putExtra("videoTitle",selectedCard.getTitle());
+
                         startActivity(intent);
                         Log.d(TAG,"play live video");
                     }

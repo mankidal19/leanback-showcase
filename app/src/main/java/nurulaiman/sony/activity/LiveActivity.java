@@ -6,12 +6,17 @@ import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.KeyEvent;
 
+import com.pierfrancescosoffritti.androidyoutubeplayer.player.YouTubePlayer;
 import com.pierfrancescosoffritti.androidyoutubeplayer.player.YouTubePlayerView;
 import com.pierfrancescosoffritti.androidyoutubeplayer.player.listeners.AbstractYouTubePlayerListener;
 
 import java.util.ArrayList;
 
 import android.support.v17.leanback.supportleanbackshowcase.R;
+import android.view.View;
+import android.widget.TextView;
+
+import nurulaiman.sony.data.MockDatabase;
 
 
 public class LiveActivity extends FragmentActivity {
@@ -19,9 +24,17 @@ public class LiveActivity extends FragmentActivity {
     //default live TV
     private String liveVideoId = "FdtQ2ZgLbEs";
     private YouTubePlayerView youTubePlayerView = null;
+    //to implement play/pause
+    private YouTubePlayer youTubePlayer = null;
+    private boolean playing = true;
 
     //for channel up/down button
     private ArrayList<String> channelArrayList = new ArrayList<String>();
+
+    //to implement channel title
+    private String videoTitle = null;
+    MockDatabase mockDatabase = new MockDatabase(this);
+
 
 
     @Override
@@ -138,6 +151,44 @@ public class LiveActivity extends FragmentActivity {
 
         }
 
+        else if(KeyCode==KeyEvent.KEYCODE_MEDIA_PLAY_PAUSE){
+            Log.i("KeyEvent","Play/Pause button pressed");
+            handled=true;
+            if(playing){
+                youTubePlayer.pause();
+                playing=false;
+                youTubePlayerView.getPlayerUIController().showUI(true);
+
+            }
+            else{
+                youTubePlayer.play();
+                playing = true;
+            }
+
+        }
+
+        else if(KeyCode==KeyEvent.KEYCODE_MEDIA_PLAY){
+            Log.i("KeyEvent","Play button pressed");
+            handled=true;
+            if(!playing){
+                youTubePlayer.play();
+                playing = true;
+            }
+
+        }
+
+        else if(KeyCode==KeyEvent.KEYCODE_MEDIA_PAUSE){
+            Log.i("KeyEvent","Pause button pressed");
+            handled=true;
+            if(playing){
+                youTubePlayer.pause();
+                playing = false;
+                //youTubePlayerView.getPlayerUIController().showSeekBar(true);
+
+            }
+
+        }
+
 
         if(handled){
 
@@ -160,14 +211,49 @@ public class LiveActivity extends FragmentActivity {
         youTubePlayerView = findViewById(R.id.youtube_player_view);
         youTubePlayerView.getPlayerUIController().showFullscreenButton(false);
         youTubePlayerView.getPlayerUIController().enableLiveVideoUI(true);
+        //youTubePlayerView.getPlayerUIController().showPlayPauseButton(true);
+        //youTubePlayerView.getPlayerUIController().showVideoTitle(true);
+        //youTubePlayerView.getPlayerUIController().showUI(true);
 
         liveVideoId = getIntent().getExtras().getString("videoId");
         Log.i("in Live Activity","current videoID: "+ liveVideoId);
+
+        //to set video title
+
+        //method #1- using intent
+        /*videoTitle = getIntent().getExtras().getString("videoTitle");
+        if(videoTitle!=null){
+            youTubePlayerView.getPlayerUIController().setVideoTitle(videoTitle);
+        }*/
+
+        //method #2- using mockdatabase searchCard()
+        videoTitle = mockDatabase.searchCard(liveVideoId).getTitle();
+        if(videoTitle!=null){
+            //youTubePlayerView.getPlayerUIController().setVideoTitle(videoTitle);
+
+            //to display pop-up when changing channel
+            //setContentView(R.layout.change_channel);
+            TextView textView = findViewById(R.id.textView1);
+            textView.setText(videoTitle);
+
+            //hide after 3 seconds
+            textView.postDelayed(new Runnable() {
+                public void run() {
+                    textView.setVisibility(View.GONE);
+                }
+            }, 5000);
+        }
+
+
+
+
+
 
         getLifecycle().addObserver(youTubePlayerView);
 
         youTubePlayerView.initialize(youTubePlayer -> {
 
+            passYoutubePlayer(youTubePlayer);
             youTubePlayer.addListener(new AbstractYouTubePlayerListener() {
                 @Override
                 public void onReady() {
@@ -179,6 +265,10 @@ public class LiveActivity extends FragmentActivity {
             });
 
         }, true);
+    }
+
+    private void passYoutubePlayer(YouTubePlayer youTubePlayer) {
+        this.youTubePlayer = youTubePlayer;
     }
 
     //initialize channel list ArrayList
@@ -223,5 +313,7 @@ public class LiveActivity extends FragmentActivity {
 
 
     }
+
+
 
 }
