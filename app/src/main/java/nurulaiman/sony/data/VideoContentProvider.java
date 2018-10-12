@@ -47,6 +47,20 @@ public class VideoContentProvider extends ContentProvider {
 
     private MockDatabase mDatabase;
 
+    //for in-app search
+    private static int idIndex;
+    private static int nameIndex;
+    private static int descIndex;
+    private static int iconIndex;
+    private static int dataTypeIndex;
+    private static int videoWidthIndex;
+    private static int videoHeightIndex;
+    private static int isLiveIndex;
+    private static int actionIndex;
+    private static int suggestColumnIndex;
+
+
+
     // UriMatcher constant for search suggestions
     private static final int SEARCH_SUGGEST = 1;
 
@@ -165,4 +179,5 @@ public class VideoContentProvider extends ContentProvider {
             @Nullable String[] strings) {
         throw new UnsupportedOperationException("Update is not implemented.");
     }
+
 }

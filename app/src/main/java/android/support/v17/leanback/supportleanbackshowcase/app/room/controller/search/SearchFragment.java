@@ -68,7 +68,7 @@ public class SearchFragment extends android.support.v17.leanback.app.SearchSuppo
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        AndroidSupportInjection.inject(this);
+//        AndroidSupportInjection.inject(this);
         super.onCreate(savedInstanceState);
         setBadgeDrawable(ResourcesCompat.getDrawable(getActivity().getResources(),
                 R.drawable.ic_add_row_circle_black_24dp, getActivity().getTheme()));

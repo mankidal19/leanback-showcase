@@ -197,6 +197,7 @@ public class LiveActivity extends FragmentActivity {
         }
 
         else{
+
             return super.onKeyDown(KeyCode, event);
         }
         //return handled;
@@ -232,9 +233,11 @@ public class LiveActivity extends FragmentActivity {
             //youTubePlayerView.getPlayerUIController().setVideoTitle(videoTitle);
 
             //to display pop-up when changing channel
-            //setContentView(R.layout.change_channel);
+            //
+            String channelNum = "10"+ Integer.toString(channelArrayList.indexOf(liveVideoId)+1);
+            String displayText = channelNum + ": " + videoTitle;
             TextView textView = findViewById(R.id.textView1);
-            textView.setText(videoTitle);
+            textView.setText(displayText);
 
             //hide after 3 seconds
             textView.postDelayed(new Runnable() {

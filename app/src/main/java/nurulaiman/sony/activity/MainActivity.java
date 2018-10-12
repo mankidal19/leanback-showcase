@@ -3,6 +3,7 @@ package nurulaiman.sony.activity;
 import android.app.Activity;
 import android.support.v17.leanback.supportleanbackshowcase.R;
 import android.os.Bundle;
+import android.util.Log;
 
 import nurulaiman.sony.fragment.MainBrowseFragment;
 
@@ -40,6 +41,15 @@ public class MainActivity extends Activity {
         getFragmentManager().beginTransaction()
                 .replace(R.id.container, fragment)
                 .commit();*/
+    }
+
+    @Override
+    public boolean onSearchRequested() {
+        Bundle appData = new Bundle();
+        appData.putBoolean(SearchableActivity.JARGON, true);
+        startSearch(null, false, appData, false);
+        Log.i(TAG,"search requested");
+        return true;
     }
 
 

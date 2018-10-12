@@ -51,6 +51,7 @@ import nurulaiman.sony.activity.DetailViewLiveBroadcastActivity;
 import nurulaiman.sony.activity.DetailViewMovieActivity;
 import nurulaiman.sony.activity.DetailViewTvShowActivity;
 import nurulaiman.sony.activity.LiveActivity;
+import nurulaiman.sony.activity.SearchActivity;
 import nurulaiman.sony.activity.YoutubePlayerActivity;
 
 public class MainBrowseFragment extends BrowseFragment {
@@ -123,9 +124,12 @@ public class MainBrowseFragment extends BrowseFragment {
 
             @Override
             public void onClick(View view) {
-                Toast.makeText(
+                /*Toast.makeText(
                         getActivity(), getString(R.string.implement_search), Toast.LENGTH_SHORT)
-                        .show();
+                        .show();*/
+                Intent intent = new Intent(getActivity(), SearchActivity.class);
+                startActivity(intent);
+
             }
         });
 

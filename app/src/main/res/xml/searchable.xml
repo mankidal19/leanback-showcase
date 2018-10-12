@@ -39,4 +39,5 @@
     android:searchSuggestIntentData="content://nurulaiman.sony/video"
     android:queryAfterZeroResults="true"
     android:searchSuggestPath="search"
-    android:searchSuggestThreshold="0" />
+    android:searchSuggestThreshold="0"
+    android:voiceSearchMode="showVoiceSearchButton"/>
