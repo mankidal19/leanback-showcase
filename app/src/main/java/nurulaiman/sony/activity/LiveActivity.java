@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import android.support.v17.leanback.supportleanbackshowcase.R;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import nurulaiman.sony.data.MockDatabase;
 
@@ -34,6 +35,7 @@ public class LiveActivity extends FragmentActivity {
     //to implement channel title
     private String videoTitle = null;
     MockDatabase mockDatabase = new MockDatabase(this);
+    private TextView textView = null;
 
 
 
@@ -158,11 +160,13 @@ public class LiveActivity extends FragmentActivity {
                 youTubePlayer.pause();
                 playing=false;
                 youTubePlayerView.getPlayerUIController().showUI(true);
+                textView.setVisibility(View.VISIBLE);
 
             }
             else{
                 youTubePlayer.play();
                 playing = true;
+                textView.setVisibility(View.GONE);
             }
 
         }
@@ -173,6 +177,7 @@ public class LiveActivity extends FragmentActivity {
             if(!playing){
                 youTubePlayer.play();
                 playing = true;
+                textView.setVisibility(View.GONE);
             }
 
         }
@@ -184,9 +189,23 @@ public class LiveActivity extends FragmentActivity {
                 youTubePlayer.pause();
                 playing = false;
                 //youTubePlayerView.getPlayerUIController().showSeekBar(true);
-
+                textView.setVisibility(View.VISIBLE);
             }
 
+        }
+
+        else if(KeyCode==KeyEvent.KEYCODE_MEDIA_REWIND){
+            Log.i("KeyEvent","Rewind button pressed");
+            handled=true;
+            Toast.makeText(this, "Features unavailable.", Toast.LENGTH_LONG)
+                    .show();
+        }
+
+        else if(KeyCode==KeyEvent.KEYCODE_MEDIA_FAST_FORWARD){
+            Log.i("KeyEvent","Fast Forward button pressed");
+            handled=true;
+            Toast.makeText(this, "Features unavailable.", Toast.LENGTH_LONG)
+                    .show();
         }
 
 
@@ -236,7 +255,7 @@ public class LiveActivity extends FragmentActivity {
             //
             String channelNum = "10"+ Integer.toString(channelArrayList.indexOf(liveVideoId)+1);
             String displayText = channelNum + ": " + videoTitle;
-            TextView textView = findViewById(R.id.textView1);
+            textView = findViewById(R.id.textView1);
             textView.setText(displayText);
 
             //hide after 3 seconds

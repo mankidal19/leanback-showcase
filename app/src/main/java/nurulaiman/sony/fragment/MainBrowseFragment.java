@@ -17,6 +17,7 @@ import android.support.v17.leanback.supportleanbackshowcase.app.page.SettingsIco
 import android.support.v17.leanback.supportleanbackshowcase.cards.presenters.CardPresenterSelector;
 import android.support.v17.leanback.supportleanbackshowcase.models.Card;
 import android.support.v17.leanback.supportleanbackshowcase.models.CardRow;
+import android.support.v17.leanback.supportleanbackshowcase.models.DetailedCard;
 import android.support.v17.leanback.supportleanbackshowcase.utils.CardListRow;
 import android.support.v17.leanback.supportleanbackshowcase.utils.Utils;
 import android.support.v17.leanback.widget.ArrayObjectAdapter;
@@ -53,6 +54,7 @@ import nurulaiman.sony.activity.DetailViewTvShowActivity;
 import nurulaiman.sony.activity.LiveActivity;
 import nurulaiman.sony.activity.SearchActivity;
 import nurulaiman.sony.activity.YoutubePlayerActivity;
+import nurulaiman.sony.utils.MatchingCardUtils;
 
 public class MainBrowseFragment extends BrowseFragment {
     private static final long HEADER_ID_1 = 1;
@@ -84,16 +86,22 @@ public class MainBrowseFragment extends BrowseFragment {
 
     private ArrayObjectAdapter mRowsAdapter;
 
+    private MatchingCardUtils matchingCardUtils = null;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setupUi();
         loadData();
+
+
         mBackgroundManager = BackgroundManager.getInstance(getActivity());
         mBackgroundManager.attach(getActivity().getWindow());
         getMainFragmentRegistry().registerFragment(PageRow.class,
                 new PageRowFragmentFactory(mBackgroundManager));
 
+
+        matchingCardUtils = new MatchingCardUtils(getContext());
 
     }
 
@@ -394,7 +402,15 @@ public class MainBrowseFragment extends BrowseFragment {
                     Intent intent = null;
                     Card selectedCard = (Card)item;
 
-                    if(selectedCard.getTitle().toLowerCase().contains("superman")){
+                    intent = new Intent(getContext(), DetailViewTvShowActivity.class);
+                    intent.putExtra("videoId",selectedCard.getVideoId());
+                    intent.putExtra("videoTitle",selectedCard.getTitle());
+
+
+                    startActivity(intent);
+                    Log.d(TAG,"open tv show details page");
+
+                    /*if(selectedCard.getTitle().toLowerCase().contains("superman")){
                         intent = new Intent(getContext(), DetailViewTvShowActivity.class);
                         intent.putExtra("videoId",selectedCard.getVideoId());
                         startActivity(intent);
@@ -405,7 +421,11 @@ public class MainBrowseFragment extends BrowseFragment {
                         intent.putExtra("videoId",selectedCard.getVideoId());
                         startActivity(intent);
                         Log.d(TAG,"play non-live youtube video");
-                    }
+                    }*/
+
+
+
+
 
 
 
@@ -460,19 +480,20 @@ public class MainBrowseFragment extends BrowseFragment {
                         Row row) {
 
 
-                    Intent intent = new Intent(getContext(), YoutubePlayerActivity.class);
+                    Intent intent = new Intent(getContext(), DetailViewMovieActivity.class);
                     Card selectedCard = (Card)item;
 
-                    if(selectedCard.getDescription().toLowerCase().contains("korean")){
+
+
+                    if(selectedCard.getDescription().toLowerCase().contains("korean")||selectedCard.getTitle().toLowerCase().contains("gone")) {
+
                         intent.putExtra("videoId",selectedCard.getVideoId());
+                        intent.putExtra("videoTitle",selectedCard.getTitle());
+
+                        Log.d(TAG,"open movie details page");
+
                         startActivity(intent);
-                        Log.d(TAG,"play non-live youtube video");
-                    }
-                    else if(selectedCard.getTitle().toLowerCase().contains("gone")){
-                        intent = new Intent(getContext(), DetailViewMovieActivity.class);
-                        intent.putExtra("videoId",selectedCard.getVideoId());
-                        startActivity(intent);
-                        Log.d(TAG,"open sample movie details page");
+
                     }
                     else{
                         Toast.makeText(getActivity(), "this is a dummy movie", Toast.LENGTH_SHORT)

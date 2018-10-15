@@ -115,19 +115,21 @@ public class SearchableActivity extends Activity {
 
         else{
             //for sample movie details page
-            if(selectedCard.getTitle().toLowerCase().contains("gone")){
+            if(selectedCard.getTitle().toLowerCase().contains("gone")||selectedCard.getTitle().toLowerCase().contains("korean")){
                 Intent intent = new Intent(this, DetailViewMovieActivity.class);
                 intent.putExtra("mediaId",id);
                 intent.putExtra("videoId",selectedCard.getVideoId());
+                intent.putExtra("videoTitle",selectedCard.getTitle());
+
                 startActivity(intent);
-                Log.d(TAG,"open sample movie details page");
+                Log.d(TAG,"open movie details page");
             }
             //for dummy movie
             else if(selectedCard.getDescription().toLowerCase().contains("$3.99")){
                 Toast.makeText(this, "this is a dummy movie", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this,MainActivity.class));
             }
-            //for sample tv show details page
+            /*//for sample tv show details page
             else if(selectedCard.getTitle().toLowerCase().contains("superman")){
                 Intent intent = new Intent(this, DetailViewTvShowActivity.class);
                 intent.putExtra("mediaId",id);
@@ -142,7 +144,17 @@ public class SearchableActivity extends Activity {
                 intent.putExtra("videoId",selectedCard.getVideoId());
                 startActivity(intent);
                 Log.d(TAG,"play non-live youtube video");
+            }*/
+            else{
+                Intent intent = new Intent(this, DetailViewTvShowActivity.class);
+                intent.putExtra("mediaId",id);
+                intent.putExtra("videoId",selectedCard.getVideoId());
+                intent.putExtra("videoTitle",selectedCard.getTitle());
+
+                startActivity(intent);
+                Log.d(TAG,"open tv show details page");
             }
+
 
         }
     }

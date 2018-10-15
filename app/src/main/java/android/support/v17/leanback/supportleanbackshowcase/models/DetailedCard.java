@@ -32,6 +32,7 @@ public class DetailedCard {
     @SerializedName("year") private int mYear = 0;
     @SerializedName("trailerUrl") private String mTrailerUrl = null;
     @SerializedName("videoUrl") private String mVideoUrl = null;
+    @SerializedName("videoId") private String mVideoId = null;
 
 
     public String getPrice() {
@@ -78,4 +79,6 @@ public class DetailedCard {
         return context.getResources()
                       .getIdentifier(getLocalImageResource(), "drawable", context.getPackageName());
     }
+
+    public String getVideoId(){return mVideoId;}
 }

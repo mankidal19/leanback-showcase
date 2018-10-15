@@ -48,6 +48,9 @@ public class MySearchFragment extends android.support.v17.leanback.app.SearchFra
     private static final boolean DEBUG = BuildConfig.DEBUG;
 
     private boolean mResultsFound = false;
+
+    private Intent intent = null;
+
     /*private MockDatabase mockDatabase = new MockDatabase(getContext());*/
 
     @Override
@@ -64,8 +67,11 @@ public class MySearchFragment extends android.support.v17.leanback.app.SearchFra
     @Override
     public void onPause() {
         mHandler.removeCallbacksAndMessages(null);
-        Intent intent = new Intent(getContext(),MainActivity.class);
-        startActivity(intent);
+        if(intent==null){
+            intent = new Intent(getContext(),MainActivity.class);
+            startActivity(intent);
+        }
+
         super.onPause();
     }
 
@@ -163,70 +169,69 @@ public class MySearchFragment extends android.support.v17.leanback.app.SearchFra
                     TvUtil.openMedia(mActivity, (MediaWrapper) item, row);
                 }*/
 
-               if(item instanceof Card){
-                   Card selectedCard = (Card)item;
-                   if(selectedCard.isLive()){
+                if(item instanceof Card){
+                    Card selectedCard = (Card)item;
 
-                       //for sample live tv details page
-                       if(selectedCard.getTitle().toLowerCase().contains("jazeera")){
-                           Intent intent = new Intent(getContext(), DetailViewLiveBroadcastActivity.class);
-                           intent.putExtra("mediaId",selectedCard.getId());
-                           intent.putExtra("videoId",selectedCard.getVideoId());
+                    if(selectedCard.isLive()){
 
-                           //to set video title
-                           intent.putExtra("videoTitle",selectedCard.getTitle());
+                        //for sample live tv details page
+                        if(selectedCard.getTitle().toLowerCase().contains("jazeera")){
+                            intent = new Intent(getContext(), DetailViewLiveBroadcastActivity.class);
+                            //intent.putExtra("mediaId",id);
+                            intent.putExtra("videoId",selectedCard.getVideoId());
 
-                           startActivity(intent);
-                           Log.d(TAG,"open sample live tv details page");
-                       }
-                       //directly play video
-                       else{
-                           Intent intent = new Intent(getContext(), LiveActivity.class);
-                           intent.putExtra("mediaId",selectedCard.getId());
-                           intent.putExtra("videoId",selectedCard.getVideoId());
+                            //to set video title
+                            intent.putExtra("videoTitle",selectedCard.getTitle());
 
-                           //to set video title
-                           intent.putExtra("videoTitle",selectedCard.getTitle());
+                            startActivity(intent);
+                            Log.d(TAG,"open sample live tv details page");
+                        }
+                        //directly play video
+                        else{
+                            intent = new Intent(getContext(), LiveActivity.class);
+                            //intent.putExtra("mediaId",id);
+                            intent.putExtra("videoId",selectedCard.getVideoId());
 
-                           startActivity(intent);
-                           Log.d(TAG,"play live video");
-                       }
+                            //to set video title
+                            intent.putExtra("videoTitle",selectedCard.getTitle());
 
-                   }
+                            startActivity(intent);
+                            Log.d(TAG,"play live video");
+                        }
 
-                   else{
-                       //for sample movie details page
-                       if(selectedCard.getTitle().toLowerCase().contains("gone")){
-                           Intent intent = new Intent(getContext(), DetailViewMovieActivity.class);
-                           intent.putExtra("mediaId",selectedCard.getId());
-                           intent.putExtra("videoId",selectedCard.getVideoId());
-                           startActivity(intent);
-                           Log.d(TAG,"open sample movie details page");
-                       }
-                       //for dummy movie
-                       else if(selectedCard.getDescription().toLowerCase().contains("$3.99")){
-                           Toast.makeText(getContext(), "this is a dummy movie", Toast.LENGTH_SHORT).show();
-                           startActivity(new Intent(getContext(),MainActivity.class));
-                       }
-                       //for sample tv show details page
-                       else if(selectedCard.getTitle().toLowerCase().contains("superman")){
-                           Intent intent = new Intent(getContext(), DetailViewTvShowActivity.class);
-                           intent.putExtra("mediaId",selectedCard.getId());
-                           intent.putExtra("videoId",selectedCard.getVideoId());
-                           startActivity(intent);
-                           Log.d(TAG,"open sample tv show details page");
-                       }
-                       //directly plays video
-                       else{
-                           Intent intent = new Intent(getContext(), YoutubePlayerActivity.class);
-                           intent.putExtra("mediaId",selectedCard.getId());
-                           intent.putExtra("videoId",selectedCard.getVideoId());
-                           startActivity(intent);
-                           Log.d(TAG,"play non-live youtube video");
-                       }
+                    }
 
-                   }
-               }
+                    else{
+                        //for sample movie details page
+                        if(selectedCard.getTitle().toLowerCase().contains("gone")||selectedCard.getTitle().toLowerCase().contains("korean")){
+                            intent = new Intent(getContext(), DetailViewMovieActivity.class);
+                            // intent.putExtra("mediaId",id);
+                            intent.putExtra("videoId",selectedCard.getVideoId());
+                            intent.putExtra("videoTitle",selectedCard.getTitle());
+
+                            startActivity(intent);
+                            Log.d(TAG,"open movie details page");
+                        }
+                        //for dummy movie
+                        else if(selectedCard.getDescription().toLowerCase().contains("$3.99")){
+                            Toast.makeText(getActivity(), "this is a dummy movie", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getContext(),MainActivity.class));
+                        }
+
+                        else{
+                            intent = new Intent(getContext(), DetailViewTvShowActivity.class);
+                            //intent.putExtra("mediaId",id);
+                            intent.putExtra("videoId",selectedCard.getVideoId());
+                            intent.putExtra("videoTitle",selectedCard.getTitle());
+
+                            startActivity(intent);
+                            Log.d(TAG,"open tv show details page");
+                        }
+
+
+                    }
+
+                }
             }
         };
     }

@@ -48,7 +48,10 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 
+import nurulaiman.sony.activity.DetailViewMovieActivity;
+import nurulaiman.sony.activity.DetailViewTvShowActivity;
 import nurulaiman.sony.activity.YoutubePlayerActivity;
+import nurulaiman.sony.utils.MatchingCardUtils;
 
 /**
  * Displays a card with more details using a {@link DetailsFragment}.
@@ -72,13 +75,19 @@ public class DetailViewTvShowFragment extends DetailsFragment implements OnItemV
     private Action mActionOtherEp;
     private Action mActionSubAudio;
 
+    private DetailedCard data = null;
+
     private ArrayObjectAdapter mRowsAdapter;
     private final DetailsFragmentBackgroundController mDetailsBackground =
             new DetailsFragmentBackgroundController(this);
 
+    //for finding matching detailed card
+    private MatchingCardUtils matchingCardUtils = null;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        matchingCardUtils = new MatchingCardUtils(getContext());
         setupUi();
         setupEventListeners();
     }
@@ -86,9 +95,19 @@ public class DetailViewTvShowFragment extends DetailsFragment implements OnItemV
     private void setupUi() {
         // Load the card we want to display from a JSON resource. This JSON data could come from
         // anywhere in a real world app, e.g. a server.
-        String json = Utils
+        /*String json = Utils
                 .inputStreamToString(getResources().openRawResource(R.raw.detail_tv_show));
-        DetailedCard data = new Gson().fromJson(json, DetailedCard.class);
+        DetailedCard data = new Gson().fromJson(json, DetailedCard.class);*/
+
+        data = matchingCardUtils.findMatchingCard(getActivity().getIntent().getExtras().getString("videoTitle"));
+
+
+        //for yet to be declared shows in all_detailed_card_row.json
+        if(data == null){
+            String json = Utils
+                    .inputStreamToString(getResources().openRawResource(R.raw.detail_tv_show));
+            data = new Gson().fromJson(json, DetailedCard.class);
+        }
 
         // Setup fragment
         setTitle(getString(R.string.detail_view_tv_show));
@@ -177,8 +196,10 @@ public class DetailViewTvShowFragment extends DetailsFragment implements OnItemV
 
     private void initializeBackground(DetailedCard data) {
         mDetailsBackground.enableParallax();
+        /*mDetailsBackground.setCoverBitmap(BitmapFactory.decodeResource(getResources(),
+                R.drawable.tros_bg));*/
         mDetailsBackground.setCoverBitmap(BitmapFactory.decodeResource(getResources(),
-                R.drawable.tros_bg));
+                data.getLocalImageResourceId(getContext())));
     }
 
     private void setupEventListeners() {
@@ -189,23 +210,55 @@ public class DetailViewTvShowFragment extends DetailsFragment implements OnItemV
     @Override
     public void onItemClicked(Presenter.ViewHolder itemViewHolder, Object item,
                               RowPresenter.ViewHolder rowViewHolder, Row row) {
-        if (!(item instanceof Action)) return;
-        Action action = (Action) item;
+        //if (!()) return;
 
-        if (action.getId() == ACTION_OTHER_EP) {
-            setSelectedPosition(1);
+        if(item instanceof Action){
+            Action action = (Action) item;
+
+            if (action.getId() == ACTION_OTHER_EP) {
+                setSelectedPosition(1);
+            }
+            else if(action.getId()==ACTION_WATCHNOW){
+                Intent intent = new Intent(getContext(), YoutubePlayerActivity.class);
+                String videoId = data.getVideoId();
+                String videoTitle = data.getTitle();
+                intent.putExtra("videoId",videoId);
+                intent.putExtra("videoTitle",videoTitle);
+                startActivity(intent);
+                Log.d(TAG,"play non-live youtube video from details page");
+            }
+            else {
+                Toast.makeText(getActivity(), getString(R.string.action_cicked), Toast.LENGTH_LONG)
+                        .show();
+            }
         }
-        else if(action.getId()==ACTION_WATCHNOW){
+
+        else if(item instanceof Card && ((Card)item).getType().equals(Card.Type.DEFAULT)){
             Intent intent = new Intent(getContext(), YoutubePlayerActivity.class);
-            String videoId = getActivity().getIntent().getExtras().getString("videoId");
-            intent.putExtra("videoId",videoId);
-            startActivity(intent);
-            Log.d(TAG,"play non-live youtube video from details page");
+            Card selectedCard = (Card)item;
+
+
+
+            if(selectedCard.getVideoId()!=null) {
+
+                intent.putExtra("videoId",selectedCard.getVideoId());
+                intent.putExtra("videoTitle",selectedCard.getTitle());
+
+                Log.d(TAG,"play another episode of tv show");
+
+                startActivity(intent);
+
+            }
+
+            else{
+                return;
+            }
+
         }
-        else {
-            Toast.makeText(getActivity(), getString(R.string.action_cicked), Toast.LENGTH_LONG)
-                    .show();
-        }
+
+        else
+            return;
+
     }
 
     @Override

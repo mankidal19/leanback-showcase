@@ -174,6 +174,14 @@ public class Card {
         return mVideoId;
     }
 
+    public void setVideoId(String id){
+        this.mVideoId=id;
+    }
+
+    public void setIsLive(boolean set){
+        this.mLive=set;
+    }
+
     public boolean isLive() {
         return mLive;
     }

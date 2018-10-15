@@ -48,48 +48,37 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 
-import nurulaiman.sony.activity.DetailViewMovieActivity;
 import nurulaiman.sony.activity.YoutubePlayerActivity;
-import nurulaiman.sony.utils.MatchingCardUtils;
 
 /**
  * Displays a card with more details using a {@link DetailsFragment}.
  */
-public class DetailViewMovieFragment extends DetailsFragment implements OnItemViewClickedListener,
+public class DemoDetailViewTvShowFragment extends DetailsFragment implements OnItemViewClickedListener,
         OnItemViewSelectedListener {
 
     public static final String TRANSITION_NAME = "t_for_transition";
     public static final String EXTRA_CARD = "card";
 
-    private static final long ACTION_BUY = 1;
+    private static String TAG = "TvShowDetailsFragment";
+
+    private static final long ACTION_WATCHNOW = 1;
     private static final long ACTION_WATCHLIST = 2;
+    private static final long ACTION_OTHER_EP = 4;
     private static final long ACTION_SUB_AUDIO = 3;
-    private static final long ACTION_RECOMMEDED = 4;
-    private static final String TAG = "DetailViewMovieFragment";
 
-    private Action mActionBuy;
-    private Action mActionWatchList;
-    private Action mActionSubAudio;
-    private Action mActionRecommeded;
 
-    //for purchased/free movies
     private Action mActionWatchNow;
-    private static final long ACTION_WATCHNOW = 5;
-    private DetailedCard data = null;
-
-
+    private Action mActionWatchList;
+    private Action mActionOtherEp;
+    private Action mActionSubAudio;
 
     private ArrayObjectAdapter mRowsAdapter;
     private final DetailsFragmentBackgroundController mDetailsBackground =
             new DetailsFragmentBackgroundController(this);
 
-    //for finding matching detailed card
-    private MatchingCardUtils matchingCardUtils = null;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        matchingCardUtils = new MatchingCardUtils(getContext());
         setupUi();
         setupEventListeners();
     }
@@ -97,19 +86,12 @@ public class DetailViewMovieFragment extends DetailsFragment implements OnItemVi
     private void setupUi() {
         // Load the card we want to display from a JSON resource. This JSON data could come from
         // anywhere in a real world app, e.g. a server.
-
-        data = matchingCardUtils.findMatchingCard(getActivity().getIntent().getExtras().getString("videoTitle"));
-
-        if(data==null){
-            String json = Utils
-                    .inputStreamToString(getResources().openRawResource(R.raw.detail_movie));
-            data = new Gson().fromJson(json, DetailedCard.class);
-        }
-
+        String json = Utils
+                .inputStreamToString(getResources().openRawResource(R.raw.detail_tv_show));
+        DetailedCard data = new Gson().fromJson(json, DetailedCard.class);
 
         // Setup fragment
-        setTitle(getString(R.string.detail_view_movie));
-
+        setTitle(getString(R.string.detail_view_tv_show));
         FullWidthDetailsOverviewRowPresenter rowPresenter = new FullWidthDetailsOverviewRowPresenter(
                 new DetailsDescriptionPresenter(getActivity())) {
 
@@ -157,24 +139,16 @@ public class DetailViewMovieFragment extends DetailsFragment implements OnItemVi
         detailsOverview.setImageDrawable(getResources().getDrawable(imageResId, null));
         ArrayObjectAdapter actionAdapter = new ArrayObjectAdapter();
 
-        if(data.getPrice().equals("FREE")||data.getPrice().equals("PURCHASED")){
-            mActionWatchNow = new Action(ACTION_WATCHNOW,"WATCH NOW");
-            actionAdapter.add(mActionWatchNow);
-        }
-
-        else{
-            mActionBuy = new Action(ACTION_BUY, getString(R.string.action_buy) + " " + data.getPrice());
-            actionAdapter.add(mActionBuy);
-        }
-
+        mActionWatchNow = new Action(ACTION_WATCHNOW,"WATCH NOW");
         mActionWatchList = new Action(ACTION_WATCHLIST, getString(R.string.action_favorite));
-        mActionSubAudio = new Action(ACTION_SUB_AUDIO,getString(R.string.action_sub_audio));
-        mActionRecommeded = new Action(ACTION_RECOMMEDED, getString(R.string.action_recommeded));
+        mActionSubAudio = new Action((ACTION_SUB_AUDIO),getString(R.string.action_sub_audio));
+        mActionOtherEp = new Action(ACTION_OTHER_EP,getString(R.string.action_other_ep));
 
 
+        actionAdapter.add(mActionWatchNow);
         actionAdapter.add(mActionWatchList);
         actionAdapter.add(mActionSubAudio);
-        actionAdapter.add(mActionRecommeded);
+        actionAdapter.add(mActionOtherEp);
         detailsOverview.setActionsAdapter(actionAdapter);
         mRowsAdapter.add(detailsOverview);
 
@@ -188,7 +162,7 @@ public class DetailViewMovieFragment extends DetailsFragment implements OnItemVi
         // Setup recommended row.
         listRowAdapter = new ArrayObjectAdapter(new CardPresenterSelector(getActivity()));
         for (Card card : data.getRecommended()) listRowAdapter.add(card);
-        header = new HeaderItem(1, getString(R.string.header_recommended));
+        header = new HeaderItem(1, "Other Episodes:");
         mRowsAdapter.add(new ListRow(header, listRowAdapter));
 
         setAdapter(mRowsAdapter);
@@ -204,7 +178,7 @@ public class DetailViewMovieFragment extends DetailsFragment implements OnItemVi
     private void initializeBackground(DetailedCard data) {
         mDetailsBackground.enableParallax();
         mDetailsBackground.setCoverBitmap(BitmapFactory.decodeResource(getResources(),
-                data.getLocalImageResourceId(getContext())));
+                R.drawable.tros_bg));
     }
 
     private void setupEventListeners() {
@@ -215,52 +189,23 @@ public class DetailViewMovieFragment extends DetailsFragment implements OnItemVi
     @Override
     public void onItemClicked(Presenter.ViewHolder itemViewHolder, Object item,
                               RowPresenter.ViewHolder rowViewHolder, Row row) {
-        //if (!(item instanceof Action)) return;
+        if (!(item instanceof Action)) return;
+        Action action = (Action) item;
 
-        if(item instanceof Action){
-            Action action = (Action) item;
-
-            if (action.getId() == ACTION_RECOMMEDED) {
-                setSelectedPosition(1);
-            }
-            //FOR WATCH NOW FREE/PURCHASED MOVIES
-            else if(action.getId()==ACTION_WATCHNOW){
-                Intent intent = new Intent(getContext(), YoutubePlayerActivity.class);
-                String videoId = getActivity().getIntent().getExtras().getString("videoId");
-                intent.putExtra("videoId",videoId);
-                intent.putExtra("videoTitle",data.getTitle());
-                startActivity(intent);
-                Log.d(TAG,"play non-live youtube video from details page");
-            }
-
-            else {
-                Toast.makeText(getActivity(), getString(R.string.action_cicked), Toast.LENGTH_LONG)
-                        .show();
-            }
+        if (action.getId() == ACTION_OTHER_EP) {
+            setSelectedPosition(1);
         }
-
-        else if(item instanceof Card && ((Card)item).getType().equals(Card.Type.DEFAULT)){
-            Intent intent = new Intent(getContext(), DetailViewMovieActivity.class);
-            Card selectedCard = (Card)item;
-
-
-
-            if(selectedCard.getDescription().toLowerCase().contains("korean movie")||selectedCard.getTitle().toLowerCase().contains("gone")) {
-
-                intent.putExtra("videoId",selectedCard.getVideoId());
-                intent.putExtra("videoTitle",selectedCard.getTitle());
-
-                Log.d(TAG,"open movie details page");
-
-                startActivity(intent);
-
-            }
-
+        else if(action.getId()==ACTION_WATCHNOW){
+            Intent intent = new Intent(getContext(), YoutubePlayerActivity.class);
+            String videoId = getActivity().getIntent().getExtras().getString("videoId");
+            intent.putExtra("videoId",videoId);
+            startActivity(intent);
+            Log.d(TAG,"play non-live youtube video from details page");
         }
-
-        else
-            return;
-
+        else {
+            Toast.makeText(getActivity(), getString(R.string.action_cicked), Toast.LENGTH_LONG)
+                    .show();
+        }
     }
 
     @Override
