@@ -26,6 +26,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ImageView;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * Custom title view to be used in {@link android.support.v17.leanback.app.BrowseFragment}.
  */
@@ -33,6 +38,12 @@ public class CustomTitleView extends RelativeLayout implements TitleViewAdapter.
     private final TextView mTitleView;
     private final View mAnalogClockView;
     private final View mSearchOrbView;
+
+    //to display day & date
+    private final TextView mDayDate;
+
+    //to display logo
+    private final ImageView mBadge;
 
     private final TitleViewAdapter mTitleViewAdapter = new TitleViewAdapter() {
         @Override
@@ -47,7 +58,7 @@ public class CustomTitleView extends RelativeLayout implements TitleViewAdapter.
 
         @Override
         public void setBadgeDrawable(Drawable drawable) {
-            //CustomTitleView.this.setBadgeDrawable(drawable);
+            CustomTitleView.this.setBadgeDrawable(drawable);
         }
 
         @Override
@@ -73,9 +84,12 @@ public class CustomTitleView extends RelativeLayout implements TitleViewAdapter.
             if (visible) {
                 mAnalogClockView.setVisibility(View.VISIBLE);
                 mTitleView.setVisibility(View.VISIBLE);
+                mDayDate.setVisibility(View.VISIBLE);
             } else {
                 mAnalogClockView.setVisibility(View.GONE);
                 mTitleView.setVisibility(View.GONE);
+                mDayDate.setVisibility(View.GONE);
+
             }
         }
     };
@@ -94,6 +108,10 @@ public class CustomTitleView extends RelativeLayout implements TitleViewAdapter.
         mTitleView = (TextView) root.findViewById(R.id.title_tv);
         mAnalogClockView = root.findViewById(R.id.clock);
         mSearchOrbView = root.findViewById(R.id.search_orb);
+        mDayDate = root.findViewById(R.id.day_date);
+        mBadge = root.findViewById(R.id.title_badge2);
+
+        setDayDate();
     }
 
     public void setTitle(CharSequence title) {
@@ -101,6 +119,8 @@ public class CustomTitleView extends RelativeLayout implements TitleViewAdapter.
             mTitleView.setText(title);
             mTitleView.setVisibility(View.VISIBLE);
             mAnalogClockView.setVisibility(View.VISIBLE);
+            mDayDate.setVisibility(View.VISIBLE);
+            mBadge.setVisibility(View.VISIBLE);
         }
     }
 
@@ -109,7 +129,22 @@ public class CustomTitleView extends RelativeLayout implements TitleViewAdapter.
         if (drawable != null) {
             mTitleView.setVisibility(View.GONE);
             mAnalogClockView.setVisibility(View.VISIBLE);
+            mDayDate.setVisibility(View.VISIBLE);
+
+            mBadge.setImageDrawable(drawable);
+            mBadge.setVisibility(View.VISIBLE);
+
         }
+
+
+    }
+
+    public void setDayDate(){
+        DateFormat dateFormat = new SimpleDateFormat("EEE, dd MMM");
+        Date date = new Date();
+        String dayDate = dateFormat.format(date);
+        mDayDate.setText(dayDate);
+
     }
 
     @Override

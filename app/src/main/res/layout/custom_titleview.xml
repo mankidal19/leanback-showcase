@@ -22,13 +22,34 @@
             android:layout_marginEnd="24dp" />
 
     <TextView
-            android:id="@+id/title_tv"
-            android:textAppearance="@android:style/TextAppearance.Large"
-            android:visibility="gone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="24dp"
-            android:layout_centerVertical="true"
-            android:layout_toStartOf="@id/clock" />
+        android:id="@+id/title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="348dp"
+        android:layout_toStartOf="@id/clock"
+        android:textAlignment="center"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:visibility="gone" />
+
+    <ImageView android:id="@+id/title_badge2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="380dp"
+        android:layout_toStartOf="@id/clock"
+        android:textAlignment="center"
+        android:visibility="gone"
+        android:transitionGroup="true"/>
+
+    <TextView
+        android:id="@+id/day_date"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@id/clock" />
 
 </merge>

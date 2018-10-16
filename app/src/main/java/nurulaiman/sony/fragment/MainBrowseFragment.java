@@ -127,6 +127,10 @@ public class MainBrowseFragment extends BrowseFragment {
         setHeadersState(HEADERS_ENABLED);
         setHeadersTransitionOnBackEnabled(true);
         setBrandColor(getResources().getColor(R.color.fastlane_background));
+
+        //display logo
+        setBadgeDrawable(getResources().getDrawable(R.drawable.company_logo_small, null));
+
         setTitle("YouTube OpApp");
         setOnSearchClickedListener(new View.OnClickListener() {
 
