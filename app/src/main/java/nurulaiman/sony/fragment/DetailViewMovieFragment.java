@@ -221,7 +221,7 @@ public class DetailViewMovieFragment extends DetailsFragment implements OnItemVi
             Action action = (Action) item;
 
             if (action.getId() == ACTION_RECOMMEDED) {
-                setSelectedPosition(1);
+                setSelectedPosition(2);
             }
             //FOR WATCH NOW FREE/PURCHASED MOVIES
             else if(action.getId()==ACTION_WATCHNOW){

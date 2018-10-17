@@ -282,6 +282,20 @@ public class YoutubePlayerActivity extends FragmentActivity {
             }
         }
 
+        else if(KeyCode==KeyEvent.KEYCODE_CHANNEL_DOWN){
+            Log.i("KeyEvent","CH- button pressed");
+            handled=true;
+            Toast.makeText(this, "Features unavailable.", Toast.LENGTH_LONG)
+                    .show();
+        }
+
+        else if(KeyCode==KeyEvent.KEYCODE_CHANNEL_UP){
+            Log.i("KeyEvent","CH+ button pressed");
+            handled=true;
+            Toast.makeText(this, "Features unavailable.", Toast.LENGTH_LONG)
+                    .show();
+        }
+
 
 
         if(handled){

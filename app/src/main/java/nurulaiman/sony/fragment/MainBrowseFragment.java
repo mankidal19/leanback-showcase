@@ -64,7 +64,7 @@ public class MainBrowseFragment extends BrowseFragment {
     private static final long HEADER_ID_3 = 3;
     private static final String HEADER_NAME_3 = "DRAMA SERIES";
     private static final long HEADER_ID_4 = 4;
-    private static final String HEADER_NAME_4 = "TV SHOW";
+    private static final String HEADER_NAME_4 = "TV SHOWS";
     private static final long HEADER_ID_5 = 5;
     private static final String HEADER_NAME_5 = "MOVIES";
     private static final long HEADER_ID_6 = 6;
@@ -113,7 +113,7 @@ public class MainBrowseFragment extends BrowseFragment {
         return fragment;
     }
 
-    //implement voice iteraction
+
     @Override
     public void onResume(){
         super.onResume();
@@ -182,13 +182,13 @@ public class MainBrowseFragment extends BrowseFragment {
         PageRow pageRow5 = new PageRow(headerItem5);
         mRowsAdapter.add(pageRow5);
 
-        HeaderItem headerItem6 = new HeaderItem(HEADER_ID_6, HEADER_NAME_6);
+      /*  HeaderItem headerItem6 = new HeaderItem(HEADER_ID_6, HEADER_NAME_6);
         PageRow pageRow6 = new PageRow(headerItem6);
         mRowsAdapter.add(pageRow6);
 
         HeaderItem headerItem7 = new HeaderItem(HEADER_ID_7, HEADER_NAME_7);
         PageRow pageRow7 = new PageRow(headerItem7);
-        mRowsAdapter.add(pageRow7);
+        mRowsAdapter.add(pageRow7);*/
 
         HeaderItem headerItem8 = new HeaderItem(HEADER_ID_8, HEADER_NAME_8);
         PageRow pageRow8 = new PageRow(headerItem8);
@@ -413,23 +413,6 @@ public class MainBrowseFragment extends BrowseFragment {
 
                     startActivity(intent);
                     Log.d(TAG,"open tv show details page");
-
-                    /*if(selectedCard.getTitle().toLowerCase().contains("superman")){
-                        intent = new Intent(getContext(), DetailViewTvShowActivity.class);
-                        intent.putExtra("videoId",selectedCard.getVideoId());
-                        startActivity(intent);
-                        Log.d(TAG,"open sample tv show details page");
-                    }
-                    else{
-                        intent = new Intent(getContext(), YoutubePlayerActivity.class);
-                        intent.putExtra("videoId",selectedCard.getVideoId());
-                        startActivity(intent);
-                        Log.d(TAG,"play non-live youtube video");
-                    }*/
-
-
-
-
 
 
 

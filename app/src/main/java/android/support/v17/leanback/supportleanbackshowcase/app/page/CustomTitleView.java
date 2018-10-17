@@ -140,7 +140,7 @@ public class CustomTitleView extends RelativeLayout implements TitleViewAdapter.
     }
 
     public void setDayDate(){
-        DateFormat dateFormat = new SimpleDateFormat("EEE, dd MMM");
+        DateFormat dateFormat = new SimpleDateFormat("EEE, dd MMMM");
         Date date = new Date();
         String dayDate = dateFormat.format(date);
         mDayDate.setText(dayDate);

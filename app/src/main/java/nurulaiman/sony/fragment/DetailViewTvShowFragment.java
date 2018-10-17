@@ -216,7 +216,7 @@ public class DetailViewTvShowFragment extends DetailsFragment implements OnItemV
             Action action = (Action) item;
 
             if (action.getId() == ACTION_OTHER_EP) {
-                setSelectedPosition(1);
+                setSelectedPosition(2);
             }
             else if(action.getId()==ACTION_WATCHNOW){
                 Intent intent = new Intent(getContext(), YoutubePlayerActivity.class);
