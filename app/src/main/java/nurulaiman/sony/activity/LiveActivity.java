@@ -197,17 +197,30 @@ public class LiveActivity extends FragmentActivity {
         else if(KeyCode==KeyEvent.KEYCODE_MEDIA_REWIND){
             Log.i("KeyEvent","Rewind button pressed");
             handled=true;
-            Toast.makeText(this, "Features unavailable.", Toast.LENGTH_LONG)
+            Toast.makeText(this, "REWIND button feature available on VOD.", Toast.LENGTH_LONG)
                     .show();
         }
 
         else if(KeyCode==KeyEvent.KEYCODE_MEDIA_FAST_FORWARD){
             Log.i("KeyEvent","Fast Forward button pressed");
             handled=true;
-            Toast.makeText(this, "Features unavailable.", Toast.LENGTH_LONG)
+            Toast.makeText(this, "FAST FORWARD button feature available on VOD.", Toast.LENGTH_LONG)
                     .show();
         }
 
+        else if(KeyCode==KeyEvent.KEYCODE_MEDIA_PREVIOUS){
+            Log.i("KeyEvent","Rewind button pressed");
+            handled=true;
+            Toast.makeText(this, "PREVIOUS button feature available on TV Shows VOD.", Toast.LENGTH_LONG)
+                    .show();
+        }
+
+        else if(KeyCode==KeyEvent.KEYCODE_MEDIA_NEXT){
+            Log.i("KeyEvent","Fast Forward button pressed");
+            handled=true;
+            Toast.makeText(this, "NEXT button feature available on TV Shows VOD.", Toast.LENGTH_LONG)
+                    .show();
+        }
 
         if(handled){
 

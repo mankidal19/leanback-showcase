@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="TextView"
-            android:textAlignment="textEnd"
+            android:textAlignment="textStart"
             android:textAppearance="@style/RegularMediaItemTextStyle"
             android:textColor="@color/design_default_color_primary"
             android:textSize="35dp" />

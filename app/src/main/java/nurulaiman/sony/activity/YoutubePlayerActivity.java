@@ -285,14 +285,14 @@ public class YoutubePlayerActivity extends FragmentActivity {
         else if(KeyCode==KeyEvent.KEYCODE_CHANNEL_DOWN){
             Log.i("KeyEvent","CH- button pressed");
             handled=true;
-            Toast.makeText(this, "Features unavailable.", Toast.LENGTH_LONG)
+            Toast.makeText(this, "CH- button feature available on Live TV.", Toast.LENGTH_LONG)
                     .show();
         }
 
         else if(KeyCode==KeyEvent.KEYCODE_CHANNEL_UP){
             Log.i("KeyEvent","CH+ button pressed");
             handled=true;
-            Toast.makeText(this, "Features unavailable.", Toast.LENGTH_LONG)
+            Toast.makeText(this, "CH+ button feature available on Live TV.", Toast.LENGTH_LONG)
                     .show();
         }
 
@@ -316,7 +316,7 @@ public class YoutubePlayerActivity extends FragmentActivity {
 
 
         if(episodeArrayList.isEmpty()){
-            Toast.makeText(this, "Features unavailable.", Toast.LENGTH_LONG)
+            Toast.makeText(this, "PREVIOUS button feature available on TV Shows VOD.", Toast.LENGTH_LONG)
                     .show();
             return null;
         }
@@ -347,7 +347,7 @@ public class YoutubePlayerActivity extends FragmentActivity {
         }
 
         else if(episodeArrayList.isEmpty()){
-            Toast.makeText(this, "Features unavailable.", Toast.LENGTH_LONG)
+            Toast.makeText(this, "NEXT button feature available on TV Shows VOD.", Toast.LENGTH_LONG)
                     .show();
             return null;
         }
