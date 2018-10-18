@@ -4,13 +4,15 @@
         android:layout_height="wrap_content">
 
     <android.support.v17.leanback.widget.SearchOrbView
-        android:id="@+id/search_orb"
+        android:id="@+id/search_orb2"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:transitionGroup="true"
         android:layout_gravity="center_vertical|start"
         android:layout_marginTop="8dp"
-        android:paddingStart="48dp" />
+
+        android:clipChildren="false"
+        android:clipToPadding="false"/>
 
     <AnalogClock
             android:id="@+id/clock"

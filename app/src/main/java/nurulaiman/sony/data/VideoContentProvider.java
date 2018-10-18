@@ -47,17 +47,6 @@ public class VideoContentProvider extends ContentProvider {
 
     private MockDatabase mDatabase;
 
-    //for in-app search
-    private static int idIndex;
-    private static int nameIndex;
-    private static int descIndex;
-    private static int iconIndex;
-    private static int dataTypeIndex;
-    private static int videoWidthIndex;
-    private static int videoHeightIndex;
-    private static int isLiveIndex;
-    private static int actionIndex;
-    private static int suggestColumnIndex;
 
 
 
@@ -138,11 +127,14 @@ public class VideoContentProvider extends ContentProvider {
     }
 
     private Object[] convertMovieIntoRow(Card card) {
+        Log.d(TAG, Integer.toString(card.getLocalImageResourceId(getContext())) + "-"+ card.getLocalImageResourceName() + "-"+ card.getLocalImageResource());
+
+
         return new Object[] {
             card.getId(),
             card.getTitle(),
             card.getDescription(),
-            card.getLocalImageResourceId(getContext()),
+                card.getLocalImageResourceId(getContext()),
                 "video/mp4",
             card.getWidth(),
             card.getHeight(),

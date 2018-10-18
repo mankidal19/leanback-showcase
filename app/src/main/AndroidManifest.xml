@@ -29,7 +29,7 @@
         android:name=".app.room.controller.app.SampleApplication"
         android:allowBackup="true"
         android:banner="@string/app_name"
-        android:icon="@mipmap/app_banner_sample_app"
+        android:icon="@mipmap/ic_launcher"
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/Theme.Example.LeanbackLauncher">

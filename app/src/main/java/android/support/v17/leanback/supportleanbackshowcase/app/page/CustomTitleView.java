@@ -37,7 +37,7 @@ import java.util.Date;
 public class CustomTitleView extends RelativeLayout implements TitleViewAdapter.Provider {
     private final TextView mTitleView;
     private final View mAnalogClockView;
-    private final View mSearchOrbView;
+    private final SearchOrbView mSearchOrbView;
 
     //to display day & date
     private final TextView mDayDate;
@@ -107,7 +107,12 @@ public class CustomTitleView extends RelativeLayout implements TitleViewAdapter.
         View root  = LayoutInflater.from(context).inflate(R.layout.custom_titleview, this);
         mTitleView = (TextView) root.findViewById(R.id.title_tv);
         mAnalogClockView = root.findViewById(R.id.clock);
-        mSearchOrbView = root.findViewById(R.id.search_orb);
+        mSearchOrbView = root.findViewById(R.id.search_orb2);
+
+
+        Drawable drawable = getResources().getDrawable(R.drawable.ic_search_in_app,null);
+        mSearchOrbView.setOrbIcon(drawable);
+
         mDayDate = root.findViewById(R.id.day_date);
         mBadge = root.findViewById(R.id.title_badge2);
 

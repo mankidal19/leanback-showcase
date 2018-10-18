@@ -32,7 +32,7 @@
     android:hint="@string/search_hint"
     android:includeInGlobalSearch="true"
     android:label="@string/search_label"
-    android:icon="@drawable/lb_ic_in_app_search"
+    android:icon="@drawable/ic_search_black_24dp"
     android:searchSettingsDescription="@string/settings_description"
     android:searchSuggestAuthority="nurulaiman.sony"
     android:searchSuggestIntentAction="android.intent.action.VIEW"

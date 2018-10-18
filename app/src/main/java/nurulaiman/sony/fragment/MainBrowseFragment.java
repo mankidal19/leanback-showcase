@@ -2,6 +2,7 @@ package nurulaiman.sony.fragment;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.os.Handler;
@@ -54,11 +55,13 @@ import nurulaiman.sony.activity.DetailViewTvShowActivity;
 import nurulaiman.sony.activity.LiveActivity;
 import nurulaiman.sony.activity.SearchActivity;
 import nurulaiman.sony.activity.YoutubePlayerActivity;
+import nurulaiman.sony.models.IconHeaderItem;
+import nurulaiman.sony.ui.presenter.IconHeaderItemPresenter;
 import nurulaiman.sony.utils.MatchingCardUtils;
 
 public class MainBrowseFragment extends BrowseFragment {
     private static final long HEADER_ID_1 = 1;
-    private static final String HEADER_NAME_1 = "HOME";
+    private static final String HEADER_NAME_1 = "[User Custom] HOME";
     private static final long HEADER_ID_2 = 2;
     private static final String HEADER_NAME_2 = "LIVE TV";
     private static final long HEADER_ID_3 = 3;
@@ -67,12 +70,6 @@ public class MainBrowseFragment extends BrowseFragment {
     private static final String HEADER_NAME_4 = "TV SHOWS";
     private static final long HEADER_ID_5 = 5;
     private static final String HEADER_NAME_5 = "MOVIES";
-    private static final long HEADER_ID_6 = 6;
-    private static final String HEADER_NAME_6 = "SPORTS";
-    private static final long HEADER_ID_7 = 7;
-    private static final String HEADER_NAME_7 = "CHILDREN";
-    private static final long HEADER_ID_8 = 8;
-    private static final String HEADER_NAME_8 = "VIP PACKAGES";
 
 
     private static final long HEADER_ID_9 = 9;
@@ -129,7 +126,15 @@ public class MainBrowseFragment extends BrowseFragment {
         setBrandColor(getResources().getColor(R.color.fastlane_background));
 
         //display logo
-        setBadgeDrawable(getResources().getDrawable(R.drawable.company_logo_small, null));
+        setBadgeDrawable(getResources().getDrawable(R.drawable.operator_app_logo_small, null));
+
+        //for displaying logo beside header
+        setHeaderPresenterSelector(new PresenterSelector() {
+            @Override
+            public Presenter getPresenter(Object o) {
+                return new IconHeaderItemPresenter();
+            }
+        });
 
         setTitle("YouTube OpApp");
         setOnSearchClickedListener(new View.OnClickListener() {
@@ -162,43 +167,35 @@ public class MainBrowseFragment extends BrowseFragment {
     }
 
     private void createRows() {
-        HeaderItem headerItem1 = new HeaderItem(HEADER_ID_1, HEADER_NAME_1);
+
+
+        IconHeaderItem headerItem1 = new IconHeaderItem(HEADER_ID_1, HEADER_NAME_1,R.drawable.ic_home_black_24dp);
         PageRow pageRow1 = new PageRow(headerItem1);
         mRowsAdapter.add(pageRow1);
 
-        HeaderItem headerItem2 = new HeaderItem(HEADER_ID_2, HEADER_NAME_2);
+        IconHeaderItem headerItem2 = new IconHeaderItem(HEADER_ID_2, HEADER_NAME_2,R.drawable.live_red);
         PageRow pageRow2 = new PageRow(headerItem2);
         mRowsAdapter.add(pageRow2);
 
-        HeaderItem headerItem3 = new HeaderItem(HEADER_ID_3, HEADER_NAME_3);
+        IconHeaderItem headerItem3 = new IconHeaderItem(HEADER_ID_3, HEADER_NAME_3,R.drawable.vod_green);
         PageRow pageRow3 = new PageRow(headerItem3);
         mRowsAdapter.add(pageRow3);
 
-        HeaderItem headerItem4 = new HeaderItem(HEADER_ID_4, HEADER_NAME_4);
+        IconHeaderItem headerItem4 = new IconHeaderItem(HEADER_ID_4, HEADER_NAME_4,R.drawable.vod_yellow);
         PageRow pageRow4 = new PageRow(headerItem4);
         mRowsAdapter.add(pageRow4);
 
-        HeaderItem headerItem5 = new HeaderItem(HEADER_ID_5, HEADER_NAME_5);
+        IconHeaderItem headerItem5 = new IconHeaderItem(HEADER_ID_5, HEADER_NAME_5,R.drawable.vod_blue);
         PageRow pageRow5 = new PageRow(headerItem5);
         mRowsAdapter.add(pageRow5);
 
-      /*  HeaderItem headerItem6 = new HeaderItem(HEADER_ID_6, HEADER_NAME_6);
-        PageRow pageRow6 = new PageRow(headerItem6);
-        mRowsAdapter.add(pageRow6);
 
-        HeaderItem headerItem7 = new HeaderItem(HEADER_ID_7, HEADER_NAME_7);
-        PageRow pageRow7 = new PageRow(headerItem7);
-        mRowsAdapter.add(pageRow7);*/
 
-        HeaderItem headerItem8 = new HeaderItem(HEADER_ID_8, HEADER_NAME_8);
-        PageRow pageRow8 = new PageRow(headerItem8);
-        mRowsAdapter.add(pageRow8);
-
-        HeaderItem headerItem9 = new HeaderItem(HEADER_ID_9, HEADER_NAME_9);
+        IconHeaderItem headerItem9 = new IconHeaderItem(HEADER_ID_9, HEADER_NAME_9,R.drawable.ic_person_black_24dp);
         PageRow pageRow9 = new PageRow(headerItem9);
         mRowsAdapter.add(pageRow9);
 
-        HeaderItem headerItem10 = new HeaderItem(HEADER_ID_10, HEADER_NAME_10);
+        IconHeaderItem headerItem10 = new IconHeaderItem(HEADER_ID_10, HEADER_NAME_10,R.drawable.ic_settings_black_24dp);
         PageRow pageRow10 = new PageRow(headerItem10);
         mRowsAdapter.add(pageRow10);
 
@@ -215,6 +212,14 @@ public class MainBrowseFragment extends BrowseFragment {
         public Fragment createFragment(Object rowObj) {
             Row row = (Row)rowObj;
             mBackgroundManager.setDrawable(null);
+
+            if(row.getHeaderItem()!=null){
+                Log.i(TAG,"HeaderItem obtained- "+row.getHeaderItem().getId());
+            }
+
+            else {
+                Log.i(TAG,"HeaderItem NOT obtained- "+row.getHeaderItem().getId());
+            }
 
             if(row.getHeaderItem().getId() == HEADER_ID_9){
                 return new MainBrowseFragment.FragmentLoginSignUp();
@@ -382,6 +387,7 @@ public class MainBrowseFragment extends BrowseFragment {
                 adapter.add(card);
             }
 
+            //IconHeaderItem headerItem = new IconHeaderItem(cardRow.getTitle());
             HeaderItem headerItem = new HeaderItem(cardRow.getTitle());
             return new CardListRow(headerItem, adapter, cardRow);
         }
@@ -446,6 +452,7 @@ public class MainBrowseFragment extends BrowseFragment {
                 adapter.add(card);
             }
 
+            //IconHeaderItem headerItem = new IconHeaderItem(cardRow.getTitle());
             HeaderItem headerItem = new HeaderItem(cardRow.getTitle());
             return new CardListRow(headerItem, adapter, cardRow);
         }
@@ -517,6 +524,7 @@ public class MainBrowseFragment extends BrowseFragment {
                 adapter.add(card);
             }
 
+            //IconHeaderItem headerItem = new IconHeaderItem(cardRow.getTitle());
             HeaderItem headerItem = new HeaderItem(cardRow.getTitle());
             return new CardListRow(headerItem, adapter, cardRow);
         }
@@ -561,6 +569,7 @@ public class MainBrowseFragment extends BrowseFragment {
                 adapter.add(card);
             }
 
+            //IconHeaderItem headerItem = new IconHeaderItem(cardRow.getTitle());
             HeaderItem headerItem = new HeaderItem(cardRow.getTitle());
             return new CardListRow(headerItem, adapter, cardRow);
         }
