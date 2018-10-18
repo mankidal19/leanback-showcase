@@ -107,5 +107,4 @@ dependencies {
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:8.0.1'
     implementation 'fr.bmartel:youtubetv:1.2'
     implementation 'com.squareup.picasso:picasso:2.5.2'
-    implementation 'com.github.dextorer:sofa:1.0.0'
 }

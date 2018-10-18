@@ -283,6 +283,7 @@ public class MainBrowseFragment extends BrowseFragment {
             mRowsAdapter = new ArrayObjectAdapter(presenterSelector);
 
 
+
             setAdapter(mRowsAdapter);
             setOnItemViewClickedListener(new OnItemViewClickedListener() {
                 @Override
@@ -324,6 +325,22 @@ public class MainBrowseFragment extends BrowseFragment {
             getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
         }
 
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+            //expand
+            setExpand(true);
+
+            return super.onCreateView(inflater,container,savedInstanceState);
+        }
+
+       @Override
+       public void onTransitionEnd(){
+           //expand
+           setExpand(true);
+
+           super.onTransitionEnd();
+       }
 
         private void createRows() {
             String json = Utils.inputStreamToString(getResources().openRawResource(
@@ -383,6 +400,23 @@ public class MainBrowseFragment extends BrowseFragment {
             super.onCreate(savedInstanceState);
             createRows();
             getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+            //expand
+            setExpand(true);
+
+            return super.onCreateView(inflater,container,savedInstanceState);
+        }
+
+        @Override
+        public void onTransitionEnd(){
+            //expand
+            setExpand(true);
+
+            super.onTransitionEnd();
         }
 
         private void createRows() {
@@ -456,6 +490,23 @@ public class MainBrowseFragment extends BrowseFragment {
             super.onCreate(savedInstanceState);
             createRows();
             getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+            //expand
+            setExpand(true);
+
+            return super.onCreateView(inflater,container,savedInstanceState);
+        }
+
+        @Override
+        public void onTransitionEnd(){
+            //expand
+            setExpand(true);
+
+            super.onTransitionEnd();
         }
 
         private void createRows() {
@@ -540,6 +591,23 @@ public class MainBrowseFragment extends BrowseFragment {
             super.onCreate(savedInstanceState);
             createRows();
             getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+            //expand
+            setExpand(true);
+
+            return super.onCreateView(inflater,container,savedInstanceState);
+        }
+
+        @Override
+        public void onTransitionEnd(){
+            //expand
+            setExpand(true);
+
+            super.onTransitionEnd();
         }
 
         private void createRows() {
