@@ -21,6 +21,8 @@ import android.support.v17.leanback.widget.HeaderItem;
 import android.support.v17.leanback.widget.ListRow;
 import android.support.v17.leanback.widget.ObjectAdapter;
 
+import nurulaiman.sony.models.IconHeaderItem;
+
 /**
  * The {@link CardListRow} allows the {@link ShadowRowPresenterSelector} to access the {@link CardRow}
  * held by the row and determine whether to use a {@link android.support.v17.leanback.widget.Presenter}
@@ -34,6 +36,15 @@ public class CardListRow extends ListRow {
         super(header, adapter);
         setCardRow(cardRow);
     }
+
+    //for CustomCardListRowUsage
+    public CardListRow(ObjectAdapter adapter, CardRow cardRow) {
+        super(adapter);
+        setCardRow(cardRow);
+
+
+    }
+
 
     public CardRow getCardRow() {
         return mCardRow;

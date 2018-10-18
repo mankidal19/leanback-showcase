@@ -56,6 +56,7 @@ import nurulaiman.sony.activity.LiveActivity;
 import nurulaiman.sony.activity.SearchActivity;
 import nurulaiman.sony.activity.YoutubePlayerActivity;
 import nurulaiman.sony.models.IconHeaderItem;
+import nurulaiman.sony.ui.presenter.CustomShadowRowPresenterSelector;
 import nurulaiman.sony.ui.presenter.IconHeaderItemPresenter;
 import nurulaiman.sony.utils.MatchingCardUtils;
 
@@ -102,7 +103,6 @@ public class MainBrowseFragment extends BrowseFragment {
 
     }
 
-    // to add the voice interaction capabilities to MainBrowseFragment
     public static MainBrowseFragment newInstance() {
         Log.d(TAG, "newInstance: ");
         MainBrowseFragment fragment = new MainBrowseFragment();
@@ -234,7 +234,12 @@ public class MainBrowseFragment extends BrowseFragment {
                 return new MainBrowseFragment.FragmentLiveBroadcast();
             }
             else if(row.getHeaderItem().getId() == HEADER_ID_4){
-                return new MainBrowseFragment.FragmentTvShow();
+                MainBrowseFragment.FragmentTvShow fragment = new MainBrowseFragment.FragmentTvShow();
+                Bundle bundle = new Bundle();
+                bundle.putLong("headerId",row.getHeaderItem().getId());
+                fragment.setArguments(bundle);
+
+                return fragment;
             }
             else if(row.getHeaderItem().getId() == HEADER_ID_5){
                 return new MainBrowseFragment.FragmentMovie();
@@ -242,7 +247,12 @@ public class MainBrowseFragment extends BrowseFragment {
 
             //DUMMY
             else{
-                return new MainBrowseFragment.FragmentTvShow();
+                MainBrowseFragment.FragmentTvShow fragment = new MainBrowseFragment.FragmentTvShow();
+                Bundle bundle = new Bundle();
+                bundle.putLong("headerId",row.getHeaderItem().getId());
+                fragment.setArguments(bundle);
+
+                return fragment;
 
             }
 
@@ -283,6 +293,7 @@ public class MainBrowseFragment extends BrowseFragment {
 
             CardPresenterSelector cardPresenter = new CardPresenterSelector(getActivity());
             mAdapter = new ArrayObjectAdapter(cardPresenter);
+
             setAdapter(mAdapter);
 
             setOnItemViewClickedListener(new OnItemViewClickedListener() {
@@ -329,6 +340,11 @@ public class MainBrowseFragment extends BrowseFragment {
             String json = Utils.inputStreamToString(getResources().openRawResource(
                     R.raw.grid_live_broadcast));
             CardRow cardRow = new Gson().fromJson(json, CardRow.class);
+
+            //to implement header with icon
+            IconHeaderItem headerItem = new IconHeaderItem(cardRow.getTitle());
+
+
             mAdapter.addAll(0, cardRow.getCards());
         }
     }
@@ -340,7 +356,7 @@ public class MainBrowseFragment extends BrowseFragment {
         private final ArrayObjectAdapter mRowsAdapter;
 
         public FragmentHome() {
-            mRowsAdapter = new ArrayObjectAdapter(new ShadowRowPresenterSelector());
+            mRowsAdapter = new ArrayObjectAdapter(new CustomShadowRowPresenterSelector());
 
             setAdapter(mRowsAdapter);
             setOnItemViewClickedListener(new OnItemViewClickedListener() {
@@ -387,8 +403,16 @@ public class MainBrowseFragment extends BrowseFragment {
                 adapter.add(card);
             }
 
-            //IconHeaderItem headerItem = new IconHeaderItem(cardRow.getTitle());
-            HeaderItem headerItem = new HeaderItem(cardRow.getTitle());
+            IconHeaderItem headerItem;
+
+            if(cardRow.getTitle().toLowerCase().contains("recommended")||cardRow.getTitle().toLowerCase().contains("popular")){
+                headerItem = new IconHeaderItem(cardRow.getTitle(),R.drawable.vod_icon_text);
+            }
+            else{
+                headerItem = new IconHeaderItem(cardRow.getTitle(),R.drawable.live_icon_text);
+            }
+
+            //HeaderItem headerItem = new HeaderItem(cardRow.getTitle());
             return new CardListRow(headerItem, adapter, cardRow);
         }
     }
@@ -397,7 +421,7 @@ public class MainBrowseFragment extends BrowseFragment {
         private final ArrayObjectAdapter mRowsAdapter;
 
         public FragmentTvShow() {
-            mRowsAdapter = new ArrayObjectAdapter(new ShadowRowPresenterSelector());
+            mRowsAdapter = new ArrayObjectAdapter(new CustomShadowRowPresenterSelector());
 
             setAdapter(mRowsAdapter);
             setOnItemViewClickedListener(new OnItemViewClickedListener() {
@@ -453,7 +477,19 @@ public class MainBrowseFragment extends BrowseFragment {
             }
 
             //IconHeaderItem headerItem = new IconHeaderItem(cardRow.getTitle());
-            HeaderItem headerItem = new HeaderItem(cardRow.getTitle());
+            IconHeaderItem headerItem;
+            long headerId = getArguments().getLong("headerId");
+
+            if(headerId==HEADER_ID_4){
+                headerItem =  new IconHeaderItem(cardRow.getTitle(),R.drawable.vod_icon_text_yellow);
+            }
+
+            //dummy for drama
+            else{
+                headerItem =  new IconHeaderItem(cardRow.getTitle(),R.drawable.vod_icon_text_green);
+            }
+
+
             return new CardListRow(headerItem, adapter, cardRow);
         }
     }
@@ -462,7 +498,7 @@ public class MainBrowseFragment extends BrowseFragment {
         private final ArrayObjectAdapter mRowsAdapter;
 
         public FragmentMovie() {
-            mRowsAdapter = new ArrayObjectAdapter(new ShadowRowPresenterSelector());
+            mRowsAdapter = new ArrayObjectAdapter(new CustomShadowRowPresenterSelector());
 
             setAdapter(mRowsAdapter);
             setOnItemViewClickedListener(new OnItemViewClickedListener() {
@@ -524,8 +560,8 @@ public class MainBrowseFragment extends BrowseFragment {
                 adapter.add(card);
             }
 
-            //IconHeaderItem headerItem = new IconHeaderItem(cardRow.getTitle());
-            HeaderItem headerItem = new HeaderItem(cardRow.getTitle());
+            IconHeaderItem headerItem = new IconHeaderItem(cardRow.getTitle(),R.drawable.vod_icon_text_blue);
+            //HeaderItem headerItem = new HeaderItem(cardRow.getTitle());
             return new CardListRow(headerItem, adapter, cardRow);
         }
     }

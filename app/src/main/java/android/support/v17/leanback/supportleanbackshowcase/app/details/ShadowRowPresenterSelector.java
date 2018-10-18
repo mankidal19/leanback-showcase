@@ -17,9 +17,14 @@ package android.support.v17.leanback.supportleanbackshowcase.app.details;
 
 import android.support.v17.leanback.supportleanbackshowcase.models.CardRow;
 import android.support.v17.leanback.supportleanbackshowcase.utils.CardListRow;
+import android.support.v17.leanback.widget.HeaderItem;
 import android.support.v17.leanback.widget.ListRowPresenter;
 import android.support.v17.leanback.widget.Presenter;
 import android.support.v17.leanback.widget.PresenterSelector;
+import android.util.Log;
+
+import nurulaiman.sony.models.IconHeaderItem;
+import nurulaiman.sony.ui.presenter.IconHeaderItemPresenter;
 
 /**
  * This {@link PresenterSelector} will return a {@link ListRowPresenter} which has shadow support
@@ -27,16 +32,26 @@ import android.support.v17.leanback.widget.PresenterSelector;
  */
 public class ShadowRowPresenterSelector extends PresenterSelector {
 
+    private static final String TAG = "ShadowRowPresenter";
     private ListRowPresenter mShadowEnabledRowPresenter = new ListRowPresenter();
     private ListRowPresenter mShadowDisabledRowPresenter = new ListRowPresenter();
+    private IconHeaderItemPresenter mIconHeaderItemPresenter = new IconHeaderItemPresenter();
 
     public ShadowRowPresenterSelector() {
         mShadowEnabledRowPresenter.setNumRows(1);
         mShadowDisabledRowPresenter.setShadowEnabled(false);
+
+       /* mShadowDisabledRowPresenter.setHeaderPresenter(new IconHeaderItemPresenter());
+        mShadowEnabledRowPresenter.setHeaderPresenter(new IconHeaderItemPresenter());*/
     }
 
     @Override public Presenter getPresenter(Object item) {
-        if (!(item instanceof CardListRow)) return mShadowDisabledRowPresenter;
+        if (!(item instanceof CardListRow))
+        {   return mShadowDisabledRowPresenter;
+        }
+
+        Log.d(TAG,"(outside) item instance of " + item.toString());
+
         CardListRow listRow = (CardListRow) item;
         CardRow row = listRow.getCardRow();
         if (row.useShadow()) return mShadowEnabledRowPresenter;
@@ -49,5 +64,14 @@ public class ShadowRowPresenterSelector extends PresenterSelector {
                 mShadowDisabledRowPresenter,
                 mShadowEnabledRowPresenter
         };
+    }
+
+    public void setPresenter(ListRowPresenter[] presenters){
+
+        if(presenters!=null){
+            mShadowDisabledRowPresenter = presenters[0];
+            mShadowEnabledRowPresenter = presenters[1];
+        }
+
     }
 }
