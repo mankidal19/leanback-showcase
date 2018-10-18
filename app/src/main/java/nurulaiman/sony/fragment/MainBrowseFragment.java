@@ -272,30 +272,18 @@ public class MainBrowseFragment extends BrowseFragment {
      */
 
 
-    public static class FragmentLiveBroadcast extends GridFragment {
-        private static final int COLUMNS = 3;
-        private final int ZOOM_FACTOR = FocusHighlight.ZOOM_FACTOR_MEDIUM;
-        private ArrayObjectAdapter mAdapter;
+    public static class FragmentLiveBroadcast extends RowsFragment {
+        private final ArrayObjectAdapter mRowsAdapter;
 
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setupAdapter();
-            loadData();
-            getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
-        }
+        public FragmentLiveBroadcast() {
+            CustomShadowRowPresenterSelector presenterSelector = new CustomShadowRowPresenterSelector();
+
+            //set 2 rows
+            presenterSelector.setRows(2);
+            mRowsAdapter = new ArrayObjectAdapter(presenterSelector);
 
 
-        private void setupAdapter() {
-            VerticalGridPresenter presenter = new VerticalGridPresenter(ZOOM_FACTOR);
-            presenter.setNumberOfColumns(COLUMNS);
-            setGridPresenter(presenter);
-
-            CardPresenterSelector cardPresenter = new CardPresenterSelector(getActivity());
-            mAdapter = new ArrayObjectAdapter(cardPresenter);
-
-            setAdapter(mAdapter);
-
+            setAdapter(mRowsAdapter);
             setOnItemViewClickedListener(new OnItemViewClickedListener() {
                 @Override
                 public void onItemClicked(
@@ -304,48 +292,60 @@ public class MainBrowseFragment extends BrowseFragment {
                         RowPresenter.ViewHolder rowViewHolder,
                         Row row) {
                     Intent intent;
-
                     Card card = (Card)item;
-                    /*Toast.makeText(getActivity(),
-                            "Clicked on "+card.getTitle(),
-                            Toast.LENGTH_SHORT).show();*/
-
+        /*Toast.makeText(getActivity(),
+                "Clicked on "+card.getTitle(),
+                Toast.LENGTH_SHORT).show();*/
                     if(card.getTitle().toLowerCase().contains("jazeera")){
                         intent = new Intent(getContext(), DetailViewLiveBroadcastActivity.class);
                         intent.putExtra("videoId",card.getVideoId());
-
                         //to set video title
                         intent.putExtra("videoTitle",card.getTitle());
-
                         startActivity(intent);
                         Log.d(TAG,"open sample live tv details page");
                     }
-
                     else{
                         intent = new Intent(getContext(), LiveActivity.class);
                         intent.putExtra("videoId",card.getVideoId());
-
                         //to set video title
                         intent.putExtra("videoTitle",card.getTitle());
-
-
                         getContext().startActivity(intent);
                     }
-
                 }
             });
         }
 
-        private void loadData() {
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+
+            createRows();
+
+            getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
+        }
+
+
+        private void createRows() {
             String json = Utils.inputStreamToString(getResources().openRawResource(
                     R.raw.grid_live_broadcast));
-            CardRow cardRow = new Gson().fromJson(json, CardRow.class);
+            CardRow[] rows = new Gson().fromJson(json, CardRow[].class);
+            for (CardRow row : rows) {
+                if (row.getType() == CardRow.TYPE_DEFAULT) {
+                    mRowsAdapter.add(createCardRow(row));
+                }
+            }
+        }
 
-            //to implement header with icon
-            IconHeaderItem headerItem = new IconHeaderItem(cardRow.getTitle());
+        private Row createCardRow(CardRow cardRow) {
+            PresenterSelector presenterSelector = new CardPresenterSelector(getActivity());
+            ArrayObjectAdapter adapter = new ArrayObjectAdapter(presenterSelector);
+            for (Card card : cardRow.getCards()) {
+                adapter.add(card);
+            }
 
-
-            mAdapter.addAll(0, cardRow.getCards());
+            IconHeaderItem headerItem = new IconHeaderItem(cardRow.getTitle(),R.drawable.live_icon_text);
+            //HeaderItem headerItem = new HeaderItem(cardRow.getTitle());
+            return new CardListRow(headerItem, adapter, cardRow);
         }
     }
 

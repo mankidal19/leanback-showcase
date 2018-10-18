@@ -35,7 +35,7 @@ public class ShadowRowPresenterSelector extends PresenterSelector {
     private static final String TAG = "ShadowRowPresenter";
     private ListRowPresenter mShadowEnabledRowPresenter = new ListRowPresenter();
     private ListRowPresenter mShadowDisabledRowPresenter = new ListRowPresenter();
-    private IconHeaderItemPresenter mIconHeaderItemPresenter = new IconHeaderItemPresenter();
+    //private IconHeaderItemPresenter mIconHeaderItemPresenter = new IconHeaderItemPresenter();
 
     public ShadowRowPresenterSelector() {
         mShadowEnabledRowPresenter.setNumRows(1);
@@ -73,5 +73,9 @@ public class ShadowRowPresenterSelector extends PresenterSelector {
             mShadowEnabledRowPresenter = presenters[1];
         }
 
+    }
+
+    public void setRows(int n){
+        mShadowEnabledRowPresenter.setNumRows(n);
     }
 }
