@@ -1,7 +1,10 @@
 package nurulaiman.sony.fragment;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -33,7 +36,9 @@ import android.support.v17.leanback.widget.PresenterSelector;
 import android.support.v17.leanback.widget.Row;
 import android.support.v17.leanback.widget.RowPresenter;
 import android.support.v17.leanback.widget.VerticalGridPresenter;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -86,6 +91,9 @@ public class MainBrowseFragment extends BrowseFragment {
 
     private MatchingCardUtils matchingCardUtils = null;
 
+    //for RGYB buttons function
+    private PageRowFragmentFactory mPageRowFragmentFactory = null;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,8 +103,13 @@ public class MainBrowseFragment extends BrowseFragment {
 
         mBackgroundManager = BackgroundManager.getInstance(getActivity());
         mBackgroundManager.attach(getActivity().getWindow());
+        /*getMainFragmentRegistry().registerFragment(PageRow.class,
+                new PageRowFragmentFactory(mBackgroundManager));*/
+
+        //for RGYB buttons function
+        mPageRowFragmentFactory = new PageRowFragmentFactory(mBackgroundManager);
         getMainFragmentRegistry().registerFragment(PageRow.class,
-                new PageRowFragmentFactory(mBackgroundManager));
+                mPageRowFragmentFactory);
 
 
         matchingCardUtils = new MatchingCardUtils(getContext());
@@ -116,6 +129,64 @@ public class MainBrowseFragment extends BrowseFragment {
         super.onResume();
 
     }
+
+    //for RGYB shortcut buttons
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+
+// Register to receive messages.
+// We are registering an observer (mMessageReceiver) to receive Intents
+// with actions named "custom-event-name".
+        LocalBroadcastManager.getInstance(getContext()).registerReceiver(mMessageReceiver,
+                new IntentFilter("activity-says-hi"));
+    }
+
+    // Our handler for received Intents. This will be called whenever an Intent
+    // with an action named "custom-event-name" is broadcasted.
+    private BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            // Get extra data included in the Intent
+            KeyEvent keyEvent = (KeyEvent)intent.getParcelableExtra(Intent.EXTRA_KEY_EVENT);
+            int keyCode = keyEvent.getKeyCode();
+
+           // KeyEvent keyEvent = KeyEvent(KeyEvent.keyCodeToString(keyCode));
+            Log.d(TAG,"KEYEVENT RECEIVED: " + keyEvent.toString());
+            startHeadersTransition(false);
+
+            //doSomething for RGYB buttons;
+            switch (keyCode) {
+
+
+                case KeyEvent.KEYCODE_PROG_RED:
+                    //LIVE TV
+                    Log.d(TAG,"Red button pressed");
+                    setSelectedPosition(1,true);
+
+                    break;
+
+                case KeyEvent.KEYCODE_PROG_GREEN:
+                    //DUMMY DRAMA
+                    Log.d(TAG,"Green button pressed");
+                    setSelectedPosition(2,true);
+                    break;
+
+                case KeyEvent.KEYCODE_PROG_YELLOW:
+                    Log.d(TAG,"Yellow button pressed");
+                    setSelectedPosition(3,true);
+                    break;
+
+                case KeyEvent.KEYCODE_PROG_BLUE:
+                    Log.d(TAG,"Blue button pressed");
+                    setSelectedPosition(4,true);
+                    break;
+            }
+
+
+        }
+    };
 
 
 
@@ -211,15 +282,19 @@ public class MainBrowseFragment extends BrowseFragment {
         @Override
         public Fragment createFragment(Object rowObj) {
             Row row = (Row)rowObj;
+
             mBackgroundManager.setDrawable(null);
 
-            if(row.getHeaderItem()!=null){
-                Log.i(TAG,"HeaderItem obtained- "+row.getHeaderItem().getId());
+            //debug
+            if(row!=null){
+                Log.d(TAG,"HeaderItem obtained- "+row+", "+row.getHeaderItem().getId());
+
             }
 
             else {
-                Log.i(TAG,"HeaderItem NOT obtained- "+row.getHeaderItem().getId());
+                Log.d(TAG,"HeaderItem NOT obtained ");
             }
+
 
             if(row.getHeaderItem().getId() == HEADER_ID_9){
                 return new MainBrowseFragment.FragmentLoginSignUp();
@@ -245,7 +320,7 @@ public class MainBrowseFragment extends BrowseFragment {
                 return new MainBrowseFragment.FragmentMovie();
             }
 
-            //DUMMY
+            //DUMMY for drama
             else{
                 MainBrowseFragment.FragmentTvShow fragment = new MainBrowseFragment.FragmentTvShow();
                 Bundle bundle = new Bundle();
@@ -255,6 +330,7 @@ public class MainBrowseFragment extends BrowseFragment {
                 return fragment;
 
             }
+
 
             //throw new IllegalArgumentException(String.format("Invalid row %s", rowObj));
         }
