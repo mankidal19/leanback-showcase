@@ -47,6 +47,7 @@ import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 
 //implement voice interaction
@@ -111,7 +112,6 @@ public class MainBrowseFragment extends BrowseFragment {
         getMainFragmentRegistry().registerFragment(PageRow.class,
                 mPageRowFragmentFactory);
 
-
         matchingCardUtils = new MatchingCardUtils(getContext());
 
     }
@@ -154,7 +154,12 @@ public class MainBrowseFragment extends BrowseFragment {
 
            // KeyEvent keyEvent = KeyEvent(KeyEvent.keyCodeToString(keyCode));
             Log.d(TAG,"KEYEVENT RECEIVED: " + keyEvent.toString());
-            startHeadersTransition(false);
+
+            //need the if, to debug if opening app from Google Assistant
+            if(getRowsFragment()!=null){
+                startHeadersTransition(false);
+            }
+
 
             //doSomething for RGYB buttons;
             switch (keyCode) {

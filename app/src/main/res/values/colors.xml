@@ -14,7 +14,7 @@
   ~
   -->
 <resources>
-    <color name="background_gradient_start">#FFFFFF</color>
+    <color name="background_gradient_start">#ffffff</color>
     <color name="background_gradient_end">#DDDDDD</color>
     <color name="fastlane_background">#06838f</color>
     <color name="fastlane_teal_background">#00796B</color>

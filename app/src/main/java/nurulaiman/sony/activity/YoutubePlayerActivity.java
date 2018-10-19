@@ -1,16 +1,16 @@
 package nurulaiman.sony.activity;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v17.leanback.supportleanbackshowcase.R;
 import android.support.v17.leanback.supportleanbackshowcase.models.Card;
 import android.support.v17.leanback.supportleanbackshowcase.models.DetailedCard;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,6 +46,10 @@ public class YoutubePlayerActivity extends FragmentActivity {
     //for displaying current video title
     private TextView textView = null;
 
+    //for displaying icon when user presses button
+    //private TextView textMessageView = null;
+    private ImageView iconView = null;
+    private int defaultHideTime = 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,13 +121,24 @@ public class YoutubePlayerActivity extends FragmentActivity {
         //YouTubePlayerView youTubePlayerView = findViewById(R.id.youtube_player_view);
         youTubePlayerView = findViewById(R.id.youtube_player_view);
         youTubePlayerView.getPlayerUIController().showFullscreenButton(false);
-        //youTubePlayerView.getPlayerUIController().showUI(true);
+        youTubePlayerView.getPlayerUIController().showUI(false);
         youTubePlayerView.getPlayerUIController().enableLiveVideoUI(false);
+
+
 
 
         //youtubeVideoId = getIntent().getExtras().getString("videoId");
         Log.i("YoutubePlayerActivity","current videoID: "+ youtubeVideoId);
 
+        //to display prompt message
+        /*textMessageView = findViewById(R.id.textMessage);
+        textMessageView.setVisibility(View.VISIBLE);
+        textMessageView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_home_black_24dp,0,0,0);*/
+
+        //to display icon
+        iconView = findViewById(R.id.iconView);
+        iconView.setVisibility(View.GONE);
+        //iconView.setImageDrawable(getDrawable(R.drawable.ic_home_black_24dp));
 
         //to display video title
         if(youtubeVideoTitle!=null){
@@ -135,7 +150,7 @@ public class YoutubePlayerActivity extends FragmentActivity {
             textView = findViewById(R.id.textView2);
             textView.setText(youtubeVideoTitle);
 
-            //hide after 3 seconds
+            //hide after 5 seconds
             textView.postDelayed(new Runnable() {
                 public void run() {
                     textView.setVisibility(View.GONE);
@@ -175,7 +190,7 @@ public class YoutubePlayerActivity extends FragmentActivity {
 
         Log.i("KeyEvent",KeyCode + " button pressed");
 
-
+/*
         if(KeyCode == KeyEvent.KEYCODE_BACK){
             Log.i("KeyEvent","Return button pressed");
             handled=true;
@@ -185,7 +200,7 @@ public class YoutubePlayerActivity extends FragmentActivity {
 
         }
 
-        else if(KeyCode == KeyEvent.KEYCODE_ESCAPE){
+        else */if(KeyCode == KeyEvent.KEYCODE_ESCAPE){
             Log.i("KeyEvent","Exit button pressed");
             handled=true;
             moveTaskToBack(true);
@@ -202,13 +217,20 @@ public class YoutubePlayerActivity extends FragmentActivity {
                 playing=false;
                 youTubePlayerView.getPlayerUIController().showUI(true);
                 textView.setVisibility(View.VISIBLE);
+
+                iconView.setImageDrawable(getDrawable(R.drawable.ic_pause_white_24dp));
+                iconView.setVisibility(View.VISIBLE);
             }
             else{
                 youTubePlayer.play();
                 playing = true;
                 textView.setVisibility(View.GONE);
 
+                iconView.setImageDrawable(getDrawable(R.drawable.ic_play_arrow_white_24dp));
+                iconView.setVisibility(View.VISIBLE);
             }
+
+            hideIconView(defaultHideTime);
 
         }
 
@@ -219,7 +241,12 @@ public class YoutubePlayerActivity extends FragmentActivity {
                 youTubePlayer.play();
                 playing = true;
                 textView.setVisibility(View.GONE);
+
+                iconView.setImageDrawable(getDrawable(R.drawable.ic_play_arrow_white_24dp));
+                iconView.setVisibility(View.VISIBLE);
+                hideIconView(defaultHideTime);
             }
+
 
         }
 
@@ -232,6 +259,10 @@ public class YoutubePlayerActivity extends FragmentActivity {
                 textView.setVisibility(View.VISIBLE);
                 //youTubePlayerView.getPlayerUIController().showSeekBar(true);
 
+                iconView.setImageDrawable(getDrawable(R.drawable.ic_pause_white_24dp));
+                iconView.setVisibility(View.VISIBLE);
+                hideIconView(defaultHideTime);
+
             }
 
         }
@@ -239,18 +270,28 @@ public class YoutubePlayerActivity extends FragmentActivity {
             Log.i("KeyEvent","Rewind button pressed");
             handled=true;
             youTubePlayer.seekTo(tracker.getCurrentSecond()-10);
+
+            iconView.setImageDrawable(getDrawable(R.drawable.ic_fast_rewind_white_24dp));
+            iconView.setVisibility(View.VISIBLE);
+            hideIconView(defaultHideTime);
         }
 
         else if(KeyCode==KeyEvent.KEYCODE_MEDIA_FAST_FORWARD){
             Log.i("KeyEvent","Fast Forward button pressed");
             handled=true;
             youTubePlayer.seekTo(tracker.getCurrentSecond()+10);
+
+            iconView.setImageDrawable(getDrawable(R.drawable.ic_fast_forward_white_24dp));
+            iconView.setVisibility(View.VISIBLE);
+            hideIconView(defaultHideTime);
         }
 
         else if(KeyCode==KeyEvent.KEYCODE_MEDIA_NEXT){
             Log.i("KeyEvent","Next button pressed");
             handled=true;
 
+            iconView.setImageDrawable(getDrawable(R.drawable.ic_skip_next_white_24dp));
+            iconView.setVisibility(View.VISIBLE);
 
 
             String newVideoId = getNextEpisode();
@@ -261,14 +302,20 @@ public class YoutubePlayerActivity extends FragmentActivity {
 
                 intent.putExtra("videoId",newVideoId);
                 intent.putExtra("videoTitle",titleArrayList.get(episodeArrayList.indexOf(newVideoId)));
-                startActivity(intent);
-            }
+                //startActivity(intent);
+                delayStartActivity(2000,intent);
 
+
+            }
+            hideIconView(defaultHideTime);
         }
 
         else if(KeyCode==KeyEvent.KEYCODE_MEDIA_PREVIOUS){
             Log.i("KeyEvent","Previous button pressed");
             handled=true;
+
+            iconView.setImageDrawable(getDrawable(R.drawable.ic_skip_previous_white_24dp));
+            iconView.setVisibility(View.VISIBLE);
 
             String newVideoId = getPrevEpisode();
 
@@ -278,22 +325,35 @@ public class YoutubePlayerActivity extends FragmentActivity {
 
                 intent.putExtra("videoId",newVideoId);
                 intent.putExtra("videoTitle",titleArrayList.get(episodeArrayList.indexOf(newVideoId)));
-                startActivity(intent);
+
+                //startActivity(intent);
+                delayStartActivity(defaultHideTime,intent);
+
+
             }
+            hideIconView(3000);
         }
 
         else if(KeyCode==KeyEvent.KEYCODE_CHANNEL_DOWN){
             Log.i("KeyEvent","CH- button pressed");
             handled=true;
-            Toast.makeText(this, "CH- button feature available on Live TV.", Toast.LENGTH_LONG)
+            Toast.makeText(this, "CH- button feature available on Live TV.", Toast.LENGTH_SHORT)
                     .show();
+
+            iconView.setImageDrawable(getDrawable(R.drawable.ic_ch_minus));
+            iconView.setVisibility(View.VISIBLE);
+            hideIconView(defaultHideTime);
         }
 
         else if(KeyCode==KeyEvent.KEYCODE_CHANNEL_UP){
             Log.i("KeyEvent","CH+ button pressed");
             handled=true;
-            Toast.makeText(this, "CH+ button feature available on Live TV.", Toast.LENGTH_LONG)
+            Toast.makeText(this, "CH+ button feature available on Live TV.", Toast.LENGTH_SHORT)
                     .show();
+
+            iconView.setImageDrawable(getDrawable(R.drawable.ic_ch_plus));
+            iconView.setVisibility(View.VISIBLE);
+            hideIconView(defaultHideTime);
         }
 
 
@@ -311,12 +371,30 @@ public class YoutubePlayerActivity extends FragmentActivity {
         //return handled;
     }
 
+    //hide icon
+    public void hideIconView(int time){
+        iconView.postDelayed(new Runnable() {
+            public void run() {
+                iconView.setVisibility(View.GONE);
+            }
+        }, time);
+    }
+
+    public void delayStartActivity(int time, Intent intent){
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                startActivity(intent);
+            }
+        }, time);
+    }
+
     private String getPrevEpisode() {
         int idx = episodeArrayList.indexOf(youtubeVideoId);
 
 
         if(episodeArrayList.isEmpty()){
-            Toast.makeText(this, "PREVIOUS button feature available on TV Shows VOD.", Toast.LENGTH_LONG)
+            Toast.makeText(this, "PREVIOUS button feature available on TV Shows VOD.", Toast.LENGTH_SHORT)
                     .show();
             return null;
         }
@@ -329,7 +407,7 @@ public class YoutubePlayerActivity extends FragmentActivity {
 
         else{
 
-            Toast.makeText(this, "Previous episode unavailable.", Toast.LENGTH_LONG)
+            Toast.makeText(this, "Previous episode unavailable.", Toast.LENGTH_SHORT)
                     .show();
             return  null;
         }
@@ -347,13 +425,13 @@ public class YoutubePlayerActivity extends FragmentActivity {
         }
 
         else if(episodeArrayList.isEmpty()){
-            Toast.makeText(this, "NEXT button feature available on TV Shows VOD.", Toast.LENGTH_LONG)
+            Toast.makeText(this, "NEXT button feature available on TV Shows VOD.", Toast.LENGTH_SHORT)
                     .show();
             return null;
         }
 
         else{
-            Toast.makeText(this, "Next episode unavailable.", Toast.LENGTH_LONG)
+            Toast.makeText(this, "Next episode unavailable.", Toast.LENGTH_SHORT)
                     .show();
             return null;
         }

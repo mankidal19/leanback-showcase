@@ -2,6 +2,7 @@ package nurulaiman.sony.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 
 import android.support.v17.leanback.supportleanbackshowcase.R;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,7 +25,7 @@ import nurulaiman.sony.data.MockDatabase;
 public class LiveActivity extends FragmentActivity {
 
     //default live TV
-    private String liveVideoId = "FdtQ2ZgLbEs";
+    private String liveVideoId = "iygNrT5d27U";
     private YouTubePlayerView youTubePlayerView = null;
     //to implement play/pause
     private YouTubePlayer youTubePlayer = null;
@@ -36,6 +38,9 @@ public class LiveActivity extends FragmentActivity {
     private String videoTitle = null;
     MockDatabase mockDatabase = new MockDatabase(this);
     private TextView textView = null;
+
+    private ImageView iconView = null;
+    private int defaultHideTime = 1000;
 
 
 
@@ -117,22 +122,35 @@ public class LiveActivity extends FragmentActivity {
         if(event.getKeyCode() == KeyEvent.KEYCODE_CHANNEL_DOWN){
             Log.i("KeyEvent","Channel down button pressed");
             handled=true;
-            onDestroy();
+            //onDestroy();
             //youTubePlayerView.release();
             intent.putExtra("videoId",getPrevChannel());
 
-            startActivity(intent);
+            iconView.setImageDrawable(getDrawable(R.drawable.ic_ch_minus));
+            iconView.setVisibility(View.VISIBLE);
+
+
+            //startActivity(intent);
+            delayStartActivity(1000,intent);
+            hideIconView(defaultHideTime);
         }
 
         else if(event.getKeyCode() == KeyEvent.KEYCODE_CHANNEL_UP){
             Log.i("KeyEvent","Channel up button pressed");
             handled=true;
-            onDestroy();
+            //onDestroy();
             intent.putExtra("videoId",getNextChannel());
 
             //youTubePlayerView.release();
 
-            startActivity(intent);
+            iconView.setImageDrawable(getDrawable(R.drawable.ic_ch_plus));
+            iconView.setVisibility(View.VISIBLE);
+
+
+            //startActivity(intent);
+            delayStartActivity(1000,intent);
+            hideIconView(defaultHideTime);
+
         }
 
         else if(event.getKeyCode() == KeyEvent.KEYCODE_BACK){
@@ -141,7 +159,8 @@ public class LiveActivity extends FragmentActivity {
             intent = new Intent(this, MainActivity.class);
 
             onDestroy();
-            startActivity(intent);
+            //startActivity(intent);
+            delayStartActivity(1000,intent);
         }
 
         else if(event.getKeyCode() == KeyEvent.KEYCODE_ESCAPE){
@@ -162,12 +181,20 @@ public class LiveActivity extends FragmentActivity {
                 youTubePlayerView.getPlayerUIController().showUI(true);
                 textView.setVisibility(View.VISIBLE);
 
+                iconView.setImageDrawable(getDrawable(R.drawable.ic_pause_white_24dp));
+                iconView.setVisibility(View.VISIBLE);
+
             }
             else{
                 youTubePlayer.play();
                 playing = true;
                 textView.setVisibility(View.GONE);
+
+                iconView.setImageDrawable(getDrawable(R.drawable.ic_play_arrow_white_24dp));
+                iconView.setVisibility(View.VISIBLE);
             }
+
+            hideIconView(defaultHideTime);
 
         }
 
@@ -178,6 +205,10 @@ public class LiveActivity extends FragmentActivity {
                 youTubePlayer.play();
                 playing = true;
                 textView.setVisibility(View.GONE);
+
+                iconView.setImageDrawable(getDrawable(R.drawable.ic_play_arrow_white_24dp));
+                iconView.setVisibility(View.VISIBLE);
+                hideIconView(defaultHideTime);
             }
 
         }
@@ -190,6 +221,10 @@ public class LiveActivity extends FragmentActivity {
                 playing = false;
                 //youTubePlayerView.getPlayerUIController().showSeekBar(true);
                 textView.setVisibility(View.VISIBLE);
+
+                iconView.setImageDrawable(getDrawable(R.drawable.ic_pause_white_24dp));
+                iconView.setVisibility(View.VISIBLE);
+                hideIconView(defaultHideTime);
             }
 
         }
@@ -197,29 +232,45 @@ public class LiveActivity extends FragmentActivity {
         else if(KeyCode==KeyEvent.KEYCODE_MEDIA_REWIND){
             Log.i("KeyEvent","Rewind button pressed");
             handled=true;
-            Toast.makeText(this, "REWIND button feature available on VOD.", Toast.LENGTH_LONG)
+            Toast.makeText(this, "REWIND button feature available on VOD.", Toast.LENGTH_SHORT)
                     .show();
+
+            iconView.setImageDrawable(getDrawable(R.drawable.ic_fast_rewind_white_24dp));
+            iconView.setVisibility(View.VISIBLE);
+            hideIconView(defaultHideTime);
         }
 
         else if(KeyCode==KeyEvent.KEYCODE_MEDIA_FAST_FORWARD){
             Log.i("KeyEvent","Fast Forward button pressed");
             handled=true;
-            Toast.makeText(this, "FAST FORWARD button feature available on VOD.", Toast.LENGTH_LONG)
+            Toast.makeText(this, "FAST FORWARD button feature available on VOD.", Toast.LENGTH_SHORT)
                     .show();
+
+
+            iconView.setImageDrawable(getDrawable(R.drawable.ic_fast_forward_white_24dp));
+            iconView.setVisibility(View.VISIBLE);
+            hideIconView(defaultHideTime);
         }
 
         else if(KeyCode==KeyEvent.KEYCODE_MEDIA_PREVIOUS){
             Log.i("KeyEvent","Rewind button pressed");
             handled=true;
-            Toast.makeText(this, "PREVIOUS button feature available on TV Shows VOD.", Toast.LENGTH_LONG)
+            Toast.makeText(this, "PREVIOUS button feature available on TV Shows VOD.", Toast.LENGTH_SHORT)
                     .show();
+            iconView.setImageDrawable(getDrawable(R.drawable.ic_skip_previous_white_24dp));
+            iconView.setVisibility(View.VISIBLE);
+            hideIconView(defaultHideTime);
         }
 
         else if(KeyCode==KeyEvent.KEYCODE_MEDIA_NEXT){
             Log.i("KeyEvent","Fast Forward button pressed");
             handled=true;
-            Toast.makeText(this, "NEXT button feature available on TV Shows VOD.", Toast.LENGTH_LONG)
+            Toast.makeText(this, "NEXT button feature available on TV Shows VOD.", Toast.LENGTH_SHORT)
                     .show();
+
+            iconView.setImageDrawable(getDrawable(R.drawable.ic_skip_next_white_24dp));
+            iconView.setVisibility(View.VISIBLE);
+            hideIconView(defaultHideTime);
         }
 
         if(handled){
@@ -250,6 +301,12 @@ public class LiveActivity extends FragmentActivity {
 
         liveVideoId = getIntent().getExtras().getString("videoId");
         Log.i("in Live Activity","current videoID: "+ liveVideoId);
+
+
+        //to display icon
+        iconView = findViewById(R.id.iconView2);
+        iconView.setVisibility(View.GONE);
+
 
         //to set video title
 
@@ -306,11 +363,30 @@ public class LiveActivity extends FragmentActivity {
         this.youTubePlayer = youTubePlayer;
     }
 
+    //hide icon
+    public void hideIconView(int time){
+        iconView.postDelayed(new Runnable() {
+            public void run() {
+                iconView.setVisibility(View.GONE);
+            }
+        }, time);
+    }
+
+    public void delayStartActivity(int time, Intent intent){
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                startActivity(intent);
+            }
+        }, time);
+    }
+
     //initialize channel list ArrayList
     private void initChannelList(){
-        channelArrayList.add("FdtQ2ZgLbEs");
+
+        channelArrayList.add("iygNrT5d27U");
         channelArrayList.add("2LWt-dxd0v4");
-        channelArrayList.add("DrtjkQAa1lI");
+        channelArrayList.add("Ek7K4pq0jZY");
         channelArrayList.add("KkXq2sv6Tos");
         channelArrayList.add("Lvp-lSqHVKc");
     }
