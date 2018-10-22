@@ -42,6 +42,8 @@ public class LiveActivity extends FragmentActivity {
     private ImageView iconView = null;
     private int defaultHideTime = 1000;
 
+    private String nextToLoadVidId = null;
+
 
 
     @Override
@@ -124,7 +126,10 @@ public class LiveActivity extends FragmentActivity {
             handled=true;
             //onDestroy();
             //youTubePlayerView.release();
-            intent.putExtra("videoId",getPrevChannel());
+            nextToLoadVidId = getPrevChannel();
+            initVideoTitle(nextToLoadVidId);
+
+            intent.putExtra("videoId",nextToLoadVidId);
 
             iconView.setImageDrawable(getDrawable(R.drawable.ic_ch_minus));
             iconView.setVisibility(View.VISIBLE);
@@ -139,7 +144,10 @@ public class LiveActivity extends FragmentActivity {
             Log.i("KeyEvent","Channel up button pressed");
             handled=true;
             //onDestroy();
-            intent.putExtra("videoId",getNextChannel());
+
+            nextToLoadVidId = getNextChannel();
+            initVideoTitle(nextToLoadVidId);
+            intent.putExtra("videoId",nextToLoadVidId);
 
             //youTubePlayerView.release();
 
@@ -317,7 +325,7 @@ public class LiveActivity extends FragmentActivity {
         }*/
 
         //method #2- using mockdatabase searchCard()
-        videoTitle = mockDatabase.searchCard(liveVideoId).getTitle();
+        /*videoTitle = mockDatabase.searchCard(liveVideoId).getTitle();
         if(videoTitle!=null){
             //youTubePlayerView.getPlayerUIController().setVideoTitle(videoTitle);
 
@@ -334,8 +342,10 @@ public class LiveActivity extends FragmentActivity {
                     textView.setVisibility(View.GONE);
                 }
             }, 5000);
-        }
+        }*/
 
+        //method #3- using reusable function
+        initVideoTitle(liveVideoId);
 
 
 
@@ -361,6 +371,28 @@ public class LiveActivity extends FragmentActivity {
 
     private void passYoutubePlayer(YouTubePlayer youTubePlayer) {
         this.youTubePlayer = youTubePlayer;
+    }
+
+    //to display next video title faster
+    public void initVideoTitle(String videoId){
+        videoTitle = mockDatabase.searchCard(videoId).getTitle();
+        if(videoTitle!=null){
+            //youTubePlayerView.getPlayerUIController().setVideoTitle(videoTitle);
+
+            //to display pop-up when changing channel
+            //
+            String channelNum = "10"+ Integer.toString(channelArrayList.indexOf(liveVideoId)+1);
+            String displayText = channelNum + ": " + videoTitle;
+            textView = findViewById(R.id.textView1);
+            textView.setText(displayText);
+
+            //hide after 3 seconds
+            textView.postDelayed(new Runnable() {
+                public void run() {
+                    textView.setVisibility(View.GONE);
+                }
+            }, 5000);
+        }
     }
 
     //hide icon

@@ -70,9 +70,9 @@ public class MainBrowseFragment extends BrowseFragment {
     private static final long HEADER_ID_1 = 1;
     private static final String HEADER_NAME_1 = "[User Custom] HOME";
     private static final long HEADER_ID_2 = 2;
-    private static final String HEADER_NAME_2 = "LIVE TV";
+    private static final String HEADER_NAME_2 = "LIVE TV CHANNELS";
     private static final long HEADER_ID_3 = 3;
-    private static final String HEADER_NAME_3 = "DRAMA SERIES";
+    private static final String HEADER_NAME_3 = "NEWS & SPORTS";
     private static final long HEADER_ID_4 = 4;
     private static final String HEADER_NAME_4 = "TV SHOWS";
     private static final long HEADER_ID_5 = 5;
@@ -314,30 +314,31 @@ public class MainBrowseFragment extends BrowseFragment {
                 return new MainBrowseFragment.FragmentLiveBroadcast();
             }
             else if(row.getHeaderItem().getId() == HEADER_ID_4){
-                MainBrowseFragment.FragmentTvShow fragment = new MainBrowseFragment.FragmentTvShow();
+                /*MainBrowseFragment.FragmentTvShow fragment = new MainBrowseFragment.FragmentTvShow();
                 Bundle bundle = new Bundle();
                 bundle.putLong("headerId",row.getHeaderItem().getId());
                 fragment.setArguments(bundle);
 
-                return fragment;
+                return fragment;*/
+                return new MainBrowseFragment.FragmentTvShow();
             }
             else if(row.getHeaderItem().getId() == HEADER_ID_5){
                 return new MainBrowseFragment.FragmentMovie();
             }
 
             //DUMMY for drama
-            else{
-                MainBrowseFragment.FragmentTvShow fragment = new MainBrowseFragment.FragmentTvShow();
+            else if(row.getHeaderItem().getId() == HEADER_ID_3){
+                /*MainBrowseFragment.FragmentTvShow fragment = new MainBrowseFragment.FragmentTvShow();
                 Bundle bundle = new Bundle();
                 bundle.putLong("headerId",row.getHeaderItem().getId());
                 fragment.setArguments(bundle);
 
-                return fragment;
-
+                return fragment;*/
+                return new MainBrowseFragment.FragmentNewsSports();
             }
 
 
-            //throw new IllegalArgumentException(String.format("Invalid row %s", rowObj));
+            throw new IllegalArgumentException(String.format("Invalid row %s", rowObj));
         }
     }
 
@@ -610,16 +611,97 @@ public class MainBrowseFragment extends BrowseFragment {
 
             //IconHeaderItem headerItem = new IconHeaderItem(cardRow.getTitle());
             IconHeaderItem headerItem;
-            long headerId = getArguments().getLong("headerId");
+            //long headerId = getArguments().getLong("headerId");
 
-            if(headerId==HEADER_ID_4){
-                headerItem =  new IconHeaderItem(cardRow.getTitle(),R.drawable.vod_icon_text_yellow);
+            headerItem =  new IconHeaderItem(cardRow.getTitle(),R.drawable.vod_icon_text_yellow);
+
+
+
+            return new CardListRow(headerItem, adapter, cardRow);
+        }
+    }
+
+    public static class FragmentNewsSports extends RowsFragment {
+        private final ArrayObjectAdapter mRowsAdapter;
+
+        public FragmentNewsSports() {
+            mRowsAdapter = new ArrayObjectAdapter(new CustomShadowRowPresenterSelector());
+
+            setAdapter(mRowsAdapter);
+            setOnItemViewClickedListener(new OnItemViewClickedListener() {
+                @Override
+                public void onItemClicked(
+                        Presenter.ViewHolder itemViewHolder,
+                        Object item,
+                        RowPresenter.ViewHolder rowViewHolder,
+                        Row row) {
+                    /*Toast.makeText(getActivity(), "Implement click handler", Toast.LENGTH_SHORT)
+                            .show();*/
+                    Intent intent = null;
+                    Card selectedCard = (Card)item;
+
+                    intent = new Intent(getContext(), DetailViewTvShowActivity.class);
+                    intent.putExtra("videoId",selectedCard.getVideoId());
+                    intent.putExtra("videoTitle",selectedCard.getTitle());
+
+
+                    startActivity(intent);
+                    Log.d(TAG,"open tv show details page");
+
+
+
+
+                }
+            });
+        }
+
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            createRows();
+            getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+            //expand
+            setExpand(true);
+
+            return super.onCreateView(inflater,container,savedInstanceState);
+        }
+
+        @Override
+        public void onTransitionEnd(){
+            //expand
+            setExpand(true);
+
+            super.onTransitionEnd();
+        }
+
+        private void createRows() {
+            String json = Utils.inputStreamToString(getResources().openRawResource(
+                    R.raw.news_sports_browse_row));
+            CardRow[] rows = new Gson().fromJson(json, CardRow[].class);
+            for (CardRow row : rows) {
+                if (row.getType() == CardRow.TYPE_DEFAULT) {
+                    mRowsAdapter.add(createCardRow(row));
+                }
+            }
+        }
+
+        private Row createCardRow(CardRow cardRow) {
+            PresenterSelector presenterSelector = new CardPresenterSelector(getActivity());
+            ArrayObjectAdapter adapter = new ArrayObjectAdapter(presenterSelector);
+            for (Card card : cardRow.getCards()) {
+                adapter.add(card);
             }
 
-            //dummy for drama
-            else{
-                headerItem =  new IconHeaderItem(cardRow.getTitle(),R.drawable.vod_icon_text_green);
-            }
+            //IconHeaderItem headerItem = new IconHeaderItem(cardRow.getTitle());
+            IconHeaderItem headerItem;
+            //long headerId = getArguments().getLong("headerId");
+            headerItem =  new IconHeaderItem(cardRow.getTitle(),R.drawable.vod_icon_text_green);
+
 
 
             return new CardListRow(headerItem, adapter, cardRow);

@@ -1,6 +1,6 @@
 [
   {
-    "title": "New",
+    "title": "New Movies",
     "cards": [
       {
         "type": "DEFAULT",
@@ -40,7 +40,7 @@
     ]
   },
   {
-    "title": "Monthly Top Picks",
+    "title": "Movies Top Picks",
     "cards": [
       {
         "type": "DEFAULT",

@@ -51,6 +51,8 @@ public class YoutubePlayerActivity extends FragmentActivity {
     private ImageView iconView = null;
     private int defaultHideTime = 1000;
 
+    private String nextToLoadVidTitle = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -130,10 +132,6 @@ public class YoutubePlayerActivity extends FragmentActivity {
         //youtubeVideoId = getIntent().getExtras().getString("videoId");
         Log.i("YoutubePlayerActivity","current videoID: "+ youtubeVideoId);
 
-        //to display prompt message
-        /*textMessageView = findViewById(R.id.textMessage);
-        textMessageView.setVisibility(View.VISIBLE);
-        textMessageView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_home_black_24dp,0,0,0);*/
 
         //to display icon
         iconView = findViewById(R.id.iconView);
@@ -149,6 +147,7 @@ public class YoutubePlayerActivity extends FragmentActivity {
 
             textView = findViewById(R.id.textView2);
             textView.setText(youtubeVideoTitle);
+            textView.setVisibility(View.VISIBLE);
 
             //hide after 5 seconds
             textView.postDelayed(new Runnable() {
@@ -297,13 +296,17 @@ public class YoutubePlayerActivity extends FragmentActivity {
             String newVideoId = getNextEpisode();
 
             if(newVideoId!=null){
-                onDestroy();
+
                 intent = new Intent(this, YoutubePlayerActivity.class);
 
+                nextToLoadVidTitle = titleArrayList.get(episodeArrayList.indexOf(newVideoId));
+                initVideoTitle(nextToLoadVidTitle);
+
                 intent.putExtra("videoId",newVideoId);
-                intent.putExtra("videoTitle",titleArrayList.get(episodeArrayList.indexOf(newVideoId)));
+                intent.putExtra("videoTitle",nextToLoadVidTitle);
                 //startActivity(intent);
-                delayStartActivity(2000,intent);
+                //onDestroy();
+                delayStartActivity(500,intent);
 
 
             }
@@ -319,15 +322,20 @@ public class YoutubePlayerActivity extends FragmentActivity {
 
             String newVideoId = getPrevEpisode();
 
+
             if(newVideoId!=null){
-                onDestroy();
+
+                nextToLoadVidTitle = titleArrayList.get(episodeArrayList.indexOf(newVideoId));
+                initVideoTitle(nextToLoadVidTitle);
+
                 intent = new Intent(this, YoutubePlayerActivity.class);
 
                 intent.putExtra("videoId",newVideoId);
-                intent.putExtra("videoTitle",titleArrayList.get(episodeArrayList.indexOf(newVideoId)));
+                intent.putExtra("videoTitle",nextToLoadVidTitle);
 
                 //startActivity(intent);
-                delayStartActivity(defaultHideTime,intent);
+                //onDestroy();
+                delayStartActivity(500,intent);
 
 
             }
@@ -387,6 +395,23 @@ public class YoutubePlayerActivity extends FragmentActivity {
                 startActivity(intent);
             }
         }, time);
+    }
+
+    //to display next video title faster
+    public void initVideoTitle(String videoTitle){
+
+        if(videoTitle!=null){
+
+            textView = findViewById(R.id.textView2);
+            textView.setText(videoTitle);
+
+            //hide after 3 seconds
+            textView.postDelayed(new Runnable() {
+                public void run() {
+                    textView.setVisibility(View.GONE);
+                }
+            }, 5000);
+        }
     }
 
     private String getPrevEpisode() {

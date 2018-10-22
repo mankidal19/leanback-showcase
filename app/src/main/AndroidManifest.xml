@@ -230,7 +230,8 @@
 
         <activity
             android:name="nurulaiman.sony.activity.YoutubePlayerActivity"
-            android:theme="@style/Theme.Example.Leanback.CustomTitle">
+            android:theme="@style/Theme.Example.Leanback.CustomTitle"
+            android:noHistory="true" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
