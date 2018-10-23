@@ -89,7 +89,8 @@ dependencies {
 
     implementation "com.google.code.gson:gson:2.8.1"
     implementation "com.android.support:palette-v7:28.0.0-rc02"
-    implementation 'com.google.android.exoplayer:exoplayer:r2.2.0'
+    //implementation 'com.google.android.exoplayer:exoplayer:r2.2.0'
+    implementation 'com.google.android.exoplayer:exoplayer:2.6.1'
 
     implementation 'com.github.bumptech.glide:glide:4.0.0-RC1'
     implementation 'com.android.support:support-tv-provider:28.0.0-rc02'
@@ -105,6 +106,32 @@ dependencies {
     annotationProcessor "com.google.dagger:dagger-compiler:2.11"
 
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:8.0.1'
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:chromecast-sender:0.15'
     implementation 'fr.bmartel:youtubetv:1.2'
     implementation 'com.squareup.picasso:picasso:2.5.2'
+
+    //Universal Image Loader
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:mediarouter-v7:28.0.0'
+    implementation 'com.google.android.gms:play-services-cast-framework:9.8.0'
+    implementation 'com.googlecode.android-query:android-query:0.25.9'
+
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.2.50'
+    implementation "io.reactivex.rxjava2:rxjava:2.1.15"
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+
+    implementation('com.google.api-client:google-api-client-android:1.23.0') {
+        exclude group: 'com.google.guava'
+        exclude group: 'org.apache.httpcomponents'
+        exclude group: 'com.google.code.findbugs'
+        exclude group: 'com.google.http-client', module: 'google-http-client-jackson2'
+    }
+    implementation('com.google.apis:google-api-services-youtube:v3-rev198-1.23.0') {
+        exclude group: 'com.google.guava'
+        exclude group: 'org.apache.httpcomponents'
+        exclude group: 'com.google.code.findbugs'
+        exclude group: 'com.google.http-client', module: 'google-http-client-jackson2'
+    }
 }

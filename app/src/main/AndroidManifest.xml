@@ -172,9 +172,12 @@
             android:exported="true"
             android:theme="@style/Theme.Example.Leanback.CustomTitle">
             <intent-filter>
+
+                <!--
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+                -->
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.VOICE" />
             </intent-filter>
@@ -199,6 +202,7 @@
         <activity
             android:name="nurulaiman.sony.activity.LiveActivity"
             android:exported="true"
+            android:noHistory="true"
             android:theme="@style/Theme.Example.Leanback.CustomTitle">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -230,8 +234,19 @@
 
         <activity
             android:name="nurulaiman.sony.activity.YoutubePlayerActivity"
-            android:theme="@style/Theme.Example.Leanback.CustomTitle"
-            android:noHistory="true" >
+            android:noHistory="true"
+            android:theme="@style/Theme.Example.Leanback.CustomTitle">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.VOICE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="nurulaiman.sony.activity.YoutubeTvViewActivity"
+            android:noHistory="true"
+            android:theme="@style/Theme.Example.Leanback.CustomTitle">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -244,8 +259,34 @@
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Leanback.Details.NoSharedElementTransition" />
+        <activity
+            android:name="nurulaiman.sony.activity.CheckDeviceActivity"
+            android:noHistory="true"
+            android:theme="@style/Theme.Leanback.Details.NoSharedElementTransition">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="nurulaiman.sony.chromecastFeature.ChromecastActivity"
+            android:theme="@style/MobileAppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
 
+        <meta-data
+            android:name="com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME"
+            android:value="nurulaiman.sony.chromecastFeature.CastOptionsProvider" />
 
+        <activity android:name="nurulaiman.sony.mobile.activity.MobileMainActivity"
+            android:theme="@style/MobileAppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

@@ -217,9 +217,7 @@ public class MainBrowseFragment extends BrowseFragment {
 
             @Override
             public void onClick(View view) {
-                /*Toast.makeText(
-                        getActivity(), getString(R.string.implement_search), Toast.LENGTH_SHORT)
-                        .show();*/
+
                 Intent intent = new Intent(getActivity(), SearchActivity.class);
                 startActivity(intent);
 

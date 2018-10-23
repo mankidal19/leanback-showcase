@@ -50,6 +50,7 @@ import com.google.gson.Gson;
 
 import nurulaiman.sony.activity.DetailViewMovieActivity;
 import nurulaiman.sony.activity.YoutubePlayerActivity;
+import nurulaiman.sony.activity.YoutubeTvViewActivity;
 import nurulaiman.sony.utils.MatchingCardUtils;
 
 /**
@@ -225,7 +226,9 @@ public class DetailViewMovieFragment extends DetailsFragment implements OnItemVi
             }
             //FOR WATCH NOW FREE/PURCHASED MOVIES
             else if(action.getId()==ACTION_WATCHNOW){
-                Intent intent = new Intent(getContext(), YoutubePlayerActivity.class);
+                //Intent intent = new Intent(getContext(), YoutubePlayerActivity.class);
+                Intent intent = new Intent(getContext(), YoutubeTvViewActivity.class);
+
                 String videoId = getActivity().getIntent().getExtras().getString("videoId");
                 intent.putExtra("videoId",videoId);
                 intent.putExtra("videoTitle",data.getTitle());

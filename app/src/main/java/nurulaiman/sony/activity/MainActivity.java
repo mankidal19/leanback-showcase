@@ -63,6 +63,23 @@ public class MainActivity extends Activity {
                 }
                 return true;
 
+            case KeyEvent.KEYCODE_BACK:
+                if(action==KeyEvent.ACTION_DOWN){
+                    finish();
+                    startActivity(getIntent());
+                }
+                return true;
+
+            case KeyEvent.KEYCODE_ESCAPE:
+                if(action==KeyEvent.ACTION_DOWN){
+                    moveTaskToBack(true);
+                    android.os.Process.killProcess(android.os.Process.myPid());
+                    System.exit(1);
+                }
+                return true;
+
+
+
             default:
                 return super.dispatchKeyEvent(event);
         }

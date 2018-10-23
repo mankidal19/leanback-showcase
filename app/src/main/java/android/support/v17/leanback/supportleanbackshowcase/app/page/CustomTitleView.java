@@ -38,6 +38,7 @@ public class CustomTitleView extends RelativeLayout implements TitleViewAdapter.
     private final TextView mTitleView;
     private final View mAnalogClockView;
     private final SearchOrbView mSearchOrbView;
+    private final TextView searchTextView;
 
     //to display day & date
     private final TextView mDayDate;
@@ -78,6 +79,7 @@ public class CustomTitleView extends RelativeLayout implements TitleViewAdapter.
             int visibility = (flags & SEARCH_VIEW_VISIBLE) == SEARCH_VIEW_VISIBLE
                     ? View.VISIBLE : View.INVISIBLE;
             mSearchOrbView.setVisibility(visibility);
+            searchTextView.setVisibility(visibility);
         }
 
         private void updateBadgeVisibility(boolean visible) {
@@ -108,10 +110,12 @@ public class CustomTitleView extends RelativeLayout implements TitleViewAdapter.
         mTitleView = (TextView) root.findViewById(R.id.title_tv);
         mAnalogClockView = root.findViewById(R.id.clock);
         mSearchOrbView = root.findViewById(R.id.search_orb2);
+        searchTextView = root.findViewById(R.id.searchTextView);
 
 
         Drawable drawable = getResources().getDrawable(R.drawable.ic_search_in_app,null);
         mSearchOrbView.setOrbIcon(drawable);
+
 
         mDayDate = root.findViewById(R.id.day_date);
         mBadge = root.findViewById(R.id.title_badge2);

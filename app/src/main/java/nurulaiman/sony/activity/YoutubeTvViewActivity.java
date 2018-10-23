@@ -1,12 +1,35 @@
+/*
+ * The MIT License (MIT)
+ * <p/>
+ * Copyright (c) 2016 Bertrand Martel
+ * <p/>
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * <p/>
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * <p/>
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
 package nurulaiman.sony.activity;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v17.leanback.supportleanbackshowcase.R;
 import android.support.v17.leanback.supportleanbackshowcase.models.Card;
 import android.support.v17.leanback.supportleanbackshowcase.models.DetailedCard;
-import android.support.v4.app.FragmentActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -14,22 +37,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.pierfrancescosoffritti.androidyoutubeplayer.player.YouTubePlayer;
-import com.pierfrancescosoffritti.androidyoutubeplayer.player.YouTubePlayerView;
-import com.pierfrancescosoffritti.androidyoutubeplayer.player.listeners.AbstractYouTubePlayerListener;
-import com.pierfrancescosoffritti.androidyoutubeplayer.utils.YouTubePlayerTracker;
-
 import java.util.ArrayList;
 
+import fr.bmartel.youtubetv.YoutubeTvView;
 import nurulaiman.sony.utils.MatchingCardUtils;
 
-public class YoutubePlayerActivity extends FragmentActivity {
+/**
+ * Created by bertrandmartel on 04/11/16.
+ * ANOTHER VERSION OF YOUTUBE PLAYER USING DIFFERENT API
+ */
+public class YoutubeTvViewActivity extends Activity {
 
+    private YoutubeTvView mYoutubeView;
     private String youtubeVideoId = null;
-    private YouTubePlayerView youTubePlayerView = null;
     private boolean playing = true;
-    private YouTubePlayer youTubePlayer = null;
-    YouTubePlayerTracker tracker = new YouTubePlayerTracker();
+    private boolean ccOn = false;
+
 
     //for skipping to next/prev episodes
     private Card[] episodes = null;
@@ -53,84 +76,23 @@ public class YoutubePlayerActivity extends FragmentActivity {
 
     private String nextToLoadVidTitle = null;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_youtube_player);
+        setContentView(R.layout.youtube_tv_view);
+
+        //mYoutubeView = (YoutubeTvView) findViewById(R.id.youtube_tv_video);
+
         matchingCardUtils = new MatchingCardUtils(this);
 
         initEpisodes();
-
         initYouTubePlayerView();
     }
+    private void initYouTubePlayerView(){
 
-    @Override
-    protected void onPause(){
+        mYoutubeView = (YoutubeTvView) findViewById(R.id.youtube_tv_video);
+        mYoutubeView.playVideo(youtubeVideoId);
 
-        prevVideoTitle = youtubeVideoTitle;
-        super.onPause();
-    }
-
-    private void initEpisodes(){
-
-
-        youtubeVideoId = getIntent().getExtras().getString("videoId");
-
-
-
-        youtubeVideoTitle = getIntent().getExtras().getString("videoTitle");
-
-        if(prevVideoTitle==null){
-            prevVideoTitle = youtubeVideoTitle;
-        }
-
-
-        Log.i("YoutubePlayerActivity","Video title: "+ youtubeVideoTitle);
-
-
-
-            showDetailedCard = matchingCardUtils.findMatchingCard(youtubeVideoTitle);
-            if(!showDetailedCard.getText().toLowerCase().contains("movie")){
-                episodes = showDetailedCard.getRecommended();
-
-
-                for(Card card:episodes){
-                    episodeArrayList.add(card.getVideoId());
-                    titleArrayList.add(card.getTitle());
-                }
-
-                if(!episodeArrayList.contains(showDetailedCard.getVideoId())){
-                    episodeArrayList.add(0,showDetailedCard.getVideoId());
-                    titleArrayList.add(0,showDetailedCard.getTitle());
-                }
-
-                //for debugging
-                for(String ep:episodeArrayList){
-                    Log.i("YoutubePlayerActivity","Episode video id: "+ ep);
-
-                }
-
-            }
-
-
-
-
-
-
-    }
-
-    private void initYouTubePlayerView() {
-        //YouTubePlayerView youTubePlayerView = findViewById(R.id.youtube_player_view);
-        youTubePlayerView = findViewById(R.id.youtube_player_view);
-        youTubePlayerView.getPlayerUIController().showFullscreenButton(false);
-        youTubePlayerView.getPlayerUIController().showUI(false);
-        youTubePlayerView.getPlayerUIController().enableLiveVideoUI(false);
-
-       // youTubePlayerView.enterFullScreen();
-
-
-        //youtubeVideoId = getIntent().getExtras().getString("videoId");
-        Log.i("YoutubePlayerActivity","current videoID: "+ youtubeVideoId);
+        Log.d("YoutubeTvView","play video "+ youtubeVideoId);
 
 
         //to display icon
@@ -156,28 +118,71 @@ public class YoutubePlayerActivity extends FragmentActivity {
                 }
             }, 5000);
         }
-
-        getLifecycle().addObserver(youTubePlayerView);
-
-        youTubePlayerView.initialize(youTubePlayer -> {
-
-            passYoutubePlayer(youTubePlayer);
-            youTubePlayer.addListener(tracker);
-            youTubePlayer.addListener(new AbstractYouTubePlayerListener() {
-                @Override
-                public void onReady() {
-                    youTubePlayer.loadVideo(youtubeVideoId,0f);
-                 }
+    }
+    private void initEpisodes(){
 
 
-            });
+        youtubeVideoId = getIntent().getExtras().getString("videoId");
 
 
-        }, true);
+
+        youtubeVideoTitle = getIntent().getExtras().getString("videoTitle");
+
+        if(prevVideoTitle==null){
+            prevVideoTitle = youtubeVideoTitle;
+        }
+
+
+        Log.i("YoutubeTvViewActivity","Video title: "+ youtubeVideoTitle);
+
+
+
+        showDetailedCard = matchingCardUtils.findMatchingCard(youtubeVideoTitle);
+        if(!showDetailedCard.getText().toLowerCase().contains("movie")){
+            episodes = showDetailedCard.getRecommended();
+
+
+            for(Card card:episodes){
+                episodeArrayList.add(card.getVideoId());
+                titleArrayList.add(card.getTitle());
+            }
+
+            if(!episodeArrayList.contains(showDetailedCard.getVideoId())){
+                episodeArrayList.add(0,showDetailedCard.getVideoId());
+                titleArrayList.add(0,showDetailedCard.getTitle());
+            }
+
+            //for debugging
+            for(String ep:episodeArrayList){
+                Log.i("YoutubeTvViewActivity","Episode video id: "+ ep);
+
+            }
+
+        }
+
+
+
+
+
+
     }
 
-    private void passYoutubePlayer(YouTubePlayer youTubePlayer) {
-        this.youTubePlayer = youTubePlayer;
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        mYoutubeView.closePlayer();
+        finish();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
     }
 
     @Override
@@ -212,16 +217,16 @@ public class YoutubePlayerActivity extends FragmentActivity {
             Log.i("KeyEvent","Play/Pause button pressed");
             handled=true;
             if(playing){
-                youTubePlayer.pause();
+                mYoutubeView.pause();
                 playing=false;
-                youTubePlayerView.getPlayerUIController().showUI(true);
+
                 textView.setVisibility(View.VISIBLE);
 
                 iconView.setImageDrawable(getDrawable(R.drawable.ic_pause_white_24dp));
                 iconView.setVisibility(View.VISIBLE);
             }
             else{
-                youTubePlayer.play();
+                mYoutubeView.start();
                 playing = true;
                 textView.setVisibility(View.GONE);
 
@@ -237,7 +242,7 @@ public class YoutubePlayerActivity extends FragmentActivity {
             Log.i("KeyEvent","Play button pressed");
             handled=true;
             if(!playing){
-                youTubePlayer.play();
+                mYoutubeView.start();
                 playing = true;
                 textView.setVisibility(View.GONE);
 
@@ -253,7 +258,7 @@ public class YoutubePlayerActivity extends FragmentActivity {
             Log.i("KeyEvent","Pause button pressed");
             handled=true;
             if(playing){
-                youTubePlayer.pause();
+                mYoutubeView.pause();
                 playing = false;
                 textView.setVisibility(View.VISIBLE);
                 //youTubePlayerView.getPlayerUIController().showSeekBar(true);
@@ -268,8 +273,8 @@ public class YoutubePlayerActivity extends FragmentActivity {
         else if(KeyCode==KeyEvent.KEYCODE_MEDIA_REWIND){
             Log.i("KeyEvent","Rewind button pressed");
             handled=true;
-            youTubePlayer.seekTo(tracker.getCurrentSecond()-10);
-
+            //youTubePlayer.seekTo(tracker.getCurrentSecond()-10);
+            mYoutubeView.moveBackward(10);
             iconView.setImageDrawable(getDrawable(R.drawable.ic_fast_rewind_white_24dp));
             iconView.setVisibility(View.VISIBLE);
             hideIconView(defaultHideTime);
@@ -278,8 +283,8 @@ public class YoutubePlayerActivity extends FragmentActivity {
         else if(KeyCode==KeyEvent.KEYCODE_MEDIA_FAST_FORWARD){
             Log.i("KeyEvent","Fast Forward button pressed");
             handled=true;
-            youTubePlayer.seekTo(tracker.getCurrentSecond()+10);
-
+            //youTubePlayer.seekTo(tracker.getCurrentSecond()+10);
+            mYoutubeView.moveForward(10);
             iconView.setImageDrawable(getDrawable(R.drawable.ic_fast_forward_white_24dp));
             iconView.setVisibility(View.VISIBLE);
             hideIconView(defaultHideTime);
@@ -293,21 +298,23 @@ public class YoutubePlayerActivity extends FragmentActivity {
             iconView.setVisibility(View.VISIBLE);
 
 
-            String newVideoId = getNextEpisode();
+            //String newVideoId = getNextEpisode();
+            youtubeVideoId = getNextEpisode();
+            if(youtubeVideoId!=null){
 
-            if(newVideoId!=null){
 
-                intent = new Intent(this, YoutubePlayerActivity.class);
 
-                nextToLoadVidTitle = titleArrayList.get(episodeArrayList.indexOf(newVideoId));
+                nextToLoadVidTitle = titleArrayList.get(episodeArrayList.indexOf(youtubeVideoId));
                 initVideoTitle(nextToLoadVidTitle);
-
+                /*intent = new Intent(this, YoutubePlayerActivity.class);
                 intent.putExtra("videoId",newVideoId);
                 intent.putExtra("videoTitle",nextToLoadVidTitle);
                 //startActivity(intent);
                 //onDestroy();
 
-                delayStartActivity(500,intent);
+                delayStartActivity(500,intent);*/
+
+                mYoutubeView.playVideo(youtubeVideoId);
 
 
             }
@@ -321,22 +328,24 @@ public class YoutubePlayerActivity extends FragmentActivity {
             iconView.setImageDrawable(getDrawable(R.drawable.ic_skip_previous_white_24dp));
             iconView.setVisibility(View.VISIBLE);
 
-            String newVideoId = getPrevEpisode();
+            //String newVideoId = getPrevEpisode();
+            youtubeVideoId = getPrevEpisode();
 
+            if(youtubeVideoId!=null){
 
-            if(newVideoId!=null){
-
-                nextToLoadVidTitle = titleArrayList.get(episodeArrayList.indexOf(newVideoId));
+                nextToLoadVidTitle = titleArrayList.get(episodeArrayList.indexOf(youtubeVideoId));
                 initVideoTitle(nextToLoadVidTitle);
 
-                intent = new Intent(this, YoutubePlayerActivity.class);
+                /*intent = new Intent(this, YoutubePlayerActivity.class);
 
                 intent.putExtra("videoId",newVideoId);
                 intent.putExtra("videoTitle",nextToLoadVidTitle);
 
                 //startActivity(intent);
                 //onDestroy();
-                delayStartActivity(500,intent);
+                delayStartActivity(500,intent);*/
+                mYoutubeView.playVideo(youtubeVideoId);
+
 
 
             }
@@ -365,6 +374,28 @@ public class YoutubePlayerActivity extends FragmentActivity {
             hideIconView(defaultHideTime);
         }
 
+        else if(KeyCode==KeyEvent.KEYCODE_CAPTIONS){
+            Log.i("KeyEvent","CC button pressed");
+            handled=true;
+            /*Toast.makeText(this, "CH+ button feature available on Live TV.", Toast.LENGTH_SHORT)
+                    .show();*/
+            Bundle args = new Bundle();
+            if(!ccOn){
+                args.putBoolean("closedCaptions",true);
+                mYoutubeView.updateView(args);
+                ccOn=true;
+            }
+            else{
+                args.putBoolean("closedCaptions",false);
+                mYoutubeView.updateView(args);
+                ccOn=false;
+            }
+
+
+            iconView.setImageDrawable(getDrawable(R.drawable.ic_closed_caption_white_24dp));
+            iconView.setVisibility(View.VISIBLE);
+            hideIconView(defaultHideTime);
+        }
 
 
         if(handled){
@@ -406,8 +437,6 @@ public class YoutubePlayerActivity extends FragmentActivity {
             textView = findViewById(R.id.textView2);
             textView.setText(videoTitle);
             textView.setVisibility(View.VISIBLE);
-
-
             //hide after 3 seconds
             textView.postDelayed(new Runnable() {
                 public void run() {

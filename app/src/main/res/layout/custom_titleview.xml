@@ -10,9 +10,19 @@
         android:transitionGroup="true"
         android:layout_gravity="center_vertical|start"
         android:layout_marginTop="8dp"
-
         android:clipChildren="false"
-        android:clipToPadding="false"/>
+        android:clipToPadding="false">
+
+
+    </android.support.v17.leanback.widget.SearchOrbView>
+
+    <TextView
+        android:id="@+id/searchTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/search_text_view"
+        android:layout_toRightOf="@+id/search_orb2"
+        android:layout_alignBottom="@id/search_orb2"/>
 
     <AnalogClock
             android:id="@+id/clock"

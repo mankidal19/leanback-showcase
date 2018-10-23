@@ -15,3 +15,9 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+-keep class fr.bmartel.youtubetv.JavascriptInterface { *; }
+
+-keepclassmembers,allowobfuscation class fr.bmartel.youtubetv.JavascriptInterface.** {
+    <methods>;
+}

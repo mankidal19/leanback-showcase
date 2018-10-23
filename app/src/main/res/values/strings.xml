@@ -140,5 +140,18 @@
     <string name="yellow_button" />
     <string name="blue_button" />
     <string name="title_activity_main">MainActivity</string>
+    <string name="search_text_view">In-app Voice Search</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_search">Search</string>
+    <string name="title_cast">Cast</string>
+    <string name="title_account">Account</string>
+    <string name="title_settings">Settings</string>
+    <string name="title_tv_show">TV Show</string>
+    <string name="title_live_tv">Live TV</string>
+    <string name="title_favorite">Favorite</string>
+
+    <string name="backdrop_title"></string>
+    <string name="backdrop_subtitle"></string>
 
 </resources>
