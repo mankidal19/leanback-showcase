@@ -232,7 +232,8 @@ public class DetailViewMovieFragment extends DetailsFragment implements OnItemVi
                 String videoId = getActivity().getIntent().getExtras().getString("videoId");
                 intent.putExtra("videoId",videoId);
                 intent.putExtra("videoTitle",data.getTitle());
-                startActivity(intent);
+                //startActivity(intent);
+                getActivity().startActivityForResult(intent,101);
                 Log.d(TAG,"play non-live youtube video from details page");
             }
 
@@ -255,7 +256,8 @@ public class DetailViewMovieFragment extends DetailsFragment implements OnItemVi
 
                 Log.d(TAG,"open movie details page");
 
-                startActivity(intent);
+                //startActivity(intent);
+                getActivity().startActivityForResult(intent,101);
 
             }
 

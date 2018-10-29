@@ -398,7 +398,8 @@ public class MainBrowseFragment extends BrowseFragment {
                         intent.putExtra("videoId",card.getVideoId());
                         //to set video title
                         intent.putExtra("videoTitle",card.getTitle());
-                        getContext().startActivity(intent);
+                        //getContext().startActivity(intent);
+                        getActivity().startActivityForResult(intent,101);
                     }
                 }
             });

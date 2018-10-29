@@ -1,5 +1,6 @@
 package nurulaiman.sony.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -279,6 +280,16 @@ public class LiveActivity extends FragmentActivity {
             iconView.setImageDrawable(getDrawable(R.drawable.ic_skip_next_white_24dp));
             iconView.setVisibility(View.VISIBLE);
             hideIconView(defaultHideTime);
+        }
+
+        //implement RGYB shortcut from YT player
+        else if(KeyCode==KeyEvent.KEYCODE_PROG_RED||KeyCode==KeyEvent.KEYCODE_PROG_GREEN
+                ||KeyCode==KeyEvent.KEYCODE_PROG_YELLOW||KeyCode==KeyEvent.KEYCODE_PROG_BLUE){
+            handled = true;
+            Intent returnIntent = new Intent();
+            returnIntent.putExtra(Intent.EXTRA_KEY_EVENT,event);
+            setResult(Activity.RESULT_OK,returnIntent);
+            finish();
         }
 
         if(handled){

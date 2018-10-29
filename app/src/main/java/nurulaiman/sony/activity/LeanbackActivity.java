@@ -58,7 +58,8 @@ public class LeanbackActivity extends Activity {
 
             //setContentView(R.layout.fragment_main_browse);
             Log.d(TAG,"Not instanceof MainActivity");
-            super.onBackPressed();
+            finish();
+
             //startActivity(new Intent(this,MainActivity.class));
             //LocalBroadcastManager.getInstance(mContext).sendBroadcast(intent);
 
@@ -69,5 +70,39 @@ public class LeanbackActivity extends Activity {
         LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
 
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        Log.d(TAG,"onActivityResult");
+
+        if (requestCode == 101) {
+
+            if(data!=null){
+                KeyEvent event = data.getParcelableExtra(Intent.EXTRA_KEY_EVENT);
+                sendShortcutBroadcast(event);
+            }
+            finishActivity(101);
+
+            finishActivity(101);
+            if(resultCode == Activity.RESULT_OK){
+                //String result=data.getStringExtra("result");
+               /* KeyEvent event = data.getParcelableExtra(Intent.EXTRA_KEY_EVENT);
+                sendShortcutBroadcast(event);*/
+                Log.d(TAG,"result ok");
+                //finishActivity(101);
+
+                //finish();
+            }
+            if (resultCode == Activity.RESULT_CANCELED) {
+                //Write your code if there's no result
+                Log.d(TAG,"result cancelled");
+                finish();
+
+            }
+        }
+    }
+
+
 
 }

@@ -28,6 +28,7 @@ import nurulaiman.sony.fragment.DetailViewTvShowFragment;
  * Contains a {@link DetailsFragment} in order to display more details for a given card.
  */
 public class DetailViewTvShowActivity extends LeanbackActivity {
+    private static String TAG = "DetailViewActivity";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -85,7 +86,6 @@ public class DetailViewTvShowActivity extends LeanbackActivity {
         }
         //return handled;
     }
-
 
 
 

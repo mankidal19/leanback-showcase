@@ -196,7 +196,8 @@ public class DetailViewLiveBroadcastFragment extends DetailsFragment implements 
             Intent intent = new Intent(getContext(), LiveActivity.class);
             String videoId = getActivity().getIntent().getExtras().getString("videoId");
             intent.putExtra("videoId",videoId);
-            startActivity(intent);
+            //startActivity(intent);
+            getActivity().startActivityForResult(intent,101);
             Log.d(TAG,"play live youtube video from details page with");
         }
 

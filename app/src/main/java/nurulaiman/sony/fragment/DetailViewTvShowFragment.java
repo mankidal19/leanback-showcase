@@ -226,7 +226,7 @@ public class DetailViewTvShowFragment extends DetailsFragment implements OnItemV
                 String videoTitle = data.getTitle();
                 intent.putExtra("videoId",videoId);
                 intent.putExtra("videoTitle",videoTitle);
-                startActivity(intent);
+                getActivity().startActivityForResult(intent,101);
                 Log.d(TAG,"play non-live youtube video from details page");
             }
             else {
@@ -250,7 +250,8 @@ public class DetailViewTvShowFragment extends DetailsFragment implements OnItemV
 
                 Log.d(TAG,"play another episode of tv show");
 
-                startActivity(intent);
+                //startActivity(intent);
+                getActivity().startActivityForResult(intent,101);
 
             }
 
