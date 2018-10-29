@@ -28,7 +28,7 @@ import nurulaiman.sony.fragment.DetailViewLiveBroadcastFragment;
 /**
  * Contains a {@link DetailsFragment} in order to display more details for a given card.
  */
-public class DetailViewLiveBroadcastActivity extends Activity {
+public class DetailViewLiveBroadcastActivity extends LeanbackActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

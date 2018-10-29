@@ -20,7 +20,7 @@ public final class CastOptionsProvider implements OptionsProvider {
           Remember to change it with the ID of your own receiver. See documentation for more info.
           <a href="https://github.com/PierfrancescoSoffritti/chromecast-youtube-player">chromecast-youtube-player</a>
           */
-        String receiverId = "4F8B3483";
+        String receiverId = "C5CBE8CA";
 
         return new CastOptions.Builder()
                 .setReceiverApplicationId(receiverId)

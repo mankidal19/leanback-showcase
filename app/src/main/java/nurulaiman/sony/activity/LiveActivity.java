@@ -418,7 +418,7 @@ public class LiveActivity extends FragmentActivity {
 
         channelArrayList.add("iygNrT5d27U");
         channelArrayList.add("2LWt-dxd0v4");
-        channelArrayList.add("Ek7K4pq0jZY");
+        channelArrayList.add("hMOH-tnxOA4");
         channelArrayList.add("KkXq2sv6Tos");
         channelArrayList.add("Lvp-lSqHVKc");
     }

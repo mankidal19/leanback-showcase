@@ -45,6 +45,7 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -95,6 +96,8 @@ public class MainBrowseFragment extends BrowseFragment {
     //for RGYB buttons function
     private PageRowFragmentFactory mPageRowFragmentFactory = null;
 
+    private ImageView imageView = null;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -113,6 +116,8 @@ public class MainBrowseFragment extends BrowseFragment {
                 mPageRowFragmentFactory);
 
         matchingCardUtils = new MatchingCardUtils(getContext());
+
+
 
     }
 
@@ -134,6 +139,7 @@ public class MainBrowseFragment extends BrowseFragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
 
 
 // Register to receive messages.
@@ -374,6 +380,8 @@ public class MainBrowseFragment extends BrowseFragment {
                         Row row) {
                     Intent intent;
                     Card card = (Card)item;
+
+
         /*Toast.makeText(getActivity(),
                 "Clicked on "+card.getTitle(),
                 Toast.LENGTH_SHORT).show();*/
@@ -873,7 +881,8 @@ public class MainBrowseFragment extends BrowseFragment {
         @Override
         public void onResume() {
             super.onResume();
-            mWebview.loadUrl("https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Fnext%3D%252Faccount%26action_handle_signin%3Dtrue%26feature%3Dredirect_login%26hl%3Den%26app%3Ddesktop&hl=en&service=youtube&flowName=GlifWebSignIn&flowEntry=ServiceLogin");
+            //mWebview.loadUrl("https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Fnext%3D%252Faccount%26action_handle_signin%3Dtrue%26feature%3Dredirect_login%26hl%3Den%26app%3Ddesktop&hl=en&service=youtube&flowName=GlifWebSignIn&flowEntry=ServiceLogin");
+            mWebview.loadUrl("https://chromecast-5545d.firebaseapp.com/");
             getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
 
 

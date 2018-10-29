@@ -27,7 +27,7 @@ import nurulaiman.sony.fragment.DetailViewMovieFragment;
 /**
  * Contains a {@link DetailsFragment} in order to display more details for a given card.
  */
-public class DetailViewMovieActivity extends Activity {
+public class DetailViewMovieActivity extends LeanbackActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

@@ -245,7 +245,7 @@
         </activity>
         <activity
             android:name="nurulaiman.sony.activity.YoutubeTvViewActivity"
-            android:noHistory="true"
+
             android:theme="@style/Theme.Example.Leanback.CustomTitle">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />

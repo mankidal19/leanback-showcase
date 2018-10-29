@@ -1,18 +1,25 @@
 package nurulaiman.sony.activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.v17.leanback.supportleanbackshowcase.R;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
+import android.util.AttributeSet;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.View;
 
 import nurulaiman.sony.fragment.MainBrowseFragment;
 
-public class MainActivity extends Activity {
+import static android.content.Intent.EXTRA_KEY_EVENT;
+
+public class MainActivity extends LeanbackActivity {
 
     private static String TAG = "MainActivity";
+    private  KeyEvent keyEvent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +28,31 @@ public class MainActivity extends Activity {
 
         //MainBrowseFragment fragment = MainBrowseFragment.newInstance();
 
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(String name, Context context, AttributeSet attrs) {
+
+       /* if(getIntent().getExtras()!=null){
+            keyEvent = (KeyEvent) getIntent().getExtras().get(Intent.EXTRA_KEY_EVENT);
+            Log.d(TAG,"getExtras not null");
+
+            if(keyEvent!=null){
+                super.sendShortcutBroadcast(keyEvent);
+                Log.d(TAG,"keyEvent not null");
+                getIntent().removeExtra(Intent.EXTRA_KEY_EVENT);
+            }
+
+        }
+
+        else{
+            Log.d(TAG,"getExtras null");
+
+        }*/
+
+
+        return super.onCreateView(name, context, attrs);
     }
 
     @Override
@@ -38,31 +70,6 @@ public class MainActivity extends Activity {
         int action = event.getAction();
         int keyCode = event.getKeyCode();
         switch (keyCode) {
-            case KeyEvent.KEYCODE_PROG_RED:
-                if (action == KeyEvent.ACTION_DOWN) {
-                    //sendBroadcast();
-                    sendShortcutBroadcast(event);
-                }
-                return true;
-            case KeyEvent.KEYCODE_PROG_GREEN:
-                if (action == KeyEvent.ACTION_DOWN) {
-                    //sendBroadcast();
-                    sendShortcutBroadcast(event);
-                }
-                return true;
-            case KeyEvent.KEYCODE_PROG_YELLOW:
-                if (action == KeyEvent.ACTION_DOWN) {
-                    //sendBroadcast();
-                    sendShortcutBroadcast(event);
-                }
-                return true;
-            case KeyEvent.KEYCODE_PROG_BLUE:
-                if (action == KeyEvent.ACTION_DOWN) {
-                    //sendBroadcast();
-                    sendShortcutBroadcast(event);
-                }
-                return true;
-
             case KeyEvent.KEYCODE_BACK:
                 if(action==KeyEvent.ACTION_DOWN){
                     finish();
@@ -78,20 +85,12 @@ public class MainActivity extends Activity {
                 }
                 return true;
 
-
-
             default:
                 return super.dispatchKeyEvent(event);
         }
+
     }
 
-    private void  sendShortcutBroadcast(KeyEvent keyEvent){
-        Intent intent = new Intent("activity-says-hi");
 
-        //intent.putExtra("keyEvent",keyEvent);
-        intent.putExtra(Intent.EXTRA_KEY_EVENT,keyEvent);
-
-        LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
-    }
 
 }
