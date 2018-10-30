@@ -21,6 +21,7 @@ public class MatchingCardUtils {
         this.context = context;
     }
 
+
     public DetailedCard findMatchingCard(Card card){
 
 
@@ -30,9 +31,40 @@ public class MatchingCardUtils {
         //DetailedCardRow detailedCardRow = new Gson().fromJson(json, DetailedCardRow.class);
         DetailedCard[] rows = new Gson().fromJson(json, DetailedCard[].class);
         for(DetailedCard detailedCard:rows){
-            if(card.getTitle().toLowerCase().contains(detailedCard.getTitle().toLowerCase())){
+            if(card.getTitle().toLowerCase().equals(detailedCard.getTitle().toLowerCase())
+                    && card.getType()==detailedCard.getType()){
                 chosenDetailedCard = detailedCard;
                 return chosenDetailedCard;
+            }
+        }
+
+        return chosenDetailedCard;
+
+    }
+    //for movies
+    public DetailedCard findMatchingMovieCard(String videoTitle){
+
+
+        String json = Utils.inputStreamToString(context.getResources().openRawResource(
+                R.raw.all_detailed_card_row));
+
+        Log.d("MatchingCardUtils","Finding for title: "+videoTitle.toLowerCase());
+
+        //DetailedCardRow detailedCardRow = new Gson().fromJson(json, DetailedCardRow.class);
+        DetailedCard[] rows = new Gson().fromJson(json, DetailedCard[].class);
+        for(DetailedCard detailedCard:rows){
+            Log.d("MatchingCardUtils","Searched title: "+detailedCard.getTitle().toLowerCase());
+
+            if(videoTitle.toLowerCase().equals(detailedCard.getTitle().toLowerCase())){
+
+                Log.d("MatchingCardUtils","MATCH FOUND");
+
+                chosenDetailedCard = detailedCard;
+                return chosenDetailedCard;
+            }
+            else{
+                Log.d("MatchingCardUtils","FALSE");
+
             }
         }
 
@@ -48,10 +80,10 @@ public class MatchingCardUtils {
 
         //DetailedCardRow detailedCardRow = new Gson().fromJson(json, DetailedCardRow.class);
         DetailedCard[] rows = new Gson().fromJson(json, DetailedCard[].class);
-        Log.i("MatchingCardUtils","Finding for title: "+videoTitle.toLowerCase());
+        Log.d("MatchingCardUtils","Finding for title: "+videoTitle.toLowerCase());
 
         for(DetailedCard detailedCard:rows){
-            Log.i("MatchingCardUtils","Searched title: "+detailedCard.getTitle().toLowerCase());
+            Log.d("MatchingCardUtils","Searched title: "+detailedCard.getTitle().toLowerCase());
 
             if(detailedCard.getTitle().toLowerCase().contains(videoTitle.toLowerCase()) || videoTitle.toLowerCase().contains(detailedCard.getTitle().toLowerCase())
                     ||detailedCard.getTitle().regionMatches(true,10,videoTitle,10,10)
@@ -59,7 +91,7 @@ public class MatchingCardUtils {
                     ||detailedCard.getTitle().regionMatches(true,8,videoTitle,8,10)
                     ){
                 chosenDetailedCard = detailedCard;
-                Log.i("MatchingCardUtils","Match found: "+videoTitle.toLowerCase()+", "+detailedCard.getTitle().toLowerCase());
+                Log.d("MatchingCardUtils","Match found: "+videoTitle.toLowerCase()+", "+detailedCard.getTitle().toLowerCase());
                 return chosenDetailedCard;
             }
         }
@@ -73,12 +105,12 @@ public class MatchingCardUtils {
                 ||a.regionMatches(true,10,b,10,10)
                 ||a.regionMatches(true,12,b,12,10)){
 
-            Log.i("MatchingCardUtils","Two title matched: "+a+", "+b);
+            Log.d("MatchingCardUtils","Two title matched: "+a+", "+b);
             return true;
         }
 
         else{
-            Log.i("MatchingCardUtils","Two title not matched: "+a+", "+b);
+            Log.d("MatchingCardUtils","Two title not matched: "+a+", "+b);
 
             return false;
         }

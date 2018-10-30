@@ -736,20 +736,22 @@ public class MainBrowseFragment extends BrowseFragment {
 
 
 
-                    if(selectedCard.getDescription().toLowerCase().contains("korean")||selectedCard.getTitle().toLowerCase().contains("gone")) {
+                    //if(selectedCard.getDescription().toLowerCase().contains("korean")||selectedCard.getTitle().toLowerCase().contains("gone")) {
 
                         intent.putExtra("videoId",selectedCard.getVideoId());
                         intent.putExtra("videoTitle",selectedCard.getTitle());
+                        //intent.putExtra("cardType",selectedCard.getType().toString());
 
                         Log.d(TAG,"open movie details page");
 
                         startActivity(intent);
+                    //getActivity().startActivityForResult(intent,101);
 
-                    }
-                    else{
+                    //}
+                    /*else{
                         Toast.makeText(getActivity(), "this is a dummy movie", Toast.LENGTH_SHORT)
                                 .show();
-                    }
+                    }*/
 
 
                 }

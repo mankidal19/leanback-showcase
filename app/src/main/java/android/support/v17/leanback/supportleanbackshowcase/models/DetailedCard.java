@@ -34,10 +34,14 @@ public class DetailedCard {
     @SerializedName("videoUrl") private String mVideoUrl = null;
     @SerializedName("videoId") private String mVideoId = null;
 
+    @SerializedName("type") private Card.Type mType;
+
 
     public String getPrice() {
         return mPrice;
     }
+
+    public Card.Type getType(){return mType;}
 
     public int getYear() {
         return mYear;

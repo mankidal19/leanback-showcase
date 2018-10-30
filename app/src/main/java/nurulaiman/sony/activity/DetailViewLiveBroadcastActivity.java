@@ -54,16 +54,7 @@ public class DetailViewLiveBroadcastActivity extends LeanbackActivity {
         Log.i("KeyEvent",KeyCode + " button pressed");
 
 
-        if(KeyCode == KeyEvent.KEYCODE_BACK){
-            Log.i("KeyEvent","Return button pressed");
-            handled=true;
-            intent = new Intent(this, MainActivity.class);
-            onDestroy();
-            startActivity(intent);
-
-        }
-
-        else if(KeyCode == KeyEvent.KEYCODE_ESCAPE){
+       if(KeyCode == KeyEvent.KEYCODE_ESCAPE){
             Log.i("KeyEvent","Exit button pressed");
             handled=true;
             moveTaskToBack(true);

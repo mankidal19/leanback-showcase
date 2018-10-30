@@ -99,7 +99,8 @@ public class DetailViewMovieFragment extends DetailsFragment implements OnItemVi
         // Load the card we want to display from a JSON resource. This JSON data could come from
         // anywhere in a real world app, e.g. a server.
 
-        data = matchingCardUtils.findMatchingCard(getActivity().getIntent().getExtras().getString("videoTitle"));
+        //data = matchingCardUtils.findMatchingCard(getActivity().getIntent().getExtras().getString("videoTitle"));
+        data = matchingCardUtils.findMatchingMovieCard(getActivity().getIntent().getExtras().getString("videoTitle"));
 
         if(data==null){
             String json = Utils
