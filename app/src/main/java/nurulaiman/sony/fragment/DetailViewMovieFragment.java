@@ -100,7 +100,7 @@ public class DetailViewMovieFragment extends DetailsFragment implements OnItemVi
         // anywhere in a real world app, e.g. a server.
 
         //data = matchingCardUtils.findMatchingCard(getActivity().getIntent().getExtras().getString("videoTitle"));
-        data = matchingCardUtils.findMatchingMovieCard(getActivity().getIntent().getExtras().getString("videoTitle"));
+        data = matchingCardUtils.findExactTitleMatchingCard(getActivity().getIntent().getExtras().getString("videoTitle"));
 
         if(data==null){
             String json = Utils
@@ -155,6 +155,7 @@ public class DetailViewMovieFragment extends DetailsFragment implements OnItemVi
         Bundle extras = getActivity().getIntent().getExtras();
         if (extras != null && extras.containsKey(EXTRA_CARD)) {
             imageResId = extras.getInt(EXTRA_CARD, imageResId);
+
         }
         detailsOverview.setImageDrawable(getResources().getDrawable(imageResId, null));
         ArrayObjectAdapter actionAdapter = new ArrayObjectAdapter();
@@ -244,23 +245,22 @@ public class DetailViewMovieFragment extends DetailsFragment implements OnItemVi
             }
         }
 
-        else if(item instanceof Card && ((Card)item).getType().equals(Card.Type.DEFAULT)){
+        else if(item instanceof Card && ((Card)item).getType().equals(Card.Type.DEFAULT)
+                ||((Card)item).getType().equals(Card.Type.MOVIE)){
             Intent intent = new Intent(getContext(), DetailViewMovieActivity.class);
             Card selectedCard = (Card)item;
 
 
 
-            if(selectedCard.getDescription().toLowerCase().contains("korean movie")||selectedCard.getTitle().toLowerCase().contains("gone")) {
-
-                intent.putExtra("videoId",selectedCard.getVideoId());
+               intent.putExtra("videoId",selectedCard.getVideoId());
                 intent.putExtra("videoTitle",selectedCard.getTitle());
 
-                Log.d(TAG,"open movie details page");
+                Log.d(TAG,"open another movie details page");
 
                 //startActivity(intent);
                 getActivity().startActivityForResult(intent,101);
 
-            }
+
 
         }
 

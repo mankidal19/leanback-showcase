@@ -385,22 +385,15 @@ public class MainBrowseFragment extends BrowseFragment {
         /*Toast.makeText(getActivity(),
                 "Clicked on "+card.getTitle(),
                 Toast.LENGTH_SHORT).show();*/
-                    if(card.getTitle().toLowerCase().contains("jazeera")){
+
                         intent = new Intent(getContext(), DetailViewLiveBroadcastActivity.class);
                         intent.putExtra("videoId",card.getVideoId());
                         //to set video title
                         intent.putExtra("videoTitle",card.getTitle());
                         startActivity(intent);
-                        Log.d(TAG,"open sample live tv details page");
-                    }
-                    else{
-                        intent = new Intent(getContext(), LiveActivity.class);
-                        intent.putExtra("videoId",card.getVideoId());
-                        //to set video title
-                        intent.putExtra("videoTitle",card.getTitle());
-                        //getContext().startActivity(intent);
-                        getActivity().startActivityForResult(intent,101);
-                    }
+                        Log.d(TAG,"open live tv details page");
+
+
                 }
             });
         }

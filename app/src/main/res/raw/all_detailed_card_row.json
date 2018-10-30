@@ -366,7 +366,7 @@
     "recommended": [
       {
         "type": "DEFAULT",
-        "title": "[WEEK 2] I Can See Your Voice Malaysia",
+        "title": "[WEEK 2] I Can See Your Voice (Malaysia)",
         "description": "Ayda Jebat as guest.",
         "localImageResource": "icsyv",
         "footerIconLocalImageResource": "",
@@ -374,7 +374,7 @@
       },
       {
         "type": "DEFAULT",
-        "title": "[WEEK 3] I Can See Your Voice Malaysia",
+        "title": "[WEEK 3] I Can See Your Voice (Malaysia)",
         "description": "De FAM as guest.",
         "localImageResource": "icsyv",
         "footerIconLocalImageResource": "",
@@ -382,7 +382,7 @@
       },
       {
         "type": "DEFAULT",
-        "title": "[WEEK 4] I Can See Your Voice Malaysia",
+        "title": "[WEEK 4] I Can See Your Voice (Malaysia)",
         "description": "Wany Hasrita as guest.",
         "localImageResource": "icsyv",
         "footerIconLocalImageResource": "",
@@ -390,7 +390,7 @@
       },
       {
         "type": "DEFAULT",
-        "title": "[WEEK 5] I Can See Your Voice Malaysia",
+        "title": "[WEEK 5] I Can See Your Voice (Malaysia)",
         "description": "Faizal Tahir as guest.",
         "localImageResource": "icsyv",
         "footerIconLocalImageResource": "",
@@ -570,7 +570,7 @@
     "title": "[Inside Story] Al Jazeera News",
     "description": "Al Jazeera Media Network",
     "year": 2018,
-    "text": "Follow Al Jazeera as it covers what's happening around the world.How worrying is the rise of US right-wing extremism? | Inside Story",
+    "text": "Follow Al Jazeera as it covers what's happening around the world.\nHow worrying is the rise of US right-wing extremism? | Inside Story",
     "localImageResource": "aljazeera_news",
     "trailerUrl": "",
     "videoUrl": "",
@@ -2171,6 +2171,156 @@
         "videoId": "vZ7EMIH0oHw",
         "id": 39,
         "live": false
+      }
+    ]
+  },
+  {
+    "title": "Al Jazeera News (English)",
+    "description": "News Channel",
+    "year": "2018",
+    "text": "At Al Jazeera English, we focus on people and events that affect people's lives.",
+    "localImageResource": "aljazeera",
+    "trailerUrl": "",
+    "videoUrl": "",
+    "type": "LIVE_TV",
+    "recommended": [
+      {
+        "type": "DEFAULT",
+        "title": "Arirang TV World",
+        "description": "Arirang TV/Radio is a public service agency that spreads the uniqueness of Korea to the world through cutting-edge broadcasting.",
+        "localImageResource": "arirang"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Euronews English",
+        "description": "Euronews: the most watched news channel in Europe.",
+        "localImageResource": "euronews"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "KBSWorld 24",
+        "description": "700만 해외동포와 함께 하는 KBS World 24!!! ",
+        "localImageResource": "kbsworld"
+      }
+    ]
+  },
+  {
+    "title": "Arirang TV World",
+    "description": "News Channel",
+    "year": "2018",
+    "text": "Arirang TV/Radio is a public service agency that spreads the uniqueness of Korea to the world through cutting-edge broadcasting.",
+    "localImageResource": "arirang",
+    "trailerUrl": "",
+    "videoUrl": "",
+    "type": "LIVE_TV",
+    "recommended": [
+      {
+        "type": "DEFAULT",
+        "title": "Al Jazeera News (English)",
+        "description": "At Al Jazeera English, we focus on people and events that affect people's lives.",
+        "localImageResource": "aljazeera"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Euronews English",
+        "description": "Euronews: the most watched news channel in Europe.",
+        "localImageResource": "euronews"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "KBSWorld 24",
+        "description": "700만 해외동포와 함께 하는 KBS World 24!!! ",
+        "localImageResource": "kbsworld"
+      }
+    ]
+  },
+  {
+    "title": "Euronews English",
+    "description": "News Channel",
+    "year": "2018",
+    "text": "Euronews: the most watched news channel in Europe.",
+    "localImageResource": "euronews",
+    "trailerUrl": "",
+    "videoUrl": "",
+    "type": "LIVE_TV",
+    "recommended": [
+      {
+        "type": "DEFAULT",
+        "title": "Arirang TV World",
+        "description": "Arirang TV/Radio is a public service agency that spreads the uniqueness of Korea to the world through cutting-edge broadcasting.",
+        "localImageResource": "arirang"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Al Jazeera News (English)",
+        "description": "At Al Jazeera English, we focus on people and events that affect people's lives.",
+        "localImageResource": "aljazeera"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "KBSWorld 24",
+        "description": "700만 해외동포와 함께 하는 KBS World 24!!! ",
+        "localImageResource": "kbsworld"
+      }
+    ]
+  },
+  {
+    "title": "KBSWorld 24",
+    "description": "News Channel",
+    "year": "2018",
+    "text": "700만 해외동포와 함께 하는 KBS World 24!!!",
+    "localImageResource": "kbsworld",
+    "trailerUrl": "",
+    "videoUrl": "",
+    "type": "LIVE_TV",
+    "recommended": [
+      {
+        "type": "DEFAULT",
+        "title": "Arirang TV World",
+        "description": "Arirang TV/Radio is a public service agency that spreads the uniqueness of Korea to the world through cutting-edge broadcasting.",
+        "localImageResource": "arirang"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Euronews English",
+        "description": "Euronews: the most watched news channel in Europe.",
+        "localImageResource": "euronews"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Al Jazeera News (English)",
+        "description": "At Al Jazeera English, we focus on people and events that affect people's lives.",
+        "localImageResource": "aljazeera"
+      }
+    ]
+  },
+  {
+    "title": "Mr Bean Cartoon Marathon",
+    "description": "24/7 Cartoon Marathon",
+    "year": "2018",
+    "text": "Funny Episodes of Mr Bean the Animated Series 24/7",
+    "localImageResource": "mrbeanc",
+    "trailerUrl": "",
+    "videoUrl": "",
+    "type": "LIVE_TV",
+    "recommended": [
+      {
+        "type": "DEFAULT",
+        "title": "Arirang TV World",
+        "description": "Arirang TV/Radio is a public service agency that spreads the uniqueness of Korea to the world through cutting-edge broadcasting.",
+        "localImageResource": "arirang"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Euronews English",
+        "description": "Euronews: the most watched news channel in Europe.",
+        "localImageResource": "euronews"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "KBSWorld 24",
+        "description": "700만 해외동포와 함께 하는 KBS World 24!!! ",
+        "localImageResource": "kbsworld"
       }
     ]
   }

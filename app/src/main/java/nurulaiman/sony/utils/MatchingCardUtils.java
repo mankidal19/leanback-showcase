@@ -42,7 +42,7 @@ public class MatchingCardUtils {
 
     }
     //for movies
-    public DetailedCard findMatchingMovieCard(String videoTitle){
+    public DetailedCard findExactTitleMatchingCard(String videoTitle){
 
 
         String json = Utils.inputStreamToString(context.getResources().openRawResource(
@@ -85,11 +85,13 @@ public class MatchingCardUtils {
         for(DetailedCard detailedCard:rows){
             Log.d("MatchingCardUtils","Searched title: "+detailedCard.getTitle().toLowerCase());
 
-            if(detailedCard.getTitle().toLowerCase().contains(videoTitle.toLowerCase()) || videoTitle.toLowerCase().contains(detailedCard.getTitle().toLowerCase())
-                    ||detailedCard.getTitle().regionMatches(true,10,videoTitle,10,10)
-                    ||detailedCard.getTitle().regionMatches(true,12,videoTitle,12,10)
-                    ||detailedCard.getTitle().regionMatches(true,8,videoTitle,8,10)
-                    ){
+            String[] title = videoTitle.toLowerCase().split("]");
+            String[] cardTitle = detailedCard.getTitle().toLowerCase().split("] ");
+
+            Log.d("MatchingCardUtils",title[title.length-1]+", "+cardTitle[cardTitle.length-1]);
+
+            if(title[title.length-1].contains(cardTitle[cardTitle.length-1])){
+
                 chosenDetailedCard = detailedCard;
                 Log.d("MatchingCardUtils","Match found: "+videoTitle.toLowerCase()+", "+detailedCard.getTitle().toLowerCase());
                 return chosenDetailedCard;

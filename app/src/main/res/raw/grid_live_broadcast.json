@@ -2,7 +2,7 @@
   "title":"TV Channels",
   "cards": [
     {
-      "type": "DEFAULT",
+      "type": "LIVE_TV",
       "title": "Al Jazeera News (English)",
       "description": "At Al Jazeera English, we focus on people and events that affect people's lives.",
       "localImageResource": "aljazeera",

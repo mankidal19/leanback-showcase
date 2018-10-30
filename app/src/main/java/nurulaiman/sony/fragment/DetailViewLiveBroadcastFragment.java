@@ -48,7 +48,9 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 
+import nurulaiman.sony.activity.DetailViewLiveBroadcastActivity;
 import nurulaiman.sony.activity.LiveActivity;
+import nurulaiman.sony.utils.MatchingCardUtils;
 
 /**
  * Displays a card with more details using a {@link DetailsFragment}.
@@ -71,9 +73,15 @@ public class DetailViewLiveBroadcastFragment extends DetailsFragment implements 
     private final DetailsFragmentBackgroundController mDetailsBackground =
             new DetailsFragmentBackgroundController(this);
 
+    private DetailedCard data = null;
+    //for finding matching detailed card
+    private MatchingCardUtils matchingCardUtils = null;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        matchingCardUtils = new MatchingCardUtils(getContext());
+
         setupUi();
         setupEventListeners();
     }
@@ -81,9 +89,15 @@ public class DetailViewLiveBroadcastFragment extends DetailsFragment implements 
     private void setupUi() {
         // Load the card we want to display from a JSON resource. This JSON data could come from
         // anywhere in a real world app, e.g. a server.
-        String json = Utils
-                .inputStreamToString(getResources().openRawResource(R.raw.detail_live_broadcast));
-        DetailedCard data = new Gson().fromJson(json, DetailedCard.class);
+
+        data = matchingCardUtils.findExactTitleMatchingCard(getActivity().getIntent().getExtras().getString("videoTitle"));
+
+        if(data==null){
+            String json = Utils
+                    .inputStreamToString(getResources().openRawResource(R.raw.detail_live_broadcast));
+            data = new Gson().fromJson(json, DetailedCard.class);
+        }
+
 
         // Setup fragment
         setTitle(getString(R.string.detail_view_live_broadcast));
@@ -175,7 +189,7 @@ public class DetailViewLiveBroadcastFragment extends DetailsFragment implements 
     private void initializeBackground(DetailedCard data) {
         mDetailsBackground.enableParallax();
         mDetailsBackground.setCoverBitmap(BitmapFactory.decodeResource(getResources(),
-                R.drawable.aljazeera_news));
+                data.getLocalImageResourceId(getContext())));
     }
 
     private void setupEventListeners() {
@@ -186,25 +200,47 @@ public class DetailViewLiveBroadcastFragment extends DetailsFragment implements 
     @Override
     public void onItemClicked(Presenter.ViewHolder itemViewHolder, Object item,
                               RowPresenter.ViewHolder rowViewHolder, Row row) {
-        if (!(item instanceof Action)) return;
-        Action action = (Action) item;
 
-        if (action.getId() == ACTION_RELATED) {
-            setSelectedPosition(1);
+
+        if ((item instanceof Action)) {
+            Action action = (Action) item;
+
+            if (action.getId() == ACTION_RELATED) {
+                setSelectedPosition(1);
+            }
+            else if(action.getId()==ACTION_WATCHNOW){
+                Intent intent = new Intent(getContext(), LiveActivity.class);
+                String videoId = getActivity().getIntent().getExtras().getString("videoId");
+                intent.putExtra("videoId",videoId);
+                //startActivity(intent);
+                getActivity().startActivityForResult(intent,101);
+                Log.d(TAG,"play live youtube video from details page with");
+            }
+
+            else {
+                Toast.makeText(getActivity(), getString(R.string.action_cicked), Toast.LENGTH_LONG)
+                        .show();
+            }
         }
-        else if(action.getId()==ACTION_WATCHNOW){
-            Intent intent = new Intent(getContext(), LiveActivity.class);
-            String videoId = getActivity().getIntent().getExtras().getString("videoId");
-            intent.putExtra("videoId",videoId);
+
+        else if(item instanceof Card && ((Card)item).getType().equals(Card.Type.DEFAULT)){
+            Intent intent = new Intent(getContext(), DetailViewLiveBroadcastActivity.class);
+            Card selectedCard = (Card)item;
+
+
+
+            intent.putExtra("videoId",selectedCard.getVideoId());
+            intent.putExtra("videoTitle",selectedCard.getTitle());
+
+            Log.d(TAG,"open another live tv details page");
+
             //startActivity(intent);
             getActivity().startActivityForResult(intent,101);
-            Log.d(TAG,"play live youtube video from details page with");
+
+
+
         }
 
-        else {
-            Toast.makeText(getActivity(), getString(R.string.action_cicked), Toast.LENGTH_LONG)
-                    .show();
-        }
     }
 
     @Override

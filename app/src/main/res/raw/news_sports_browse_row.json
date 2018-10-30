@@ -36,7 +36,7 @@
       {
         "type": "DEFAULT",
         "title": "Euronews",
-        "description": "PurchasedEuronews is a multilingual news media service, headquartered in Lyon, France. [TV SHOW] [NEWS]",
+        "description": "Euronews is a multilingual news media service, headquartered in Lyon, France. [TV SHOW] [NEWS]",
         "localImageResource": "euro_news",
         "footerIconLocalImageResource": "ic_installed",
         "id":13,
