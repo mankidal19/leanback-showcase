@@ -13,7 +13,8 @@
         android:layout_height="match_parent"
         app:yt_userAgentString="iphone"
         app:yt_videoQuality="hd720"
-        app:yt_showControls="always">
+        app:yt_showControls="always"
+        app:yt_debug="true">
 
         <LinearLayout
             android:layout_width="match_parent"

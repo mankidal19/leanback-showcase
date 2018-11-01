@@ -310,8 +310,10 @@ public class YoutubePlayerActivity extends FragmentActivity {
                 delayStartActivity(500,intent);
 
 
+
             }
             hideIconView(defaultHideTime);
+
         }
 
         else if(KeyCode==KeyEvent.KEYCODE_MEDIA_PREVIOUS){

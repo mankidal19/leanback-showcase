@@ -4,8 +4,7 @@
     package="android.support.v17.leanback.supportleanbackshowcase">
 
     <uses-sdk
-        android:minSdkVersion="17"
-        android:targetSdkVersion="23"
+
         tools:overrideLibrary="android.support.media.tv" />
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -32,6 +31,7 @@
         android:icon="@mipmap/ic_launcher"
         android:largeHeap="true"
         android:supportsRtl="true"
+        android:hardwareAccelerated="true"
         android:theme="@style/Theme.Example.LeanbackLauncher">
         <activity
             android:name=".app.MainActivity"
@@ -245,7 +245,7 @@
         </activity>
         <activity
             android:name="nurulaiman.sony.activity.YoutubeTvViewActivity"
-
+            android:hardwareAccelerated="true"
             android:theme="@style/Theme.Example.Leanback.CustomTitle">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />

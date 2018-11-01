@@ -48,7 +48,7 @@ android {
         abortOnError false
     }
 
-    buildToolsVersion '27.0.3'
+    buildToolsVersion '28.0.3'
     compileOptions {
         sourceCompatibility = '1.8'
         targetCompatibility = '1.8'
@@ -67,64 +67,47 @@ dependencies {
     implementation 'android.arch.lifecycle:livedata:1.1.1'
     annotationProcessor "android.arch.lifecycle:compiler:" + rootProject.archLifecycleVersion
     annotationProcessor "android.arch.persistence.room:compiler:" + rootProject.archRoomVersion
-
     testImplementation 'junit:junit:4.12'
-
     // Testing-only dependencies
     androidTestImplementation 'com.android.support.test:runner:' + rootProject.runnerVersion
     androidTestImplementation 'com.android.support.test:rules:' + rootProject.rulesVersion
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:' + rootProject.espressoVersion
-
     androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:' + rootProject.espressoVersion
-
     // Force usage of dependencies in the test app, since it is internally used by the runner module.
     androidTestImplementation 'com.android.support:design:28.0.0-rc02'
     androidTestImplementation 'com.android.support:recyclerview-v7:28.0.0-rc02'
-
     implementation 'com.android.support:leanback-v17:28.0.0-rc02'
     implementation 'com.android.support:appcompat-v7:28.0.0-rc02'
-
     implementation 'com.android.support:preference-v7:28.0.0-rc02'
     implementation 'com.android.support:preference-leanback-v17:28.0.0-rc02'
     implementation 'com.android.support:preference-v14:28.0.0-rc02'
-
-    implementation "com.google.code.gson:gson:2.8.1"
-    implementation "com.android.support:palette-v7:28.0.0-rc02"
+    implementation 'com.google.code.gson:gson:2.8.1'
+    implementation 'com.android.support:palette-v7:28.0.0-rc02'
     //implementation 'com.google.android.exoplayer:exoplayer:r2.2.0'
     implementation 'com.google.android.exoplayer:exoplayer:2.6.1'
-
     implementation 'com.github.bumptech.glide:glide:4.0.0-RC1'
     implementation 'com.android.support:support-tv-provider:28.0.0-rc02'
-
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
-
-    implementation "com.google.dagger:dagger:2.11"
-    implementation "com.google.dagger:dagger-android:2.11"
-    implementation "com.google.dagger:dagger-android-support:2.11"
-
+    implementation 'com.google.dagger:dagger:2.11'
+    implementation 'com.google.dagger:dagger-android:2.11'
+    implementation 'com.google.dagger:dagger-android-support:2.11'
     annotationProcessor "com.google.dagger:dagger-android-processor:2.11"
     annotationProcessor "com.google.dagger:dagger-compiler:2.11"
-
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:8.0.1'
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:chromecast-sender:0.15'
     implementation 'fr.bmartel:youtubetv:1.2'
     implementation 'com.squareup.picasso:picasso:2.5.2'
-
     //Universal Image Loader
     implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
-
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:mediarouter-v7:28.0.0'
     implementation 'com.google.android.gms:play-services-cast-framework:9.8.0'
     implementation 'com.googlecode.android-query:android-query:0.25.9'
-
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.2.50'
-    implementation "io.reactivex.rxjava2:rxjava:2.1.15"
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.15'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
-
     implementation 'com.android.support:support-annotations:27.1.1'
-
     implementation('com.google.api-client:google-api-client-android:1.23.0') {
         exclude group: 'com.google.guava'
         exclude group: 'org.apache.httpcomponents'
@@ -139,5 +122,5 @@ dependencies {
     }
     implementation 'com.google.firebase:firebase-core:16.0.4'
     implementation 'com.google.firebase:firebase-database:16.0.1'
-
+    implementation files('libs/YouTubeAndroidPlayerApi.jar')
 }
