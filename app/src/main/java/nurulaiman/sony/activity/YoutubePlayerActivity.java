@@ -20,6 +20,7 @@ import androidyoutubeplayer.player.YouTubePlayer;
 import androidyoutubeplayer.player.YouTubePlayerView;
 import androidyoutubeplayer.player.listeners.AbstractYouTubePlayerListener;
 import androidyoutubeplayer.utils.YouTubePlayerTracker;
+import fr.bmartel.youtubetv.YoutubeTvView;
 import nurulaiman.sony.utils.MatchingCardUtils;
 
 public class YoutubePlayerActivity extends FragmentActivity {
@@ -50,6 +51,9 @@ public class YoutubePlayerActivity extends FragmentActivity {
     private ImageView iconView = null;
     private int defaultHideTime = 1000;
 
+    //just to use playlist features
+    private YoutubeTvView mYoutubeView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,9 +74,29 @@ public class YoutubePlayerActivity extends FragmentActivity {
 
     private void initEpisodes(){
 
-
         youtubeVideoId = getIntent().getExtras().getString("videoId");
         youtubeVideoTitle = getIntent().getExtras().getString("videoTitle");
+
+        mYoutubeView = (YoutubeTvView) findViewById(R.id.youtube_tv_video);
+
+        Bundle args = new Bundle();
+        args.putString("playlistId", "PLV71sdBgCmhSQwckYsNtNn7e5CGUnldJk");
+        args.putString("videoId",youtubeVideoId);
+        mYoutubeView.updateView(args);
+
+
+
+
+
+
+        episodeArrayList = (ArrayList<String>) mYoutubeView.getPlaylist();
+        for(String ep:episodeArrayList) {
+            Log.d("YoutubePlayerActivity", "Episode video id: " + ep);
+        }
+
+        if(mYoutubeView.getPlaylist().isEmpty()){
+            Log.d("YoutubePlayerActivity", "Empty playlist");
+        }
 
         if(prevVideoTitle==null){
             prevVideoTitle = youtubeVideoTitle;
@@ -86,7 +110,7 @@ public class YoutubePlayerActivity extends FragmentActivity {
             showDetailedCard = matchingCardUtils.findMatchingCard(youtubeVideoTitle);
 
             //if not movies, get episodes & title list
-            if(!showDetailedCard.getText().toLowerCase().contains("movie")){
+            /*if(!showDetailedCard.getText().toLowerCase().contains("movie")){
                 episodes = showDetailedCard.getRecommended();
 
 
@@ -106,7 +130,7 @@ public class YoutubePlayerActivity extends FragmentActivity {
 
                 }
 
-            }
+            }*/
    }
 
     private void initYouTubePlayerView() {

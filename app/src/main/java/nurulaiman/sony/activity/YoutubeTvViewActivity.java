@@ -74,8 +74,6 @@ public class YoutubeTvViewActivity extends Activity {
     private ImageView iconView = null;
     private int defaultHideTime = 1000;
 
-    private String nextToLoadVidTitle = null;
-
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.youtube_tv_view);
@@ -92,20 +90,17 @@ public class YoutubeTvViewActivity extends Activity {
         mYoutubeView = (YoutubeTvView) findViewById(R.id.youtube_tv_video);
         mYoutubeView.playVideo(youtubeVideoId);
 
+
         Log.d("YoutubeTvView","play video "+ youtubeVideoId);
 
 
         //to display icon
         iconView = findViewById(R.id.iconView);
         iconView.setVisibility(View.GONE);
-        //iconView.setImageDrawable(getDrawable(R.drawable.ic_home_black_24dp));
+
 
         //to display video title
         if(youtubeVideoTitle!=null){
-            //youTubePlayerView.getPlayerUIController().setVideoTitle(videoTitle);
-
-            //to display pop-up when changing channel
-            //
 
             textView = findViewById(R.id.textView2);
             textView.setText(youtubeVideoTitle);
@@ -194,17 +189,7 @@ public class YoutubeTvViewActivity extends Activity {
 
         Log.i("KeyEvent",KeyCode + " button pressed");
 
-/*
-        if(KeyCode == KeyEvent.KEYCODE_BACK){
-            Log.i("KeyEvent","Return button pressed");
-            handled=true;
-            intent = new Intent(this, MainActivity.class);
-            onDestroy();
-            startActivity(intent);
-
-        }
-
-        else */if(KeyCode == KeyEvent.KEYCODE_ESCAPE){
+        if(KeyCode == KeyEvent.KEYCODE_ESCAPE){
             Log.i("KeyEvent","Exit button pressed");
             handled=true;
             moveTaskToBack(true);
@@ -298,21 +283,13 @@ public class YoutubeTvViewActivity extends Activity {
             iconView.setVisibility(View.VISIBLE);
 
 
-            //String newVideoId = getNextEpisode();
             youtubeVideoId = getNextEpisode();
             if(youtubeVideoId!=null){
 
 
 
-                nextToLoadVidTitle = titleArrayList.get(episodeArrayList.indexOf(youtubeVideoId));
-                initVideoTitle(nextToLoadVidTitle);
-                /*intent = new Intent(this, YoutubePlayerActivity.class);
-                intent.putExtra("videoId",newVideoId);
-                intent.putExtra("videoTitle",nextToLoadVidTitle);
-                //startActivity(intent);
-                //onDestroy();
-
-                delayStartActivity(500,intent);*/
+                youtubeVideoTitle = titleArrayList.get(episodeArrayList.indexOf(youtubeVideoId));
+                initVideoTitle();
 
                 mYoutubeView.playVideo(youtubeVideoId);
 
@@ -328,22 +305,14 @@ public class YoutubeTvViewActivity extends Activity {
             iconView.setImageDrawable(getDrawable(R.drawable.ic_skip_previous_white_24dp));
             iconView.setVisibility(View.VISIBLE);
 
-            //String newVideoId = getPrevEpisode();
+
             youtubeVideoId = getPrevEpisode();
 
             if(youtubeVideoId!=null){
 
-                nextToLoadVidTitle = titleArrayList.get(episodeArrayList.indexOf(youtubeVideoId));
-                initVideoTitle(nextToLoadVidTitle);
+                youtubeVideoTitle = titleArrayList.get(episodeArrayList.indexOf(youtubeVideoId));
+                initVideoTitle();
 
-                /*intent = new Intent(this, YoutubePlayerActivity.class);
-
-                intent.putExtra("videoId",newVideoId);
-                intent.putExtra("videoTitle",nextToLoadVidTitle);
-
-                //startActivity(intent);
-                //onDestroy();
-                delayStartActivity(500,intent);*/
                 mYoutubeView.playVideo(youtubeVideoId);
 
 
@@ -377,8 +346,7 @@ public class YoutubeTvViewActivity extends Activity {
         else if(KeyCode==KeyEvent.KEYCODE_CAPTIONS){
             Log.i("KeyEvent","CC button pressed");
             handled=true;
-            /*Toast.makeText(this, "CH+ button feature available on Live TV.", Toast.LENGTH_SHORT)
-                    .show();*/
+
             Bundle args = new Bundle();
             if(!ccOn){
                 args.putBoolean("closedCaptions",true);
@@ -409,8 +377,6 @@ public class YoutubeTvViewActivity extends Activity {
 
 
         if(handled){
-            //onDestroy();
-            //startActivity(intent);
 
             return handled;
         }
@@ -430,24 +396,18 @@ public class YoutubeTvViewActivity extends Activity {
         }, time);
     }
 
-    public void delayStartActivity(int time, Intent intent){
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            public void run() {
-                startActivity(intent);
-            }
-        }, time);
-    }
+
 
     //to display next video title faster
-    public void initVideoTitle(String videoTitle){
+    public void initVideoTitle(){
 
-        if(videoTitle!=null){
+        if(youtubeVideoTitle!=null){
 
             textView = findViewById(R.id.textView2);
-            textView.setText(videoTitle);
+            textView.setText(youtubeVideoTitle);
             textView.setVisibility(View.VISIBLE);
-            //hide after 3 seconds
+
+            //hide after 5 seconds
             textView.postDelayed(new Runnable() {
                 public void run() {
                     textView.setVisibility(View.GONE);
