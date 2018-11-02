@@ -14,13 +14,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.pierfrancescosoffritti.androidyoutubeplayer.player.YouTubePlayer;
-import com.pierfrancescosoffritti.androidyoutubeplayer.player.YouTubePlayerView;
-import com.pierfrancescosoffritti.androidyoutubeplayer.player.listeners.AbstractYouTubePlayerListener;
-import com.pierfrancescosoffritti.androidyoutubeplayer.utils.YouTubePlayerTracker;
-
 import java.util.ArrayList;
 
+import androidyoutubeplayer.player.YouTubePlayer;
+import androidyoutubeplayer.player.YouTubePlayerView;
+import androidyoutubeplayer.player.listeners.AbstractYouTubePlayerListener;
+import androidyoutubeplayer.utils.YouTubePlayerTracker;
 import nurulaiman.sony.utils.MatchingCardUtils;
 
 public class YoutubePlayerActivity extends FragmentActivity {
@@ -51,8 +50,6 @@ public class YoutubePlayerActivity extends FragmentActivity {
     private ImageView iconView = null;
     private int defaultHideTime = 1000;
 
-    private String nextToLoadVidTitle = null;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,9 +72,6 @@ public class YoutubePlayerActivity extends FragmentActivity {
 
 
         youtubeVideoId = getIntent().getExtras().getString("videoId");
-
-
-
         youtubeVideoTitle = getIntent().getExtras().getString("videoTitle");
 
         if(prevVideoTitle==null){
@@ -90,6 +84,8 @@ public class YoutubePlayerActivity extends FragmentActivity {
 
 
             showDetailedCard = matchingCardUtils.findMatchingCard(youtubeVideoTitle);
+
+            //if not movies, get episodes & title list
             if(!showDetailedCard.getText().toLowerCase().contains("movie")){
                 episodes = showDetailedCard.getRecommended();
 
@@ -106,44 +102,30 @@ public class YoutubePlayerActivity extends FragmentActivity {
 
                 //for debugging
                 for(String ep:episodeArrayList){
-                    Log.i("YoutubePlayerActivity","Episode video id: "+ ep);
+                    Log.d("YoutubePlayerActivity","Episode video id: "+ ep);
 
                 }
 
             }
-
-
-
-
-
-
-    }
+   }
 
     private void initYouTubePlayerView() {
-        //YouTubePlayerView youTubePlayerView = findViewById(R.id.youtube_player_view);
         youTubePlayerView = findViewById(R.id.youtube_player_view);
         youTubePlayerView.getPlayerUIController().showFullscreenButton(false);
         youTubePlayerView.getPlayerUIController().showUI(false);
         youTubePlayerView.getPlayerUIController().enableLiveVideoUI(false);
 
-       // youTubePlayerView.enterFullScreen();
-
-
-        //youtubeVideoId = getIntent().getExtras().getString("videoId");
         Log.i("YoutubePlayerActivity","current videoID: "+ youtubeVideoId);
 
 
         //to display icon
         iconView = findViewById(R.id.iconView);
         iconView.setVisibility(View.GONE);
-        //iconView.setImageDrawable(getDrawable(R.drawable.ic_home_black_24dp));
+
 
         //to display video title
         if(youtubeVideoTitle!=null){
-            //youTubePlayerView.getPlayerUIController().setVideoTitle(videoTitle);
-
-            //to display pop-up when changing channel
-            //
+            //to display pop-up when changing episode
 
             textView = findViewById(R.id.textView2);
             textView.setText(youtubeVideoTitle);
@@ -159,9 +141,10 @@ public class YoutubePlayerActivity extends FragmentActivity {
 
         getLifecycle().addObserver(youTubePlayerView);
 
+
         youTubePlayerView.initialize(youTubePlayer -> {
 
-            passYoutubePlayer(youTubePlayer);
+            this.passYoutubePlayer((YouTubePlayer) youTubePlayer);
             youTubePlayer.addListener(tracker);
             youTubePlayer.addListener(new AbstractYouTubePlayerListener() {
                 @Override
@@ -180,6 +163,7 @@ public class YoutubePlayerActivity extends FragmentActivity {
         this.youTubePlayer = youTubePlayer;
     }
 
+
     @Override
     public boolean onKeyDown(int KeyCode, KeyEvent event){
 
@@ -189,17 +173,7 @@ public class YoutubePlayerActivity extends FragmentActivity {
 
         Log.i("KeyEvent",KeyCode + " button pressed");
 
-/*
-        if(KeyCode == KeyEvent.KEYCODE_BACK){
-            Log.i("KeyEvent","Return button pressed");
-            handled=true;
-            intent = new Intent(this, MainActivity.class);
-            onDestroy();
-            startActivity(intent);
-
-        }
-
-        else */if(KeyCode == KeyEvent.KEYCODE_ESCAPE){
+        if(KeyCode == KeyEvent.KEYCODE_ESCAPE){
             Log.i("KeyEvent","Exit button pressed");
             handled=true;
             moveTaskToBack(true);
@@ -296,21 +270,10 @@ public class YoutubePlayerActivity extends FragmentActivity {
             String newVideoId = getNextEpisode();
 
             if(newVideoId!=null){
-
-                intent = new Intent(this, YoutubePlayerActivity.class);
-
-                nextToLoadVidTitle = titleArrayList.get(episodeArrayList.indexOf(newVideoId));
-                initVideoTitle(nextToLoadVidTitle);
-
-                intent.putExtra("videoId",newVideoId);
-                intent.putExtra("videoTitle",nextToLoadVidTitle);
-                //startActivity(intent);
-                //onDestroy();
-
-                delayStartActivity(500,intent);
-
-
-
+                youtubeVideoTitle = titleArrayList.get(episodeArrayList.indexOf(newVideoId));
+                youtubeVideoId = newVideoId;
+                initVideoTitle();
+                youTubePlayer.loadVideo(youtubeVideoId,0f);
             }
             hideIconView(defaultHideTime);
 
@@ -328,19 +291,10 @@ public class YoutubePlayerActivity extends FragmentActivity {
 
             if(newVideoId!=null){
 
-                nextToLoadVidTitle = titleArrayList.get(episodeArrayList.indexOf(newVideoId));
-                initVideoTitle(nextToLoadVidTitle);
-
-                intent = new Intent(this, YoutubePlayerActivity.class);
-
-                intent.putExtra("videoId",newVideoId);
-                intent.putExtra("videoTitle",nextToLoadVidTitle);
-
-                //startActivity(intent);
-                //onDestroy();
-                delayStartActivity(500,intent);
-
-
+                youtubeVideoTitle = titleArrayList.get(episodeArrayList.indexOf(newVideoId));
+                youtubeVideoId = newVideoId;
+                initVideoTitle();
+                youTubePlayer.loadVideo(youtubeVideoId,0f);
             }
             hideIconView(3000);
         }
@@ -370,8 +324,6 @@ public class YoutubePlayerActivity extends FragmentActivity {
 
 
         if(handled){
-            //onDestroy();
-            //startActivity(intent);
 
             return handled;
         }
@@ -391,26 +343,18 @@ public class YoutubePlayerActivity extends FragmentActivity {
         }, time);
     }
 
-    public void delayStartActivity(int time, Intent intent){
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            public void run() {
-                startActivity(intent);
-            }
-        }, time);
-    }
 
-    //to display next video title faster
-    public void initVideoTitle(String videoTitle){
 
-        if(videoTitle!=null){
+    //to display next video title
+    public void initVideoTitle(){
+
+        if(youtubeVideoTitle!=null){
 
             textView = findViewById(R.id.textView2);
-            textView.setText(videoTitle);
             textView.setVisibility(View.VISIBLE);
+            textView.setText(youtubeVideoTitle);
 
-
-            //hide after 3 seconds
+            //hide after 5 seconds
             textView.postDelayed(new Runnable() {
                 public void run() {
                     textView.setVisibility(View.GONE);
@@ -418,6 +362,7 @@ public class YoutubePlayerActivity extends FragmentActivity {
             }, 5000);
         }
     }
+
 
     private String getPrevEpisode() {
         int idx = episodeArrayList.indexOf(youtubeVideoId);

@@ -48,10 +48,9 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 
-import nurulaiman.sony.activity.DetailViewMovieActivity;
-import nurulaiman.sony.activity.DetailViewTvShowActivity;
 import nurulaiman.sony.activity.YoutubePlayerActivity;
 import nurulaiman.sony.activity.YoutubeTvViewActivity;
+import nurulaiman.sony.testpackage.media.YoutubeActivityFragment;
 import nurulaiman.sony.utils.MatchingCardUtils;
 
 /**
@@ -220,8 +219,9 @@ public class DetailViewTvShowFragment extends DetailsFragment implements OnItemV
                 setSelectedPosition(2);
             }
             else if(action.getId()==ACTION_WATCHNOW){
-                //Intent intent = new Intent(getContext(), YoutubePlayerActivity.class);
-                Intent intent = new Intent(getContext(), YoutubeTvViewActivity.class);
+                Intent intent = new Intent(getContext(), YoutubePlayerActivity.class);
+                //Intent intent = new Intent(getContext(), YoutubeTvViewActivity.class);
+                //Intent intent = new Intent(getContext(), YoutubeActivityFragment.class);
                 String videoId = data.getVideoId();
                 String videoTitle = data.getTitle();
                 intent.putExtra("videoId",videoId);
@@ -236,8 +236,8 @@ public class DetailViewTvShowFragment extends DetailsFragment implements OnItemV
         }
 
         else if(item instanceof Card && ((Card)item).getType().equals(Card.Type.DEFAULT)){
-            //Intent intent = new Intent(getContext(), YoutubePlayerActivity.class);
-            Intent intent = new Intent(getContext(), YoutubeTvViewActivity.class);
+            Intent intent = new Intent(getContext(), YoutubePlayerActivity.class);
+            //Intent intent = new Intent(getContext(), YoutubeTvViewActivity.class);
 
             Card selectedCard = (Card)item;
 

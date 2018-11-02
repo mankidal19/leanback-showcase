@@ -25,6 +25,7 @@ import nurulaiman.sony.data.MockDatabase;
 
 public class LiveActivity extends FragmentActivity {
 
+    private final String TAG = "LiveActivity";
     //default live TV
     private String liveVideoId = "iygNrT5d27U";
     private YouTubePlayerView youTubePlayerView = null;
@@ -67,7 +68,7 @@ public class LiveActivity extends FragmentActivity {
 
         finish();
 
-        Log.i("in Live Activity","onBackPressed() is called");
+        Log.d(TAG,"onBackPressed() is called");
     }
 
     @Override
@@ -77,7 +78,7 @@ public class LiveActivity extends FragmentActivity {
             //youTubePlayerView.release();
         }
 
-        Log.i("in Live Activity","onPause() is called");
+        Log.d(TAG,"onPause() is called");
 
     }
 
@@ -87,7 +88,7 @@ public class LiveActivity extends FragmentActivity {
         youTubePlayerView.release();
         youTubePlayerView = null;
         super.onDestroy();
-        Log.i("in Live Activity","onDestroy() is called");
+        Log.d(TAG,"onDestroy() is called");
     }
 
     @Override
@@ -95,7 +96,7 @@ public class LiveActivity extends FragmentActivity {
 
 
         super.onStop();
-        Log.i("in Live Activity","onStop() is called");
+        Log.d(TAG,"onStop() is called");
     }
 
 
@@ -107,10 +108,10 @@ public class LiveActivity extends FragmentActivity {
         KeyCode = event.getKeyCode();
         Intent intent = new Intent(this, LiveActivity.class);
 
-        Log.i("KeyEvent",KeyCode + " button pressed");
+        Log.d(TAG,KeyCode + " button pressed");
 
         if(event.getKeyCode() == KeyEvent.KEYCODE_CHANNEL_DOWN){
-            Log.i("KeyEvent","Channel down button pressed");
+            Log.d(TAG,"Channel down button pressed");
             handled=true;
 
             liveVideoId = getPrevChannel();
@@ -126,7 +127,7 @@ public class LiveActivity extends FragmentActivity {
         }
 
         else if(event.getKeyCode() == KeyEvent.KEYCODE_CHANNEL_UP){
-            Log.i("KeyEvent","Channel up button pressed");
+            Log.d(TAG,"Channel up button pressed");
             handled=true;
             //onDestroy();
 
@@ -144,7 +145,7 @@ public class LiveActivity extends FragmentActivity {
         }
 
         else if(event.getKeyCode() == KeyEvent.KEYCODE_ESCAPE){
-            Log.i("KeyEvent","Exit button pressed");
+            Log.d(TAG,"Exit button pressed");
             handled=true;
             moveTaskToBack(true);
             android.os.Process.killProcess(android.os.Process.myPid());
@@ -153,7 +154,7 @@ public class LiveActivity extends FragmentActivity {
         }
 
         else if(KeyCode==KeyEvent.KEYCODE_MEDIA_PLAY_PAUSE){
-            Log.i("KeyEvent","Play/Pause button pressed");
+            Log.d(TAG,"Play/Pause button pressed");
             handled=true;
             if(playing){
                 youTubePlayer.pause();
@@ -179,7 +180,7 @@ public class LiveActivity extends FragmentActivity {
         }
 
         else if(KeyCode==KeyEvent.KEYCODE_MEDIA_PLAY){
-            Log.i("KeyEvent","Play button pressed");
+            Log.d(TAG,"Play button pressed");
             handled=true;
             if(!playing){
                 youTubePlayer.play();
@@ -194,7 +195,7 @@ public class LiveActivity extends FragmentActivity {
         }
 
         else if(KeyCode==KeyEvent.KEYCODE_MEDIA_PAUSE){
-            Log.i("KeyEvent","Pause button pressed");
+            Log.d(TAG,"Pause button pressed");
             handled=true;
             if(playing){
                 youTubePlayer.pause();
@@ -210,7 +211,7 @@ public class LiveActivity extends FragmentActivity {
         }
 
         else if(KeyCode==KeyEvent.KEYCODE_MEDIA_REWIND){
-            Log.i("KeyEvent","Rewind button pressed");
+            Log.d(TAG,"Rewind button pressed");
             handled=true;
             Toast.makeText(this, "REWIND button feature available on VOD.", Toast.LENGTH_SHORT)
                     .show();
@@ -221,7 +222,7 @@ public class LiveActivity extends FragmentActivity {
         }
 
         else if(KeyCode==KeyEvent.KEYCODE_MEDIA_FAST_FORWARD){
-            Log.i("KeyEvent","Fast Forward button pressed");
+            Log.d(TAG,"Fast Forward button pressed");
             handled=true;
             Toast.makeText(this, "FAST FORWARD button feature available on VOD.", Toast.LENGTH_SHORT)
                     .show();
@@ -233,7 +234,7 @@ public class LiveActivity extends FragmentActivity {
         }
 
         else if(KeyCode==KeyEvent.KEYCODE_MEDIA_PREVIOUS){
-            Log.i("KeyEvent","Rewind button pressed");
+            Log.d(TAG,"Rewind button pressed");
             handled=true;
             Toast.makeText(this, "PREVIOUS button feature available on TV Shows VOD.", Toast.LENGTH_SHORT)
                     .show();
@@ -243,7 +244,7 @@ public class LiveActivity extends FragmentActivity {
         }
 
         else if(KeyCode==KeyEvent.KEYCODE_MEDIA_NEXT){
-            Log.i("KeyEvent","Fast Forward button pressed");
+            Log.d(TAG,"Fast Forward button pressed");
             handled=true;
             Toast.makeText(this, "NEXT button feature available on TV Shows VOD.", Toast.LENGTH_SHORT)
                     .show();
@@ -287,7 +288,7 @@ public class LiveActivity extends FragmentActivity {
         youTubePlayerView.getPlayerUIController().enableLiveVideoUI(true);
 
         liveVideoId = getIntent().getExtras().getString("videoId");
-        Log.i("in Live Activity","current videoID: "+ liveVideoId);
+        Log.d(TAG,"current videoID: "+ liveVideoId);
 
 
         //to display icon
@@ -336,6 +337,8 @@ public class LiveActivity extends FragmentActivity {
                 }
             }, 5000);
         }
+
+
     }
 
     //hide icon
@@ -354,7 +357,7 @@ public class LiveActivity extends FragmentActivity {
 
         channelArrayList.add("iygNrT5d27U");
         channelArrayList.add("2LWt-dxd0v4");
-        channelArrayList.add("hMOH-tnxOA4");
+        channelArrayList.add("_ulUsFYyLZ0");
         channelArrayList.add("KkXq2sv6Tos");
         channelArrayList.add("Lvp-lSqHVKc");
     }

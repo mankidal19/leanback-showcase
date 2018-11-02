@@ -132,7 +132,7 @@ public class MockDatabase {
             if(c.getVideoId()!=null){
                 if(c.getVideoId().toLowerCase().contains(query)){
 
-                    Log.i("found title for:",c.getVideoId());
+                    Log.d("found title for:",c.getVideoId());
 
                     card = c;
                     return card;
@@ -142,6 +142,10 @@ public class MockDatabase {
 
             }
 
+            else{
+                Log.d("title not found for:",query);
+            }
+
 
 
         }
@@ -149,6 +153,43 @@ public class MockDatabase {
         return card;
 
     }
+
+   /* public Card searchCardByTitle(String query){
+        query = query.toLowerCase();
+
+        String[] title = query.split("]");
+
+
+        Card card = null;
+
+        for (Card c : getAllCard()) {
+
+            String[] cardTitle = c.getTitle().toLowerCase().split("] ");
+
+            if(c.getTitle()!=null){
+                if(title[title.length-1].contains(cardTitle[cardTitle.length-1])){
+
+                    Log.d("found title for:",c.getTitle());
+
+                    card = c;
+                    return card;
+
+
+                }
+
+            }
+
+            else{
+                Log.d("title not found for:",query);
+            }
+
+
+
+        }
+
+        return card;
+
+    }*/
 
     /**
      * Finds a particular movie with the given id.

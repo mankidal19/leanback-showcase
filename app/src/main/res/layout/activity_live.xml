@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context="nurulaiman.sony.activity.LiveActivity">
 
-    <com.pierfrancescosoffritti.androidyoutubeplayer.player.YouTubePlayerView
+    <androidyoutubeplayer.player.YouTubePlayerView
         android:id="@+id/youtube_player_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -39,6 +39,6 @@
 
         </LinearLayout>
 
-    </com.pierfrancescosoffritti.androidyoutubeplayer.player.YouTubePlayerView>
+    </androidyoutubeplayer.player.YouTubePlayerView>
 
 </LinearLayout>
