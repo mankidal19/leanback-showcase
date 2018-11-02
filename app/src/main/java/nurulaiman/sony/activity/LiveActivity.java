@@ -8,9 +8,9 @@ import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.KeyEvent;
 
-import com.pierfrancescosoffritti.androidyoutubeplayer.player.YouTubePlayer;
-import com.pierfrancescosoffritti.androidyoutubeplayer.player.YouTubePlayerView;
-import com.pierfrancescosoffritti.androidyoutubeplayer.player.listeners.AbstractYouTubePlayerListener;
+import androidyoutubeplayer.player.YouTubePlayer;
+import androidyoutubeplayer.player.YouTubePlayerView;
+import androidyoutubeplayer.player.listeners.AbstractYouTubePlayerListener;
 
 import java.util.ArrayList;
 
@@ -43,7 +43,6 @@ public class LiveActivity extends FragmentActivity {
     private ImageView iconView = null;
     private int defaultHideTime = 1000;
 
-    private String nextToLoadVidId = null;
 
 
 
@@ -53,14 +52,6 @@ public class LiveActivity extends FragmentActivity {
         setContentView(R.layout.activity_live);
 
         initChannelList();
-
-       /* if(getIntent().getExtras().getInt("mediaId") >=0){
-            int mediaId = getIntent().getExtras().getInt("mediaId");
-            liveVideoId = channelArrayList.get(mediaId);
-            Log.i("in Live Activity","video id: " + liveVideoId);
-        }*/
-
-
         initYouTubePlayerView();
 
     }
@@ -73,10 +64,6 @@ public class LiveActivity extends FragmentActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        //if(youTubePlayerView !=null){
-            //youTubePlayerView.release();
-        //}
-
 
         finish();
 
@@ -125,19 +112,16 @@ public class LiveActivity extends FragmentActivity {
         if(event.getKeyCode() == KeyEvent.KEYCODE_CHANNEL_DOWN){
             Log.i("KeyEvent","Channel down button pressed");
             handled=true;
-            //onDestroy();
-            //youTubePlayerView.release();
-            nextToLoadVidId = getPrevChannel();
-            initVideoTitle(nextToLoadVidId);
 
-            intent.putExtra("videoId",nextToLoadVidId);
+            liveVideoId = getPrevChannel();
+            initVideoTitle();
+
 
             iconView.setImageDrawable(getDrawable(R.drawable.ic_ch_minus));
             iconView.setVisibility(View.VISIBLE);
 
+            youTubePlayer.loadVideo(liveVideoId,0f);
 
-            //startActivity(intent);
-            delayStartActivity(1000,intent);
             hideIconView(defaultHideTime);
         }
 
@@ -146,30 +130,17 @@ public class LiveActivity extends FragmentActivity {
             handled=true;
             //onDestroy();
 
-            nextToLoadVidId = getNextChannel();
-            initVideoTitle(nextToLoadVidId);
-            intent.putExtra("videoId",nextToLoadVidId);
+            liveVideoId = getNextChannel();
+            initVideoTitle();
 
-            //youTubePlayerView.release();
+
+            youTubePlayer.loadVideo(liveVideoId,0f);
 
             iconView.setImageDrawable(getDrawable(R.drawable.ic_ch_plus));
             iconView.setVisibility(View.VISIBLE);
 
-
-            //startActivity(intent);
-            delayStartActivity(1000,intent);
             hideIconView(defaultHideTime);
 
-        }
-
-        else if(event.getKeyCode() == KeyEvent.KEYCODE_BACK){
-            Log.i("KeyEvent","Return button pressed");
-            handled=true;
-            intent = new Intent(this, MainActivity.class);
-
-            onDestroy();
-            //startActivity(intent);
-            delayStartActivity(1000,intent);
         }
 
         else if(event.getKeyCode() == KeyEvent.KEYCODE_ESCAPE){
@@ -310,13 +281,10 @@ public class LiveActivity extends FragmentActivity {
 
 
     private void initYouTubePlayerView() {
-        //YouTubePlayerView youTubePlayerView = findViewById(R.id.youtube_player_view);
+
         youTubePlayerView = findViewById(R.id.youtube_player_view);
         youTubePlayerView.getPlayerUIController().showFullscreenButton(false);
         youTubePlayerView.getPlayerUIController().enableLiveVideoUI(true);
-        //youTubePlayerView.getPlayerUIController().showPlayPauseButton(true);
-        //youTubePlayerView.getPlayerUIController().showVideoTitle(true);
-        //youTubePlayerView.getPlayerUIController().showUI(true);
 
         liveVideoId = getIntent().getExtras().getString("videoId");
         Log.i("in Live Activity","current videoID: "+ liveVideoId);
@@ -326,47 +294,13 @@ public class LiveActivity extends FragmentActivity {
         iconView = findViewById(R.id.iconView2);
         iconView.setVisibility(View.GONE);
 
-
-        //to set video title
-
-        //method #1- using intent
-        /*videoTitle = getIntent().getExtras().getString("videoTitle");
-        if(videoTitle!=null){
-            youTubePlayerView.getPlayerUIController().setVideoTitle(videoTitle);
-        }*/
-
-        //method #2- using mockdatabase searchCard()
-        /*videoTitle = mockDatabase.searchCard(liveVideoId).getTitle();
-        if(videoTitle!=null){
-            //youTubePlayerView.getPlayerUIController().setVideoTitle(videoTitle);
-
-            //to display pop-up when changing channel
-            //
-            String channelNum = "10"+ Integer.toString(channelArrayList.indexOf(liveVideoId)+1);
-            String displayText = channelNum + ": " + videoTitle;
-            textView = findViewById(R.id.textView1);
-            textView.setText(displayText);
-
-            //hide after 3 seconds
-            textView.postDelayed(new Runnable() {
-                public void run() {
-                    textView.setVisibility(View.GONE);
-                }
-            }, 5000);
-        }*/
-
-        //method #3- using reusable function
-        initVideoTitle(liveVideoId);
-
-
-
-
+        initVideoTitle();
 
         getLifecycle().addObserver(youTubePlayerView);
 
         youTubePlayerView.initialize(youTubePlayer -> {
 
-            passYoutubePlayer(youTubePlayer);
+            this.passYoutubePlayer((YouTubePlayer) youTubePlayer);
             youTubePlayer.addListener(new AbstractYouTubePlayerListener() {
                 @Override
                 public void onReady() {
@@ -384,20 +318,18 @@ public class LiveActivity extends FragmentActivity {
         this.youTubePlayer = youTubePlayer;
     }
 
-    //to display next video title faster
-    public void initVideoTitle(String videoId){
-        videoTitle = mockDatabase.searchCard(videoId).getTitle();
+    //to display next video title
+    public void initVideoTitle(){
+        videoTitle = mockDatabase.searchCard(liveVideoId).getTitle();
         if(videoTitle!=null){
-            //youTubePlayerView.getPlayerUIController().setVideoTitle(videoTitle);
 
-            //to display pop-up when changing channel
-            //
             String channelNum = "10"+ Integer.toString(channelArrayList.indexOf(liveVideoId)+1);
             String displayText = channelNum + ": " + videoTitle;
             textView = findViewById(R.id.textView1);
+            textView.setVisibility(View.VISIBLE);
             textView.setText(displayText);
 
-            //hide after 3 seconds
+            //hide after 5 seconds
             textView.postDelayed(new Runnable() {
                 public void run() {
                     textView.setVisibility(View.GONE);
@@ -415,14 +347,7 @@ public class LiveActivity extends FragmentActivity {
         }, time);
     }
 
-    public void delayStartActivity(int time, Intent intent){
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            public void run() {
-                startActivity(intent);
-            }
-        }, time);
-    }
+
 
     //initialize channel list ArrayList
     private void initChannelList(){
