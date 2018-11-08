@@ -14,14 +14,21 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
+import androidyoutubeplayer.YoutubeTvView;
 import androidyoutubeplayer.player.YouTubePlayer;
 import androidyoutubeplayer.player.YouTubePlayerView;
 import androidyoutubeplayer.player.listeners.AbstractYouTubePlayerListener;
 import androidyoutubeplayer.utils.YouTubePlayerTracker;
-import fr.bmartel.youtubetv.YoutubeTvView;
+import fr.bmartel.youtubetv.listener.IPlayerListener;
+import fr.bmartel.youtubetv.model.VideoInfo;
+import fr.bmartel.youtubetv.model.VideoState;
+import nurulaiman.sony.utils.JsonParseTask;
 import nurulaiman.sony.utils.MatchingCardUtils;
+import nurulaiman.sony.utils.VideoUtils;
 
 public class YoutubePlayerActivity extends FragmentActivity {
 
@@ -53,7 +60,7 @@ public class YoutubePlayerActivity extends FragmentActivity {
 
     //just to use playlist features
     private YoutubeTvView mYoutubeView;
-
+    private String playlistId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,19 +87,56 @@ public class YoutubePlayerActivity extends FragmentActivity {
         mYoutubeView = (YoutubeTvView) findViewById(R.id.youtube_tv_video);
 
         Bundle args = new Bundle();
-        args.putString("playlistId", "PLV71sdBgCmhSQwckYsNtNn7e5CGUnldJk");
+        playlistId = "PLV71sdBgCmhSQwckYsNtNn7e5CGUnldJk";
+        args.putString("playlistId",playlistId);
         args.putString("videoId",youtubeVideoId);
+
+
         mYoutubeView.updateView(args);
 
+        mYoutubeView.addPlayerListener(new IPlayerListener() {
+            @Override
+            public void onPlayerReady(final VideoInfo videoInfo) {
+                Log.i("YoutubePlayerActivity", "onPlayerReady");
+
+            }
+
+            @Override
+            public void onPlayerStateChange(final VideoState state,
+                                            final long position,
+                                            final float speed,
+                                            final float duration,
+                                            final VideoInfo videoInfo) {
+                Log.i("YoutubePlayerActivity", "onPlayerStateChange : " + state.toString() + " | position : " + position + " | speed : " + speed);
+
+                if(state.equals(VideoState.VIDEO_CUED)){
+                    Log.d("YoutubePlayerActivity", "video cued");
 
 
+                    if(episodeArrayList.isEmpty()){
+                        episodeArrayList = (ArrayList<String>)mYoutubeView.getPlaylist();
+
+                        for(String ep:episodeArrayList) {
+                            Log.d("YoutubePlayerActivity", "Episode video id: " + ep);
+
+                        }
 
 
+                        mYoutubeView.closePlayer();
 
-        episodeArrayList = (ArrayList<String>) mYoutubeView.getPlaylist();
-        for(String ep:episodeArrayList) {
-            Log.d("YoutubePlayerActivity", "Episode video id: " + ep);
-        }
+                        JsonParseTask jsonParseTask = (JsonParseTask) new JsonParseTask(new JsonParseTask.AsyncResponse() {
+                            @Override
+                            public void processFinish(ArrayList<String> output) {
+                                titleArrayList.addAll(output);
+                            }
+                        }).execute(playlistId);
+                    }
+
+
+                }
+            }
+        });
+
 
         if(mYoutubeView.getPlaylist().isEmpty()){
             Log.d("YoutubePlayerActivity", "Empty playlist");
@@ -435,5 +479,7 @@ public class YoutubePlayerActivity extends FragmentActivity {
             return null;
         }
     }
+
+
 
 }
