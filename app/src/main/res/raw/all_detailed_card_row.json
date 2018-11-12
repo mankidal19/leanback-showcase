@@ -25,32 +25,6 @@
         "title": "Ko Ji-yong",
         "localImageResource": "face_02"
       }
-    ],
-    "recommended": [
-      {
-        "type": "DEFAULT",
-        "title": "[EP 240] The Return of Superman",
-        "description": "You Don't Have to Be in a Hurry!",
-        "localImageResource": "tros",
-        "footerIconLocalImageResource": "ic_installed",
-        "videoId": "50eg9SXUDwA"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[EP 242] The Return of Superman",
-        "description": "The Time We Walk Together",
-        "localImageResource": "tros",
-        "footerIconLocalImageResource": "ic_installed",
-        "videoId": "NvFGid9hLTU"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[EP 243] The Return of Superman",
-        "description": " I Support Your First Tries",
-        "localImageResource": "tros",
-        "footerIconLocalImageResource": "ic_installed",
-        "videoId": "NNTw8EI7NVk"
-      }
     ]
   },
   {
@@ -79,40 +53,6 @@
         "title": "Heejun",
         "localImageResource": "face_03"
       }
-    ],
-    "recommended": [
-      {
-        "type": "DEFAULT",
-        "title": "[EP 330] After School Club",
-        "description": "Between boys and men, MXM(엠엑스엠)!",
-        "localImageResource": "asc_club",
-        "footerIconLocalImageResource": "",
-        "videoId": "PCAq7zao_DA"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[EP 331] After School Club",
-        "description": "Their anticipated comeback as a whole group, LABOUM(라붐)! ",
-        "localImageResource": "asc_club",
-        "footerIconLocalImageResource": "",
-        "videoId": "nXX-pq5xgfA"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[EP 332] After School Club",
-        "description": "The comeback everyone has been waiting for, Jimin Park(박지민)!",
-        "localImageResource": "asc_club",
-        "footerIconLocalImageResource": "",
-        "videoId": "xzBZ7u6BWcA"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[EP 333] After School Club",
-        "description": "The rising rookie group, NATURE(네이처)!!",
-        "localImageResource": "asc_club",
-        "footerIconLocalImageResource": "",
-        "videoId": "MmkOpfoVl_8"
-      }
     ]
   },
   {
@@ -136,40 +76,6 @@
         "title": "Eyra Hazali",
         "localImageResource": "face_02"
       }
-    ],
-    "recommended": [
-      {
-        "type": "DEFAULT",
-        "title": "[WEEK 5] Big Stage",
-        "description": "5th week of Big Stage Live.",
-        "localImageResource": "big_stage",
-        "footerIconLocalImageResource": "",
-        "videoId": "F3g-hhdpNBQ"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[WEEK 6] Big Stage",
-        "description": "6th week of Big Stage Live.",
-        "localImageResource": "big_stage",
-        "footerIconLocalImageResource": "",
-        "videoId": "y5mwXuKgbMo"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[WEEK 7] Big Stage",
-        "description": "7th week of Big Stage Live.",
-        "localImageResource": "big_stage",
-        "footerIconLocalImageResource": "",
-        "videoId": "X6Co14BC9bw"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[FINAL] Big Stage",
-        "description": "Final week of Big Stage Live.",
-        "localImageResource": "big_stage",
-        "footerIconLocalImageResource": "",
-        "videoId": "iD_i7enDjtY"
-      }
     ]
   },
   {
@@ -192,40 +98,6 @@
         "type": "CHARACTER",
         "title": "Choi Won-myung",
         "localImageResource": "face_02"
-      }
-    ],
-    "recommended": [
-      {
-        "type": "DEFAULT",
-        "title": "[2018.05.04] Music Bank",
-        "description": "HWANG CHI YEUL, UNB, THE BOYZ, LOVELYZ, GFRIEND, IZ etc [MusicBank Live 2018.05.04]",
-        "localImageResource": "music_bank",
-        "footerIconLocalImageResource": "",
-        "videoId": "ZH3aP_yl_VI"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[2018.05.11] Music Bank",
-        "description": "GFRIEND, UNB, THE BOYZ, LOVELYZ, GFRIEND, 10CM, PENTAGON, etc [MusicBank Live 2018.05.11]",
-        "localImageResource": "music_bank",
-        "footerIconLocalImageResource": "",
-        "videoId": "SYrosnohG2s"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[2018.08.03] Music Bank",
-        "description": "FTISLAND, MAMAMOO, SEVENTEEN, SF9, LEO, Triple H, etc. [MusicBank Live 2018.08.03]",
-        "localImageResource": "music_bank",
-        "footerIconLocalImageResource": "",
-        "videoId": "NSThqhH0h0g"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[2018.08.31] Music Bank",
-        "description": "BTS, SHINHWA, Stray Kids, (G)I-DLE, NCT DREAM, SF9, etc.",
-        "localImageResource": "music_bank",
-        "footerIconLocalImageResource": "",
-        "videoId": "PwJY7gPQ9o"
       }
     ]
   },
@@ -255,40 +127,6 @@
         "title": "Mikako Komatsu",
         "localImageResource": "face_05"
       }
-    ],
-    "recommended": [
-      {
-        "type": "DEFAULT",
-        "title": "[EP 2]Gundam Build Fighters",
-        "description": "Having met Sei by chance, the mysterious boy Reiji insists on staying at his home and somehow even ends up coming to his school. And when Gonda, a student council executive, tries to kick out this intruder, Reiji turns the tables on him as well. Tatsuya Yuuki, the student council president and head of the model-building club, attempts to resolve the situation by saying that he invited Reiji to join the club. But Gonda, having lost face in front of the other students, challenges Reiji to a Gunpla battle purely for revenge. Using Sei's Build Strike Gundam, Reiji wins a total victory in his battle with Gonda. Then a crimson Gunpla appears before them both—the Zaku Amazing!",
-        "localImageResource": "gbf",
-        "footerIconLocalImageResource": "",
-        "videoId": "BIOi14hOOHY"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[EP 3]Gundam Build Fighters",
-        "description": "Sei and Reiji have now witnessed the overwhelmingly superior power of Tatsuya Yuuki's Zaku Amazing. To prepare for the day when he'll face Yuuki again in the championship, Sei secludes himself in his workshop to complete the Full Package equipment for his Build Strike. Meanwhile, Reiji goes out into the city at night and heads for a certain place—a store where men with years of Gunpla experience meet night after night to fight battles. Reiji challenges the men just for the sake of combat practice, and easily defeats his opponents. But then Ricardo Fellini, an Italian Gunpla battle fighter, appears before him! And on the day of the championship, Sei has somehow completed the Build Strike, but Reiji is nowhere to be found...",
-        "localImageResource": "gbf",
-        "footerIconLocalImageResource": "",
-        "videoId": "ZI4zRExqv4U"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[EP 4]Gundam Build Fighters",
-        "description": "Sei and Reiji are advancing smoothly through the Gunpla Battle Championship. Then, on a certain day, a woman calling herself Mihoshi appears at the hobby shop owned by Sei's family. Sei immediately hits it off with Mihoshi, who has a wealth of Gunpla knowledge. Mihoshi makes a deep impression on Sei, and as he advances through the championship, she repeatedly comes to see him at school as well as at the store. Seeing the two of them happily discussing Gunpla, China is greatly disturbed. And Yuuki, who is with her, feels an indescribable anxiety when he sees Mihoshi. On the day of the championship, Sei and Reiji are perfectly positioned to fight. But before them appears a singing woman named Kirara... Kirara, the Akihabara-style Gunpla idol!",
-        "localImageResource": "gbf",
-        "footerIconLocalImageResource": "",
-        "videoId": "h-FVyHGZI0Y"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[EP 5]Gundam Build Fighters",
-        "description": "Before the decisive battle with Tatsuya Yuuki, Reiji once again goes in search of combat practice, while Sei concentrates on fine-tuning the Build Strike. China is becoming concerned that Sei is too engrossed in his work. Then, a mysterious boy named Mao Yasaka appears before the two of them. Having won the Japanese 5th Block, he has already earned a place in the World Tournament, and he says he has come to the store because he is interested in Sei, a highly skilled builder who is the same age as he is. Mao has only one goal: to determine which of them is superior as a Gunpla builder. Sei accepts his challenge, and Sei and Mao bring out their Gunpla, the Build Strike and the Gundam X Maoh. As soon as they see each other's work, Sei and Mao find themselves adrift in space...!",
-        "localImageResource": "gbf",
-        "footerIconLocalImageResource": "",
-        "videoId": "dG6x_FcfWrA"
-      }
     ]
   },
   {
@@ -311,40 +149,6 @@
         "type": "CHARACTER",
         "title": "Sōichirō Hoshi",
         "localImageResource": "face_02"
-      }
-    ],
-    "recommended": [
-      {
-        "type": "DEFAULT",
-        "title": "[EP 2] Mobile Suit Gundam SEED",
-        "description": "Mobile Suit Gundam SEED HD REMASTER-Episode 2: Its Name is Gundam",
-        "localImageResource": "gundam_seed",
-        "footerIconLocalImageResource": "",
-        "videoId": "Ht3ujAaI-Qg"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[EP 3] Mobile Suit Gundam SEED",
-        "description": "Mobile Suit Gundam SEED HD REMASTER-Episode 3: Collapsing Land",
-        "localImageResource": "gundam_seed",
-        "footerIconLocalImageResource": "",
-        "videoId": "Hrc4AYyj4PQ"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[EP 4] Mobile Suit Gundam SEED",
-        "description": "Mobile Suit Gundam SEED HD REMASTER-Episode 4: Silent Run",
-        "localImageResource": "gundam_seed",
-        "footerIconLocalImageResource": "",
-        "videoId": "vyEUd1nvkNk"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[EP 5] Mobile Suit Gundam SEED",
-        "description": "Mobile Suit Gundam SEED HD REMASTER-Episode 5: Phase Shift Down (ENG Sub)",
-        "localImageResource": "gundam_seed",
-        "footerIconLocalImageResource": "",
-        "videoId": "fZwfzXBqPYE"
       }
     ]
   },
@@ -369,40 +173,6 @@
         "title": "Shuk",
         "localImageResource": "face_02"
       }
-    ],
-    "recommended": [
-      {
-        "type": "DEFAULT",
-        "title": "[WEEK 2] I Can See Your Voice (Malaysia)",
-        "description": "Ayda Jebat as guest.",
-        "localImageResource": "icsyv",
-        "footerIconLocalImageResource": "",
-        "videoId": "G__66TmBS9Y"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[WEEK 3] I Can See Your Voice (Malaysia)",
-        "description": "De FAM as guest.",
-        "localImageResource": "icsyv",
-        "footerIconLocalImageResource": "",
-        "videoId": "XltzeeGpFB8"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[WEEK 4] I Can See Your Voice (Malaysia)",
-        "description": "Wany Hasrita as guest.",
-        "localImageResource": "icsyv",
-        "footerIconLocalImageResource": "",
-        "videoId": "_mepqW7GwqA"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[WEEK 5] I Can See Your Voice (Malaysia)",
-        "description": "Faizal Tahir as guest.",
-        "localImageResource": "icsyv",
-        "footerIconLocalImageResource": "",
-        "videoId": "EwuZVL3hY4Q"
-      }
     ]
   },
   {
@@ -425,40 +195,6 @@
         "type": "CHARACTER",
         "title": "Queen E",
         "localImageesource": "face_02"
-      }
-    ],
-    "recommended": [
-      {
-        "type": "DEFAULT",
-        "title": "[EP 2] Mr Bean the Animated Series",
-        "description": "Missing Teddy ",
-        "localImageResource": "mr_bean_animated",
-        "footerIconLocalImageResource": "",
-        "videoId": "KpqWI_ZdwjI"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[EP 3] Mr Bean the Animated Series",
-        "description": "No Parking",
-        "localImageResource": "mr_bean_animated",
-        "footerIconLocalImageResource": "",
-        "videoId": "4NWCn29SXjA"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[EP 4] Mr Bean the Animated Series",
-        "description": "Bean's Bounty",
-        "localImageResource": "mr_bean_animated",
-        "footerIconLocalImageResource": "",
-        "videoId": "yIZ54zeyBk4"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[EP 5] Mr Bean the Animated Series",
-        "description": "Artful Bean",
-        "localImageResource": "mr_bean_animated",
-        "footerIconLocalImageResource": "",
-        "videoId": "fsmmDRQseQM"
       }
     ]
   },
@@ -483,40 +219,6 @@
         "title": "Clarence Nash",
         "localImageResource": "face_02"
       }
-    ],
-    "recommended": [
-      {
-        "type": "DEFAULT",
-        "title": "[EP 2]Tom & Jerry",
-        "description": "Best of Little Quacker",
-        "localImageResource": "tom_jerry",
-        "footerIconLocalImageResource": "",
-        "videoId": "AGBjI0x9VbM"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[EP 3]Tom & Jerry",
-        "description": "Funniest Food Moments! ",
-        "localImageResource": "tom_jerry",
-        "footerIconLocalImageResource": "",
-        "videoId": "QJmKw33k0mA"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[EP 4]Tom & Jerry",
-        "description": "BAD CHEESE DREAMS",
-        "localImageResource": "tom_jerry",
-        "footerIconLocalImageResource": "",
-        "videoId": "M7IDZjWi08"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[EP 5]Tom & Jerry",
-        "description": "Snow Day! ",
-        "localImageResource": "tom_jerry",
-        "footerIconLocalImageResource": "",
-        "videoId": "cgpdszzmhqM"
-      }
     ]
   },
   {
@@ -539,40 +241,6 @@
         "type": "CHARACTER",
         "title": "Hjh. Ainon Ariff",
         "localImageResource": "face_02"
-      }
-    ],
-    "recommended": [
-      {
-        "type": "DEFAULT",
-        "title": "[EP 2] Upin & Ipin",
-        "description": "Upin, Ipin & Apin",
-        "localImageResource": "upin_ipin",
-        "footerIconLocalImageResource": "",
-        "videoId": "awOtnlj6lmM"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[EP 3] Upin & Ipin",
-        "description": "Rembo's Trail",
-        "localImageResource": "upin_ipin",
-        "footerIconLocalImageResource": "",
-        "videoId": "fYRsfOEnqmk"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[EP 4] Upin & Ipin",
-        "description": "We Are 1 Malaysia",
-        "localImageResource": "upin_ipin",
-        "footerIconLocalImageResource": "",
-        "videoId": "ITYARThNVGk"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[EP 5] Upin & Ipin",
-        "description": "Journey To Treasure Island",
-        "localImageResource": "upin_ipin",
-        "footerIconLocalImageResource": "",
-        "videoId": "HgUnlfiXLnM"
       }
     ]
   },
@@ -597,40 +265,6 @@
         "title": "Abu",
         "localImageResource": "face_02"
       }
-    ],
-    "recommended": [
-      {
-        "type": "DEFAULT",
-        "title": "[Inside Story] Al Jazeera News",
-        "description": "Can Saudi, Turkey work together to shed light on Khashoggi murder? | Inside Story",
-        "localImageResource": "aljazeera_news",
-        "footerIconLocalImageResource": "",
-        "videoId": "3Vkn7JwvNGk"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[UpFront] Al Jazeera News",
-        "description": "Ukraine vice PM: 'Crimea will one day come back home'",
-        "localImageResource": "aljazeera_news",
-        "footerIconLocalImageResource": "",
-        "videoId": "j4r4DECc1VU"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[UpFront] Al Jazeera News",
-        "description": "Why are some Asian Americans suing Harvard University?",
-        "localImageResource": "aljazeera_news",
-        "footerIconLocalImageResource": "",
-        "videoId": "jFMNNUB69Y8"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[The Stream] Al Jazeera News",
-        "description": "Will Hollywood ever really understand Islam?",
-        "localImageResource": "aljazeera_news",
-        "footerIconLocalImageResource": "",
-        "videoId": "uTRnmPHUH2o"
-      }
     ]
   },
   {
@@ -653,40 +287,6 @@
         "type": "CHARACTER",
         "title": "Jiwon",
         "localImageResource": "face_02"
-      }
-    ],
-    "recommended": [
-      {
-        "type": "DEFAULT",
-        "title": "Arirang News- Foreign Correspondents",
-        "description": "North Korea-China relations a crash course in diplomacy?",
-        "localImageResource": "arirang_news",
-        "footerIconLocalImageResource": "",
-        "videoId": "1GiBIO86oiA"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[Foreign Correspondents] Arirang News",
-        "description": "FAKE NEWS ON SOCIAL MEDIA",
-        "localImageResource": "arirang_news",
-        "footerIconLocalImageResource": "",
-        "videoId": "8lGVWVvhcgY"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[A+  Story] Arirang News",
-        "description": "RM, were you always this awesome?",
-        "localImageResource": "arirang_news",
-        "footerIconLocalImageResource": "",
-        "videoId": "lRVXQ02cgtY"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[Issue Talk][2018 Inter-Korean Summit] Arirang News",
-        "description": "Inter-Korean Summit=Full of Firsts",
-        "localImageResource": "arirang_news",
-        "footerIconLocalImageResource": "",
-        "videoId": "WfEmYP79nVU"
       }
     ]
   },
@@ -711,40 +311,6 @@
         "title": "Yoseob",
         "localImageResource": "face_02"
       }
-    ],
-    "recommended": [
-      {
-        "type": "DEFAULT",
-        "title": "[5 Stories Today] Euronews",
-        "description": "Jakarta crash, Brazil, and Merkel to end CDU reign: Five stories to know about today",
-        "localImageResource": "euro_news",
-        "footerIconLocalImageResource": "",
-        "videoId": "reWCgJ_A0iE"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[Talking Business] Euronews",
-        "description": "Oil prices rise as Khashoggi investigation continues",
-        "localImageResource": "euro_news",
-        "footerIconLocalImageResource": "",
-        "videoId": "QlKSujswunQ"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[Futuris] Euronews",
-        "description": "Transkribus system makes breakthrough in understanding medieval texts",
-        "localImageResource": "euro_news",
-        "footerIconLocalImageResource": "",
-        "videoId": "TCfBaOxN8Hw"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[Global] Euronews",
-        "description": "Far-right candidate Jair Bolsonaro won a decisive victory in Brazil's presidential elections.",
-        "localImageResource": "euro_news",
-        "footerIconLocalImageResource": "",
-        "videoId": "masHYqmydPo"
-      }
     ]
   },
   {
@@ -767,40 +333,6 @@
         "type": "CHARACTER",
         "title": "Shuhada",
         "localImageResource": "face_02"
-      }
-    ],
-    "recommended": [
-      {
-        "type": "DEFAULT",
-        "title": "[Buletin Awani 7:45] Buletin Awani",
-        "description": "Bajet pertama Malaysia Baharu",
-        "localImageResource": "buletin_awani",
-        "footerIconLocalImageResource": "",
-        "videoId": "PP_UV6981sg"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[Buletin Awani 7:45] Buletin Awani",
-        "description": "Huawei lancar 4 produk baharu, termasuk \"Mate 20 Series\"",
-        "localImageResource": "buletin_awani",
-        "footerIconLocalImageResource": "",
-        "videoId": "NLY1D6muXkk"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[Buletin Awani 7:45] Buletin Awani",
-        "description": "Enam pertuduhan pecah amanah, Zahid digesa bercuti & jejak Jho Low lapuk",
-        "localImageResource": "buletin_awani",
-        "footerIconLocalImageResource": "",
-        "videoId": "tKqEl9QEt2k"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[Buletin Awani 7:45] Buletin Awani",
-        "description": "Kelantan masukkan tuntutan hasil petroleum dalam Belanjawan 2019",
-        "localImageResource": "buletin_awani",
-        "footerIconLocalImageResource": "",
-        "videoId": "0LT6DALLgrQ"
       }
     ]
   },
@@ -825,40 +357,6 @@
         "title": "Yewon",
         "localImageResource": "face_02"
       }
-    ],
-    "recommended": [
-      {
-        "type": "DEFAULT",
-        "title": "[2018.10.24] KBS News",
-        "description": "[다시보기] 유류세 15% 내리고 공공일자리 5만 9천 개 창출 - 2018년 10월 24일(수) KBS뉴스9",
-        "localImageResource": "kbs_news",
-        "footerIconLocalImageResource": "",
-        "videoId": "-20knlAEssc"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[2018.10.23] KBS News",
-        "description": "[다시보기] 국회 동의 없이 ‘평양공동선언’ 비준 - 2018년 10월 23일(화) KBS뉴스9",
-        "localImageResource": "kbs_news",
-        "footerIconLocalImageResource": "",
-        "videoId": "PUOpgoA5ftg"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[2018.10.22] KBS News",
-        "description": "[다시보기] 야당, 채용비리 국정조사 요구…정의당도 가세 -  2018년 10월 22일(월) KBS뉴스9",
-        "localImageResource": "kbs_news",
-        "footerIconLocalImageResource": "",
-        "videoId": "aa9tO6R68cs"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[2018.10.21] KBS News",
-        "description": "[다시보기] “음주 운전은 살인 행위…처벌 강화” - 2018년 10월 21일(일) KBS뉴스9",
-        "localImageResource": "kbs_news",
-        "footerIconLocalImageResource": "",
-        "videoId": "M8B1zfW06M4"
-      }
     ]
   },
   {
@@ -881,40 +379,6 @@
         "type": "CHARACTER",
         "title": "Lin Dan",
         "localImageResource": "face_02"
-      }
-    ],
-    "recommended": [
-      {
-        "type": "DEFAULT",
-        "title": "[Men's Double SF] 2018 All England Open",
-        "description": " GIDEON/SUKAMULJO (INA) [1] vs CONRAD-PETERSEN/KOLDING (DEN) [6] ",
-        "localImageResource": "all_england",
-        "footerIconLocalImageResource": "",
-        "videoId": "cmqazBquXkM"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[Men's Single Final] 2018 All England Open",
-        "description": " SHI Yuqi (CHN) [7] vs LIN Dan (CHN) [6]",
-        "localImageResource": "all_england",
-        "footerIconLocalImageResource": "",
-        "videoId": "ge3g-GT9j00"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[Women's Single Final] 2018 All England Open",
-        "description": "TAI Tzu Ying (TPE) [1] vs Akane YAMAGUCHI (JPN) [2]",
-        "localImageResource": "all_england",
-        "footerIconLocalImageResource": "",
-        "videoId": "PCyNbtMVkpI"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[Mixed Double Final] 2018 All England Open",
-        "description": "WATANABE/HIGASHINO (JPN) vs ZHENG/HUANG (CHN) [5]",
-        "localImageResource": "all_england",
-        "footerIconLocalImageResource": "",
-        "videoId": "s-HfFmgkPQ8"
       }
     ]
   },
@@ -939,40 +403,6 @@
         "title": "Solar",
         "localImageResource": "face_02"
       }
-    ],
-    "recommended": [
-      {
-        "type": "DEFAULT",
-        "title": "[Asia] 2019 FIBA Basketball World Cup Qualifiers",
-        "description": "Philippines v Qatar - Full Game",
-        "localImageResource": "fiba_basketball",
-        "footerIconLocalImageResource": "",
-        "videoId": "DA_Phv8-HlI"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[Africa] 2019 FIBA Basketball World Cup Qualifiers",
-        "description": "Cameroon v Egypt - Full Game",
-        "localImageResource": "fiba_basketball",
-        "footerIconLocalImageResource": "",
-        "videoId": "GULSVm41TjA"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[Africa] 2019 FIBA Basketball World Cup Qualifiers",
-        "description": "Mali v Cote d'Ivoire - Full Game",
-        "localImageResource": "fiba_basketball",
-        "footerIconLocalImageResource": "",
-        "videoId": "Fcy4yYYS2Rc"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[America] 2019 FIBA Basketball World Cup Qualifiers",
-        "description": "Panama v United States - Full Game",
-        "localImageResource": "fiba_basketball",
-        "footerIconLocalImageResource": "",
-        "videoId": "HZVLY13uAd0"
-      }
     ]
   },
   {
@@ -995,40 +425,6 @@
         "type": "CHARACTER",
         "title": "Faizah",
         "localImageResource": "face_02"
-      }
-    ],
-    "recommended": [
-      {
-        "type": "DEFAULT",
-        "title": "[Group Stage MAS vs HKG] Asian Netball Championships 2018",
-        "description": " Malaysia 🇲🇾 vs 🇭🇰 Hong Kong",
-        "localImageResource": "asian_netball",
-        "footerIconLocalImageResource": "",
-        "videoId": "j26RQveLpqY"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[Group Stage LKA vs SIN] Asian Netball Championships 2018",
-        "description": " Sri Lanka 🇱🇰 vs 🇸🇬 Singapore",
-        "localImageResource": "asian_netball",
-        "footerIconLocalImageResource": "",
-        "videoId": "u86l9-Lkul0"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[Group Stage JAP vs IND] Asian Netball Championships 2018",
-        "description": "Japan 🇯🇵 vs 🇮🇳India",
-        "localImageResource": "asian_netball",
-        "footerIconLocalImageResource": "",
-        "videoId": "XSdyjJ3pIk4"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[Group Stage BRU vs JAP] Asian Netball Championships 2018",
-        "description": "Brunei 🇧🇳 vs 🇯🇵 Japan",
-        "localImageResource": "asian_netball",
-        "footerIconLocalImageResource": "",
-        "videoId": "MUS6yhEymdA"
       }
     ]
   },
@@ -1053,40 +449,6 @@
         "title": " Shawn McCray",
         "localImageResource": "face_02"
       }
-    ],
-    "recommended": [
-      {
-        "type": "DEFAULT",
-        "title": "[EP 2] Best Shot",
-        "description": "Leave This Town",
-        "localImageResource": "best_shot",
-        "footerIconLocalImageResource": "",
-        "videoId": "Ok31HMh9Rz0"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[EP 3] Best Shot",
-        "description": "Better Than My Parents",
-        "localImageResource": "best_shot",
-        "footerIconLocalImageResource": "",
-        "videoId": "v5BiGkW0XXQ"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[EP 4] Best Shot",
-        "description": "Lil Bad Choices",
-        "localImageResource": "best_shot",
-        "footerIconLocalImageResource": "",
-        "videoId": "gzSEONnq4Wc"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[EP 5] Best Shot",
-        "description": "Don’t Forget About Me",
-        "localImageResource": "best_shot",
-        "footerIconLocalImageResource": "",
-        "videoId": "TOZI2hFZEeA"
-      }
     ]
   },
   {
@@ -1109,40 +471,6 @@
         "type": "CHARACTER",
         "title": "Callum Hudson-Odoi",
         "localImageResource": "face_02"
-      }
-    ],
-    "recommended": [
-      {
-        "type": "DEFAULT",
-        "title": "[Mason Mount] Chelsea Films",
-        "description": "“Lampard Is The Perfect Role Model For Me” This Is Mason Mount",
-        "localImageResource": "chelsea_film",
-        "footerIconLocalImageResource": "",
-        "videoId": "mZuh6pKoDPc"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[Olivier Giroud] Chelsea Films",
-        "description": "Giroud's FA Cup “Wembley Is My Garden!”",
-        "localImageResource": "chelsea_film",
-        "footerIconLocalImageResource": "",
-        "videoId": "oJoyC7YKDzk"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[The Best Assists Of 2017] Chelsea Films",
-        "description": "Cesc Fabregas Presents The Best Assists Of 2017",
-        "localImageResource": "chelsea_film",
-        "footerIconLocalImageResource": "",
-        "videoId": "z8t4iylW-nM"
-      },
-      {
-        "type": "DEFAULT",
-        "title": "[Andreas Christensen] Chelsea Films",
-        "description": "The Rise Of Andreas Christensen ",
-        "localImageResource": "chelsea_film",
-        "footerIconLocalImageResource": "",
-        "videoId": "0PxvhkfnPTs"
       }
     ]
   },

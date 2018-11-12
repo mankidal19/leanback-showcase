@@ -82,37 +82,27 @@ public class YoutubePlayerActivity extends FragmentActivity {
 
         youtubeVideoId = getIntent().getExtras().getString("videoId");
         youtubeVideoTitle = getIntent().getExtras().getString("videoTitle");
-        playlistId = getIntent().getExtras().getString("playlistId");
+        //playlistId = getIntent().getExtras().getString("playlistId");
 
-        if(playlistId!=null){
+        //if(playlistId!=null){
             Log.d(TAG,"PLAYLIST ID NOT NULL");
 
-            /*JsonParseTask jsonParseTask = (JsonParseTask) new JsonParseTask(new JsonParseTask.AsyncResponse() {
-                @Override
-                public void processFinish(ArrayList<Card> output) {
-                    //titleArrayList.addAll(output);
-                    episodes.addAll(output);
-
-                    for(int i = 0; i< episodes.size(); i++){
-                        episodeArrayList.add(episodes.get(i).getVideoId());
-                        titleArrayList.add(episodes.get(i).getTitle());
-                    }
-
-
-                    initYouTubePlayerView();
-                }
-            }).execute(playlistId);*/
 
             Bundle extra = getIntent().getBundleExtra("extra");
-            episodes  = (ArrayList<Card>) extra.getSerializable("recommended");
+            episodes.addAll((ArrayList<Card>) extra.getSerializable("recommended"));
+
+        for(Card card:episodes){
+            episodeArrayList.add(card.getVideoId());
+            titleArrayList.add(card.getTitle());
+        }
 
             initYouTubePlayerView();
 
             Log.d(TAG,"title length,episode length: "+ titleArrayList.size()+", "+episodeArrayList.size());
 
-        }
+        //}
 
-        else{
+       /* else{
             Log.d(TAG,"PLAYLIST ID NULL");
 
             showDetailedCard = matchingCardUtils.findMatchingCard(youtubeVideoTitle);
@@ -142,7 +132,7 @@ public class YoutubePlayerActivity extends FragmentActivity {
 
             initYouTubePlayerView();
 
-        }
+        }*/
 
         if(prevVideoTitle==null){
             prevVideoTitle = youtubeVideoTitle;

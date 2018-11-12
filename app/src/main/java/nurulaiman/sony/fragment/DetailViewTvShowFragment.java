@@ -89,6 +89,7 @@ public class DetailViewTvShowFragment extends DetailsFragment implements OnItemV
 
     private ArrayList<Card> recommendations = new ArrayList<Card>();
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -292,6 +293,12 @@ public class DetailViewTvShowFragment extends DetailsFragment implements OnItemV
 
                 intent.putExtra("videoId",selectedCard.getVideoId());
                 intent.putExtra("videoTitle",selectedCard.getTitle());
+
+
+                Bundle extras = new Bundle();
+                extras.putSerializable("recommended",recommendations);
+
+                intent.putExtra("extra",extras);
 
                 Log.d(TAG,"play another episode of tv show");
 
