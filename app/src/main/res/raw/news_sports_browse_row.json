@@ -15,7 +15,7 @@
       },
       {
         "type": "DEFAULT",
-        "title": "Arirang News",
+        "title": "Arirang News- Foreign Correspondents",
         "description": "Arirang TV is a global, English-language television network based in Seoul, South Korea. [TV SHOW] [NEWS]",
         "localImageResource": "arirang_news",
         "footerIconLocalImageResource": "ic_installed",
@@ -25,7 +25,7 @@
       },
       {
         "type": "DEFAULT",
-        "title": "Buletin Awani",
+        "title": "Buletin Awani 7:45",
         "description": "Astro Awani is the in-house rolling television news and current affairs channel providing 24-hour news coverage including news in Malay. [TV SHOW] [NEWS]",
         "localImageResource": "buletin_awani",
         "footerIconLocalImageResource": "ic_installed",
@@ -35,7 +35,7 @@
       },
       {
         "type": "DEFAULT",
-        "title": "Euronews",
+        "title": "Euronews- Raw Politics",
         "description": "Euronews is a multilingual news media service, headquartered in Lyon, France. [TV SHOW] [NEWS]",
         "localImageResource": "euro_news",
         "footerIconLocalImageResource": "ic_installed",
@@ -45,7 +45,7 @@
       },
       {
         "type": "DEFAULT",
-        "title": "KBS News",
+        "title": "KBS News 9",
         "description": "KBS Nine O'Clock News is the flagship newscast that airs on KBS1 every night at 9:00pm KST. [TV SHOW] [NEWS]",
         "localImageResource": "kbs_news",
         "footerIconLocalImageResource": "ic_installed",

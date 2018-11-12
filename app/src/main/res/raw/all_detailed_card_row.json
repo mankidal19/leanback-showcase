@@ -8,6 +8,7 @@
     "trailerUrl": "",
     "videoUrl": "",
     "videoId": "CyxwNmKmq7o",
+    "playlistId":"PLV71sdBgCmhR0ukwiie3LkO5TDADc7lq3",
     "characters": [
       {
         "type": "CHARACTER",
@@ -123,6 +124,7 @@
     "trailerUrl": "",
     "videoUrl": "",
     "videoId": "XuKuzKNQcxI",
+    "playlistId": "PLV71sdBgCmhSqotsspKrNPENicHFMMp3e",
     "characters": [
       {
         "type": "CHARACTER",
@@ -179,6 +181,7 @@
     "trailerUrl": "",
     "videoUrl": "",
     "videoId": "OE-EnnWODT4",
+    "playlistId": "PLV71sdBgCmhTCsQ_9uIr990DgL1DtTrtx",
     "characters": [
       {
         "type": "CHARACTER",
@@ -235,6 +238,7 @@
     "trailerUrl": "",
     "videoUrl": "",
     "videoId": "R9H1u1zFVNc",
+    "playlistId": "PLJV1h9xQ7Hx-0WipavLDd3mFSLJL1r2XQ",
     "characters": [
       {
         "type": "CHARACTER",
@@ -296,6 +300,7 @@
     "trailerUrl": "",
     "videoUrl": "",
     "videoId": "EWtuU5H6BdQ",
+    "playlistId": "PLJV1h9xQ7Hx89jH49IgnVuKyuRNTj11PK",
     "characters": [
       {
         "type": "CHARACTER",
@@ -352,6 +357,7 @@
     "trailerUrl": "",
     "videoUrl": "",
     "videoId": "dd4P1jo5Ys0",
+    "playlistId": "PLV71sdBgCmhRywMhzrCQ5sFcaeEquUDK2",
     "characters": [
       {
         "type": "CHARACTER",
@@ -408,6 +414,7 @@
     "trailerUrl": "",
     "videoUrl": "",
     "videoId": "qfg4aSLxFcI",
+    "playlistId": "PLC1EDzqtkrh-2763ug-ABi8LWh5om2nkK",
     "characters": [
       {
         "type": "CHARACTER",
@@ -576,6 +583,7 @@
     "trailerUrl": "",
     "videoUrl": "",
     "videoId": "DKvWoaZ5tLc",
+    "playlistId": "PLzGHKb8i9vTxYYfgnuGEdzr6Tlp3cb7hS",
     "characters": [
       {
         "type": "CHARACTER",
@@ -624,14 +632,15 @@
     ]
   },
   {
-    "title": "[Issue Talk] Arirang News",
+    "title": "Arirang News- Foreign Correspondents",
     "description": " Korea International Broadcasting Foundation",
     "year": 2018,
-    "text": "Arirang TV is a global, English-language television network based in Seoul, South Korea.\n\nTrump says he doesn't care how long negotiations with North Korea take | Issue Talk",
+    "text": "Foreign Correspondents from all around the globe sit down to discuss issues happening in-and-out of Korea on our news talk program, [Foreign Correspondents]! [Foreign Correspondents] delivers not only the most recent news, but also other unveiled behind stories, as well as their own thoughts regarding the issues. Furthermore, as current affairs from Korea have greater impact on the world than ever, the current status of our society will be redefined through the objective eyes of foreign correspondents.",
     "localImageResource": "arirang_news",
     "trailerUrl": "",
     "videoUrl": "",
     "videoId": "yEA4UpdirS4",
+    "playlistId": "PLWdVPk7xgPCATZnQg3mouESJABEBuyFoD",
     "characters": [
       {
         "type": "CHARACTER",
@@ -647,7 +656,7 @@
     "recommended": [
       {
         "type": "DEFAULT",
-        "title": "[Foreign Correspondents] Arirang News",
+        "title": "Arirang News- Foreign Correspondents",
         "description": "North Korea-China relations a crash course in diplomacy?",
         "localImageResource": "arirang_news",
         "footerIconLocalImageResource": "",
@@ -680,7 +689,7 @@
     ]
   },
   {
-    "title": "[Raw Politics] Euronews",
+    "title": "Euronews- Raw Politics",
     "description": "Media Globe Networks",
     "year": 2018,
     "text": "Euronews is a multilingual news media service, headquartered in Lyon, France.\n\nBritish budget, Bolsonaro victory, Merkel announcement",
@@ -688,6 +697,7 @@
     "trailerUrl": "",
     "videoUrl": "",
     "videoId": "fH4XtQems3k",
+    "playlistId": "PLV71sdBgCmhSxGf6YK18cFE1EfX1Vivxn",
     "characters": [
       {
         "type": "CHARACTER",
@@ -736,7 +746,7 @@
     ]
   },
   {
-    "title": "[Dewan Rakyat] Buletin Awani",
+    "title": "Buletin Awani 7:45",
     "description": "Astro",
     "year": 2018,
     "text": "Astro Awani is the in-house rolling television news and current affairs channel providing 24-hour news coverage including news in Malay.\n\nIsu nasional tumpuan laporan sidang Dewan Rakyat",
@@ -744,6 +754,7 @@
     "trailerUrl": "",
     "videoUrl": "",
     "videoId": "_Mvs9m3i-tM",
+    "playlistId":"PLV71sdBgCmhR8i7YjoAtDgEFTgEvLxrlC",
     "characters": [
       {
         "type": "CHARACTER",
@@ -792,7 +803,7 @@
     ]
   },
   {
-    "title": "[2018.10.25] KBS News",
+    "title": "KBS News 9",
     "description": "Korean Broadcasting System",
     "year": 2018,
     "text": "KBS Nine O'Clock News is the flagship newscast that airs on KBS1 every night at 9:00pm KST.\n\n25th October 2018 news.",
@@ -800,6 +811,7 @@
     "trailerUrl": "",
     "videoUrl": "",
     "videoId": "sxeydTEVYFk",
+    "playlistId": "PLV71sdBgCmhSaDWhMFZZXsNRNlmSYKFYh",
     "characters": [
       {
         "type": "CHARACTER",
@@ -856,6 +868,7 @@
     "trailerUrl": "",
     "videoUrl": "",
     "videoId": "NVluiq7hLg8",
+    "playlistId": "PLV71sdBgCmhScOPUZKwFTaIE2k78lsXLo",
     "characters": [
       {
         "type": "CHARACTER",
@@ -912,6 +925,7 @@
     "trailerUrl": "",
     "videoUrl": "",
     "videoId": "XM0BYUt5cmM",
+    "playlistId":"PLV71sdBgCmhQ9uNXW9Pf-LS-4_nMsBejN",
     "characters": [
       {
         "type": "CHARACTER",
@@ -968,6 +982,7 @@
     "trailerUrl": "",
     "videoUrl": "",
     "videoId": "48as9V-47Po",
+    "playlistId": "PLV71sdBgCmhQ52TF6NXzyzWMkKfsJ7g8o",
     "characters": [
       {
         "type": "CHARACTER",
@@ -1024,6 +1039,7 @@
     "trailerUrl": "",
     "videoUrl": "",
     "videoId": "NdkLOwYYfpA",
+    "playlistId": "PLlVlyGVtvuVnYpLKwy4Nz7QgTV69B54By",
     "characters": [
       {
         "type": "CHARACTER",
@@ -1080,6 +1096,7 @@
     "trailerUrl": "",
     "videoUrl": "",
     "videoId": "YgwMCulRmqo",
+    "playlistId": "PLx6bGx4zt6Ekz7CEhqHUeBbeoo_VxiVpa",
     "characters": [
       {
         "type": "CHARACTER",
