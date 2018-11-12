@@ -27,6 +27,7 @@ import androidyoutubeplayer.utils.YouTubePlayerTracker;
 import fr.bmartel.youtubetv.listener.IPlayerListener;
 import fr.bmartel.youtubetv.model.VideoInfo;
 import fr.bmartel.youtubetv.model.VideoState;
+import nurulaiman.sony.models.ShowCollection;
 import nurulaiman.sony.utils.JsonParseTask;
 import nurulaiman.sony.utils.MatchingCardUtils;
 import nurulaiman.sony.utils.VideoUtils;
@@ -62,6 +63,9 @@ public class YoutubePlayerActivity extends FragmentActivity {
     //just to use playlist features
     private YoutubeTvView mYoutubeView;
     private String playlistId;
+    private ArrayList<ShowCollection> showCollections = new ArrayList<ShowCollection>();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,7 +74,18 @@ public class YoutubePlayerActivity extends FragmentActivity {
 
         initEpisodes();
 
-        initYouTubePlayerView();
+        JsonParseTask jsonParseTask = (JsonParseTask) new JsonParseTask(new JsonParseTask.AsyncResponse() {
+            @Override
+            public void processFinish(ArrayList<ShowCollection> output) {
+                //titleArrayList.addAll(output);
+                showCollections.addAll(output);
+                initYouTubePlayerView();
+            }
+        }).execute(playlistId);
+
+        Log.d("YoutubePlayerActivity","title length,episode length: "+ titleArrayList.size()+", "+episodeArrayList.size());
+
+
     }
 
     @Override
@@ -125,12 +140,6 @@ public class YoutubePlayerActivity extends FragmentActivity {
 
                         mYoutubeView.closePlayer();
 
-                        JsonParseTask jsonParseTask = (JsonParseTask) new JsonParseTask(new JsonParseTask.AsyncResponse() {
-                            @Override
-                            public void processFinish(ArrayList<String> output) {
-                                titleArrayList.addAll(output);
-                            }
-                        }).execute(playlistId);
                     }
 
 
