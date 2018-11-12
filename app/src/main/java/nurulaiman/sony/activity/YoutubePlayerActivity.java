@@ -82,9 +82,7 @@ public class YoutubePlayerActivity extends FragmentActivity {
 
         youtubeVideoId = getIntent().getExtras().getString("videoId");
         youtubeVideoTitle = getIntent().getExtras().getString("videoTitle");
-        //playlistId = getIntent().getExtras().getString("playlistId");
 
-        //if(playlistId!=null){
             Log.d(TAG,"PLAYLIST ID NOT NULL");
 
 
@@ -100,39 +98,6 @@ public class YoutubePlayerActivity extends FragmentActivity {
 
             Log.d(TAG,"title length,episode length: "+ titleArrayList.size()+", "+episodeArrayList.size());
 
-        //}
-
-       /* else{
-            Log.d(TAG,"PLAYLIST ID NULL");
-
-            showDetailedCard = matchingCardUtils.findMatchingCard(youtubeVideoTitle);
-
-            //if not movies, get episodes & title list
-            if(!showDetailedCard.getText().toLowerCase().contains("movie")){
-                episodes = showDetailedCard.getRecommended();
-
-
-                for(Card card:episodes){
-                    episodeArrayList.add(card.getVideoId());
-                    titleArrayList.add(card.getTitle());
-                }
-
-                if(!episodeArrayList.contains(showDetailedCard.getVideoId())){
-                    episodeArrayList.add(0,showDetailedCard.getVideoId());
-                    titleArrayList.add(0,showDetailedCard.getTitle());
-                }
-
-                //for debugging
-                for(String ep:episodeArrayList){
-                    Log.d(TAG,"Episode video id: "+ ep);
-
-                }
-
-            }
-
-            initYouTubePlayerView();
-
-        }*/
 
         if(prevVideoTitle==null){
             prevVideoTitle = youtubeVideoTitle;
