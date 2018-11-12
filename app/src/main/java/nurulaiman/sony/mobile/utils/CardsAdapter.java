@@ -47,6 +47,7 @@ public class CardsAdapter extends RecyclerView.Adapter<CardsAdapter.MyViewHolder
             cardView = view.findViewById(R.id.card_view);
             //cast = (ImageView) view.findViewById(R.id.overflow);
 
+            title.setSelected(true);
 
         }
     }
