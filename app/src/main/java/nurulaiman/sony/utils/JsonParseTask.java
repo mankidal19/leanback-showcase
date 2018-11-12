@@ -1,6 +1,7 @@
 package nurulaiman.sony.utils;
 
 import android.os.AsyncTask;
+import android.support.v17.leanback.supportleanbackshowcase.models.Card;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -12,13 +13,12 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Map;
 
 import javax.net.ssl.HttpsURLConnection;
 
-import nurulaiman.sony.models.ShowCollection;
+import nurulaiman.sony.models.Episode;
 
-public class JsonParseTask extends AsyncTask<String, Void, ArrayList<ShowCollection>> {
+public class JsonParseTask extends AsyncTask<String, Void, ArrayList<Card>> {
 
     private final static String TAG = JsonParseTask.class.getSimpleName();
 
@@ -27,7 +27,8 @@ public class JsonParseTask extends AsyncTask<String, Void, ArrayList<ShowCollect
     private String videoUrl;
     //private ArrayList<String> titles = new ArrayList<String>();
     //private ArrayList<String> episodes = new ArrayList<String>();
-    private ArrayList<ShowCollection> showCollections = new ArrayList<ShowCollection>();
+    private ArrayList<Card> episodes = new ArrayList<Card>();
+
 
     @Override
     protected void onPreExecute() {
@@ -35,7 +36,7 @@ public class JsonParseTask extends AsyncTask<String, Void, ArrayList<ShowCollect
     }
 
     @Override
-    protected ArrayList<ShowCollection> doInBackground(String... params) {
+    protected ArrayList<Card> doInBackground(String... params) {
         playlistId = params[0];
         String videoUrl = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=20&playlistId="+playlistId+"&key="+apiKey;
 
@@ -49,25 +50,38 @@ public class JsonParseTask extends AsyncTask<String, Void, ArrayList<ShowCollect
             for(int i=0;i<jsonArray.length();i++){
                 JSONObject snippetJsonObject = jsonArray.getJSONObject(i).getJSONObject("snippet");
                 JSONObject resourceJsonObject = snippetJsonObject.getJSONObject("resourceId");
+                JSONObject thumbnailJsonObject = snippetJsonObject.getJSONObject("thumbnails");
 
                 String title = snippetJsonObject.getString("title");
+                String description = snippetJsonObject.getString("description");
                 String videoId = resourceJsonObject.getString("videoId");
-                ShowCollection show = new ShowCollection(videoId,title);
+                String imageUrl = thumbnailJsonObject.getJSONObject("high").getString("url");
+
+
+
+                Card show = new Card();
+                show.setTitle(title);
+                show.setDescription(description);
+                show.setVideoId(videoId);
+                show.setImageUrl(imageUrl);
+                show.setType(Card.Type.DEFAULT);
 
 
                 Log.d(TAG,"resourceJsonObject["+i+"]"+resourceJsonObject.toString());
                 Log.d(TAG,"title["+i+"]"+title);
+                Log.d(TAG,"description["+i+"]"+description);
                 Log.d(TAG,"videoId["+i+"]"+videoId);
+                Log.d(TAG,"imageUrl["+i+"]"+imageUrl);
 
                 //titles.add(snippetJsonObject.getString("title"));
                 //episodes.add(resourceJsonObject.getString("videoId"));
 
-                showCollections.add(show);
+                episodes.add(show);
 
-                Log.d(TAG,showCollections.get(i).toString());
+                Log.d(TAG, episodes.get(i).toString());
             }
 
-            return showCollections;
+            return episodes;
 
         }
         catch (Exception e){
@@ -79,7 +93,7 @@ public class JsonParseTask extends AsyncTask<String, Void, ArrayList<ShowCollect
     }
 
     public interface AsyncResponse {
-        void processFinish(ArrayList<ShowCollection> output);
+        void processFinish(ArrayList<Card> output);
     }
 
     public AsyncResponse delegate = null;
@@ -89,7 +103,7 @@ public class JsonParseTask extends AsyncTask<String, Void, ArrayList<ShowCollect
     }
 
     @Override
-    protected void onPostExecute(ArrayList<ShowCollection> shows) {
+    protected void onPostExecute(ArrayList<Card> shows) {
         super.onPostExecute(shows);
         delegate.processFinish(shows);
     }

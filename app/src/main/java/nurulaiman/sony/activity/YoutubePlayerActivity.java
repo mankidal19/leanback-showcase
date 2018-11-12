@@ -2,7 +2,6 @@ package nurulaiman.sony.activity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Handler;
 import android.support.v17.leanback.supportleanbackshowcase.R;
 import android.support.v17.leanback.supportleanbackshowcase.models.Card;
 import android.support.v17.leanback.supportleanbackshowcase.models.DetailedCard;
@@ -15,22 +14,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 import androidyoutubeplayer.YoutubeTvView;
 import androidyoutubeplayer.player.YouTubePlayer;
 import androidyoutubeplayer.player.YouTubePlayerView;
 import androidyoutubeplayer.player.listeners.AbstractYouTubePlayerListener;
 import androidyoutubeplayer.utils.YouTubePlayerTracker;
-import fr.bmartel.youtubetv.listener.IPlayerListener;
-import fr.bmartel.youtubetv.model.VideoInfo;
-import fr.bmartel.youtubetv.model.VideoState;
-import nurulaiman.sony.models.ShowCollection;
+import nurulaiman.sony.models.Episode;
 import nurulaiman.sony.utils.JsonParseTask;
 import nurulaiman.sony.utils.MatchingCardUtils;
-import nurulaiman.sony.utils.VideoUtils;
 
 public class YoutubePlayerActivity extends FragmentActivity {
 
@@ -43,7 +36,8 @@ public class YoutubePlayerActivity extends FragmentActivity {
     YouTubePlayerTracker tracker = new YouTubePlayerTracker();
 
     //for skipping to next/prev episodes
-    private Card[] episodes = null;
+    private ArrayList<Card> episodes = new ArrayList<Card>();
+
     private DetailedCard showDetailedCard = null;
     private String youtubeVideoTitle = null;
     private static String prevVideoTitle = null;
@@ -63,10 +57,8 @@ public class YoutubePlayerActivity extends FragmentActivity {
     private ImageView iconView = null;
     private int defaultHideTime = 1000;
 
-    //just to use playlist features
-    private YoutubeTvView mYoutubeView;
+
     private String playlistId;
-    private ArrayList<ShowCollection> showCollections = new ArrayList<ShowCollection>();
 
 
     @Override
@@ -95,21 +87,26 @@ public class YoutubePlayerActivity extends FragmentActivity {
         if(playlistId!=null){
             Log.d(TAG,"PLAYLIST ID NOT NULL");
 
-            JsonParseTask jsonParseTask = (JsonParseTask) new JsonParseTask(new JsonParseTask.AsyncResponse() {
+            /*JsonParseTask jsonParseTask = (JsonParseTask) new JsonParseTask(new JsonParseTask.AsyncResponse() {
                 @Override
-                public void processFinish(ArrayList<ShowCollection> output) {
+                public void processFinish(ArrayList<Card> output) {
                     //titleArrayList.addAll(output);
-                    showCollections.addAll(output);
+                    episodes.addAll(output);
 
-                    for(int i=0;i<showCollections.size();i++){
-                        episodeArrayList.add(showCollections.get(i).getVideoId());
-                        titleArrayList.add(showCollections.get(i).getTitle());
+                    for(int i = 0; i< episodes.size(); i++){
+                        episodeArrayList.add(episodes.get(i).getVideoId());
+                        titleArrayList.add(episodes.get(i).getTitle());
                     }
 
 
                     initYouTubePlayerView();
                 }
-            }).execute(playlistId);
+            }).execute(playlistId);*/
+
+            Bundle extra = getIntent().getBundleExtra("extra");
+            episodes  = (ArrayList<Card>) extra.getSerializable("recommended");
+
+            initYouTubePlayerView();
 
             Log.d(TAG,"title length,episode length: "+ titleArrayList.size()+", "+episodeArrayList.size());
 

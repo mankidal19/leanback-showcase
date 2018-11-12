@@ -48,9 +48,12 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 
+import java.util.ArrayList;
+
 import nurulaiman.sony.activity.YoutubePlayerActivity;
 import nurulaiman.sony.activity.YoutubeTvViewActivity;
 import nurulaiman.sony.testpackage.media.YoutubeActivityFragment;
+import nurulaiman.sony.utils.JsonParseTask;
 import nurulaiman.sony.utils.MatchingCardUtils;
 
 /**
@@ -84,12 +87,53 @@ public class DetailViewTvShowFragment extends DetailsFragment implements OnItemV
     //for finding matching detailed card
     private MatchingCardUtils matchingCardUtils = null;
 
+    private ArrayList<Card> recommendations = new ArrayList<Card>();
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         matchingCardUtils = new MatchingCardUtils(getContext());
-        setupUi();
+        loadRecommendations();
+        //setupUi();
         setupEventListeners();
+    }
+
+    private void loadRecommendations() {
+        data = matchingCardUtils.findMatchingCard(getActivity().getIntent().getExtras().getString("videoTitle"));
+
+        String playlistId = data.getPlaylistId();
+
+        //for yet to be declared shows in all_detailed_card_row.json
+        if(data == null){
+            String json = Utils
+                    .inputStreamToString(getResources().openRawResource(R.raw.detail_tv_show));
+            data = new Gson().fromJson(json, DetailedCard.class);
+        }
+
+        if (playlistId != null) {
+            Log.d(TAG, "PLAYLIST ID NOT NULL");
+
+            JsonParseTask jsonParseTask = (JsonParseTask) new JsonParseTask(new JsonParseTask.AsyncResponse() {
+                @Override
+                public void processFinish(ArrayList<Card> output) {
+                    //titleArrayList.addAll(output);
+
+                    if(output!=null){
+                        recommendations.addAll(output);
+
+                        for(Card card:recommendations){
+                            data.addRecommended(card);
+                        }
+                    }
+
+
+                    setupUi();
+
+                }
+            }).execute(playlistId);
+
+
+        }
     }
 
     private void setupUi() {
@@ -99,15 +143,7 @@ public class DetailViewTvShowFragment extends DetailsFragment implements OnItemV
                 .inputStreamToString(getResources().openRawResource(R.raw.detail_tv_show));
         DetailedCard data = new Gson().fromJson(json, DetailedCard.class);*/
 
-        data = matchingCardUtils.findMatchingCard(getActivity().getIntent().getExtras().getString("videoTitle"));
 
-
-        //for yet to be declared shows in all_detailed_card_row.json
-        if(data == null){
-            String json = Utils
-                    .inputStreamToString(getResources().openRawResource(R.raw.detail_tv_show));
-            data = new Gson().fromJson(json, DetailedCard.class);
-        }
 
         // Setup fragment
         setTitle(getString(R.string.detail_view_tv_show));
@@ -228,6 +264,12 @@ public class DetailViewTvShowFragment extends DetailsFragment implements OnItemV
                 intent.putExtra("videoId",videoId);
                 intent.putExtra("videoTitle",videoTitle);
                 intent.putExtra("playlistId",playlistId);
+
+                Bundle extras = new Bundle();
+                extras.putSerializable("recommended",recommendations);
+
+                intent.putExtra("extra",extras);
+
                 getActivity().startActivityForResult(intent,101);
                 Log.d(TAG,"playlist id- "+playlistId);
                 Log.d(TAG,"play non-live youtube video from details page");

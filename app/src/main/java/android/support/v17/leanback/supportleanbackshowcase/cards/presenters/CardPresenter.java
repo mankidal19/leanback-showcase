@@ -82,12 +82,26 @@ public class CardPresenter extends Presenter {
         cardView.setTitleText(video.getTitle());
         cardView.setContentText(video.getDescription());
 
-        if (video.getLocalImageResourceId(context) >= 0) {
+        Resources res = cardView.getResources();
+        int width = res.getDimensionPixelSize(R.dimen.card_width);
+        int height = res.getDimensionPixelSize(R.dimen.card_height);
+        cardView.setMainImageDimensions(width, height);
+
+        if(video.getImageUrl()!=null){
+            Glide.with(cardView.getContext())
+                    .asBitmap()
+                    .load(video.getImageUrl())
+                    .apply(RequestOptions.errorOf(mDefaultCardImage))
+                    .into(cardView.getMainImageView());
+        }
+
+
+        else if (video.getLocalImageResourceId(context) >= 0) {
             // Set card size from dimension resources.
-            Resources res = cardView.getResources();
+            /*Resources res = cardView.getResources();
             int width = res.getDimensionPixelSize(R.dimen.card_width);
             int height = res.getDimensionPixelSize(R.dimen.card_height);
-            cardView.setMainImageDimensions(width, height);
+            cardView.setMainImageDimensions(width, height);*/
 
             Glide.with(cardView.getContext())
                     .load(video.getLocalImageResourceId(context))

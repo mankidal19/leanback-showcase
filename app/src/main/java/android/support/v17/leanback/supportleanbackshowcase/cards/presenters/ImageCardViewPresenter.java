@@ -22,6 +22,7 @@ import android.util.Log;
 import android.view.ContextThemeWrapper;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 /**
  * A very basic {@link ImageCardView} {@link android.support.v17.leanback.widget.Presenter}.You can
@@ -66,7 +67,15 @@ public class ImageCardViewPresenter extends AbstractCardPresenter<ImageCardView>
         cardView.setTag(card);
         cardView.setTitleText(card.getTitle());
         cardView.setContentText(card.getDescription());
-        if (card.getLocalImageResourceName() != null) {
+
+        if(card.getImageUrl()!=null){
+            Glide.with(cardView.getContext())
+                    .asBitmap()
+                    .load(card.getImageUrl())
+                    .into(cardView.getMainImageView());
+        }
+
+        else if (card.getLocalImageResourceName() != null) {
             int resourceId = getContext().getResources()
                     .getIdentifier(card.getLocalImageResourceName(),
                             "drawable", getContext().getPackageName());

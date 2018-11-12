@@ -20,6 +20,7 @@ import android.util.Log;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -27,7 +28,7 @@ import java.net.URISyntaxException;
  * This is a generic example of a custom data object, containing info we might want to keep with
  * each card on the home screen
  */
-public class Card {
+public class Card implements Serializable {
 
     @SerializedName("title") private String mTitle = "";
     @SerializedName("description") private String mDescription = "";

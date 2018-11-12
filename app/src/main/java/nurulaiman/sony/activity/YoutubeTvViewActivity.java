@@ -55,7 +55,7 @@ public class YoutubeTvViewActivity extends Activity {
 
 
     //for skipping to next/prev episodes
-    private Card[] episodes = null;
+    private ArrayList<Card> episodes = null;
     private DetailedCard showDetailedCard = null;
     private String youtubeVideoTitle = null;
     private static String prevVideoTitle = null;

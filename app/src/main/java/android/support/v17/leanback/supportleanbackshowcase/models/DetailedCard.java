@@ -20,6 +20,8 @@ import android.support.v17.leanback.supportleanbackshowcase.models.Card;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+
 public class DetailedCard {
 
     @SerializedName("title") private String mTitle = "";
@@ -28,7 +30,7 @@ public class DetailedCard {
     @SerializedName("localImageResource") private String mLocalImageResource = null;
     @SerializedName("price") private String mPrice = null;
     @SerializedName("characters") private Card[] mCharacters = null;
-    @SerializedName("recommended") private Card[] mRecommended = null;
+    @SerializedName("recommended") private ArrayList<Card> mRecommended = new ArrayList<Card>();
     @SerializedName("year") private int mYear = 0;
     @SerializedName("trailerUrl") private String mTrailerUrl = null;
     @SerializedName("videoUrl") private String mVideoUrl = null;
@@ -75,8 +77,12 @@ public class DetailedCard {
         return mCharacters;
     }
 
-    public Card[] getRecommended() {
+    public ArrayList<Card> getRecommended() {
         return mRecommended;
+    }
+
+    public void addRecommended(Card card){
+        mRecommended.add(card);
     }
 
     public int getLocalImageResourceId(Context context) {
