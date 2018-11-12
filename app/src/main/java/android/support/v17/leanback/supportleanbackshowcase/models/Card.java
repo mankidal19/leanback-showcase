@@ -174,7 +174,7 @@ public class Card {
         return mVideoId;
     }
 
-    public void setVideoId(String id){
+   public void setVideoId(String id){
         this.mVideoId=id;
     }
 

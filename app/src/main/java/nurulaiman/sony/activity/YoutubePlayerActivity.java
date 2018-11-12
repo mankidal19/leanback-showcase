@@ -34,6 +34,8 @@ import nurulaiman.sony.utils.VideoUtils;
 
 public class YoutubePlayerActivity extends FragmentActivity {
 
+    private static String TAG = "YoutubePlayerActivity";
+
     private String youtubeVideoId = null;
     private YouTubePlayerView youTubePlayerView = null;
     private boolean playing = true;
@@ -45,6 +47,7 @@ public class YoutubePlayerActivity extends FragmentActivity {
     private DetailedCard showDetailedCard = null;
     private String youtubeVideoTitle = null;
     private static String prevVideoTitle = null;
+
     private ArrayList<String> episodeArrayList = new ArrayList<String>();
     private ArrayList<String> titleArrayList = new ArrayList<String>();
 
@@ -74,18 +77,6 @@ public class YoutubePlayerActivity extends FragmentActivity {
 
         initEpisodes();
 
-        JsonParseTask jsonParseTask = (JsonParseTask) new JsonParseTask(new JsonParseTask.AsyncResponse() {
-            @Override
-            public void processFinish(ArrayList<ShowCollection> output) {
-                //titleArrayList.addAll(output);
-                showCollections.addAll(output);
-                initYouTubePlayerView();
-            }
-        }).execute(playlistId);
-
-        Log.d("YoutubePlayerActivity","title length,episode length: "+ titleArrayList.size()+", "+episodeArrayList.size());
-
-
     }
 
     @Override
@@ -99,72 +90,38 @@ public class YoutubePlayerActivity extends FragmentActivity {
 
         youtubeVideoId = getIntent().getExtras().getString("videoId");
         youtubeVideoTitle = getIntent().getExtras().getString("videoTitle");
+        playlistId = getIntent().getExtras().getString("playlistId");
 
-        mYoutubeView = (YoutubeTvView) findViewById(R.id.youtube_tv_video);
+        if(playlistId!=null){
+            Log.d(TAG,"PLAYLIST ID NOT NULL");
 
-        Bundle args = new Bundle();
-        playlistId = "PLV71sdBgCmhSQwckYsNtNn7e5CGUnldJk";
-        args.putString("playlistId",playlistId);
-        args.putString("videoId",youtubeVideoId);
+            JsonParseTask jsonParseTask = (JsonParseTask) new JsonParseTask(new JsonParseTask.AsyncResponse() {
+                @Override
+                public void processFinish(ArrayList<ShowCollection> output) {
+                    //titleArrayList.addAll(output);
+                    showCollections.addAll(output);
 
-
-        mYoutubeView.updateView(args);
-
-        mYoutubeView.addPlayerListener(new IPlayerListener() {
-            @Override
-            public void onPlayerReady(final VideoInfo videoInfo) {
-                Log.i("YoutubePlayerActivity", "onPlayerReady");
-
-            }
-
-            @Override
-            public void onPlayerStateChange(final VideoState state,
-                                            final long position,
-                                            final float speed,
-                                            final float duration,
-                                            final VideoInfo videoInfo) {
-                Log.i("YoutubePlayerActivity", "onPlayerStateChange : " + state.toString() + " | position : " + position + " | speed : " + speed);
-
-                if(state.equals(VideoState.VIDEO_CUED)){
-                    Log.d("YoutubePlayerActivity", "video cued");
-
-
-                    if(episodeArrayList.isEmpty()){
-                        episodeArrayList = (ArrayList<String>)mYoutubeView.getPlaylist();
-
-                        for(String ep:episodeArrayList) {
-                            Log.d("YoutubePlayerActivity", "Episode video id: " + ep);
-
-                        }
-
-
-                        mYoutubeView.closePlayer();
-
+                    for(int i=0;i<showCollections.size();i++){
+                        episodeArrayList.add(showCollections.get(i).getVideoId());
+                        titleArrayList.add(showCollections.get(i).getTitle());
                     }
 
 
+                    initYouTubePlayerView();
                 }
-            }
-        });
+            }).execute(playlistId);
 
+            Log.d(TAG,"title length,episode length: "+ titleArrayList.size()+", "+episodeArrayList.size());
 
-        if(mYoutubeView.getPlaylist().isEmpty()){
-            Log.d("YoutubePlayerActivity", "Empty playlist");
         }
 
-        if(prevVideoTitle==null){
-            prevVideoTitle = youtubeVideoTitle;
-        }
-
-
-        Log.i("YoutubePlayerActivity","Video title: "+ youtubeVideoTitle);
-
-
+        else{
+            Log.d(TAG,"PLAYLIST ID NULL");
 
             showDetailedCard = matchingCardUtils.findMatchingCard(youtubeVideoTitle);
 
             //if not movies, get episodes & title list
-            /*if(!showDetailedCard.getText().toLowerCase().contains("movie")){
+            if(!showDetailedCard.getText().toLowerCase().contains("movie")){
                 episodes = showDetailedCard.getRecommended();
 
 
@@ -180,11 +137,27 @@ public class YoutubePlayerActivity extends FragmentActivity {
 
                 //for debugging
                 for(String ep:episodeArrayList){
-                    Log.d("YoutubePlayerActivity","Episode video id: "+ ep);
+                    Log.d(TAG,"Episode video id: "+ ep);
 
                 }
 
-            }*/
+            }
+
+            initYouTubePlayerView();
+
+        }
+
+        if(prevVideoTitle==null){
+            prevVideoTitle = youtubeVideoTitle;
+        }
+
+
+
+        Log.i(TAG,"Video title: "+ youtubeVideoTitle);
+
+
+
+
    }
 
     private void initYouTubePlayerView() {
@@ -193,7 +166,7 @@ public class YoutubePlayerActivity extends FragmentActivity {
         youTubePlayerView.getPlayerUIController().showUI(false);
         youTubePlayerView.getPlayerUIController().enableLiveVideoUI(false);
 
-        Log.i("YoutubePlayerActivity","current videoID: "+ youtubeVideoId);
+        Log.i(TAG,"current videoID: "+ youtubeVideoId);
 
 
         //to display icon
@@ -453,6 +426,7 @@ public class YoutubePlayerActivity extends FragmentActivity {
 
 
     private String getPrevEpisode() {
+
         int idx = episodeArrayList.indexOf(youtubeVideoId);
 
 

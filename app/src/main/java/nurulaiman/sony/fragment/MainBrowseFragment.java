@@ -318,26 +318,15 @@ public class MainBrowseFragment extends BrowseFragment {
                 return new MainBrowseFragment.FragmentLiveBroadcast();
             }
             else if(row.getHeaderItem().getId() == HEADER_ID_4){
-                /*MainBrowseFragment.FragmentTvShow fragment = new MainBrowseFragment.FragmentTvShow();
-                Bundle bundle = new Bundle();
-                bundle.putLong("headerId",row.getHeaderItem().getId());
-                fragment.setArguments(bundle);
 
-                return fragment;*/
                 return new MainBrowseFragment.FragmentTvShow();
             }
             else if(row.getHeaderItem().getId() == HEADER_ID_5){
                 return new MainBrowseFragment.FragmentMovie();
             }
 
-            //DUMMY for drama
             else if(row.getHeaderItem().getId() == HEADER_ID_3){
-                /*MainBrowseFragment.FragmentTvShow fragment = new MainBrowseFragment.FragmentTvShow();
-                Bundle bundle = new Bundle();
-                bundle.putLong("headerId",row.getHeaderItem().getId());
-                fragment.setArguments(bundle);
 
-                return fragment;*/
                 return new MainBrowseFragment.FragmentNewsSports();
             }
 
@@ -547,14 +536,14 @@ public class MainBrowseFragment extends BrowseFragment {
                         Object item,
                         RowPresenter.ViewHolder rowViewHolder,
                         Row row) {
-                    /*Toast.makeText(getActivity(), "Implement click handler", Toast.LENGTH_SHORT)
-                            .show();*/
+
                     Intent intent = null;
                     Card selectedCard = (Card)item;
 
                     intent = new Intent(getContext(), DetailViewTvShowActivity.class);
                     intent.putExtra("videoId",selectedCard.getVideoId());
                     intent.putExtra("videoTitle",selectedCard.getTitle());
+
 
 
                     startActivity(intent);

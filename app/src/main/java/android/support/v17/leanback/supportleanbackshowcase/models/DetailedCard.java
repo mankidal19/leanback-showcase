@@ -33,7 +33,7 @@ public class DetailedCard {
     @SerializedName("trailerUrl") private String mTrailerUrl = null;
     @SerializedName("videoUrl") private String mVideoUrl = null;
     @SerializedName("videoId") private String mVideoId = null;
-
+    @SerializedName("playlistId") private String mPlaylistId;
     @SerializedName("type") private Card.Type mType;
 
 
@@ -85,4 +85,12 @@ public class DetailedCard {
     }
 
     public String getVideoId(){return mVideoId;}
+
+    public void setPlaylistId(String id){
+        this.mPlaylistId=id;
+    }
+
+    public String getPlaylistId() {
+        return mPlaylistId;
+    }
 }

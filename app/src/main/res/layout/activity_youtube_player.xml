@@ -43,15 +43,5 @@
 
     </androidyoutubeplayer.player.YouTubePlayerView>
 
-    <androidyoutubeplayer.YoutubeTvView
-        android:id="@+id/youtube_tv_video"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="invisible"
-        app:yt_debug="true"
-        app:yt_playlistId="PLV71sdBgCmhSQwckYsNtNn7e5CGUnldJk"
-        app:yt_showControls="always"
-        app:yt_userAgentString="iphone"
-        app:yt_videoQuality="small"></androidyoutubeplayer.YoutubeTvView>
 
 </LinearLayout>

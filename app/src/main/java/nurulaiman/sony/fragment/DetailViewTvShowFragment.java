@@ -224,9 +224,12 @@ public class DetailViewTvShowFragment extends DetailsFragment implements OnItemV
                 //Intent intent = new Intent(getContext(), YoutubeActivityFragment.class);
                 String videoId = data.getVideoId();
                 String videoTitle = data.getTitle();
+                String playlistId = data.getPlaylistId();
                 intent.putExtra("videoId",videoId);
                 intent.putExtra("videoTitle",videoTitle);
+                intent.putExtra("playlistId",playlistId);
                 getActivity().startActivityForResult(intent,101);
+                Log.d(TAG,"playlist id- "+playlistId);
                 Log.d(TAG,"play non-live youtube video from details page");
             }
             else {

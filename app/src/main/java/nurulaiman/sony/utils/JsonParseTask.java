@@ -12,18 +12,22 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Map;
 
 import javax.net.ssl.HttpsURLConnection;
 
-public class JsonParseTask extends AsyncTask<String, Void, ArrayList<String>> {
+import nurulaiman.sony.models.ShowCollection;
+
+public class JsonParseTask extends AsyncTask<String, Void, ArrayList<ShowCollection>> {
 
     private final static String TAG = JsonParseTask.class.getSimpleName();
 
     private static final String apiKey = "AIzaSyCEfmvLPr2q4esyG2ow0XQRTaYGmApjxMQ";
     private String playlistId;
     private String videoUrl;
-    private ArrayList<String> titles = new ArrayList<String>();
-
+    //private ArrayList<String> titles = new ArrayList<String>();
+    //private ArrayList<String> episodes = new ArrayList<String>();
+    private ArrayList<ShowCollection> showCollections = new ArrayList<ShowCollection>();
 
     @Override
     protected void onPreExecute() {
@@ -31,7 +35,7 @@ public class JsonParseTask extends AsyncTask<String, Void, ArrayList<String>> {
     }
 
     @Override
-    protected ArrayList<String> doInBackground(String... params) {
+    protected ArrayList<ShowCollection> doInBackground(String... params) {
         playlistId = params[0];
         String videoUrl = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=20&playlistId="+playlistId+"&key="+apiKey;
 
@@ -44,12 +48,26 @@ public class JsonParseTask extends AsyncTask<String, Void, ArrayList<String>> {
 
             for(int i=0;i<jsonArray.length();i++){
                 JSONObject snippetJsonObject = jsonArray.getJSONObject(i).getJSONObject("snippet");
-                titles.add(snippetJsonObject.getString("title"));
+                JSONObject resourceJsonObject = snippetJsonObject.getJSONObject("resourceId");
 
-                Log.d(TAG,titles.get(i));
+                String title = snippetJsonObject.getString("title");
+                String videoId = resourceJsonObject.getString("videoId");
+                ShowCollection show = new ShowCollection(videoId,title);
+
+
+                Log.d(TAG,"resourceJsonObject["+i+"]"+resourceJsonObject.toString());
+                Log.d(TAG,"title["+i+"]"+title);
+                Log.d(TAG,"videoId["+i+"]"+videoId);
+
+                //titles.add(snippetJsonObject.getString("title"));
+                //episodes.add(resourceJsonObject.getString("videoId"));
+
+                showCollections.add(show);
+
+                Log.d(TAG,showCollections.get(i).toString());
             }
 
-            return titles;
+            return showCollections;
 
         }
         catch (Exception e){
@@ -61,7 +79,7 @@ public class JsonParseTask extends AsyncTask<String, Void, ArrayList<String>> {
     }
 
     public interface AsyncResponse {
-        void processFinish(ArrayList<String> output);
+        void processFinish(ArrayList<ShowCollection> output);
     }
 
     public AsyncResponse delegate = null;
@@ -71,9 +89,9 @@ public class JsonParseTask extends AsyncTask<String, Void, ArrayList<String>> {
     }
 
     @Override
-    protected void onPostExecute(ArrayList<String> strings) {
-        super.onPostExecute(strings);
-        delegate.processFinish(strings);
+    protected void onPostExecute(ArrayList<ShowCollection> shows) {
+        super.onPostExecute(shows);
+        delegate.processFinish(shows);
     }
 
     protected String getJSON(String url) {
