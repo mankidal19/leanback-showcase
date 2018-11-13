@@ -94,7 +94,8 @@ public class CardPresenterSelector extends PresenterSelector {
                     presenter = new ImageCardViewPresenter(mContext,card.getType(),card.getVideoId());
                     break;
                 default:
-                    presenter = new ImageCardViewPresenter(mContext);
+                    presenter = new CustomImageCardViewPresenter(mContext);
+                    //presenter = new ImageCardViewPresenter(mContext);
                     break;
             }
         }
