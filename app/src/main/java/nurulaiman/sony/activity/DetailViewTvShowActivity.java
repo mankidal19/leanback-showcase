@@ -39,7 +39,7 @@ public class DetailViewTvShowActivity extends LeanbackActivity {
             DetailViewTvShowFragment fragment = new DetailViewTvShowFragment();
             getFragmentManager().beginTransaction()
                     .replace(R.id.details_fragment, fragment)
-                    .commit();
+                    .commitAllowingStateLoss();
         }
 
 

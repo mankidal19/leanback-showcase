@@ -40,7 +40,7 @@ public class DetailViewLiveBroadcastActivity extends LeanbackActivity {
             DetailViewLiveBroadcastFragment fragment = new DetailViewLiveBroadcastFragment();
             getFragmentManager().beginTransaction()
                     .replace(R.id.details_fragment, fragment)
-                    .commit();
+                    .commitAllowingStateLoss();
         }
     }
 

@@ -24,9 +24,14 @@ public class MainActivity extends LeanbackActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_main_browse);
+        //setContentView(R.layout.fragment_main_browse);
+        setContentView(R.layout.activity_main);
 
         //MainBrowseFragment fragment = MainBrowseFragment.newInstance();
+        MainBrowseFragment fragment = new MainBrowseFragment();
+        getFragmentManager().beginTransaction().replace(R.id.fragmentContainer, fragment)
+                .commitAllowingStateLoss();
+
 
     }
 
