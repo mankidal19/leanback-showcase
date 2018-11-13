@@ -86,20 +86,7 @@ public class SearchableActivity extends Activity {
     public void play(Card selectedCard,int id){
         if(selectedCard.isLive()){
 
-            //for sample live tv details page
-            if(selectedCard.getTitle().toLowerCase().contains("jazeera")){
-                Intent intent = new Intent(this, DetailViewLiveBroadcastActivity.class);
-                intent.putExtra("mediaId",id);
-                intent.putExtra("videoId",selectedCard.getVideoId());
 
-                //to set video title
-                intent.putExtra("videoTitle",selectedCard.getTitle());
-
-                startActivity(intent);
-                Log.d(TAG,"open sample live tv details page");
-            }
-            //directly play video
-            else{
                 Intent intent = new Intent(this, LiveActivity.class);
                 intent.putExtra("mediaId",id);
                 intent.putExtra("videoId",selectedCard.getVideoId());
@@ -109,13 +96,12 @@ public class SearchableActivity extends Activity {
 
                 startActivity(intent);
                 Log.d(TAG,"play live video");
-            }
 
         }
 
         else{
-            //for sample movie details page
-            if(selectedCard.getTitle().toLowerCase().contains("gone")||selectedCard.getTitle().toLowerCase().contains("korean")){
+            //for movie details page
+            if(selectedCard.getTitle().toLowerCase().contains("movie")){
                 Intent intent = new Intent(this, DetailViewMovieActivity.class);
                 intent.putExtra("mediaId",id);
                 intent.putExtra("videoId",selectedCard.getVideoId());
@@ -124,27 +110,7 @@ public class SearchableActivity extends Activity {
                 startActivity(intent);
                 Log.d(TAG,"open movie details page");
             }
-            //for dummy movie
-            else if(selectedCard.getDescription().toLowerCase().contains("$3.99")){
-                Toast.makeText(this, "this is a dummy movie", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this,MainActivity.class));
-            }
-            /*//for sample tv show details page
-            else if(selectedCard.getTitle().toLowerCase().contains("superman")){
-                Intent intent = new Intent(this, DetailViewTvShowActivity.class);
-                intent.putExtra("mediaId",id);
-                intent.putExtra("videoId",selectedCard.getVideoId());
-                startActivity(intent);
-                Log.d(TAG,"open sample tv show details page");
-            }
-            //directly plays video
-            else{
-                Intent intent = new Intent(this, YoutubePlayerActivity.class);
-                intent.putExtra("mediaId",id);
-                intent.putExtra("videoId",selectedCard.getVideoId());
-                startActivity(intent);
-                Log.d(TAG,"play non-live youtube video");
-            }*/
+            //for VOD
             else{
                 Intent intent = new Intent(this, DetailViewTvShowActivity.class);
                 intent.putExtra("mediaId",id);
