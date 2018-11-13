@@ -8,9 +8,7 @@ import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.KeyEvent;
 
-import androidyoutubeplayer.player.YouTubePlayer;
-import androidyoutubeplayer.player.YouTubePlayerView;
-import androidyoutubeplayer.player.listeners.AbstractYouTubePlayerListener;
+
 
 import java.util.ArrayList;
 
@@ -19,6 +17,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.pierfrancescosoffritti.androidyoutubeplayer.player.YouTubePlayer;
+import com.pierfrancescosoffritti.androidyoutubeplayer.player.YouTubePlayerView;
+import com.pierfrancescosoffritti.androidyoutubeplayer.player.listeners.AbstractYouTubePlayerListener;
 
 import nurulaiman.sony.data.MockDatabase;
 
@@ -263,6 +265,7 @@ public class LiveActivity extends FragmentActivity {
             setResult(Activity.RESULT_OK,returnIntent);
             finish();
         }
+
 
         if(handled){
 

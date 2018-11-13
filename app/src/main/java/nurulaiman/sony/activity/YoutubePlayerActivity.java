@@ -16,13 +16,10 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import androidyoutubeplayer.YoutubeTvView;
-import androidyoutubeplayer.player.YouTubePlayer;
-import androidyoutubeplayer.player.YouTubePlayerView;
-import androidyoutubeplayer.player.listeners.AbstractYouTubePlayerListener;
-import androidyoutubeplayer.utils.YouTubePlayerTracker;
-import nurulaiman.sony.models.Episode;
-import nurulaiman.sony.utils.JsonParseTask;
+import com.pierfrancescosoffritti.androidyoutubeplayer.player.YouTubePlayer;
+import com.pierfrancescosoffritti.androidyoutubeplayer.player.YouTubePlayerView;
+import com.pierfrancescosoffritti.androidyoutubeplayer.player.listeners.AbstractYouTubePlayerListener;
+import com.pierfrancescosoffritti.androidyoutubeplayer.utils.YouTubePlayerTracker;
 import nurulaiman.sony.utils.MatchingCardUtils;
 
 public class YoutubePlayerActivity extends FragmentActivity {

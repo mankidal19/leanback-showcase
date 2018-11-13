@@ -53,7 +53,7 @@ public class YoutubeActivityFragment extends Activity {
 
         mYtFragment = YoutubeTvFragment.newInstance(args);
         fTransaction.replace(R.id.youtube_fragment, mYtFragment);
-        fTransaction.commit();
+        fTransaction.commitAllowingStateLoss();
     }
 
     @Override
