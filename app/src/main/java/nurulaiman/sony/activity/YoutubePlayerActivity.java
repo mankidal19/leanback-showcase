@@ -83,20 +83,34 @@ public class YoutubePlayerActivity extends FragmentActivity {
         youtubeVideoId = getIntent().getExtras().getString("videoId");
         youtubeVideoTitle = getIntent().getExtras().getString("videoTitle");
 
-            Log.d(TAG,"PLAYLIST ID NOT NULL");
+        //showDetailedCard = matchingCardUtils.findMatchingCard(youtubeVideoTitle);
+        showDetailedCard = matchingCardUtils.findMatchingCardUsingVideoId(youtubeVideoId);
+
+        if(!showDetailedCard.getText().toLowerCase().contains("movie")){
+        //if(showDetailedCard==null){
+            Log.d(TAG,"NON-MOVIE VOD");
 
 
             Bundle extra = getIntent().getBundleExtra("extra");
             episodes.addAll((ArrayList<Card>) extra.getSerializable("recommended"));
 
-        for(Card card:episodes){
-            episodeArrayList.add(card.getVideoId());
-            titleArrayList.add(card.getTitle());
+            for(Card card:episodes){
+                episodeArrayList.add(card.getVideoId());
+                titleArrayList.add(card.getTitle());
+            }
+            Log.d(TAG,"title length,episode length: "+ titleArrayList.size()+", "+episodeArrayList.size());
+
         }
+
+        else{
+            Log.d(TAG,"MOVIE VOD");
+
+        }
+
+
 
             initYouTubePlayerView();
 
-            Log.d(TAG,"title length,episode length: "+ titleArrayList.size()+", "+episodeArrayList.size());
 
 
         if(prevVideoTitle==null){

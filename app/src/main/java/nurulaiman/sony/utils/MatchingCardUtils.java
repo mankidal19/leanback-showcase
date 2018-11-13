@@ -41,6 +41,23 @@ public class MatchingCardUtils {
         return chosenDetailedCard;
 
     }
+
+    public DetailedCard findMatchingCardUsingVideoId(String videoId){
+
+        String json = Utils.inputStreamToString(context.getResources().openRawResource(
+                R.raw.all_detailed_card_row));
+
+        DetailedCard[] rows = new Gson().fromJson(json, DetailedCard[].class);
+        for(DetailedCard detailedCard:rows){
+            if(videoId.equals(detailedCard.getVideoId())){
+                chosenDetailedCard = detailedCard;
+                return chosenDetailedCard;
+            }
+        }
+
+        return chosenDetailedCard;
+    }
+
     //for movies
     public DetailedCard findExactTitleMatchingCard(String videoTitle){
 

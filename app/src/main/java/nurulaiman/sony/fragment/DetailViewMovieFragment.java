@@ -228,8 +228,8 @@ public class DetailViewMovieFragment extends DetailsFragment implements OnItemVi
             }
             //FOR WATCH NOW FREE/PURCHASED MOVIES
             else if(action.getId()==ACTION_WATCHNOW){
-                //Intent intent = new Intent(getContext(), YoutubePlayerActivity.class);
-                Intent intent = new Intent(getContext(), YoutubeTvViewActivity.class);
+                Intent intent = new Intent(getContext(), YoutubePlayerActivity.class);
+                //Intent intent = new Intent(getContext(), YoutubeTvViewActivity.class);
 
                 String videoId = getActivity().getIntent().getExtras().getString("videoId");
                 intent.putExtra("videoId",videoId);
