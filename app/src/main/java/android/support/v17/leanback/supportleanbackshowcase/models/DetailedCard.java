@@ -96,6 +96,12 @@ public class DetailedCard {
         this.mPlaylistId=id;
     }
 
+    public void setTitle(String title){
+        this.mTitle=title;
+    }
+
+    public void setText(String text){this.mText=text;}
+
     public String getPlaylistId() {
         return mPlaylistId;
     }

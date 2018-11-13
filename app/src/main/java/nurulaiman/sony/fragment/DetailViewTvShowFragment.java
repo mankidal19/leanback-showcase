@@ -123,7 +123,21 @@ public class DetailViewTvShowFragment extends DetailsFragment implements OnItemV
                         recommendations.addAll(output);
 
                         for(Card card:recommendations){
-                            data.addRecommended(card);
+
+                            Log.d(TAG, "["+recommendations.indexOf(card)+"] data videoId: "+ data.getVideoId()+",card videoId: "+card.getVideoId());
+
+                            //don't add current episode to recommended
+                            if(!data.getVideoId().equals(card.getVideoId())){
+                                data.addRecommended(card);
+                                Log.d(TAG, "card added to recommended");
+
+                            }
+                            else{//else set description & title
+
+                                data.setText(card.getDescription());
+                                data.setTitle(card.getTitle());
+                            }
+
                         }
                     }
 
