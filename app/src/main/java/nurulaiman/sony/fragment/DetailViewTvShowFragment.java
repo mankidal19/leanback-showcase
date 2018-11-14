@@ -278,10 +278,11 @@ public class DetailViewTvShowFragment extends DetailsFragment implements OnItemV
                 String playlistId = data.getPlaylistId();
                 intent.putExtra("videoId",videoId);
                 intent.putExtra("videoTitle",videoTitle);
-                intent.putExtra("playlistId",playlistId);
+                //intent.putExtra("playlistId",playlistId);
 
                 Bundle extras = new Bundle();
                 extras.putSerializable("recommended",recommendations);
+                extras.putSerializable("data",data);
 
                 intent.putExtra("extra",extras);
 
@@ -311,6 +312,7 @@ public class DetailViewTvShowFragment extends DetailsFragment implements OnItemV
 
                 Bundle extras = new Bundle();
                 extras.putSerializable("recommended",recommendations);
+                extras.putSerializable("data",data);
 
                 intent.putExtra("extra",extras);
 

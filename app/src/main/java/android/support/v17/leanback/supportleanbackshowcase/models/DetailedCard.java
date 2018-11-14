@@ -20,9 +20,10 @@ import android.support.v17.leanback.supportleanbackshowcase.models.Card;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class DetailedCard {
+public class DetailedCard implements Serializable {
 
     @SerializedName("title") private String mTitle = "";
     @SerializedName("description") private String mDescription = "";
