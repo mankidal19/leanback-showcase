@@ -14,8 +14,11 @@
 
 package nurulaiman.sony.fragment;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v17.leanback.app.DetailsFragment;
@@ -59,7 +62,7 @@ import nurulaiman.sony.utils.MatchingCardUtils;
 /**
  * Displays a card with more details using a {@link DetailsFragment}.
  */
-public class DetailViewTvShowFragment extends DetailsFragment implements OnItemViewClickedListener,
+public class DetailViewTvShowFragment extends MyDetailsFragment implements OnItemViewClickedListener,
         OnItemViewSelectedListener {
 
     public static final String TRANSITION_NAME = "t_for_transition";
@@ -92,7 +95,10 @@ public class DetailViewTvShowFragment extends DetailsFragment implements OnItemV
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
+
         matchingCardUtils = new MatchingCardUtils(getContext());
         loadRecommendations();
         //setupUi();

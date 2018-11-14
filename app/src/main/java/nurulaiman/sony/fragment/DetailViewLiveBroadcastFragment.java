@@ -55,7 +55,7 @@ import nurulaiman.sony.utils.MatchingCardUtils;
 /**
  * Displays a card with more details using a {@link DetailsFragment}.
  */
-public class DetailViewLiveBroadcastFragment extends DetailsFragment implements OnItemViewClickedListener,
+public class DetailViewLiveBroadcastFragment extends MyDetailsFragment implements OnItemViewClickedListener,
         OnItemViewSelectedListener {
 
     public static final String TRANSITION_NAME = "t_for_transition";
