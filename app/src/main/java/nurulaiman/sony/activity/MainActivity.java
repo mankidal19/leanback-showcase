@@ -27,12 +27,21 @@ public class MainActivity extends LeanbackActivity {
         //setContentView(R.layout.fragment_main_browse);
         setContentView(R.layout.activity_main);
 
-        //MainBrowseFragment fragment = MainBrowseFragment.newInstance();
-        MainBrowseFragment fragment = new MainBrowseFragment();
+        MainBrowseFragment fragment = MainBrowseFragment.newInstance();
+        //MainBrowseFragment fragment = new MainBrowseFragment();
         getFragmentManager().beginTransaction().replace(R.id.fragmentContainer, fragment)
-                .commitAllowingStateLoss();
+                .commit();
+        Log.d(TAG,"onCreate called");
 
 
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        //to debug issue RGYB shortcuts not working after voice search
+
+        //super.onSaveInstanceState(outState);
+        Log.d(TAG,"onSaveInstanceState called");
     }
 
     @Nullable
@@ -65,7 +74,7 @@ public class MainActivity extends LeanbackActivity {
         Bundle appData = new Bundle();
         appData.putBoolean(SearchableActivity.JARGON, true);
         startSearch(null, false, appData, false);
-        Log.i(TAG,"search requested");
+        Log.d(TAG,"search requested");
         return true;
     }
 

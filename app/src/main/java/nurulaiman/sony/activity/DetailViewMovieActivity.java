@@ -38,7 +38,7 @@ public class DetailViewMovieActivity extends LeanbackActivity {
             DetailViewMovieFragment fragment = new DetailViewMovieFragment();
             getFragmentManager().beginTransaction()
                     .replace(R.id.details_fragment, fragment)
-                    .commitAllowingStateLoss();
+                    .commit();
         }
     }
 
