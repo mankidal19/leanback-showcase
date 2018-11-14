@@ -43,6 +43,7 @@ public class Card implements Serializable {
     @SerializedName("width") private int mWidth;
     @SerializedName("height") private int mHeight;
     @SerializedName("live") private boolean mLive;
+    @SerializedName("playlistId") private String mPlaylistId;
 
 
     //adding for video id
@@ -173,6 +174,11 @@ public class Card implements Serializable {
 
     public String getVideoId() {
         return mVideoId;
+    }
+
+
+    public String getPlaylistId() {
+        return mPlaylistId;
     }
 
    public void setVideoId(String id){
