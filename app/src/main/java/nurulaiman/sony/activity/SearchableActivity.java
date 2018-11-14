@@ -107,6 +107,7 @@ public class SearchableActivity extends Activity {
                 intent.putExtra("videoId",selectedCard.getVideoId());
                 intent.putExtra("videoTitle",selectedCard.getTitle());
 
+
                 startActivity(intent);
                 Log.d(TAG,"open movie details page");
             }
@@ -116,6 +117,11 @@ public class SearchableActivity extends Activity {
                 intent.putExtra("mediaId",id);
                 intent.putExtra("videoId",selectedCard.getVideoId());
                 intent.putExtra("videoTitle",selectedCard.getTitle());
+
+
+                //to set video playlistId
+                intent.putExtra("playlistId",selectedCard.getPlaylistId());
+
 
                 startActivity(intent);
                 Log.d(TAG,"open tv show details page");
