@@ -10,7 +10,8 @@
         "footerIconLocalImageResource": "ic_installed",
         "id":0,
         "live":false,
-        "videoId":"j92a1CAk0uU"
+        "videoId":"j92a1CAk0uU",
+        "playlistId":"PLV71sdBgCmhSQwckYsNtNn7e5CGUnldJk"
       },
       {
         "type": "DEFAULT",
@@ -20,7 +21,8 @@
         "footerIconLocalImageResource": "ic_installed",
         "id":1,
         "live":false,
-        "videoId":"iD_i7enDjtY"
+        "videoId":"iD_i7enDjtY",
+        "playlistId": "PLV71sdBgCmhSqotsspKrNPENicHFMMp3e"
       },
       {
         "type": "DEFAULT",
@@ -30,7 +32,8 @@
         "footerIconLocalImageResource": "ic_installed",
         "id":2,
         "live":false,
-        "videoId":"FsLCzW6t2bc"
+        "videoId":"FsLCzW6t2bc",
+        "playlistId": "PLV71sdBgCmhRywMhzrCQ5sFcaeEquUDK2",
       },
       {
         "type": "DEFAULT",
@@ -40,7 +43,8 @@
         "footerIconLocalImageResource": "ic_installed",
         "id":3,
         "live":false,
-        "videoId":"OE-EnnWODT4"
+        "videoId":"OE-EnnWODT4",
+        "playlistId": "PLV71sdBgCmhTCsQ_9uIr990DgL1DtTrtx"
       },
       {
         "type": "DEFAULT",
@@ -50,7 +54,8 @@
         "footerIconLocalImageResource": "ic_installed",
         "id":4,
         "live":false,
-        "videoId":"50eg9SXUDwA"
+        "videoId":"50eg9SXUDwA",
+        "playlistId":"PLV71sdBgCmhR0ukwiie3LkO5TDADc7lq3"
       }
     ]
   },
@@ -65,7 +70,8 @@
         "footerIconLocalImageResource": "ic_installed",
         "id":5,
         "live":false,
-        "videoId":"R9H1u1zFVNc"
+        "videoId":"R9H1u1zFVNc",
+        "playlistId": "PLJV1h9xQ7Hx-0WipavLDd3mFSLJL1r2XQ"
       },
       {
         "type": "DEFAULT",
@@ -75,7 +81,8 @@
         "footerIconLocalImageResource": "ic_installed",
         "id":6,
         "live":false,
-        "videoId":"EWtuU5H6BdQ"
+        "videoId":"EWtuU5H6BdQ",
+        "playlistId": "PLJV1h9xQ7Hx89jH49IgnVuKyuRNTj11PK"
       },
       {
         "type": "DEFAULT",
@@ -85,7 +92,8 @@
         "footerIconLocalImageResource": "ic_installed",
         "id":7,
         "live":false,
-        "videoId":"qfg4aSLxFcI"
+        "videoId":"qfg4aSLxFcI",
+        "playlistId": "PLC1EDzqtkrh-2763ug-ABi8LWh5om2nkK"
       },
       {
         "type": "DEFAULT",
@@ -95,7 +103,8 @@
         "footerIconLocalImageResource": "ic_installed",
         "id":8,
         "live":false,
-        "videoId":"cqyziA30whE"
+        "videoId":"cqyziA30whE",
+        "playlistId": "PLJYf0JdTApCqAbZImkQagXEuByh-b_7To"
       },
       {
         "type": "DEFAULT",
@@ -105,7 +114,8 @@
         "footerIconLocalImageResource": "ic_installed",
         "id":9,
         "live":false,
-        "videoId":"E4R_e9bkLgg"
+        "videoId":"E4R_e9bkLgg",
+        "playlistId":"PLdm4JCUOHx85iurzIvwQywGu5B8BtibN4"
       }
     ]
   },
@@ -120,47 +130,52 @@
         "footerIconLocalImageResource": "ic_installed",
         "id":10,
         "live":false,
-        "videoId":"qwKi5kZPME8"
+        "videoId":"qwKi5kZPME8",
+        "playlistId": "PLzGHKb8i9vTxYYfgnuGEdzr6Tlp3cb7hS"
       },
       {
         "type": "DEFAULT",
-        "title": "Arirang News",
+        "title": "Arirang News- Foreign Correspondents",
         "description": "Arirang TV is a global, English-language television network based in Seoul, South Korea. [TV SHOW] [NEWS]",
         "localImageResource": "arirang_news",
         "footerIconLocalImageResource": "ic_installed",
         "id":11,
         "live":false,
-        "videoId":"1ARLUNkn2kE"
+        "videoId":"1ARLUNkn2kE",
+        "playlistId": "PLWdVPk7xgPCATZnQg3mouESJABEBuyFoD"
       },
       {
         "type": "DEFAULT",
-        "title": "Buletin Awani",
+        "title": "Buletin Awani 7:45",
         "description": "Astro Awani is the in-house rolling television news and current affairs channel providing 24-hour news coverage including news in Malay. [TV SHOW] [NEWS]",
         "localImageResource": "buletin_awani",
         "footerIconLocalImageResource": "ic_installed",
         "id":12,
         "live":false,
-        "videoId":"sDOv5TurUJY"
+        "videoId":"sDOv5TurUJY",
+        "playlistId":"PLV71sdBgCmhR8i7YjoAtDgEFTgEvLxrlC"
       },
       {
         "type": "DEFAULT",
-        "title": "Euronews",
+        "title": "Euronews- Raw Politics",
         "description": "Euronews is a multilingual news media service, headquartered in Lyon, France. [TV SHOW] [NEWS]",
         "localImageResource": "euro_news",
         "footerIconLocalImageResource": "ic_installed",
         "id":13,
         "live":false,
-        "videoId":"0BIm3FE5xfk"
+        "videoId":"0BIm3FE5xfk",
+        "playlistId": "PLV71sdBgCmhSxGf6YK18cFE1EfX1Vivxn"
       },
       {
         "type": "DEFAULT",
-        "title": "KBS News",
+        "title": "KBS News 9",
         "description": "KBS Nine O'Clock News is the flagship newscast that airs on KBS1 every night at 9:00pm KST. [TV SHOW] [NEWS]",
         "localImageResource": "kbs_news",
         "footerIconLocalImageResource": "ic_installed",
         "id":14,
         "live":false,
-        "videoId":"zlds3jwi8sc"
+        "videoId":"zlds3jwi8sc",
+        "playlistId": "PLV71sdBgCmhSaDWhMFZZXsNRNlmSYKFYh"
       }
     ]
   },
@@ -176,7 +191,8 @@
         "footerIconLocalImageResource": "ic_installed",
         "id": 15,
         "live": false,
-        "videoId":"ge3g-GT9j00"
+        "videoId":"ge3g-GT9j00",
+        "playlistId": "PLV71sdBgCmhScOPUZKwFTaIE2k78lsXLo"
       },
       {
         "type": "DEFAULT",
@@ -186,7 +202,8 @@
         "footerIconLocalImageResource": "ic_installed",
         "id":16,
         "live":false,
-        "videoId":"XM0BYUt5cmM"
+        "videoId":"XM0BYUt5cmM",
+        "playlistId":"PLV71sdBgCmhQ9uNXW9Pf-LS-4_nMsBejN"
       },
       {
         "type": "DEFAULT",
@@ -196,7 +213,8 @@
         "footerIconLocalImageResource": "ic_installed",
         "id":17,
         "live":false,
-        "videoId":"48as9V-47Po"
+        "videoId":"48as9V-47Po",
+        "playlistId": "PLV71sdBgCmhQ52TF6NXzyzWMkKfsJ7g8o"
       },
       {
         "type": "DEFAULT",
@@ -206,7 +224,8 @@
         "footerIconLocalImageResource": "ic_installed",
         "id":18,
         "live":false,
-        "videoId":"NdkLOwYYfpA"
+        "videoId":"NdkLOwYYfpA",
+        "playlistId": "PLlVlyGVtvuVnYpLKwy4Nz7QgTV69B54By"
       },
       {
         "type": "DEFAULT",
@@ -216,7 +235,8 @@
         "footerIconLocalImageResource": "ic_installed",
         "id":19,
         "live":false,
-        "videoId":"z8t4iylW-nM"
+        "videoId":"z8t4iylW-nM",
+        "playlistId": "PLx6bGx4zt6Ekz7CEhqHUeBbeoo_VxiVpa"
       }
     ]
   },
