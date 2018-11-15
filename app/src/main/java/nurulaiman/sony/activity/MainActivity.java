@@ -36,7 +36,7 @@ public class MainActivity extends LeanbackActivity {
         if(interfaceMode.equals("enduser")){
             //video background
             VideoView videoview = (VideoView) findViewById(R.id.videoView);
-            Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.polina);
+            Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.fptplay);
             videoview.setVideoURI(uri);
             videoview.start();
 
@@ -44,6 +44,7 @@ public class MainActivity extends LeanbackActivity {
                 @Override
                 public void onPrepared(MediaPlayer mp) {
                     mp.setLooping(true);
+                    mp.setVolume(0f,0f);
                 }
             });
         }
