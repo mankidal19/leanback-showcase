@@ -45,18 +45,20 @@
     <!--added for Operator App-->
     <array name="pref_content_providers_entries">
         <item>Default Operator App</item>
-        <item>Another Operator 1</item>
-        <item>Another Operator 2</item>
-        <item>Another Operator 3</item>
-        <item>Another Operator 4</item>
+        <item>ALT Balaji</item>
+        <item>BigFlix</item>
+        <item>Hotstar</item>
+        <item>SONY Liv</item>
+        <item>The Viral Fever</item>
     </array>
 
     <array name="pref_content_providers_values">
-        <item>operator0</item>
-        <item>operator1</item>
-        <item>operator2</item>
-        <item>operator3</item>
-        <item>operator4</item>
+        <item>default</item>
+        <item>altbalaji</item>
+        <item>bigflix</item>
+        <item>hotstar</item>
+        <item>sonyliv</item>
+        <item>tvf</item>
     </array>
 
     <array name="pref_interface_entries">
