@@ -39,6 +39,7 @@ public class MySettingsFragment extends LeanbackSettingsFragment implements Dial
 
     private final Stack<Fragment> fragments = new Stack<Fragment>();
     private static String TAG = "MySettingsFragment";
+    private boolean changeMade = false;
 
 
 
@@ -107,28 +108,56 @@ public class MySettingsFragment extends LeanbackSettingsFragment implements Dial
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            //SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
-            //prefs.registerOnSharedPreferenceChangeListener(this);
+            getPreferenceManager().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
+            Log.d(TAG,"onCreate, register OnSharedPreferenceChangeListener");
+
         }
 
         @Override
         public void onResume() {
             super.onResume();
-            getPreferenceManager().getDefaultSharedPreferences(getContext()).registerOnSharedPreferenceChangeListener(this);
-            Log.d(TAG,"onResume, register OnSharedPreferenceChangeListener");
+            Log.d(TAG,"onResume called");
+
+
         }
 
         @Override
         public void onPause() {
-            getPreferenceManager().getDefaultSharedPreferences(getContext()).unregisterOnSharedPreferenceChangeListener(this);
             super.onPause();
-            Log.d(TAG,"onPause, unregister OnSharedPreferenceChangeListener");
+            Log.d(TAG,"onPause called");
 
         }
 
         @Override
-        public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
+        public void onDestroy() {
+            getPreferenceManager().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);
+            Log.d(TAG,"onDestroy called");
+
+            Log.d(TAG,"onDestroy, unregister OnSharedPreferenceChangeListener");
+
+            super.onDestroy();
+
         }
+
+
+        @Override
+        public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
+            changeMade = true;
+            Log.d(TAG,"onSharedPreferenceChanged called");
+
+            if(changeMade){
+                getActivity().setResult(Activity.RESULT_OK);
+                Log.d(TAG,"onSharedPreferenceChanged: set result to OK");
+                changeMade = false;
+            }
+            else {
+                getActivity().setResult(Activity.RESULT_CANCELED);
+                Log.d(TAG,"onSharedPreferenceChanged: set result to CANCELLED");
+            }
+
+        }
+
+
 
         @Override
         public boolean onPreferenceTreeClick(Preference preference) {

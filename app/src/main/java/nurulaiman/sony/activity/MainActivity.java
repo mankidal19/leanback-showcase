@@ -106,5 +106,22 @@ public class MainActivity extends LeanbackActivity {
     }
 
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode,resultCode,data);
+
+        Log.d(TAG,"onActivityResult");
+
+        if (requestCode == 1) {
+            Log.d(TAG,"onActivityResult: request code 1");
+            Log.d(TAG,"onActivityResult: result code "+resultCode);
+
+            if(resultCode==Activity.RESULT_OK){
+                Log.d(TAG,"onActivityResult: OK");
+                recreate();
+            }
+
+        }
+    }
 
 }

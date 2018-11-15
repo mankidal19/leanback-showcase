@@ -98,10 +98,15 @@ public class MainBrowseFragment extends BrowseFragment {
     //for RGYB buttons function
     private PageRowFragmentFactory mPageRowFragmentFactory = null;
 
-    private ImageView imageView = null;
 
     //for changing logo
     private int logo;
+    private final String PREFERENCE_DEFAULT = "default";
+    private final String PREFERENCE_ALTBALAJI = "altbalaji";
+    private final String PREFERENCE_BIGFLIX = "bigflix";
+    private final String PREFERENCE_HOTSTAR = "hotstar";
+    private final String PREFERENCE_SONYLIV = "sonyliv";
+    private final String PREFERENCE_TVF = "tvf";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -125,6 +130,8 @@ public class MainBrowseFragment extends BrowseFragment {
 
 
     }
+
+
 
     public static MainBrowseFragment newInstance() {
         Log.d(TAG, "newInstance: ");
@@ -213,26 +220,26 @@ public class MainBrowseFragment extends BrowseFragment {
         String provider = MySettingsFragment.getDefaults("pref_providers_key",getContext());
 
         switch (provider){
-            case "operator0":
-
+            case PREFERENCE_DEFAULT:
+                default:
                 logo = R.drawable.operator_app_logo_small;
                 break;
-            case "operator1":
-
-                logo = R.drawable.another_logo_1;
+            case PREFERENCE_ALTBALAJI:
+                logo = R.drawable.altbalaji;
                 break;
-            case "operator2":
-
-                logo = R.drawable.another_logo_2;
+            case PREFERENCE_BIGFLIX:
+                logo = R.drawable.bigflix;
                 break;
-            case "operator3":
-
-                logo = R.drawable.another_logo_3;
+            case PREFERENCE_HOTSTAR:
+                logo = R.drawable.hotstar;
                 break;
-            case "operator4":
-
-                logo = R.drawable.another_logo_4;
+            case PREFERENCE_SONYLIV:
+                logo = R.drawable.sonyliv;
                 break;
+            case PREFERENCE_TVF:
+                logo = R.drawable.tvf;
+                break;
+
         }
 
         setBadgeDrawable(getResources().getDrawable(logo, null));
@@ -846,12 +853,12 @@ public class MainBrowseFragment extends BrowseFragment {
                     switch (settings.getId()){
                         case SETTINGS_INTERFACE:
                             //TODO change between developer/user interface
-                            startActivityForResult(intent,1);
+                            getActivity().startActivityForResult(intent,1);
 
                             break;
                         case SETTINGS_PROVIDERS:
                             //TODO change provider's logo
-                            startActivityForResult(intent,1);
+                            getActivity().startActivityForResult(intent,1);
                             break;
 
                         default:
@@ -898,6 +905,8 @@ public class MainBrowseFragment extends BrowseFragment {
             HeaderItem headerItem = new HeaderItem(cardRow.getTitle());
             return new CardListRow(headerItem, adapter, cardRow);
         }
+
+
     }
 
     public static class FragmentLoginSignUp extends Fragment implements MainFragmentAdapterProvider {

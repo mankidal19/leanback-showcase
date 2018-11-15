@@ -15,13 +15,15 @@
 package nurulaiman.sony.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v17.leanback.supportleanbackshowcase.R;
+import android.util.Log;
 
-/*
- * TODO: Javadoc
- */
+
 public class MySettingsActivity extends Activity {
+    private static String TAG = "MySettingsActivity";
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -29,5 +31,24 @@ public class MySettingsActivity extends Activity {
         setContentView(R.layout.activity_my_settings);
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
 
+        //Intent returnIntent = new Intent();
+        //setResult(Activity.RESULT_CANCELED, returnIntent);
+        //finish();
+
+        Log.d(TAG,"onPause called");
+
+    }
+
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        Log.d(TAG,"onDestroy called");
+    }
 }
