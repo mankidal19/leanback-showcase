@@ -71,7 +71,7 @@ import nurulaiman.sony.utils.MatchingCardUtils;
 
 public class MainBrowseFragment extends BrowseFragment {
     private static final long HEADER_ID_1 = 1;
-    private static final String HEADER_NAME_1 = "[User Custom] HOME";
+    private static String HEADER_NAME_1 = "[User Custom] HOME";
     private static final long HEADER_ID_2 = 2;
     private static final String HEADER_NAME_2 = "LIVE TV CHANNELS";
     private static final long HEADER_ID_3 = 3;
@@ -107,6 +107,7 @@ public class MainBrowseFragment extends BrowseFragment {
     private final String PREFERENCE_HOTSTAR = "hotstar";
     private final String PREFERENCE_SONYLIV = "sonyliv";
     private final String PREFERENCE_TVF = "tvf";
+    private final String PREFERENCE_FPT = "fptplay";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -218,6 +219,7 @@ public class MainBrowseFragment extends BrowseFragment {
         setBrandColor(getResources().getColor(R.color.fastlane_background));
 
         String provider = MySettingsFragment.getDefaults("pref_providers_key",getContext());
+        String interfaceMode = MySettingsFragment.getDefaults("pref_interface_key",getContext());
 
         switch (provider){
             case PREFERENCE_DEFAULT:
@@ -239,6 +241,17 @@ public class MainBrowseFragment extends BrowseFragment {
             case PREFERENCE_TVF:
                 logo = R.drawable.tvf;
                 break;
+            case PREFERENCE_FPT:
+                logo = R.drawable.fpt_logo;
+
+        }
+
+        //change header name based on interface mode
+        if(interfaceMode.equals("developer")){
+            HEADER_NAME_1 = "[User Custom] HOME";
+        }
+        else{
+            HEADER_NAME_1 = "HOME";
 
         }
 

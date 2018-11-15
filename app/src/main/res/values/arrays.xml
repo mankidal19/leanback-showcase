@@ -45,6 +45,7 @@
     <!--added for Operator App-->
     <array name="pref_content_providers_entries">
         <item>Default Operator App</item>
+        <item>FPT Play</item>
         <item>ALT Balaji</item>
         <item>BigFlix</item>
         <item>Hotstar</item>
@@ -54,6 +55,7 @@
 
     <array name="pref_content_providers_values">
         <item>default</item>
+        <item>fptplay</item>
         <item>altbalaji</item>
         <item>bigflix</item>
         <item>hotstar</item>
