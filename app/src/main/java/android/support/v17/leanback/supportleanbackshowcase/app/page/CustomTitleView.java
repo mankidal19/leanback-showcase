@@ -31,6 +31,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import nurulaiman.sony.fragment.MySettingsFragment;
+
 /**
  * Custom title view to be used in {@link android.support.v17.leanback.app.BrowseFragment}.
  */
@@ -79,7 +81,15 @@ public class CustomTitleView extends RelativeLayout implements TitleViewAdapter.
             int visibility = (flags & SEARCH_VIEW_VISIBLE) == SEARCH_VIEW_VISIBLE
                     ? View.VISIBLE : View.INVISIBLE;
             mSearchOrbView.setVisibility(visibility);
-            searchTextView.setVisibility(visibility);
+
+            //if developer mode, show search textview, else hide
+            if(MySettingsFragment.getDefaults("pref_interface_key",getContext()).equals("developer")){
+                searchTextView.setVisibility(visibility);
+            }
+            else{
+                searchTextView.setVisibility(View.GONE);
+            }
+
         }
 
         private void updateBadgeVisibility(boolean visible) {
