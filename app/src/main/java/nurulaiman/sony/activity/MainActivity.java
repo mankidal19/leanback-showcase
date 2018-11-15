@@ -32,8 +32,10 @@ public class MainActivity extends LeanbackActivity {
         setContentView(R.layout.activity_main);
 
         String interfaceMode = MySettingsFragment.getDefaults("pref_interface_key",this);
+        String provider = MySettingsFragment.getDefaults("pref_providers_key",this);
 
-        if(interfaceMode.equals("enduser")){
+        //video background only for enduser of fptplay
+        if(interfaceMode.equals("enduser")&&provider.equals("fptplay")){
             //video background
             VideoView videoview = (VideoView) findViewById(R.id.videoView);
             Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.fptplay);
