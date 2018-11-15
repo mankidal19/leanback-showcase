@@ -1,12 +1,7 @@
 {
   "title": "Settings",
   "cards": [
-      {
-        "type": "ICON",
-        "title": "Content Providers",
-        "localImageResource": "ic_live_tv_white",
-        "id":1
-      },
+
       {
         "type": "ICON",
         "title": "Key Shortcuts",
@@ -30,7 +25,13 @@
         "title": "Privacy & Terms",
         "localImageResource": "ic_privacy",
         "id":5
-      }
+      },
+    {
+      "type": "ICON",
+      "title": "Service Providers",
+      "localImageResource": "ic_live_tv_white",
+      "id":1
+    }
 
     ]
 }

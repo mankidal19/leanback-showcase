@@ -9,7 +9,7 @@
         android:entryValues="@array/pref_content_providers_values"
         android:key="pref_providers_key"
         android:dialogMessage="Choose content provider:"
-        android:title="Content Providers">
+        android:title="Service Providers">
     </ListPreference>
 
     <ListPreference
