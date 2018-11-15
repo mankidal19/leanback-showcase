@@ -60,6 +60,8 @@ import nurulaiman.sony.activity.DetailViewLiveBroadcastActivity;
 import nurulaiman.sony.activity.DetailViewMovieActivity;
 import nurulaiman.sony.activity.DetailViewTvShowActivity;
 import nurulaiman.sony.activity.LiveActivity;
+import nurulaiman.sony.activity.MainActivity;
+import nurulaiman.sony.activity.MySettingsActivity;
 import nurulaiman.sony.activity.SearchActivity;
 import nurulaiman.sony.activity.YoutubePlayerActivity;
 import nurulaiman.sony.models.IconHeaderItem;
@@ -97,6 +99,9 @@ public class MainBrowseFragment extends BrowseFragment {
     private PageRowFragmentFactory mPageRowFragmentFactory = null;
 
     private ImageView imageView = null;
+
+    //for changing logo
+    private int logo;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -158,36 +163,34 @@ public class MainBrowseFragment extends BrowseFragment {
             KeyEvent keyEvent = (KeyEvent)intent.getParcelableExtra(Intent.EXTRA_KEY_EVENT);
             int keyCode = keyEvent.getKeyCode();
 
-           // KeyEvent keyEvent = KeyEvent(KeyEvent.keyCodeToString(keyCode));
-            Log.d(TAG,"KEYEVENT RECEIVED: " + keyEvent.toString());
+                // KeyEvent keyEvent = KeyEvent(KeyEvent.keyCodeToString(keyCode));
+                Log.d(TAG,"KEYEVENT RECEIVED: " + keyEvent.toString());
 
-            //need the if, to debug if opening app from Google Assistant
-            if(getRowsFragment()!=null){
-                startHeadersTransition(false);
-            }
+                //need the if, to debug if opening app from Google Assistant
+                if(getRowsFragment()!=null){
+                    startHeadersTransition(false);
+                }
 
-
-            //doSomething for RGYB buttons;
-            switch (keyCode) {
+                switch (keyCode) {
 
 
-                case KeyEvent.KEYCODE_PROG_RED:
-                    //LIVE TV
-                    Log.d(TAG,"Red button pressed");
-                    setSelectedPosition(1,true);
+                    case KeyEvent.KEYCODE_PROG_RED:
+                        //LIVE TV
+                        Log.d(TAG,"Red button pressed");
+                        setSelectedPosition(1,true);
 
-                    break;
+                        break;
 
-                case KeyEvent.KEYCODE_PROG_GREEN:
-                    //DUMMY DRAMA
-                    Log.d(TAG,"Green button pressed");
-                    setSelectedPosition(2,true);
-                    break;
+                    case KeyEvent.KEYCODE_PROG_GREEN:
+                        //DUMMY DRAMA
+                        Log.d(TAG,"Green button pressed");
+                        setSelectedPosition(2,true);
+                        break;
 
-                case KeyEvent.KEYCODE_PROG_YELLOW:
-                    Log.d(TAG,"Yellow button pressed");
-                    setSelectedPosition(3,true);
-                    break;
+                    case KeyEvent.KEYCODE_PROG_YELLOW:
+                        Log.d(TAG,"Yellow button pressed");
+                        setSelectedPosition(3,true);
+                        break;
 
                 case KeyEvent.KEYCODE_PROG_BLUE:
                     Log.d(TAG,"Blue button pressed");
@@ -207,8 +210,33 @@ public class MainBrowseFragment extends BrowseFragment {
         setHeadersTransitionOnBackEnabled(true);
         setBrandColor(getResources().getColor(R.color.fastlane_background));
 
-        //display logo
-        setBadgeDrawable(getResources().getDrawable(R.drawable.operator_app_logo_small, null));
+        String provider = MySettingsFragment.getDefaults("pref_providers_key",getContext());
+
+        switch (provider){
+            case "operator0":
+
+                logo = R.drawable.operator_app_logo_small;
+                break;
+            case "operator1":
+
+                logo = R.drawable.another_logo_1;
+                break;
+            case "operator2":
+
+                logo = R.drawable.another_logo_2;
+                break;
+            case "operator3":
+
+                logo = R.drawable.another_logo_3;
+                break;
+            case "operator4":
+
+                logo = R.drawable.another_logo_4;
+                break;
+        }
+
+        setBadgeDrawable(getResources().getDrawable(logo, null));
+
 
         //for displaying logo beside header
         setHeaderPresenterSelector(new PresenterSelector() {
@@ -791,11 +819,48 @@ public class MainBrowseFragment extends BrowseFragment {
     public static class SettingsFragment extends RowsFragment {
         private final ArrayObjectAdapter mRowsAdapter;
 
+        private final int SETTINGS_PROVIDERS = 1;
+        private final int SETTINGS_KEY_SHORTCUTS = 2;
+        private final int SETTINGS_HISTORY = 3;
+        private final int SETTINGS_INTERFACE = 4;
+        private final int SETTINGS_PRIVACY = 5;
+
+
         public SettingsFragment() {
             ListRowPresenter selector = new ListRowPresenter();
             selector.setNumRows(1);
             mRowsAdapter = new ArrayObjectAdapter(selector);
             setAdapter(mRowsAdapter);
+
+            setOnItemViewClickedListener(new OnItemViewClickedListener() {
+                @Override
+                public void onItemClicked(Presenter.ViewHolder itemViewHolder, Object item, RowPresenter.ViewHolder rowViewHolder, Row row) {
+
+                   // int logo = getActivity().getIntent().getBundleExtra("extras").getInt("logo");
+
+                    Card settings = (Card)item;
+                    Intent intent = new Intent(getContext(), MySettingsActivity.class);
+                    //Bundle extras = new Bundle();
+                   // extras.putInt("logo",logo);
+
+                    switch (settings.getId()){
+                        case SETTINGS_INTERFACE:
+                            //TODO change between developer/user interface
+                            startActivityForResult(intent,1);
+
+                            break;
+                        case SETTINGS_PROVIDERS:
+                            //TODO change provider's logo
+                            startActivityForResult(intent,1);
+                            break;
+
+                        default:
+                            Toast.makeText(getActivity(), settings.getTitle()+" clicked", Toast.LENGTH_SHORT)
+                                        .show();
+
+                    }
+                }
+            });
         }
 
         @Override
@@ -825,6 +890,8 @@ public class MainBrowseFragment extends BrowseFragment {
             ArrayObjectAdapter adapter = new ArrayObjectAdapter(iconCardPresenter);
             for(Card card : cardRow.getCards()) {
                 adapter.add(card);
+
+                Log.d(TAG,"icon card type: "+ card.getType());
             }
 
             //IconHeaderItem headerItem = new IconHeaderItem(cardRow.getTitle());

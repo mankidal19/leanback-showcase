@@ -19,6 +19,7 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.support.v17.leanback.supportleanbackshowcase.R;
 import android.support.v17.leanback.widget.ImageCardView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -28,6 +29,8 @@ import android.widget.ImageView;
  * menu.
  */
 public class IconCardPresenter extends ImageCardViewPresenter {
+    private final String TAG = "IconCardPresenter";
+
     private static final int ANIMATION_DURATION = 200;
 
     public IconCardPresenter(Context context) {
@@ -46,6 +49,8 @@ public class IconCardPresenter extends ImageCardViewPresenter {
                 animateIconBackground(image.getBackground(), hasFocus);
             }
         });
+
+        Log.d(TAG,"onCreate");
         return imageCardView;
     }
 

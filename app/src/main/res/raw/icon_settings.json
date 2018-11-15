@@ -1,36 +1,36 @@
 {
   "title": "Settings",
   "cards": [
-
+      {
+        "type": "ICON",
+        "title": "Content Providers",
+        "localImageResource": "ic_live_tv_white",
+        "id":1
+      },
       {
         "type": "ICON",
         "title": "Key Shortcuts",
         "localImageResource": "icon_04",
-        "id":1
+        "id":2
       },
       {
         "type": "ICON",
         "title": "History & Data",
         "localImageResource": "ic_history",
-        "id":2
+        "id":3
       },
       {
         "type": "ICON",
         "title": "Interface",
-        "localImageResource": "ic_interface_white_24dp",
-        "id":3
+        "localImageResource": "ic_interface_white",
+        "id":4
       },
       {
         "type": "ICON",
         "title": "Privacy & Terms",
         "localImageResource": "ic_privacy",
-        "id":4
-      },
-      {
-        "type": "ICON",
-        "title": "Providers",
-        "localImageResource": "ic_live_tv_white_24dp",
         "id":5
       }
+
     ]
 }

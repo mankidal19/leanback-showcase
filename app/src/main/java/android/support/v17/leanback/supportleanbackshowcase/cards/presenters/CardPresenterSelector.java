@@ -20,6 +20,7 @@ import android.support.v17.leanback.supportleanbackshowcase.R;
 import android.support.v17.leanback.supportleanbackshowcase.models.Card;
 import android.support.v17.leanback.widget.Presenter;
 import android.support.v17.leanback.widget.PresenterSelector;
+import android.util.Log;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,6 +31,8 @@ import nurulaiman.sony.ui.presenter.IconHeaderItemPresenter;
  * This PresenterSelector will decide what Presenter to use depending on a given card's type.
  */
 public class CardPresenterSelector extends PresenterSelector {
+
+    private final String TAG = "CardPresenterSelector";
 
     private final Context mContext;
     private final HashMap<Card.Type, Presenter> presenters = new HashMap<Card.Type, Presenter>();

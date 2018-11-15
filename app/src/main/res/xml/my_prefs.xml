@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="Operator App Settings">
+
+    <ListPreference
+        android:defaultValue="operator0"
+        android:icon="@drawable/ic_live_tv_white"
+        android:entries="@array/pref_content_providers_entries"
+        android:entryValues="@array/pref_content_providers_values"
+        android:key="pref_providers_key"
+        android:dialogMessage="Choose content provider:"
+        android:title="Content Providers">
+    </ListPreference>
+
+    <ListPreference
+        android:defaultValue="developer"
+        android:icon="@drawable/ic_interface_white"
+        android:entries="@array/pref_interface_entries"
+        android:entryValues="@array/pref_interface_values"
+        android:key="pref_interface_key"
+        android:dialogMessage="Choose UI:"
+        android:title="Interface">
+    </ListPreference>
+
+
+</PreferenceScreen>
