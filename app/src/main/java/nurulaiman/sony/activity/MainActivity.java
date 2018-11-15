@@ -3,6 +3,8 @@ package nurulaiman.sony.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.support.v17.leanback.supportleanbackshowcase.R;
 import android.os.Bundle;
@@ -11,8 +13,10 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.VideoView;
 
 import nurulaiman.sony.fragment.MainBrowseFragment;
+import nurulaiman.sony.fragment.MySettingsFragment;
 
 import static android.content.Intent.EXTRA_KEY_EVENT;
 
@@ -26,6 +30,24 @@ public class MainActivity extends LeanbackActivity {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.fragment_main_browse);
         setContentView(R.layout.activity_main);
+
+        String interfaceMode = MySettingsFragment.getDefaults("pref_interface_key",this);
+
+        if(interfaceMode.equals("enduser")){
+            //video background
+            VideoView videoview = (VideoView) findViewById(R.id.videoView);
+            Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.polina);
+            videoview.setVideoURI(uri);
+            videoview.start();
+
+            videoview.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                @Override
+                public void onPrepared(MediaPlayer mp) {
+                    mp.setLooping(true);
+                }
+            });
+        }
+
 
         MainBrowseFragment fragment = MainBrowseFragment.newInstance();
         //MainBrowseFragment fragment = new MainBrowseFragment();
