@@ -109,17 +109,28 @@ public class MainBrowseFragment extends BrowseFragment {
     private final String PREFERENCE_TVF = "tvf";
     private final String PREFERENCE_FPT = "fptplay";
 
+    private String provider;
+    private String interfaceMode;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        provider = MySettingsFragment.getDefaults("pref_providers_key",getContext());
+        interfaceMode = MySettingsFragment.getDefaults("pref_interface_key",getContext());
+
         setupUi();
         loadData();
 
-
         mBackgroundManager = BackgroundManager.getInstance(getActivity());
         mBackgroundManager.attach(getActivity().getWindow());
-        /*getMainFragmentRegistry().registerFragment(PageRow.class,
-                new PageRowFragmentFactory(mBackgroundManager));*/
+
+        //set bg to semi transparent, if enduser mode
+        if(interfaceMode.equals("enduser")){
+            mBackgroundManager.setColor(getResources().getColor(R.color.semi_transparent_background));
+        }
+
 
         //for RGYB buttons function
         mPageRowFragmentFactory = new PageRowFragmentFactory(mBackgroundManager);
@@ -216,10 +227,6 @@ public class MainBrowseFragment extends BrowseFragment {
     private void setupUi() {
         setHeadersState(HEADERS_ENABLED);
         setHeadersTransitionOnBackEnabled(true);
-        setBrandColor(getResources().getColor(R.color.fastlane_background));
-
-        String provider = MySettingsFragment.getDefaults("pref_providers_key",getContext());
-        String interfaceMode = MySettingsFragment.getDefaults("pref_interface_key",getContext());
 
         switch (provider){
             case PREFERENCE_DEFAULT:
@@ -246,12 +253,14 @@ public class MainBrowseFragment extends BrowseFragment {
 
         }
 
-        //change header name based on interface mode
+        //change header name & brand color based on interface mode
         if(interfaceMode.equals("developer")){
             HEADER_NAME_1 = "[User Custom] HOME";
+            setBrandColor(getResources().getColor(R.color.fastlane_background));
         }
         else{
             HEADER_NAME_1 = "HOME";
+            setBrandColor(getResources().getColor(R.color.semi_transparent_fastlane_background));
 
         }
 
