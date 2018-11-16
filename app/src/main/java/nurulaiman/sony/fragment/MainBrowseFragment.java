@@ -187,6 +187,7 @@ public class MainBrowseFragment extends BrowseFragment {
                         Log.d(TAG,"Red button pressed");
                         setSelectedPosition(1,true);
 
+
                         break;
 
                     case KeyEvent.KEYCODE_PROG_GREEN:
@@ -440,6 +441,8 @@ public class MainBrowseFragment extends BrowseFragment {
             super.onCreate(savedInstanceState);
 
             createRows();
+            setSelectedPosition(0,true);
+
 
             getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
         }
@@ -518,6 +521,7 @@ public class MainBrowseFragment extends BrowseFragment {
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             createRows();
+
             getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
         }
 
@@ -608,6 +612,8 @@ public class MainBrowseFragment extends BrowseFragment {
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             createRows();
+            setSelectedPosition(1,true);
+
             getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
         }
 
@@ -696,6 +702,8 @@ public class MainBrowseFragment extends BrowseFragment {
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             createRows();
+            setSelectedPosition(0,true);
+
             getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
         }
 
@@ -792,6 +800,8 @@ public class MainBrowseFragment extends BrowseFragment {
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             createRows();
+            setSelectedPosition(0,true);
+
             getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
         }
 
