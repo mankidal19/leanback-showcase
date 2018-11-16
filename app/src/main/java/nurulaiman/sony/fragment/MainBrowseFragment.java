@@ -177,21 +177,19 @@ public class MainBrowseFragment extends BrowseFragment {
                 //need the if, to debug if opening app from Google Assistant
                 if(getRowsFragment()!=null){
                     startHeadersTransition(false);
+
                 }
 
                 switch (keyCode) {
-
-
                     case KeyEvent.KEYCODE_PROG_RED:
                         //LIVE TV
                         Log.d(TAG,"Red button pressed");
                         setSelectedPosition(1,true);
 
-
                         break;
 
                     case KeyEvent.KEYCODE_PROG_GREEN:
-                        //DUMMY DRAMA
+                        //NEWS & SPORTS
                         Log.d(TAG,"Green button pressed");
                         setSelectedPosition(2,true);
                         break;
@@ -201,11 +199,11 @@ public class MainBrowseFragment extends BrowseFragment {
                         setSelectedPosition(3,true);
                         break;
 
-                case KeyEvent.KEYCODE_PROG_BLUE:
-                    Log.d(TAG,"Blue button pressed");
-                    setSelectedPosition(4,true);
-                    break;
-            }
+                    case KeyEvent.KEYCODE_PROG_BLUE:
+                        Log.d(TAG,"Blue button pressed");
+                        setSelectedPosition(4,true);
+                        break;
+                }
 
 
         }
@@ -284,6 +282,7 @@ public class MainBrowseFragment extends BrowseFragment {
 
     private void loadData() {
         mRowsAdapter = new ArrayObjectAdapter(new ListRowPresenter());
+
         setAdapter(mRowsAdapter);
 
         new Handler().postDelayed(new Runnable() {
@@ -406,8 +405,6 @@ public class MainBrowseFragment extends BrowseFragment {
             presenterSelector.setRows(2);
             mRowsAdapter = new ArrayObjectAdapter(presenterSelector);
 
-
-
             setAdapter(mRowsAdapter);
             setOnItemViewClickedListener(new OnItemViewClickedListener() {
                 @Override
@@ -419,10 +416,6 @@ public class MainBrowseFragment extends BrowseFragment {
                     Intent intent;
                     Card card = (Card)item;
 
-
-        /*Toast.makeText(getActivity(),
-                "Clicked on "+card.getTitle(),
-                Toast.LENGTH_SHORT).show();*/
 
                         intent = new Intent(getContext(), DetailViewLiveBroadcastActivity.class);
                         intent.putExtra("videoId",card.getVideoId());
@@ -612,9 +605,17 @@ public class MainBrowseFragment extends BrowseFragment {
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             createRows();
-            setSelectedPosition(1,true);
+            setSelectedPosition(0,true);
 
             getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
+            Log.d(TAG,"onCreate FragmentTvShow");
+        }
+
+        @Override
+        public void onResume() {
+            super.onResume();
+            Log.d(TAG,"onResume FragmentTvShow");
+
         }
 
         @Override
@@ -712,7 +713,6 @@ public class MainBrowseFragment extends BrowseFragment {
 
             //expand
             setExpand(true);
-
             return super.onCreateView(inflater,container,savedInstanceState);
         }
 
