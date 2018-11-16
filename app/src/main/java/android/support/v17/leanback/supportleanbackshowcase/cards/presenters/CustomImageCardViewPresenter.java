@@ -5,16 +5,30 @@ import android.support.v17.leanback.supportleanbackshowcase.R;
 import android.support.v17.leanback.supportleanbackshowcase.cards.CustomImageCardView;
 import android.support.v17.leanback.supportleanbackshowcase.models.Card;
 import android.support.v17.leanback.widget.ImageCardView;
+import android.support.v17.leanback.widget.OnItemViewSelectedListener;
+import android.support.v17.leanback.widget.Presenter;
+import android.support.v17.leanback.widget.Row;
+import android.support.v17.leanback.widget.RowPresenter;
+import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
+import android.view.View;
 
 import com.bumptech.glide.Glide;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CustomImageCardViewPresenter extends AbstractCardPresenter<CustomImageCardView> {
 
     private Card.Type mType;
 
     private String mVideoId;
+
+    private static String TAG = "CustomImageCardViewPresenter";
+
+    private ArrayList<CustomImageCardView> cardViewArrayList = new ArrayList<>();
+
 
     public CustomImageCardViewPresenter(Context context, int cardThemeResId) {
         super(new ContextThemeWrapper(context, cardThemeResId));
@@ -40,14 +54,32 @@ public class CustomImageCardViewPresenter extends AbstractCardPresenter<CustomIm
 //                Toast.makeText(getContext(), "Clicked on ImageCardView", Toast.LENGTH_SHORT).show();
 //            }
 //        });
+
+        //only show info for card in focus
+        imageCardView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+
+                for(CustomImageCardView cardView:cardViewArrayList){
+                    cardView.showInfo(false);
+                }
+
+                imageCardView.showInfo(true);
+                Log.d(TAG,"focus changed");
+            }
+        });
         return imageCardView;
     }
+
+
 
     @Override
     public void onBindViewHolder(Card card, final CustomImageCardView cardView) {
         cardView.setTag(card);
         cardView.setTitleText(card.getTitle());
         cardView.setContentText(card.getDescription());
+
+        cardViewArrayList.add(cardView);
 
         if(card.getImageUrl()!=null){
             Glide.with(cardView.getContext())
