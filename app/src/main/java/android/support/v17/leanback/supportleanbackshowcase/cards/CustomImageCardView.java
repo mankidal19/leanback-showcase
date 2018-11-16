@@ -18,6 +18,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import nurulaiman.sony.fragment.MySettingsFragment;
+
 public class CustomImageCardView extends BaseCardView {
 
     private ImageView mImageView;
@@ -26,6 +28,7 @@ public class CustomImageCardView extends BaseCardView {
     private TextView mContentView;
     private ImageView mBadgeImage;
     private ImageView mBadgeFadeMask;
+    private String interfaceMode;
 
 
     public CustomImageCardView(Context context, AttributeSet attrs, int defStyle) {
@@ -40,8 +43,20 @@ public class CustomImageCardView extends BaseCardView {
         mBadgeImage = (ImageView) v.findViewById(R.id.extra_badge);
         mBadgeFadeMask = (ImageView) v.findViewById(R.id.fade_mask);
 
-        //default, hide info
-        mInfoArea.setVisibility(View.GONE);
+        interfaceMode = MySettingsFragment.getDefaults("pref_interface_key",getContext());
+
+
+        if(interfaceMode.equals("enduser")){
+            //default, hide info
+            mInfoArea.setBackgroundColor(getResources().getColor(R.color.custom_info));
+            mInfoArea.setVisibility(View.GONE);
+
+            //change color
+            mTitleView.setTextColor(getResources().getColor(R.color.custom_title));
+            mContentView.setTextColor(getResources().getColor(R.color.custom_description));
+
+        }
+
 
         this.setFocusable(true);
 
