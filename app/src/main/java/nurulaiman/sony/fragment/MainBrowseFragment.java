@@ -428,9 +428,6 @@ public class MainBrowseFragment extends BrowseFragment {
                     Card card = (Card)item;
 
 
-        /*Toast.makeText(getActivity(),
-                "Clicked on "+card.getTitle(),
-                Toast.LENGTH_SHORT).show();*/
 
                         intent = new Intent(getContext(), DetailViewLiveBroadcastActivity.class);
                         intent.putExtra("videoId",card.getVideoId());
