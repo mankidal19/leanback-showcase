@@ -31,6 +31,20 @@ public class MainActivity extends LeanbackActivity {
         //setContentView(R.layout.fragment_main_browse);
         setContentView(R.layout.activity_main);
 
+
+        MainBrowseFragment fragment = MainBrowseFragment.newInstance();
+        //MainBrowseFragment fragment = new MainBrowseFragment();
+        getFragmentManager().beginTransaction().replace(R.id.fragmentContainer, fragment)
+                .commit();
+        Log.d(TAG,"onCreate called");
+
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
         String interfaceMode = MySettingsFragment.getDefaults("pref_interface_key",this);
         String provider = MySettingsFragment.getDefaults("pref_providers_key",this);
 
@@ -50,15 +64,6 @@ public class MainActivity extends LeanbackActivity {
                 }
             });
         }
-
-
-        MainBrowseFragment fragment = MainBrowseFragment.newInstance();
-        //MainBrowseFragment fragment = new MainBrowseFragment();
-        getFragmentManager().beginTransaction().replace(R.id.fragmentContainer, fragment)
-                .commit();
-        Log.d(TAG,"onCreate called");
-
-
     }
 
     @Override
