@@ -178,7 +178,7 @@ public class CustomImageCardView extends BaseCardView {
     }
 
     public void showInfo(boolean show){
-        if(show){
+        if(show && interfaceMode.equals("enduser")){
             mInfoArea.setVisibility(View.VISIBLE);
         }
         else{
