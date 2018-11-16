@@ -19,6 +19,8 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 import java.util.List;
 
+import nurulaiman.sony.fragment.MySettingsFragment;
+
 public class CustomImageCardViewPresenter extends AbstractCardPresenter<CustomImageCardView> {
 
     private Card.Type mType;
@@ -26,8 +28,6 @@ public class CustomImageCardViewPresenter extends AbstractCardPresenter<CustomIm
     private String mVideoId;
 
     private static String TAG = "CustomImageCardViewPresenter";
-
-    private ArrayList<CustomImageCardView> cardViewArrayList = new ArrayList<>();
 
 
     public CustomImageCardViewPresenter(Context context, int cardThemeResId) {
@@ -48,12 +48,7 @@ public class CustomImageCardViewPresenter extends AbstractCardPresenter<CustomIm
     @Override
     protected CustomImageCardView onCreateView() {
         CustomImageCardView imageCardView = new CustomImageCardView(getContext());
-//        imageCardView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(getContext(), "Clicked on ImageCardView", Toast.LENGTH_SHORT).show();
-//            }
-//        });
+
 
         //only show info for card in focus
         imageCardView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -61,9 +56,6 @@ public class CustomImageCardViewPresenter extends AbstractCardPresenter<CustomIm
             public void onFocusChange(View view, boolean hasFocus) {
 
                 if(hasFocus){
-                    for(CustomImageCardView cardView:cardViewArrayList){
-                        cardView.showInfo(false);
-                    }
 
                     imageCardView.showInfo(true);
                 }
@@ -85,8 +77,6 @@ public class CustomImageCardViewPresenter extends AbstractCardPresenter<CustomIm
         cardView.setTag(card);
         cardView.setTitleText(card.getTitle());
         cardView.setContentText(card.getDescription());
-
-        cardViewArrayList.add(cardView);
 
         if(card.getImageUrl()!=null){
             Glide.with(cardView.getContext())
