@@ -62,9 +62,9 @@
     <color name="selected_background">#ffaa3f</color>
 
     <color name="semi_transparent_background">#cc282727</color>
-    <color name="semi_transparent_fastlane_background">#fadc593d</color>
+    <color name="semi_transparent_fastlane_background">#eB4a20</color>
 
-    <color name="custom_detail_view_actionbar_background">#ef360e</color>
+    <color name="custom_detail_view_actionbar_background">#faef360e</color>
     <color name="custom_detail_view_background">#dc593d</color>
 
 
