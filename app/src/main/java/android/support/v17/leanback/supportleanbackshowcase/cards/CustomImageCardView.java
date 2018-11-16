@@ -2,9 +2,11 @@ package android.support.v17.leanback.supportleanbackshowcase.cards;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.Nullable;
 import android.support.v17.leanback.supportleanbackshowcase.R;
 import android.support.v17.leanback.widget.BaseCardView;
 import android.support.v17.leanback.widget.ImageCardView;
+import android.support.v7.widget.CardView;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -12,6 +14,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CustomImageCardView extends BaseCardView {
 
@@ -21,6 +26,7 @@ public class CustomImageCardView extends BaseCardView {
     private TextView mContentView;
     private ImageView mBadgeImage;
     private ImageView mBadgeFadeMask;
+
 
     public CustomImageCardView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -34,7 +40,12 @@ public class CustomImageCardView extends BaseCardView {
         mBadgeImage = (ImageView) v.findViewById(R.id.extra_badge);
         mBadgeFadeMask = (ImageView) v.findViewById(R.id.fade_mask);
 
+        //default, hide info
+        mInfoArea.setVisibility(View.GONE);
+
         this.setFocusable(true);
+
+
     }
 
     public CustomImageCardView(Context context) {
@@ -150,5 +161,17 @@ public class CustomImageCardView extends BaseCardView {
             mTitleView.setMaxLines(1);
         }
     }
+
+    public void showInfo(boolean show){
+        if(show){
+            mInfoArea.setVisibility(View.VISIBLE);
+        }
+        else{
+            mInfoArea.setVisibility(View.GONE);
+
+        }
+    }
+
+
 
 }
