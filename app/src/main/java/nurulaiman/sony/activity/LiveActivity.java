@@ -359,6 +359,7 @@ public class LiveActivity extends FragmentActivity {
     private void initChannelList(){
 
         channelArrayList.add("Nt9dn0SGAlU");
+        channelArrayList.add("5rdMyzOTK9Y");
         channelArrayList.add("2LWt-dxd0v4");
         channelArrayList.add("_ulUsFYyLZ0");
         channelArrayList.add("KkXq2sv6Tos");
