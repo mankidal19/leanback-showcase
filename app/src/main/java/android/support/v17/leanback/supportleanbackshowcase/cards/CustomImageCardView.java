@@ -43,6 +43,7 @@ public class CustomImageCardView extends BaseCardView {
         mBadgeImage = (ImageView) v.findViewById(R.id.extra_badge);
         mBadgeFadeMask = (ImageView) v.findViewById(R.id.fade_mask);
 
+
         interfaceMode = MySettingsFragment.getDefaults("pref_interface_key",getContext());
 
 
@@ -164,7 +165,7 @@ public class CustomImageCardView extends BaseCardView {
                 android.R.integer.config_shortAnimTime)).start();
     }
     private void setTextMaxLines() {
-        if (TextUtils.isEmpty(getTitleText())) {
+        /*if (TextUtils.isEmpty(getTitleText())) {
             mContentView.setMaxLines(2);
         } else {
             mContentView.setMaxLines(1);
@@ -173,7 +174,12 @@ public class CustomImageCardView extends BaseCardView {
             mTitleView.setMaxLines(2);
         } else {
             mTitleView.setMaxLines(1);
-        }
+        }*/
+
+        mContentView.setMaxLines(1);
+        mTitleView.setMaxLines(2);
+
+
     }
 
 
