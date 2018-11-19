@@ -31,20 +31,14 @@ public class MainActivity extends LeanbackActivity {
         //setContentView(R.layout.fragment_main_browse);
         setContentView(R.layout.activity_main);
 
+
         MainBrowseFragment fragment = MainBrowseFragment.newInstance();
         //MainBrowseFragment fragment = new MainBrowseFragment();
         getFragmentManager().beginTransaction().replace(R.id.fragmentContainer, fragment)
                 .commit();
         Log.d(TAG,"onCreate called");
 
-    }
 
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        //to debug issue RGYB shortcuts not working after voice search
-
-        //super.onSaveInstanceState(outState);
-        Log.d(TAG,"onSaveInstanceState called");
     }
 
     @Override
@@ -52,8 +46,10 @@ public class MainActivity extends LeanbackActivity {
         super.onResume();
 
         String interfaceMode = MySettingsFragment.getDefaults("pref_interface_key",this);
+        String provider = MySettingsFragment.getDefaults("pref_providers_key",this);
 
-        if(interfaceMode.equals("enduser")){
+        //video background only for enduser of fptplay
+        if(interfaceMode.equals("enduser")&&provider.equals("fptplay")){
             //video background
             VideoView videoview = (VideoView) findViewById(R.id.videoView);
             Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.fptplay);
@@ -68,29 +64,21 @@ public class MainActivity extends LeanbackActivity {
                 }
             });
         }
+    }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        //to debug issue RGYB shortcuts not working after voice search
+
+        //super.onSaveInstanceState(outState);
+        Log.d(TAG,"onSaveInstanceState called");
     }
 
     @Nullable
     @Override
     public View onCreateView(String name, Context context, AttributeSet attrs) {
 
-       /* if(getIntent().getExtras()!=null){
-            keyEvent = (KeyEvent) getIntent().getExtras().get(Intent.EXTRA_KEY_EVENT);
-            Log.d(TAG,"getExtras not null");
 
-            if(keyEvent!=null){
-                super.sendShortcutBroadcast(keyEvent);
-                Log.d(TAG,"keyEvent not null");
-                getIntent().removeExtra(Intent.EXTRA_KEY_EVENT);
-            }
-
-        }
-
-        else{
-            Log.d(TAG,"getExtras null");
-
-        }*/
 
 
         return super.onCreateView(name, context, attrs);
@@ -111,13 +99,13 @@ public class MainActivity extends LeanbackActivity {
         int action = event.getAction();
         int keyCode = event.getKeyCode();
         switch (keyCode) {
-           /* case KeyEvent.KEYCODE_BACK:
+            case KeyEvent.KEYCODE_BACK:
                 if(action==KeyEvent.ACTION_DOWN){
                     finish();
                     startActivity(getIntent());
                 }
                 return true;
-*/
+
             case KeyEvent.KEYCODE_ESCAPE:
                 if(action==KeyEvent.ACTION_DOWN){
                     moveTaskToBack(true);

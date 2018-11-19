@@ -109,17 +109,28 @@ public class MainBrowseFragment extends BrowseFragment {
     private final String PREFERENCE_TVF = "tvf";
     private final String PREFERENCE_FPT = "fptplay";
 
+    private String provider;
+    private String interfaceMode;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        provider = MySettingsFragment.getDefaults("pref_providers_key",getContext());
+        interfaceMode = MySettingsFragment.getDefaults("pref_interface_key",getContext());
+
         setupUi();
         loadData();
 
-
         mBackgroundManager = BackgroundManager.getInstance(getActivity());
         mBackgroundManager.attach(getActivity().getWindow());
-        /*getMainFragmentRegistry().registerFragment(PageRow.class,
-                new PageRowFragmentFactory(mBackgroundManager));*/
+
+        //set bg to semi transparent, if enduser mode
+        if(interfaceMode.equals("enduser")){
+            mBackgroundManager.setColor(getResources().getColor(R.color.semi_transparent_background));
+        }
+
 
         //for RGYB buttons function
         mPageRowFragmentFactory = new PageRowFragmentFactory(mBackgroundManager);
@@ -177,10 +188,11 @@ public class MainBrowseFragment extends BrowseFragment {
                 //need the if, to debug if opening app from Google Assistant
                 if(getRowsFragment()!=null){
                     startHeadersTransition(false);
-
                 }
 
                 switch (keyCode) {
+
+
                     case KeyEvent.KEYCODE_PROG_RED:
                         //LIVE TV
                         Log.d(TAG,"Red button pressed");
@@ -189,7 +201,7 @@ public class MainBrowseFragment extends BrowseFragment {
                         break;
 
                     case KeyEvent.KEYCODE_PROG_GREEN:
-                        //NEWS & SPORTS
+                        //DUMMY DRAMA
                         Log.d(TAG,"Green button pressed");
                         setSelectedPosition(2,true);
                         break;
@@ -199,11 +211,11 @@ public class MainBrowseFragment extends BrowseFragment {
                         setSelectedPosition(3,true);
                         break;
 
-                    case KeyEvent.KEYCODE_PROG_BLUE:
-                        Log.d(TAG,"Blue button pressed");
-                        setSelectedPosition(4,true);
-                        break;
-                }
+                case KeyEvent.KEYCODE_PROG_BLUE:
+                    Log.d(TAG,"Blue button pressed");
+                    setSelectedPosition(4,true);
+                    break;
+            }
 
 
         }
@@ -215,10 +227,6 @@ public class MainBrowseFragment extends BrowseFragment {
     private void setupUi() {
         setHeadersState(HEADERS_ENABLED);
         setHeadersTransitionOnBackEnabled(true);
-        setBrandColor(getResources().getColor(R.color.fastlane_background));
-
-        String provider = MySettingsFragment.getDefaults("pref_providers_key",getContext());
-        String interfaceMode = MySettingsFragment.getDefaults("pref_interface_key",getContext());
 
         switch (provider){
             case PREFERENCE_DEFAULT:
@@ -245,12 +253,14 @@ public class MainBrowseFragment extends BrowseFragment {
 
         }
 
-        //change header name based on interface mode
+        //change header name & brand color based on interface mode
         if(interfaceMode.equals("developer")){
             HEADER_NAME_1 = "[User Custom] HOME";
+            setBrandColor(getResources().getColor(R.color.fastlane_background));
         }
         else{
             HEADER_NAME_1 = "HOME";
+            setBrandColor(getResources().getColor(R.color.semi_transparent_fastlane_background));
 
         }
 
@@ -281,8 +291,7 @@ public class MainBrowseFragment extends BrowseFragment {
     }
 
     private void loadData() {
-        mRowsAdapter = new ArrayObjectAdapter(new ListRowPresenter());
-
+        mRowsAdapter = new ArrayObjectAdapter(new ListRowPresenter(FocusHighlight.ZOOM_FACTOR_NONE,true));
         setAdapter(mRowsAdapter);
 
         new Handler().postDelayed(new Runnable() {
@@ -405,6 +414,8 @@ public class MainBrowseFragment extends BrowseFragment {
             presenterSelector.setRows(2);
             mRowsAdapter = new ArrayObjectAdapter(presenterSelector);
 
+
+
             setAdapter(mRowsAdapter);
             setOnItemViewClickedListener(new OnItemViewClickedListener() {
                 @Override
@@ -415,6 +426,7 @@ public class MainBrowseFragment extends BrowseFragment {
                         Row row) {
                     Intent intent;
                     Card card = (Card)item;
+
 
 
                         intent = new Intent(getContext(), DetailViewLiveBroadcastActivity.class);
@@ -434,8 +446,6 @@ public class MainBrowseFragment extends BrowseFragment {
             super.onCreate(savedInstanceState);
 
             createRows();
-            setSelectedPosition(0,true);
-
 
             getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
         }
@@ -514,7 +524,6 @@ public class MainBrowseFragment extends BrowseFragment {
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             createRows();
-
             getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
         }
 
@@ -605,17 +614,7 @@ public class MainBrowseFragment extends BrowseFragment {
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             createRows();
-            setSelectedPosition(0,true);
-
             getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
-            Log.d(TAG,"onCreate FragmentTvShow");
-        }
-
-        @Override
-        public void onResume() {
-            super.onResume();
-            Log.d(TAG,"onResume FragmentTvShow");
-
         }
 
         @Override
@@ -703,8 +702,6 @@ public class MainBrowseFragment extends BrowseFragment {
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             createRows();
-            setSelectedPosition(0,true);
-
             getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
         }
 
@@ -713,6 +710,7 @@ public class MainBrowseFragment extends BrowseFragment {
 
             //expand
             setExpand(true);
+
             return super.onCreateView(inflater,container,savedInstanceState);
         }
 
@@ -800,8 +798,6 @@ public class MainBrowseFragment extends BrowseFragment {
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             createRows();
-            setSelectedPosition(0,true);
-
             getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
         }
 

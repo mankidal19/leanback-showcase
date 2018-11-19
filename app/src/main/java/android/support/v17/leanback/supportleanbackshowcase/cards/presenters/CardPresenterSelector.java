@@ -94,8 +94,8 @@ public class CardPresenterSelector extends PresenterSelector {
                     presenter = new CharacterCardPresenter(mContext);
                     break;
                 case LIVE_TV:
-                    presenter = new ImageCardViewPresenter(mContext,card.getType(),card.getVideoId());
-                    break;
+                    /*presenter = new ImageCardViewPresenter(mContext,card.getType(),card.getVideoId());
+                    break;*/
                 default:
                     presenter = new CustomImageCardViewPresenter(mContext);
                     //presenter = new ImageCardViewPresenter(mContext);

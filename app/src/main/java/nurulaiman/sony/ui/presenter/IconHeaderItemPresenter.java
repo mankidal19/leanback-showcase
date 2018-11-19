@@ -1,6 +1,7 @@
 package nurulaiman.sony.ui.presenter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.v17.leanback.supportleanbackshowcase.R;
 import android.support.v17.leanback.widget.HeaderItem;
@@ -8,6 +9,7 @@ import android.support.v17.leanback.widget.ListRow;
 import android.support.v17.leanback.widget.PageRow;
 import android.support.v17.leanback.widget.Presenter;
 import android.support.v17.leanback.widget.RowHeaderPresenter;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +24,7 @@ public class IconHeaderItemPresenter  extends RowHeaderPresenter {
 
     private float mUnselectedAlpha;
 
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup) {
         mUnselectedAlpha = viewGroup.getResources()
@@ -33,7 +36,26 @@ public class IconHeaderItemPresenter  extends RowHeaderPresenter {
         view.setAlpha(mUnselectedAlpha);
 
 
+        view.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                if(hasFocus){
 
+                    view.setBackgroundColor(viewGroup.getResources().getColor(R.color.custom_header_select));
+                    //view.getBackground().setVisible(true,false);
+
+                }
+                else {
+                    //view.getBackground().setVisible(false,false);
+                    //set bg to transparent
+                    view.setBackgroundColor(Color.parseColor("#00000000"));
+
+                }
+                Log.d(TAG,"focus changed for view "+view.toString() + " to " + hasFocus);
+
+            }
+
+        });
 
         return new ViewHolder(view);
     }

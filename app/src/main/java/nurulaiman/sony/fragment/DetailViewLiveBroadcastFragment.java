@@ -77,10 +77,18 @@ public class DetailViewLiveBroadcastFragment extends MyDetailsFragment implement
     //for finding matching detailed card
     private MatchingCardUtils matchingCardUtils = null;
 
+    //custom bg color
+    private String provider;
+    private String interfaceMode;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         matchingCardUtils = new MatchingCardUtils(getContext());
+
+        provider = MySettingsFragment.getDefaults("pref_providers_key",getContext());
+        interfaceMode = MySettingsFragment.getDefaults("pref_interface_key",getContext());
+
 
         setupUi();
         setupEventListeners();
@@ -112,12 +120,25 @@ public class DetailViewLiveBroadcastFragment extends MyDetailsFragment implement
 
                 View actionsView = viewHolder.view.
                         findViewById(R.id.details_overview_actions_background);
-                actionsView.setBackgroundColor(getActivity().getResources().
-                        getColor(R.color.detail_view_actionbar_background));
 
-                View detailsView = viewHolder.view.findViewById(R.id.details_frame);
-                detailsView.setBackgroundColor(
-                        getResources().getColor(R.color.detail_view_background));
+                if(interfaceMode.equals("developer")){
+                    actionsView.setBackgroundColor(getActivity().getResources().
+                            getColor(R.color.detail_view_actionbar_background));
+
+                    View detailsView = viewHolder.view.findViewById(R.id.details_frame);
+                    detailsView.setBackgroundColor(
+                            getResources().getColor(R.color.detail_view_background));
+                }
+                else{
+                    actionsView.setBackgroundColor(getActivity().getResources().
+                            getColor(R.color.custom_detail_view_actionbar_background));
+
+                    View detailsView = viewHolder.view.findViewById(R.id.details_frame);
+                    detailsView.setBackgroundColor(
+                            getResources().getColor(R.color.custom_detail_view_background));
+                }
+
+
                 return viewHolder;
             }
         };
