@@ -52,7 +52,6 @@ public class CustomImageCardViewPresenter extends AbstractCardPresenter<CustomIm
         CustomImageCardView imageCardView = new CustomImageCardView(getContext());
         imageCardView.setInfoVisibility(CARD_REGION_VISIBLE_SELECTED);
 
-
         return imageCardView;
     }
 
