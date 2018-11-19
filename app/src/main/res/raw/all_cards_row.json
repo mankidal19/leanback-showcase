@@ -145,6 +145,18 @@
     "cards": [
       {
         "type": "DEFAULT",
+        "title": "TIN TỨC 24h",
+        "description": "24h hay Tin tức 24h là một trang tin điện tử tại Việt Nam. [TV SHOW] [NEWS]",
+        "localImageResource": "viet_news",
+        "footerIconLocalImageResource": "ic_installed",
+        "id":10,
+        "live":false,
+        "videoId":"wP0NE4Pcq8M",
+        "playlistId": "PLeONkShy_FY66wf28ibMHuGjrqdJhUqFK"
+
+      },
+      {
+        "type": "DEFAULT",
         "title": "Al Jazeera News",
         "description": "Al Jazeera, also known as JSC, is a state-funded broadcaster in Doha, Qatar, owned by the Al Jazeera Media Network. [TV SHOW] [NEWS]",
         "localImageResource": "aljazeera_news",
@@ -225,6 +237,17 @@
         "live":false,
         "videoId":"XM0BYUt5cmM",
         "playlistId":"PLV71sdBgCmhQ9uNXW9Pf-LS-4_nMsBejN"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Ấn Tượng Thể Thao 7 Ngày",
+        "description": "Ấn tượng thể thao 7 ngày (14/10) - Hiệu ứng U23 Việt Nam tác động mạnh mẽ đến Bóng đá Việt Nam 2018. [TV SHOW] [SPORTS]",
+        "localImageResource": "viet_sports",
+        "footerIconLocalImageResource": "ic_installed",
+        "id":16,
+        "live":false,
+        "videoId":"y3_c13_Ly5s",
+        "playlistId":"PLV71sdBgCmhSEtHJxBcEbrSq82zcghc4r"
       },
       {
         "type": "DEFAULT",

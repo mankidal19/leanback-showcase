@@ -286,6 +286,24 @@
     ]
   },
   {
+    "title": "TIN TỨC 24h",
+    "description": "Everything4U channel",
+    "year": 2018,
+    "text": "24h hay Tin tức 24h là một trang tin điện tử tại Việt Nam.",
+    "localImageResource": "viet_news",
+    "trailerUrl": "",
+    "videoUrl": "",
+    "videoId": "wP0NE4Pcq8M",
+    "playlistId": "PLeONkShy_FY66wf28ibMHuGjrqdJhUqFK",
+    "characters": [
+      {
+        "type": "CHARACTER",
+        "title": "phóng viên thời sự",
+        "localImageResource": "face_01"
+      }
+    ]
+  },
+  {
     "title": "[Inside Story] Al Jazeera News",
     "description": "Al Jazeera Media Network",
     "year": 2018,
@@ -443,6 +461,24 @@
         "type": "CHARACTER",
         "title": "Solar",
         "localImageResource": "face_02"
+      }
+    ]
+  },
+  {
+    "title": "Ấn Tượng Thể Thao 7 Ngày",
+    "description": "HNTV",
+    "year": 2018,
+    "text": "Ấn tượng thể thao 7 ngày (14/10) - Hiệu ứng U23 Việt Nam tác động mạnh mẽ đến Bóng đá Việt Nam 2018. [TV SHOW] [SPORTS]",
+    "localImageResource": "viet_sports",
+    "trailerUrl": "",
+    "videoUrl": "",
+    "videoId": "y3_c13_Ly5s",
+    "playlistId":"PLV71sdBgCmhSEtHJxBcEbrSq82zcghc4r",
+    "characters": [
+      {
+        "type": "CHARACTER",
+        "title": "phóng viên thời sự",
+        "localImageResource": "face_01"
       }
     ]
   },
