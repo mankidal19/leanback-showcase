@@ -17,6 +17,7 @@ package android.support.v17.leanback.supportleanbackshowcase.app.details;
 
 import android.support.v17.leanback.supportleanbackshowcase.models.CardRow;
 import android.support.v17.leanback.supportleanbackshowcase.utils.CardListRow;
+import android.support.v17.leanback.widget.FocusHighlight;
 import android.support.v17.leanback.widget.HeaderItem;
 import android.support.v17.leanback.widget.ListRowPresenter;
 import android.support.v17.leanback.widget.Presenter;
@@ -33,8 +34,10 @@ import nurulaiman.sony.ui.presenter.IconHeaderItemPresenter;
 public class ShadowRowPresenterSelector extends PresenterSelector {
 
     private static final String TAG = "ShadowRowPresenter";
-    private ListRowPresenter mShadowEnabledRowPresenter = new ListRowPresenter();
-    private ListRowPresenter mShadowDisabledRowPresenter = new ListRowPresenter();
+
+    //disable zoom
+    private ListRowPresenter mShadowEnabledRowPresenter = new ListRowPresenter(FocusHighlight.ZOOM_FACTOR_NONE,true);
+    private ListRowPresenter mShadowDisabledRowPresenter = new ListRowPresenter(FocusHighlight.ZOOM_FACTOR_NONE,true);
     //private IconHeaderItemPresenter mIconHeaderItemPresenter = new IconHeaderItemPresenter();
 
     public ShadowRowPresenterSelector() {

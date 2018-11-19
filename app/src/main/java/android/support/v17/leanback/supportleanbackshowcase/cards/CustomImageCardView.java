@@ -49,7 +49,7 @@ public class CustomImageCardView extends BaseCardView {
         if(interfaceMode.equals("enduser")){
             //default, hide info
             mInfoArea.setBackgroundColor(getResources().getColor(R.color.custom_info));
-            mInfoArea.setVisibility(View.GONE);
+            //mInfoArea.setVisibility(View.GONE);
 
             //change color
             mTitleView.setTextColor(getResources().getColor(R.color.custom_title));

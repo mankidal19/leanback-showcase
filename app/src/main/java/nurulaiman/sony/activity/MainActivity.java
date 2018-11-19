@@ -78,22 +78,7 @@ public class MainActivity extends LeanbackActivity {
     @Override
     public View onCreateView(String name, Context context, AttributeSet attrs) {
 
-       /* if(getIntent().getExtras()!=null){
-            keyEvent = (KeyEvent) getIntent().getExtras().get(Intent.EXTRA_KEY_EVENT);
-            Log.d(TAG,"getExtras not null");
 
-            if(keyEvent!=null){
-                super.sendShortcutBroadcast(keyEvent);
-                Log.d(TAG,"keyEvent not null");
-                getIntent().removeExtra(Intent.EXTRA_KEY_EVENT);
-            }
-
-        }
-
-        else{
-            Log.d(TAG,"getExtras null");
-
-        }*/
 
 
         return super.onCreateView(name, context, attrs);

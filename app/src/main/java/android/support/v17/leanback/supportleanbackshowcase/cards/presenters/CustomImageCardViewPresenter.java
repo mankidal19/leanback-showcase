@@ -21,6 +21,8 @@ import java.util.List;
 
 import nurulaiman.sony.fragment.MySettingsFragment;
 
+import static android.support.v17.leanback.widget.BaseCardView.CARD_REGION_VISIBLE_SELECTED;
+
 public class CustomImageCardViewPresenter extends AbstractCardPresenter<CustomImageCardView> {
 
     private Card.Type mType;
@@ -48,6 +50,7 @@ public class CustomImageCardViewPresenter extends AbstractCardPresenter<CustomIm
     @Override
     protected CustomImageCardView onCreateView() {
         CustomImageCardView imageCardView = new CustomImageCardView(getContext());
+        imageCardView.setInfoVisibility(CARD_REGION_VISIBLE_SELECTED);
 
 
         //only show info for card in focus
@@ -57,10 +60,11 @@ public class CustomImageCardViewPresenter extends AbstractCardPresenter<CustomIm
 
                 if(hasFocus){
 
-                    imageCardView.showInfo(true);
+                    //imageCardView.showInfo(true);
+
                 }
                 else{
-                    imageCardView.showInfo(false);
+                    //imageCardView.showInfo(false);
                 }
 
                 Log.d(TAG,"focus changed for "+imageCardView.toString() + " to " + hasFocus);

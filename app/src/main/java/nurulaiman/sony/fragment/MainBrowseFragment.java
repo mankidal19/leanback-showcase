@@ -291,7 +291,7 @@ public class MainBrowseFragment extends BrowseFragment {
     }
 
     private void loadData() {
-        mRowsAdapter = new ArrayObjectAdapter(new ListRowPresenter());
+        mRowsAdapter = new ArrayObjectAdapter(new ListRowPresenter(FocusHighlight.ZOOM_FACTOR_NONE,true));
         setAdapter(mRowsAdapter);
 
         new Handler().postDelayed(new Runnable() {
