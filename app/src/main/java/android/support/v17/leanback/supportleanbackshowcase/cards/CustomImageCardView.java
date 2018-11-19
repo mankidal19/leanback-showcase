@@ -49,7 +49,6 @@ public class CustomImageCardView extends BaseCardView {
         if(interfaceMode.equals("enduser")){
             //default, hide info
             mInfoArea.setBackgroundColor(getResources().getColor(R.color.custom_info));
-            //mInfoArea.setVisibility(View.GONE);
 
             //change color
             mTitleView.setTextColor(getResources().getColor(R.color.custom_title));
@@ -176,17 +175,6 @@ public class CustomImageCardView extends BaseCardView {
             mTitleView.setMaxLines(1);
         }
     }
-
-    public void showInfo(boolean show){
-        if(show && interfaceMode.equals("enduser")){
-            mInfoArea.setVisibility(View.VISIBLE);
-        }
-        else{
-            mInfoArea.setVisibility(View.GONE);
-
-        }
-    }
-
 
 
 }
