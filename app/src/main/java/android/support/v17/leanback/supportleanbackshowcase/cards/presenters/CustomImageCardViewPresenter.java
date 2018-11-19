@@ -53,24 +53,6 @@ public class CustomImageCardViewPresenter extends AbstractCardPresenter<CustomIm
         imageCardView.setInfoVisibility(CARD_REGION_VISIBLE_SELECTED);
 
 
-        //only show info for card in focus
-        imageCardView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View view, boolean hasFocus) {
-
-                if(hasFocus){
-
-                    //imageCardView.showInfo(true);
-
-                }
-                else{
-                    //imageCardView.showInfo(false);
-                }
-
-                Log.d(TAG,"focus changed for "+imageCardView.toString() + " to " + hasFocus);
-            }
-        });
-
         return imageCardView;
     }
 
