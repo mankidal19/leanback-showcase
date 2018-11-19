@@ -29,7 +29,7 @@ public class LiveActivity extends FragmentActivity {
 
     private final String TAG = "LiveActivity";
     //default live TV
-    private String liveVideoId = "Nt9dn0SGAlU";
+    private String liveVideoId = "1UDprrvWzA4";
     private YouTubePlayerView youTubePlayerView = null;
     //to implement play/pause
     private YouTubePlayer youTubePlayer = null;
@@ -358,10 +358,10 @@ public class LiveActivity extends FragmentActivity {
     //initialize channel list ArrayList
     private void initChannelList(){
 
-        channelArrayList.add("Nt9dn0SGAlU");
+        channelArrayList.add("1UDprrvWzA4");
         channelArrayList.add("5rdMyzOTK9Y");
         channelArrayList.add("2LWt-dxd0v4");
-        channelArrayList.add("_ulUsFYyLZ0");
+        channelArrayList.add("CdaP7Ln9j30");
         channelArrayList.add("KkXq2sv6Tos");
         channelArrayList.add("Lvp-lSqHVKc");
     }
