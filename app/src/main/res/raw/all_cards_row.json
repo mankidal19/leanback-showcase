@@ -523,6 +523,14 @@
         "videoId":"7j7Wn0-9JJs",
         "id":43,
         "live":false
+      },
+      {
+        "type": "DEFAULT",
+        "description": "Một khu xóm trọ được mệnh danh là “Xóm Trọ 3D” của những người đồng tính nam: Lâm - chủ phòng trọ, mọi người đều gọi Lâm với biệt danh là má. ",
+        "title": "XÓM TRỌ 3D",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "viet_movie",
+        "videoId":"Uy0UElR8t8I"
       }
     ]
   },
