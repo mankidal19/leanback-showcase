@@ -1694,6 +1694,36 @@
     ]
   },
   {
+    "title": "Bản tin 113",
+    "description": "News Channel",
+    "year": "2018",
+    "text": "Bản tin 113 Online mới nhất ngày 19/11/2018 | Tin tức An ninh Việt Nam | Tin tức mới nhất | ANTV",
+    "localImageResource": "viet_live",
+    "trailerUrl": "",
+    "videoUrl": "",
+    "type": "LIVE_TV",
+    "recommended": [
+      {
+        "type": "DEFAULT",
+        "title": "Arirang TV World",
+        "description": "Arirang TV/Radio is a public service agency that spreads the uniqueness of Korea to the world through cutting-edge broadcasting.",
+        "localImageResource": "arirang"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Euronews English",
+        "description": "Euronews: the most watched news channel in Europe.",
+        "localImageResource": "euronews"
+      },
+      {
+        "type": "DEFAULT",
+        "title": "KBSWorld 24",
+        "description": "700만 해외동포와 함께 하는 KBS World 24!!! ",
+        "localImageResource": "kbsworld"
+      }
+    ]
+  },
+  {
     "title": "Arirang TV World",
     "description": "News Channel",
     "year": "2018",
