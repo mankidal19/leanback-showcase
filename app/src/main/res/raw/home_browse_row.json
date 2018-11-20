@@ -4,10 +4,13 @@
     "cards": [
       {
         "type": "DEFAULT",
-        "title": "Kang Deoksun's Love History | 강덕순 애정 변천사",
-        "description": "Played until 10:13",
-        "localImageResource": "kang_love",
-        "footerIconLocalImageResource": "ic_installed"
+        "title": "Nhanh Như Chớp",
+        "description": "Nhanh như chớp nhí là chương trình do Đài Truyền hình Thành phố Hồ Chí Minh và công ty D.I.D TV sản xuất, là phiên bản nhí của chương trình Nhanh như chớp hiện đang phát sóng trên kênh HTV7 của Đài Truyền hình Thành phố Hồ Chí Minh. [TV SHOW] [ENTERTAINMENT]",
+        "localImageResource": "viet_tv_show",
+        "footerIconLocalImageResource": "ic_installed",
+        "live":false,
+        "videoId":"EUWPPNWFrA0",
+        "playlistId":"PL9FSFrcfpxciaU1Lkt9OZXdSJRJ3EqCDm"
       },
       {
         "type": "DEFAULT",
@@ -44,10 +47,15 @@
     "cards": [
       {
         "type": "DEFAULT",
-        "title": "Mobile Suit Gundam SEED",
-        "description": "Mobile Suit Gundam SEED is an anime series developed by Sunrise and directed by Mitsuo Fukuda.",
-        "localImageResource": "gundam_seed",
-        "footerIconLocalImageResource": "ic_installed"
+        "title": "TIN TỨC 24h",
+        "description": "24h hay Tin tức 24h là một trang tin điện tử tại Việt Nam. [TV SHOW] [NEWS]",
+        "localImageResource": "viet_news",
+        "footerIconLocalImageResource": "ic_installed",
+        "id":10,
+        "live":false,
+        "videoId":"wP0NE4Pcq8M",
+        "playlistId": "PLeONkShy_FY66wf28ibMHuGjrqdJhUqFK"
+
       },
       {
         "type": "DEFAULT",
@@ -98,9 +106,11 @@
     "cards": [
       {
         "type": "DEFAULT",
-        "title": "KBSWorld 24",
-        "description": "700만 해외동포와 함께 하는 KBS World 24!!! ",
-        "localImageResource": "kbsworld"
+        "description": "Một khu xóm trọ được mệnh danh là “Xóm Trọ 3D” của những người đồng tính nam: Lâm - chủ phòng trọ, mọi người đều gọi Lâm với biệt danh là má. ",
+        "title": "XÓM TRỌ 3D",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "viet_movie",
+        "videoId":"Uy0UElR8t8I"
       },
       {
         "type": "DEFAULT",
