@@ -22,9 +22,7 @@
         android:layout_height="@dimen/default_image_card_height"
         android:scaleType="centerCrop"
         android:adjustViewBounds="true"
-        android:contentDescription="@null"
-        android:layout_above="@id/info_field"
-        android:layout_alignWithParentIfMissing="false"/>
+        android:contentDescription="@null"/>
     <android.support.v17.leanback.widget.NonOverlappingFrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
