@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.os.Handler;
@@ -35,6 +36,7 @@ import android.support.v17.leanback.widget.Presenter;
 import android.support.v17.leanback.widget.PresenterSelector;
 import android.support.v17.leanback.widget.Row;
 import android.support.v17.leanback.widget.RowPresenter;
+import android.support.v17.leanback.widget.SearchOrbView;
 import android.support.v17.leanback.widget.VerticalGridPresenter;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
@@ -112,7 +114,6 @@ public class MainBrowseFragment extends BrowseFragment {
     private String provider;
     private String interfaceMode;
 
-    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -139,10 +140,22 @@ public class MainBrowseFragment extends BrowseFragment {
 
         matchingCardUtils = new MatchingCardUtils(getContext());
 
+        setBrowseTransitionListener(new BrowseTransitionListener(){
+            @Override
+            public void onHeadersTransitionStart(boolean withHeaders) {
+                super.onHeadersTransitionStart(withHeaders);
+                Log.d(TAG,"onHeadersTransitionStart, withHeaders: "+ withHeaders);
+            }
 
+            @Override
+            public void onHeadersTransitionStop(boolean withHeaders) {
+                super.onHeadersTransitionStop(withHeaders);
+                Log.d(TAG,"onHeadersTransitionStop, withHeaders: "+ withHeaders);
+
+            }
+        });
 
     }
-
 
 
     public static MainBrowseFragment newInstance() {
@@ -188,6 +201,8 @@ public class MainBrowseFragment extends BrowseFragment {
                 //need the if, to debug if opening app from Google Assistant
                 if(getRowsFragment()!=null){
                     startHeadersTransition(false);
+
+
                 }
 
                 switch (keyCode) {
@@ -204,17 +219,20 @@ public class MainBrowseFragment extends BrowseFragment {
                         //DUMMY DRAMA
                         Log.d(TAG,"Green button pressed");
                         setSelectedPosition(2,true);
+
                         break;
 
                     case KeyEvent.KEYCODE_PROG_YELLOW:
                         Log.d(TAG,"Yellow button pressed");
                         setSelectedPosition(3,true);
+
                         break;
 
-                case KeyEvent.KEYCODE_PROG_BLUE:
-                    Log.d(TAG,"Blue button pressed");
-                    setSelectedPosition(4,true);
-                    break;
+                    case KeyEvent.KEYCODE_PROG_BLUE:
+                        Log.d(TAG,"Blue button pressed");
+                        setSelectedPosition(4,true);
+
+                        break;
             }
 
 
@@ -415,7 +433,6 @@ public class MainBrowseFragment extends BrowseFragment {
             mRowsAdapter = new ArrayObjectAdapter(presenterSelector);
 
 
-
             setAdapter(mRowsAdapter);
             setOnItemViewClickedListener(new OnItemViewClickedListener() {
                 @Override
@@ -444,8 +461,11 @@ public class MainBrowseFragment extends BrowseFragment {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+            Log.d(TAG,"Live broadcast: on create (before create rows)");
 
             createRows();
+
+            Log.d(TAG,"Live broadcast: on create (after create rows)");
 
             getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
         }
@@ -455,15 +475,25 @@ public class MainBrowseFragment extends BrowseFragment {
 
             //expand
             setExpand(true);
+            Log.d(TAG,"Live broadcast: on create view");
+
 
             return super.onCreateView(inflater,container,savedInstanceState);
         }
 
-       @Override
+        @Override
+        public void onViewCreated(View view, Bundle savedInstanceState) {
+            super.onViewCreated(view, savedInstanceState);
+
+            Log.d(TAG,"Live broadcast: on view created");
+
+        }
+
+        @Override
        public void onTransitionEnd(){
            //expand
            setExpand(true);
-
+           Log.d(TAG,"Live broadcast: transition ends");
            super.onTransitionEnd();
        }
 
@@ -476,6 +506,8 @@ public class MainBrowseFragment extends BrowseFragment {
                     mRowsAdapter.add(createCardRow(row));
                 }
             }
+            Log.d(TAG,"Live broadcast: rows created");
+
         }
 
         private Row createCardRow(CardRow cardRow) {
@@ -536,6 +568,7 @@ public class MainBrowseFragment extends BrowseFragment {
             return super.onCreateView(inflater,container,savedInstanceState);
         }
 
+
         @Override
         public void onTransitionEnd(){
             //expand
@@ -581,8 +614,9 @@ public class MainBrowseFragment extends BrowseFragment {
 
         public FragmentTvShow() {
             mRowsAdapter = new ArrayObjectAdapter(new CustomShadowRowPresenterSelector());
-
             setAdapter(mRowsAdapter);
+
+
             setOnItemViewClickedListener(new OnItemViewClickedListener() {
                 @Override
                 public void onItemClicked(
@@ -624,6 +658,14 @@ public class MainBrowseFragment extends BrowseFragment {
             setExpand(true);
 
             return super.onCreateView(inflater,container,savedInstanceState);
+        }
+
+        @Override
+        public void onViewCreated(View view, Bundle savedInstanceState) {
+            super.onViewCreated(view, savedInstanceState);
+
+            Log.d(TAG,"TV show: on view created");
+
         }
 
         @Override
