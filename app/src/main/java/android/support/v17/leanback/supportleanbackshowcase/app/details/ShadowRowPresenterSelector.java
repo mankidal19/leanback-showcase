@@ -36,8 +36,8 @@ public class ShadowRowPresenterSelector extends PresenterSelector {
     private static final String TAG = "ShadowRowPresenter";
 
     //disable zoom
-    private ListRowPresenter mShadowEnabledRowPresenter = new ListRowPresenter(FocusHighlight.ZOOM_FACTOR_NONE,false);
-    private ListRowPresenter mShadowDisabledRowPresenter = new ListRowPresenter(FocusHighlight.ZOOM_FACTOR_NONE,false);
+    private ListRowPresenter mShadowEnabledRowPresenter = new ListRowPresenter(FocusHighlight.ZOOM_FACTOR_MEDIUM,false);
+    private ListRowPresenter mShadowDisabledRowPresenter = new ListRowPresenter(FocusHighlight.ZOOM_FACTOR_MEDIUM,false);
     //private IconHeaderItemPresenter mIconHeaderItemPresenter = new IconHeaderItemPresenter();
 
     public ShadowRowPresenterSelector() {
