@@ -28,6 +28,8 @@ public class MainActivity extends LeanbackActivity {
     private static String TAG = "MainActivity";
     private  KeyEvent keyEvent;
     private VideoView videoView;
+    private String interfaceMode;
+    private String provider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +38,8 @@ public class MainActivity extends LeanbackActivity {
         setContentView(R.layout.activity_main);
 
 
-        String interfaceMode = MySettingsFragment.getDefaults("pref_interface_key",this);
-        String provider = MySettingsFragment.getDefaults("pref_providers_key",this);
+        interfaceMode = MySettingsFragment.getDefaults("pref_interface_key",this);
+        provider = MySettingsFragment.getDefaults("pref_providers_key",this);
 
         //video background only for enduser of fptplay
         if(interfaceMode.equals("enduser")&&provider.equals("fptplay")){
@@ -48,6 +50,7 @@ public class MainActivity extends LeanbackActivity {
             videoView.setFocusable(false);
 
 
+
             videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
                 @Override
                 public void onPrepared(MediaPlayer mp) {
@@ -56,7 +59,6 @@ public class MainActivity extends LeanbackActivity {
                 }
             });
         }
-
 
 
 
@@ -72,14 +74,20 @@ public class MainActivity extends LeanbackActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        videoView.start();
+        if(interfaceMode.equals("enduser")&&provider.equals("fptplay")){
+            videoView.start();
+        }
+
 
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        videoView.suspend();
+        if(interfaceMode.equals("enduser")&&provider.equals("fptplay")){
+            videoView.suspend();
+        }
+
     }
 
     @Override
