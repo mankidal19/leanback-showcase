@@ -235,7 +235,6 @@ public class MainBrowseFragment extends BrowseFragment {
                         break;
             }
 
-
         }
     };
 
