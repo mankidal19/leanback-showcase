@@ -201,7 +201,11 @@ public class MainBrowseFragment extends BrowseFragment {
                 //need the if, to debug if opening app from Google Assistant
                 if(getRowsFragment()!=null){
                     startHeadersTransition(false);
-
+                    Log.d(TAG,"getRowsFragment not null");
+                    //setHeadersState(HEADERS_HIDDEN);
+                }
+                else{
+                    Log.d(TAG,"getRowsFragment null");
 
                 }
 

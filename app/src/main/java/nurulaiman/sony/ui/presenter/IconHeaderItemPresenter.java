@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.support.v17.leanback.supportleanbackshowcase.R;
 import android.support.v17.leanback.widget.HeaderItem;
 import android.support.v17.leanback.widget.ListRow;
+import android.support.v17.leanback.widget.NonOverlappingLinearLayout;
 import android.support.v17.leanback.widget.PageRow;
 import android.support.v17.leanback.widget.Presenter;
 import android.support.v17.leanback.widget.RowHeaderPresenter;
@@ -13,7 +14,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import nurulaiman.sony.models.IconHeaderItem;
@@ -39,16 +42,19 @@ public class IconHeaderItemPresenter  extends RowHeaderPresenter {
         view.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean hasFocus) {
+
+
                 if(hasFocus){
 
                     view.setBackgroundColor(viewGroup.getResources().getColor(R.color.custom_header_select));
+
                     //view.getBackground().setVisible(true,false);
 
                 }
                 else {
                     //view.getBackground().setVisible(false,false);
                     //set bg to transparent
-                    view.setBackgroundColor(Color.parseColor("#00000000"));
+                    view.setBackgroundColor(Color.TRANSPARENT);
 
                 }
                 Log.d(TAG,"focus changed for view "+view.toString() + " to " + hasFocus);
@@ -84,6 +90,14 @@ public class IconHeaderItemPresenter  extends RowHeaderPresenter {
 
         TextView label = (TextView) rootView.findViewById(R.id.header_label);
         label.setText(iconHeaderItem.getName());
+
+        //change margin before displaying login header
+        /*if(iconHeaderItem.getName().toLowerCase().equals("login/sign up")){
+            FrameLayout.LayoutParams layoutParams =  new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            layoutParams.setMargins(0,40,0,0);
+
+            rootView.setLayoutParams(layoutParams);
+        }*/
     }
 
     @Override
