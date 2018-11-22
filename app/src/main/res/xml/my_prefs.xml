@@ -3,7 +3,7 @@
     android:title="Operator App Settings">
 
     <ListPreference
-        android:defaultValue="operator0"
+        android:defaultValue="fptplay"
         android:icon="@drawable/ic_live_tv_white"
         android:entries="@array/pref_content_providers_entries"
         android:entryValues="@array/pref_content_providers_values"
