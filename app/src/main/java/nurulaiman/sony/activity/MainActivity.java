@@ -41,6 +41,26 @@ public class MainActivity extends LeanbackActivity {
         interfaceMode = MySettingsFragment.getDefaults("pref_interface_key",this);
         provider = MySettingsFragment.getDefaults("pref_providers_key",this);
 
+        Log.d(TAG,"interfaceMode, provider: "+ interfaceMode + ", "+provider);
+
+        //for first time after installing
+        if(interfaceMode == null){
+            MySettingsFragment.setDefaults("pref_interface_key","enduser",this);
+            interfaceMode = MySettingsFragment.getDefaults("pref_interface_key",this);
+
+            Log.d(TAG,"new interfaceMode: "+ interfaceMode);
+
+        }
+
+        if(provider == null){
+            MySettingsFragment.setDefaults("pref_providers_key","fptplay",this);
+            provider = MySettingsFragment.getDefaults("pref_providers_key",this);
+
+            Log.d(TAG,"new provider: "+ provider);
+
+        }
+
+
         //video background only for enduser of fptplay
         if(interfaceMode.equals("enduser")&&provider.equals("fptplay")){
             //video background
