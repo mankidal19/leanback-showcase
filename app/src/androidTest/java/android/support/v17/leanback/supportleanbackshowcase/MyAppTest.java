@@ -31,7 +31,7 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 
 @RunWith(AndroidJUnit4.class)
-public class RGYBKeyTest {
+public class MyAppTest {
 
     private static final String PACKAGE_NAME = "com.example.android.persistence";
 
