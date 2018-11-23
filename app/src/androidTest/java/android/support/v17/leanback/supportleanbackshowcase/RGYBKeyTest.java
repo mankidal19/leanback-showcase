@@ -15,6 +15,8 @@ import org.junit.runner.RunWith;
 import java.util.ArrayList;
 
 import androidx.test.ext.junit.runners.AndroidJUnit4;
+import androidx.test.filters.FlakyTest;
+import androidx.test.filters.LargeTest;
 import androidx.test.uiautomator.By;
 import androidx.test.uiautomator.UiDevice;
 import androidx.test.uiautomator.UiObject2;
@@ -24,6 +26,7 @@ import static androidx.test.core.app.ApplicationProvider.getApplicationContext;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 
@@ -65,7 +68,6 @@ public class RGYBKeyTest {
                 .getLaunchIntentForPackage(PACKAGE_NAME);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);    // Clear out any previous instances
         context.startActivity(intent);
-
         // Wait for the app to appear
         mDevice.wait(Until.hasObject(By.pkg(PACKAGE_NAME).depth(0)), LAUNCH_TIMEOUT);
 
@@ -157,8 +159,14 @@ public class RGYBKeyTest {
     public void multipleKeys(){
         ArrayList<String> fragmentsList = new ArrayList<String>();
         //wait until home fragment is loaded
-        UiObject2 uiObject = mDevice.wait(Until.findObject(By.desc(HOME_FRAGMENT)),LAUNCH_TIMEOUT);
-        fragmentsList.add(uiObject.getContentDescription());
+        boolean found = mDevice.wait(Until.hasObject(By.desc(HOME_FRAGMENT)),LAUNCH_TIMEOUT);
+
+        //for iteration other than first one
+        if(!found){
+            found = mDevice.wait(Until.hasObject(By.desc(MOVIES_FRAGMENT)),LAUNCH_TIMEOUT);
+        }
+
+        UiObject2 uiObject;
 
         mDevice.pressKeyCode(KeyEvent.KEYCODE_PROG_RED);
         uiObject = mDevice.wait(Until.findObject(By.desc(LIVE_TV_FRAGMENT)),LAUNCH_TIMEOUT);
@@ -176,11 +184,26 @@ public class RGYBKeyTest {
         uiObject = mDevice.wait(Until.findObject(By.desc(MOVIES_FRAGMENT)),LAUNCH_TIMEOUT);
         fragmentsList.add(uiObject.getContentDescription());
 
-        assertThat(fragmentsList.get(0),equalTo(HOME_FRAGMENT));
-        assertThat(fragmentsList.get(1),equalTo(LIVE_TV_FRAGMENT));
-        assertThat(fragmentsList.get(2),equalTo(NEWS_SPORTS_FRAGMENT));
-        assertThat(fragmentsList.get(3),equalTo(TV_SHOW_FRAGMENT));
-        assertThat(fragmentsList.get(4),equalTo(MOVIES_FRAGMENT));
+        if(!found){
+            Assert.fail("fragment not found");
+        }
+
+        assertThat(fragmentsList.get(0),equalTo(LIVE_TV_FRAGMENT));
+        assertThat(fragmentsList.get(1),equalTo(NEWS_SPORTS_FRAGMENT));
+        assertThat(fragmentsList.get(2),equalTo(TV_SHOW_FRAGMENT));
+        assertThat(fragmentsList.get(3),equalTo(MOVIES_FRAGMENT));
+
+    }
+
+    @Test
+    public void multipleKeyLoopTest(){
+        final int iteration = 50;
+
+        for(int i=1;i<=iteration;i++){
+            multipleKeys();
+            System.out.println("multipleKeys() test loop #"+i);
+
+        }
     }
 
     private String getLauncherPackageName() {
