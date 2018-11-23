@@ -171,7 +171,7 @@ public class LiveActivity extends FragmentActivity {
             else{
                 youTubePlayer.play();
                 playing = true;
-                textView.setVisibility(View.GONE);
+                textView.setVisibility(View.INVISIBLE);
 
                 iconView.setImageDrawable(getDrawable(R.drawable.ic_play_arrow_white_24dp));
                 iconView.setVisibility(View.VISIBLE);
@@ -187,7 +187,7 @@ public class LiveActivity extends FragmentActivity {
             if(!playing){
                 youTubePlayer.play();
                 playing = true;
-                textView.setVisibility(View.GONE);
+                textView.setVisibility(View.INVISIBLE);
 
                 iconView.setImageDrawable(getDrawable(R.drawable.ic_play_arrow_white_24dp));
                 iconView.setVisibility(View.VISIBLE);
@@ -336,7 +336,7 @@ public class LiveActivity extends FragmentActivity {
             //hide after 5 seconds
             textView.postDelayed(new Runnable() {
                 public void run() {
-                    textView.setVisibility(View.GONE);
+                    textView.setVisibility(View.INVISIBLE);
                 }
             }, 5000);
         }
