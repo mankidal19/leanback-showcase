@@ -478,7 +478,7 @@ public class MainBrowseFragment extends BrowseFragment {
 
             //expand
             setExpand(true);
-            Log.d(TAG,"Live broadcast: on create view");
+
 
 
             return super.onCreateView(inflater,container,savedInstanceState);
@@ -486,6 +486,8 @@ public class MainBrowseFragment extends BrowseFragment {
 
         @Override
         public void onViewCreated(View view, Bundle savedInstanceState) {
+            view.setContentDescription("Live TV Fragment");
+
             super.onViewCreated(view, savedInstanceState);
 
             Log.d(TAG,"Live broadcast: on view created");
@@ -571,6 +573,15 @@ public class MainBrowseFragment extends BrowseFragment {
             return super.onCreateView(inflater,container,savedInstanceState);
         }
 
+        @Override
+        public void onViewCreated(View view, Bundle savedInstanceState) {
+            view.setContentDescription("Home Fragment");
+
+            super.onViewCreated(view, savedInstanceState);
+
+            Log.d(TAG,"Home: on view created");
+
+        }
 
         @Override
         public void onTransitionEnd(){
@@ -665,9 +676,11 @@ public class MainBrowseFragment extends BrowseFragment {
 
         @Override
         public void onViewCreated(View view, Bundle savedInstanceState) {
+            view.setContentDescription("TV Show Fragment");
+
             super.onViewCreated(view, savedInstanceState);
 
-            Log.d(TAG,"TV show: on view created");
+            Log.d(TAG,"TV Show: on view created");
 
         }
 
@@ -757,6 +770,16 @@ public class MainBrowseFragment extends BrowseFragment {
             setExpand(true);
 
             return super.onCreateView(inflater,container,savedInstanceState);
+        }
+
+        @Override
+        public void onViewCreated(View view, Bundle savedInstanceState) {
+            view.setContentDescription("News & Sports Fragment");
+
+            super.onViewCreated(view, savedInstanceState);
+
+            Log.d(TAG,"News & Sports : on view created");
+
         }
 
         @Override
@@ -853,6 +876,16 @@ public class MainBrowseFragment extends BrowseFragment {
             setExpand(true);
 
             return super.onCreateView(inflater,container,savedInstanceState);
+        }
+
+        @Override
+        public void onViewCreated(View view, Bundle savedInstanceState) {
+            view.setContentDescription("Movies Fragment");
+
+            super.onViewCreated(view, savedInstanceState);
+
+            Log.d(TAG,"Movies : on view created");
+
         }
 
         @Override
