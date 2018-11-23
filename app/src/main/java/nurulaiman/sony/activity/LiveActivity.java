@@ -360,7 +360,7 @@ public class LiveActivity extends FragmentActivity {
 
         channelArrayList.add("1UDprrvWzA4");
         channelArrayList.add("5rdMyzOTK9Y");
-        channelArrayList.add("2LWt-dxd0v4");
+        channelArrayList.add("AICpOoc4t04");
         channelArrayList.add("CdaP7Ln9j30");
         channelArrayList.add("KkXq2sv6Tos");
         channelArrayList.add("Lvp-lSqHVKc");
