@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.support.test.InstrumentationRegistry;
 import android.util.Log;
 import android.view.KeyEvent;
 
@@ -13,13 +14,18 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.FlakyTest;
 import androidx.test.filters.LargeTest;
 import androidx.test.uiautomator.By;
+import androidx.test.uiautomator.StaleObjectException;
 import androidx.test.uiautomator.UiDevice;
+import androidx.test.uiautomator.UiObject;
 import androidx.test.uiautomator.UiObject2;
+import androidx.test.uiautomator.UiObjectNotFoundException;
+import androidx.test.uiautomator.UiSelector;
 import androidx.test.uiautomator.Until;
 
 import static androidx.test.core.app.ApplicationProvider.getApplicationContext;
@@ -38,6 +44,10 @@ public class MyAppTest {
     private static final String HOME_FRAGMENT = "Home Fragment";
 
     private static final String LIVE_TV_FRAGMENT = "Live TV Fragment";
+    private static final String LIVE_TV_DETAIL_VIEW = "Detail View Live TV";
+    private static final String LIVE_TV_PLAYER = "Live TV Player";
+
+
 
     private static final String NEWS_SPORTS_FRAGMENT = "News & Sports Fragment";
 
@@ -184,6 +194,8 @@ public class MyAppTest {
         uiObject = mDevice.wait(Until.findObject(By.desc(MOVIES_FRAGMENT)),LAUNCH_TIMEOUT);
         fragmentsList.add(uiObject.getContentDescription());
 
+
+
         if(!found){
             Assert.fail("fragment not found");
         }
@@ -201,9 +213,78 @@ public class MyAppTest {
 
         for(int i=1;i<=iteration;i++){
             multipleKeys();
-            System.out.println("multipleKeys() test loop #"+i);
+            System.out.println("multipleKeys() test loop #" + i + " out of " + iteration);
 
         }
+    }
+
+    @Test
+    public void testChannelsButton() throws StaleObjectException, UiObjectNotFoundException, InterruptedException {
+        Random r = new Random();
+        int iteration = r.nextInt(30);
+        boolean found;
+        UiObject2 titleText;
+        //UiObject titleText;
+        String channelPressed;
+        String prevChannelTitle;
+        String currentChannelTitle = null;
+
+
+        //wait until home fragment is loaded
+        mDevice.wait(Until.hasObject(By.desc(HOME_FRAGMENT)),LAUNCH_TIMEOUT);
+        //press the key
+        mDevice.pressKeyCode(KeyEvent.KEYCODE_PROG_RED);
+        mDevice.wait(Until.hasObject(By.desc(LIVE_TV_FRAGMENT)),LAUNCH_TIMEOUT);
+
+        mDevice.pressDPadCenter();
+        mDevice.wait(Until.hasObject(By.desc(LIVE_TV_DETAIL_VIEW)),LAUNCH_TIMEOUT);
+
+        mDevice.pressDPadCenter();
+        found = mDevice.wait(Until.hasObject(By.desc("channel title")),1000);
+        titleText = mDevice.wait(Until.findObject(By.desc("channel title")),1000);
+
+        prevChannelTitle = titleText.getText();
+
+        //if iteration less than 10, increase by the value
+        if(iteration<10){
+            iteration+=10;
+        }
+
+        for(int i=1;i<=iteration;i++){
+
+            found = mDevice.wait(Until.hasObject(By.res("youTubePlayerDOM")),1000);
+            //mDevice.wait(1000);
+            if(r.nextBoolean()){
+                mDevice.pressKeyCode(KeyEvent.KEYCODE_CHANNEL_UP);
+                channelPressed = "UP";
+            }
+            else{
+                mDevice.pressKeyCode(KeyEvent.KEYCODE_CHANNEL_DOWN);
+                channelPressed = "DOWN";
+            }
+
+            try{
+                currentChannelTitle = titleText.getText();
+            }
+            catch (StaleObjectException e){
+                System.err.println("StaleObjectException!");
+            }
+
+
+
+            System.out.println("Channel Up/Down Random test loop #" + i + " of " + iteration);
+            System.out.println("Button pressed: " + channelPressed);
+            System.out.println("Previous channel: " + prevChannelTitle);
+            System.out.println("Current channel: " + currentChannelTitle + "\n--------------------------------------");
+
+
+            prevChannelTitle = currentChannelTitle;
+
+            Assert.assertTrue("Youtube player view not found",found);
+
+
+        }
+
     }
 
     private String getLauncherPackageName() {
