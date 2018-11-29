@@ -28,8 +28,10 @@
                 android:textAlignment="textStart"
                 android:textAppearance="@style/RegularMediaItemTextStyle"
                 android:textColor="@android:color/white"
-                android:background="#80000000"
-                android:textSize="35dp" />
+                android:background="#000000"
+                android:textSize="35dp"
+                android:paddingBottom="3dp"
+                android:paddingTop="3dp"/>
 
             <ImageView
                 android:id="@+id/iconView2"

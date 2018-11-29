@@ -21,10 +21,12 @@ import androidx.test.filters.FlakyTest;
 import androidx.test.filters.LargeTest;
 import androidx.test.uiautomator.By;
 import androidx.test.uiautomator.StaleObjectException;
+import androidx.test.uiautomator.UiCollection;
 import androidx.test.uiautomator.UiDevice;
 import androidx.test.uiautomator.UiObject;
 import androidx.test.uiautomator.UiObject2;
 import androidx.test.uiautomator.UiObjectNotFoundException;
+import androidx.test.uiautomator.UiScrollable;
 import androidx.test.uiautomator.UiSelector;
 import androidx.test.uiautomator.Until;
 
@@ -221,10 +223,11 @@ public class MyAppTest {
     @Test
     public void testChannelsButton() throws StaleObjectException, UiObjectNotFoundException, InterruptedException {
         Random r = new Random();
-        int iteration = r.nextInt(30);
+        //int iteration = r.nextInt(30);
+        int iteration = 50;
         boolean found;
-        UiObject2 titleText;
-        //UiObject titleText;
+        //UiObject2 titleText;
+        UiObject titleText;
         String channelPressed;
         String prevChannelTitle;
         String currentChannelTitle = null;
@@ -241,7 +244,7 @@ public class MyAppTest {
 
         mDevice.pressDPadCenter();
         found = mDevice.wait(Until.hasObject(By.desc("channel title")),1000);
-        titleText = mDevice.wait(Until.findObject(By.desc("channel title")),1000);
+        titleText = mDevice.findObject(new UiSelector().description("channel title"));
 
         prevChannelTitle = titleText.getText();
 
@@ -269,6 +272,9 @@ public class MyAppTest {
             catch (StaleObjectException e){
                 System.err.println("StaleObjectException!");
             }
+            catch (UiObjectNotFoundException e){
+                System.err.println("UiObjectNotFoundException!");
+            }
 
 
 
@@ -282,6 +288,37 @@ public class MyAppTest {
 
             Assert.assertTrue("Youtube player view not found",found);
 
+
+        }
+
+    }
+
+    @Test
+    public void testNewsSportsContents() throws UiObjectNotFoundException{
+        testGreenButton();
+
+        //UiScrollable videos = new UiScrollable(new UiSelector()
+         //       .descriptionContains(NEWS_SPORTS_FRAGMENT));
+
+        UiScrollable videos = new UiScrollable(new UiSelector()
+                .descriptionContains("News"));
+
+        // Retrieve the number of videos in this collection:
+        /*int count = videos.getChildCount(new UiSelector()
+                .className("android.widget.FrameLayout"));*/
+        int count = videos.getChildCount(new UiSelector()
+                .className("android.widget.FrameLayout"));
+
+
+
+        for(int i=0;i<count;i++){
+            UiObject video = videos.getChildByInstance(new UiSelector()
+                    .className("android.widget.FrameLayout"),i);
+
+            System.out.println("Click " + video.toString() + " #" + i + " of " + count);
+
+            video.click();
+            mDevice.pressBack();
 
         }
 
