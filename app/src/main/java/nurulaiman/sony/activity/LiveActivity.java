@@ -318,12 +318,8 @@ public class LiveActivity extends FragmentActivity {
                 @Override
                 public void onStateChange(@NonNull PlayerConstants.PlayerState state) {
                     switch(state){
-                        /*case UNSTARTED:
-                        case BUFFERING:
                         case PAUSED:
-                        case VIDEO_CUED:
-                        case UNKNOWN:
-                            textView.setVisibility(View.VISIBLE);*/
+                            textView.setVisibility(View.VISIBLE);
                         case PLAYING:
                             textView.postDelayed(new Runnable() {
                                 public void run() {
