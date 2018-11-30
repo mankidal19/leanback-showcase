@@ -164,7 +164,7 @@ public class LiveActivity extends FragmentActivity {
                 youTubePlayer.pause();
                 playing=false;
                 youTubePlayerView.getPlayerUIController().showUI(true);
-                textView.setVisibility(View.VISIBLE);
+                //textView.setVisibility(View.VISIBLE);
 
                 iconView.setImageDrawable(getDrawable(R.drawable.ic_pause_white_24dp));
                 iconView.setVisibility(View.VISIBLE);
@@ -173,7 +173,7 @@ public class LiveActivity extends FragmentActivity {
             else{
                 youTubePlayer.play();
                 playing = true;
-                textView.setVisibility(View.INVISIBLE);
+                //textView.setVisibility(View.INVISIBLE);
 
                 iconView.setImageDrawable(getDrawable(R.drawable.ic_play_arrow_white_24dp));
                 iconView.setVisibility(View.VISIBLE);
@@ -189,7 +189,7 @@ public class LiveActivity extends FragmentActivity {
             if(!playing){
                 youTubePlayer.play();
                 playing = true;
-                textView.setVisibility(View.INVISIBLE);
+                //textView.setVisibility(View.INVISIBLE);
 
                 iconView.setImageDrawable(getDrawable(R.drawable.ic_play_arrow_white_24dp));
                 iconView.setVisibility(View.VISIBLE);
@@ -205,7 +205,7 @@ public class LiveActivity extends FragmentActivity {
                 youTubePlayer.pause();
                 playing = false;
                 //youTubePlayerView.getPlayerUIController().showSeekBar(true);
-                textView.setVisibility(View.VISIBLE);
+                //textView.setVisibility(View.VISIBLE);
 
                 iconView.setImageDrawable(getDrawable(R.drawable.ic_pause_white_24dp));
                 iconView.setVisibility(View.VISIBLE);
@@ -314,8 +314,24 @@ public class LiveActivity extends FragmentActivity {
 
                 }
 
+
                 @Override
                 public void onStateChange(@NonNull PlayerConstants.PlayerState state) {
+                    switch(state){
+                        /*case UNSTARTED:
+                        case BUFFERING:
+                        case PAUSED:
+                        case VIDEO_CUED:
+                        case UNKNOWN:
+                            textView.setVisibility(View.VISIBLE);*/
+                        case PLAYING:
+                            textView.postDelayed(new Runnable() {
+                                public void run() {
+                                    textView.setVisibility(View.INVISIBLE);
+                                }
+                            }, 6000);
+                    }
+                    Log.d(TAG,"current player state- " + state);
                     super.onStateChange(state);
                 }
             });
@@ -338,11 +354,11 @@ public class LiveActivity extends FragmentActivity {
             textView.setText(displayText);
 
             //hide after 6 seconds
-            textView.postDelayed(new Runnable() {
+            /*textView.postDelayed(new Runnable() {
                 public void run() {
                     textView.setVisibility(View.INVISIBLE);
                 }
-            }, 6000);
+            }, 6000);*/
         }
 
 
