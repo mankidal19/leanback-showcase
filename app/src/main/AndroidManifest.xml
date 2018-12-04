@@ -232,7 +232,7 @@
 
         <provider
             android:name="nurulaiman.sony.data.VideoContentProvider"
-            android:authorities="nurulaiman.sony"
+            android:authorities="@string/content_provider"
             android:exported="true"
             tools:ignore="ExportedContentProvider" />
 
