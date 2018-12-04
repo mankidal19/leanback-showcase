@@ -50,5 +50,13 @@ ext {
     espressoVersion = "3.0.1"
     archLifecycleVersion = "1.1.1"
     archRoomVersion = "1.1.1"
+
+    androidxLibVersion = "1.0.0"
+    coreVersion = "1.0.0"
+    extJUnitVersion = "1.0.0"
+    runnerVersionX = "1.1.0"
+    rulesVersionX = "1.1.0"
+    espressoVersionX = "3.1.0"
+    uiautomatorVersion = "2.2.0"
 }
 
