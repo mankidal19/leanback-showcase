@@ -20,7 +20,6 @@ import android.app.SearchManager;
 import android.content.ContentProvider;
 import android.content.ContentValues;
 import android.content.UriMatcher;
-import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.net.Uri;

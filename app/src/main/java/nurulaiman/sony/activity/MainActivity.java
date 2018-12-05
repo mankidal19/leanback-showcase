@@ -3,10 +3,8 @@ package nurulaiman.sony.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
-import android.os.Build;
 import android.support.annotation.Nullable;
 import android.support.v17.leanback.supportleanbackshowcase.R;
 import android.os.Bundle;
@@ -15,7 +13,6 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
-import android.widget.RelativeLayout;
 import android.widget.VideoView;
 
 import nurulaiman.sony.fragment.MainBrowseFragment;
@@ -27,59 +24,12 @@ public class MainActivity extends LeanbackActivity {
 
     private static String TAG = "MainActivity";
     private  KeyEvent keyEvent;
-    private VideoView videoView;
-    private String interfaceMode;
-    private String provider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.fragment_main_browse);
         setContentView(R.layout.activity_main);
-
-
-        interfaceMode = MySettingsFragment.getDefaults("pref_interface_key",this);
-        provider = MySettingsFragment.getDefaults("pref_providers_key",this);
-
-        Log.d(TAG,"interfaceMode, provider: "+ interfaceMode + ", "+provider);
-
-        //for first time after installing
-        if(interfaceMode == null){
-            MySettingsFragment.setDefaults("pref_interface_key","enduser",this);
-            interfaceMode = MySettingsFragment.getDefaults("pref_interface_key",this);
-
-            Log.d(TAG,"new interfaceMode: "+ interfaceMode);
-
-        }
-
-        if(provider == null){
-            MySettingsFragment.setDefaults("pref_providers_key","fptplay",this);
-            provider = MySettingsFragment.getDefaults("pref_providers_key",this);
-
-            Log.d(TAG,"new provider: "+ provider);
-
-        }
-
-
-        //video background only for enduser of fptplay
-        if(interfaceMode.equals("enduser")&&provider.equals("fptplay")){
-            //video background
-            videoView = (VideoView) findViewById(R.id.videoView);
-            Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.fptplay);
-            videoView.setVideoURI(uri);
-            videoView.setFocusable(false);
-
-
-
-            videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-                @Override
-                public void onPrepared(MediaPlayer mp) {
-                    mp.setLooping(true);
-                    mp.setVolume(0f,0f);
-                }
-            });
-        }
-
 
 
         MainBrowseFragment fragment = MainBrowseFragment.newInstance();
@@ -94,20 +44,26 @@ public class MainActivity extends LeanbackActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
+        String interfaceMode = MySettingsFragment.getDefaults("pref_interface_key",this);
+        String provider = MySettingsFragment.getDefaults("pref_providers_key",this);
+
+        //video background only for enduser of fptplay
         if(interfaceMode.equals("enduser")&&provider.equals("fptplay")){
-            videoView.start();
+            //video background
+            VideoView videoview = (VideoView) findViewById(R.id.videoView);
+            Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.fptplay);
+            videoview.setVideoURI(uri);
+            videoview.start();
+
+            videoview.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                @Override
+                public void onPrepared(MediaPlayer mp) {
+                    mp.setLooping(true);
+                    mp.setVolume(0f,0f);
+                }
+            });
         }
-
-
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        if(interfaceMode.equals("enduser")&&provider.equals("fptplay")){
-            videoView.suspend();
-        }
-
     }
 
     @Override
@@ -121,6 +77,8 @@ public class MainActivity extends LeanbackActivity {
     @Nullable
     @Override
     public View onCreateView(String name, Context context, AttributeSet attrs) {
+
+
 
 
         return super.onCreateView(name, context, attrs);

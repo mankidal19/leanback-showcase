@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -19,7 +18,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.pierfrancescosoffritti.androidyoutubeplayer.player.PlayerConstants;
 import com.pierfrancescosoffritti.androidyoutubeplayer.player.YouTubePlayer;
 import com.pierfrancescosoffritti.androidyoutubeplayer.player.YouTubePlayerView;
 import com.pierfrancescosoffritti.androidyoutubeplayer.player.listeners.AbstractYouTubePlayerListener;
@@ -164,7 +162,7 @@ public class LiveActivity extends FragmentActivity {
                 youTubePlayer.pause();
                 playing=false;
                 youTubePlayerView.getPlayerUIController().showUI(true);
-                //textView.setVisibility(View.VISIBLE);
+                textView.setVisibility(View.VISIBLE);
 
                 iconView.setImageDrawable(getDrawable(R.drawable.ic_pause_white_24dp));
                 iconView.setVisibility(View.VISIBLE);
@@ -173,7 +171,7 @@ public class LiveActivity extends FragmentActivity {
             else{
                 youTubePlayer.play();
                 playing = true;
-                //textView.setVisibility(View.INVISIBLE);
+                textView.setVisibility(View.GONE);
 
                 iconView.setImageDrawable(getDrawable(R.drawable.ic_play_arrow_white_24dp));
                 iconView.setVisibility(View.VISIBLE);
@@ -189,7 +187,7 @@ public class LiveActivity extends FragmentActivity {
             if(!playing){
                 youTubePlayer.play();
                 playing = true;
-                //textView.setVisibility(View.INVISIBLE);
+                textView.setVisibility(View.GONE);
 
                 iconView.setImageDrawable(getDrawable(R.drawable.ic_play_arrow_white_24dp));
                 iconView.setVisibility(View.VISIBLE);
@@ -205,7 +203,7 @@ public class LiveActivity extends FragmentActivity {
                 youTubePlayer.pause();
                 playing = false;
                 //youTubePlayerView.getPlayerUIController().showSeekBar(true);
-                //textView.setVisibility(View.VISIBLE);
+                textView.setVisibility(View.VISIBLE);
 
                 iconView.setImageDrawable(getDrawable(R.drawable.ic_pause_white_24dp));
                 iconView.setVisibility(View.VISIBLE);
@@ -315,21 +313,6 @@ public class LiveActivity extends FragmentActivity {
                 }
 
 
-                @Override
-                public void onStateChange(@NonNull PlayerConstants.PlayerState state) {
-                    switch(state){
-                        case PAUSED:
-                            textView.setVisibility(View.VISIBLE);
-                        case PLAYING:
-                            textView.postDelayed(new Runnable() {
-                                public void run() {
-                                    textView.setVisibility(View.INVISIBLE);
-                                }
-                            }, 6000);
-                    }
-                    Log.d(TAG,"current player state- " + state);
-                    super.onStateChange(state);
-                }
             });
 
         }, true);
@@ -343,18 +326,19 @@ public class LiveActivity extends FragmentActivity {
     public void initVideoTitle(){
         videoTitle = mockDatabase.searchCard(liveVideoId).getTitle();
         if(videoTitle!=null){
+
             String channelNum = "10"+ Integer.toString(channelArrayList.indexOf(liveVideoId)+1);
             String displayText = channelNum + ": " + videoTitle;
             textView = findViewById(R.id.textView1);
             textView.setVisibility(View.VISIBLE);
             textView.setText(displayText);
 
-            //hide after 6 seconds
-            /*textView.postDelayed(new Runnable() {
+            //hide after 5 seconds
+            textView.postDelayed(new Runnable() {
                 public void run() {
-                    textView.setVisibility(View.INVISIBLE);
+                    textView.setVisibility(View.GONE);
                 }
-            }, 6000);*/
+            }, 5000);
         }
 
 

@@ -94,12 +94,6 @@ public class DetailViewLiveBroadcastFragment extends MyDetailsFragment implement
         setupEventListeners();
     }
 
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        view.setContentDescription("Detail View Live TV");
-        super.onViewCreated(view, savedInstanceState);
-    }
-
     private void setupUi() {
         // Load the card we want to display from a JSON resource. This JSON data could come from
         // anywhere in a real world app, e.g. a server.

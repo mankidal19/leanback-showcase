@@ -2,7 +2,6 @@ package nurulaiman.sony.activity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.annotation.NonNull;
 import android.support.v17.leanback.supportleanbackshowcase.R;
 import android.support.v17.leanback.supportleanbackshowcase.models.Card;
 import android.support.v17.leanback.supportleanbackshowcase.models.DetailedCard;
@@ -17,7 +16,6 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import com.pierfrancescosoffritti.androidyoutubeplayer.player.PlayerConstants;
 import com.pierfrancescosoffritti.androidyoutubeplayer.player.YouTubePlayer;
 import com.pierfrancescosoffritti.androidyoutubeplayer.player.YouTubePlayerView;
 import com.pierfrancescosoffritti.androidyoutubeplayer.player.listeners.AbstractYouTubePlayerListener;
@@ -148,11 +146,11 @@ public class YoutubePlayerActivity extends FragmentActivity {
             textView.setVisibility(View.VISIBLE);
 
             //hide after 5 seconds
-           /* textView.postDelayed(new Runnable() {
+            textView.postDelayed(new Runnable() {
                 public void run() {
                     textView.setVisibility(View.GONE);
                 }
-            }, 5000);*/
+            }, 5000);
         }
 
         getLifecycle().addObserver(youTubePlayerView);
@@ -167,22 +165,6 @@ public class YoutubePlayerActivity extends FragmentActivity {
                 public void onReady() {
                     youTubePlayer.loadVideo(youtubeVideoId,0f);
                  }
-
-                @Override
-                public void onStateChange(@NonNull PlayerConstants.PlayerState state) {
-                    switch(state){
-                        case PAUSED:
-                            textView.setVisibility(View.VISIBLE);
-                        case PLAYING:
-                            textView.postDelayed(new Runnable() {
-                                public void run() {
-                                    textView.setVisibility(View.INVISIBLE);
-                                }
-                            }, 6000);
-                    }
-                    Log.d(TAG,"current player state- " + state);
-                    super.onStateChange(state);
-                }
 
 
             });
@@ -229,7 +211,7 @@ public class YoutubePlayerActivity extends FragmentActivity {
             else{
                 youTubePlayer.play();
                 playing = true;
-                //textView.setVisibility(View.GONE);
+                textView.setVisibility(View.GONE);
 
                 iconView.setImageDrawable(getDrawable(R.drawable.ic_play_arrow_white_24dp));
                 iconView.setVisibility(View.VISIBLE);
@@ -245,7 +227,7 @@ public class YoutubePlayerActivity extends FragmentActivity {
             if(!playing){
                 youTubePlayer.play();
                 playing = true;
-                //textView.setVisibility(View.GONE);
+                textView.setVisibility(View.GONE);
 
                 iconView.setImageDrawable(getDrawable(R.drawable.ic_play_arrow_white_24dp));
                 iconView.setVisibility(View.VISIBLE);
@@ -397,11 +379,11 @@ public class YoutubePlayerActivity extends FragmentActivity {
             textView.setText(youtubeVideoTitle);
 
             //hide after 5 seconds
-           /* textView.postDelayed(new Runnable() {
+            textView.postDelayed(new Runnable() {
                 public void run() {
                     textView.setVisibility(View.GONE);
                 }
-            }, 5000);*/
+            }, 5000);
         }
     }
 

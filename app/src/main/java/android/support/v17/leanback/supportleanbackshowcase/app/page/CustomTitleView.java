@@ -16,7 +16,6 @@ package android.support.v17.leanback.supportleanbackshowcase.app.page;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.support.v17.leanback.supportleanbackshowcase.R;
 import android.support.v17.leanback.widget.SearchOrbView;
 import android.support.v17.leanback.widget.TitleViewAdapter;
@@ -126,9 +125,7 @@ public class CustomTitleView extends RelativeLayout implements TitleViewAdapter.
 
         Drawable drawable = getResources().getDrawable(R.drawable.ic_search_in_app,null);
         mSearchOrbView.setOrbIcon(drawable);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            mSearchOrbView.setFocusedByDefault(false);
-        }
+
 
         mDayDate = root.findViewById(R.id.day_date);
         mBadge = root.findViewById(R.id.title_badge2);
