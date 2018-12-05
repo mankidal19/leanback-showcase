@@ -50,7 +50,26 @@ public class CustomImageCardViewPresenter extends AbstractCardPresenter<CustomIm
     @Override
     protected CustomImageCardView onCreateView() {
         CustomImageCardView imageCardView = new CustomImageCardView(getContext());
-        imageCardView.setInfoVisibility(CARD_REGION_VISIBLE_SELECTED);
+        //imageCardView.setInfoVisibility(CARD_REGION_VISIBLE_SELECTED);
+        imageCardView.showInfo(false);
+
+        //only show info for card in focus
+        imageCardView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+
+                if(hasFocus){
+
+                    imageCardView.showInfo(true);
+
+                }
+                else{
+                    imageCardView.showInfo(false);
+                }
+
+                Log.d(TAG,"focus changed for "+imageCardView.toString() + " to " + hasFocus);
+            }
+        });
 
         return imageCardView;
     }
