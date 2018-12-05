@@ -41,7 +41,44 @@ android {
     dataBinding {
         enabled = true
     }
+
+    flavorDimensions "version"
+
     productFlavors {
+        ver1 {
+            applicationIdSuffix ".ver1"
+            versionCode 1
+            versionName "1.0"
+            resValue "string", "content_provider", "com.example.android.persistence.ver1"
+        }
+
+        ver2 {
+            applicationIdSuffix ".ver2"
+            versionCode 1
+            versionName "1.0"
+            resValue "string", "content_provider", "com.example.android.persistence.ver2"
+        }
+
+        ver3 {
+            applicationIdSuffix ".ver3"
+            versionCode 1
+            versionName "1.0"
+            resValue "string", "content_provider", "com.example.android.persistence.ver3"
+        }
+
+        ver4 {
+            applicationIdSuffix ".ver4"
+            versionCode 1
+            versionName "1.0"
+            resValue "string", "content_provider", "com.example.android.persistence.ver4"
+        }
+
+        ver5 {
+            applicationIdSuffix ".ver5"
+            versionCode 1
+            versionName "1.0"
+            resValue "string", "content_provider", "com.example.android.persistence.ver5"
+        }
     }
 
     lintOptions {
