@@ -1,6 +1,7 @@
 package android.support.v17.leanback.supportleanbackshowcase.cards;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
 import android.support.v17.leanback.supportleanbackshowcase.R;
@@ -198,6 +199,26 @@ public class CustomImageCardView extends BaseCardView {
 
 
         }
+    }
+
+    public void changeInfoAreaColor(boolean hasFocus){
+
+        if(interfaceMode.equals("enduser")){
+
+            if(hasFocus){
+                mInfoArea.setBackgroundColor(getResources().getColor(R.color.custom_info_selected));
+                mTitleView.setTextColor(Color.WHITE);
+                mContentView.setTextColor(Color.WHITE);
+            }
+
+            else {
+                mInfoArea.setBackgroundColor(getResources().getColor(R.color.custom_info));
+                mTitleView.setTextColor(getResources().getColor(R.color.custom_title));
+                mContentView.setTextColor(getResources().getColor(R.color.custom_description));
+
+            }
+        }
+
     }
 
     public void showContent(boolean show){

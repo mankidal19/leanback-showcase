@@ -57,7 +57,7 @@ public class CustomImageCardViewPresenter extends AbstractCardPresenter<CustomIm
         imageCardView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean hasFocus) {
-
+/*
                 if(hasFocus){
 
                     imageCardView.showInfo(true);
@@ -65,7 +65,10 @@ public class CustomImageCardViewPresenter extends AbstractCardPresenter<CustomIm
                 }
                 else{
                     imageCardView.showInfo(false);
-                }
+                }*/
+
+                imageCardView.showInfo(hasFocus);
+                imageCardView.changeInfoAreaColor(hasFocus);
 
                 Log.d(TAG,"focus changed for "+imageCardView.toString() + " to " + hasFocus);
             }

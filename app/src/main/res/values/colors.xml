@@ -67,6 +67,8 @@
     <color name="custom_detail_view_actionbar_background">#faef360e</color>
     <color name="custom_detail_view_background">#dc593d</color>
     <color name="custom_info">#ffffff</color>
+    <color name="custom_info_selected">#c70081</color>
+
     <color name="custom_title">#000000</color>
     <color name="custom_description">#515050</color>
     <color name="custom_header_select">#80c1bfbe</color>
