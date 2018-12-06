@@ -52,6 +52,7 @@ public class CustomImageCardView extends BaseCardView {
             //default, hide info
             mInfoArea.setBackgroundColor(getResources().getColor(R.color.custom_info));
 
+
             //change color
             mTitleView.setTextColor(getResources().getColor(R.color.custom_title));
             mContentView.setTextColor(getResources().getColor(R.color.custom_description));
@@ -198,6 +199,15 @@ public class CustomImageCardView extends BaseCardView {
             mInfoArea.requestLayout();
 
 
+        }
+    }
+
+    public void showInfoArea(boolean show){
+        if(show){
+            mInfoArea.setVisibility(VISIBLE);
+        }
+        else{
+            mInfoArea.setVisibility(GONE);
         }
     }
 

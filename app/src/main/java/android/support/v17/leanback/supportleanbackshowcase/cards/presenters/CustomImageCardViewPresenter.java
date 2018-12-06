@@ -52,22 +52,26 @@ public class CustomImageCardViewPresenter extends AbstractCardPresenter<CustomIm
         CustomImageCardView imageCardView = new CustomImageCardView(getContext());
         //imageCardView.setInfoVisibility(CARD_REGION_VISIBLE_SELECTED);
         imageCardView.showInfo(false);
+        //imageCardView.showInfoArea(false);
 
         //only show info for card in focus
         imageCardView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean hasFocus) {
 
-
                 imageCardView.showInfo(hasFocus);
                 imageCardView.changeInfoAreaColor(hasFocus);
 
-                Log.d(TAG,"focus changed for "+imageCardView.toString() + " to " + hasFocus);
+                Log.d(TAG,"current view: "+ view.toString() + " to " + hasFocus);
+                //Log.d(TAG,"focus changed for "+imageCardView.toString() + " to " + hasFocus);
+
             }
+
         });
 
         return imageCardView;
     }
+
 
 
 
