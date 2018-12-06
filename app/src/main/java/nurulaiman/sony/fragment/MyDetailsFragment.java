@@ -15,14 +15,11 @@ public class MyDetailsFragment extends DetailsFragment  {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        //check internet connection
-        if(!isInternetAvailable()){
-            Toast.makeText(getActivity(), "Internet unavailable, couldn't load.", Toast.LENGTH_LONG)
-                    .show();
-            getActivity().finish();
-        }
-
         super.onCreate(savedInstanceState);
+        throw new RuntimeException("This is a crash");
+
+
+
 
 
     }
