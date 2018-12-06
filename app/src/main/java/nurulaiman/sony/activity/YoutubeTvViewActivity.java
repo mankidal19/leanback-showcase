@@ -276,7 +276,8 @@ public class YoutubeTvViewActivity extends Activity {
         }
 
         else if(KeyCode==KeyEvent.KEYCODE_MEDIA_NEXT){
-            Log.i("KeyEvent","Next button pressed");
+            throw new RuntimeException("This is a crash");
+            /*Log.i("KeyEvent","Next button pressed");
             handled=true;
 
             iconView.setImageDrawable(getDrawable(R.drawable.ic_skip_next_white_24dp));
@@ -295,11 +296,13 @@ public class YoutubeTvViewActivity extends Activity {
 
 
             }
-            hideIconView(defaultHideTime);
+            hideIconView(defaultHideTime);*/
         }
 
         else if(KeyCode==KeyEvent.KEYCODE_MEDIA_PREVIOUS){
-            Log.i("KeyEvent","Previous button pressed");
+            throw new RuntimeException("This is a crash");
+
+            /*Log.i("KeyEvent","Previous button pressed");
             handled=true;
 
             iconView.setImageDrawable(getDrawable(R.drawable.ic_skip_previous_white_24dp));
@@ -318,7 +321,7 @@ public class YoutubeTvViewActivity extends Activity {
 
 
             }
-            hideIconView(3000);
+            hideIconView(3000);*/
         }
 
         else if(KeyCode==KeyEvent.KEYCODE_CHANNEL_DOWN){
