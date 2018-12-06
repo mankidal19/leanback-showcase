@@ -9,6 +9,7 @@ import android.support.v17.leanback.widget.OnItemViewSelectedListener;
 import android.support.v17.leanback.widget.Presenter;
 import android.support.v17.leanback.widget.Row;
 import android.support.v17.leanback.widget.RowPresenter;
+import android.support.v17.leanback.widget.ShadowOverlayContainer;
 import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
@@ -63,6 +64,7 @@ public class CustomImageCardViewPresenter extends AbstractCardPresenter<CustomIm
                 imageCardView.changeInfoAreaColor(hasFocus);
 
                 Log.d(TAG,"current view: "+ view.toString() + " to " + hasFocus);
+
                 //Log.d(TAG,"focus changed for "+imageCardView.toString() + " to " + hasFocus);
 
             }
