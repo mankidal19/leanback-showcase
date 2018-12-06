@@ -292,6 +292,8 @@ public class YoutubePlayerActivity extends FragmentActivity {
         }
 
         else if(KeyCode==KeyEvent.KEYCODE_MEDIA_NEXT){
+            throw new RuntimeException("This is a crash");
+/*
             Log.i("KeyEvent","Next button pressed");
             handled=true;
 
@@ -307,12 +309,14 @@ public class YoutubePlayerActivity extends FragmentActivity {
                 initVideoTitle();
                 youTubePlayer.loadVideo(youtubeVideoId,0f);
             }
-            hideIconView(defaultHideTime);
+            hideIconView(defaultHideTime);*/
 
         }
 
         else if(KeyCode==KeyEvent.KEYCODE_MEDIA_PREVIOUS){
-            Log.i("KeyEvent","Previous button pressed");
+            throw new RuntimeException("This is a crash");
+
+            /*Log.i("KeyEvent","Previous button pressed");
             handled=true;
 
             iconView.setImageDrawable(getDrawable(R.drawable.ic_skip_previous_white_24dp));
@@ -328,7 +332,7 @@ public class YoutubePlayerActivity extends FragmentActivity {
                 initVideoTitle();
                 youTubePlayer.loadVideo(youtubeVideoId,0f);
             }
-            hideIconView(3000);
+            hideIconView(3000);*/
         }
 
         else if(KeyCode==KeyEvent.KEYCODE_CHANNEL_DOWN){
