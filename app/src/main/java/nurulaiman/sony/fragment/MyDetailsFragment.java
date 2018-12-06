@@ -17,8 +17,9 @@ public class MyDetailsFragment extends DetailsFragment  {
     public void onCreate(Bundle savedInstanceState) {
         //check internet connection
         if(!isInternetAvailable()){
-            //throw uncaught crash
-            throw new RuntimeException("This is a crash");
+            Toast.makeText(getActivity(), "Internet unavailable, couldn't load.", Toast.LENGTH_LONG)
+                    .show();
+            getActivity().finish();
         }
 
         super.onCreate(savedInstanceState);
