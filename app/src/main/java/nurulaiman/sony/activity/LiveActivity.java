@@ -258,15 +258,6 @@ public class LiveActivity extends FragmentActivity {
             hideIconView(defaultHideTime);
         }
 
-        //implement RGYB shortcut from YT player
-        else if(KeyCode==KeyEvent.KEYCODE_PROG_RED||KeyCode==KeyEvent.KEYCODE_PROG_GREEN
-                ||KeyCode==KeyEvent.KEYCODE_PROG_YELLOW||KeyCode==KeyEvent.KEYCODE_PROG_BLUE){
-            handled = true;
-            Intent returnIntent = new Intent();
-            returnIntent.putExtra(Intent.EXTRA_KEY_EVENT,event);
-            setResult(Activity.RESULT_OK,returnIntent);
-            finish();
-        }
 
 
         if(handled){
