@@ -178,12 +178,38 @@ public class CustomImageCardView extends BaseCardView {
     }
 
     public void showInfo(boolean show){
+
+
         if(show && interfaceMode.equals("enduser")){
             mInfoArea.setVisibility(View.VISIBLE);
+            showContent(true);
+
+            mInfoArea.getLayoutParams().height = getResources().getDimensionPixelSize(R.dimen.lb_basic_card_info_height);
+            mInfoArea.requestLayout();
         }
         else{
-            mInfoArea.setVisibility(View.GONE);
+            //mInfoArea.setVisibility(View.GONE);
+            showContent(false);
+            mTitleView.setVisibility(VISIBLE);
 
+            //change height to wrap content
+            mInfoArea.getLayoutParams().height = ViewGroup.LayoutParams.WRAP_CONTENT;
+            mInfoArea.requestLayout();
+
+
+        }
+    }
+
+    public void showContent(boolean show){
+
+        //mTitleView.setVisibility(VISIBLE);
+
+        if(show){
+            mContentView.setVisibility(VISIBLE);
+
+        }
+        else{
+            mContentView.setVisibility(GONE);
         }
     }
 
