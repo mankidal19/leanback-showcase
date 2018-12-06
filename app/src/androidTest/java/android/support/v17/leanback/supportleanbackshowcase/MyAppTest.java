@@ -41,7 +41,7 @@ import static org.junit.Assert.fail;
 @RunWith(AndroidJUnit4.class)
 public class MyAppTest {
 
-    private static final String PACKAGE_NAME = "com.example.android.persistence";
+    private static final String PACKAGE_NAME = getApplicationContext().getResources().getString(R.string.content_provider);
 
     private static final String HOME_FRAGMENT = "Home Fragment";
 
