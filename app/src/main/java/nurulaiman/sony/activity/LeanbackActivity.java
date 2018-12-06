@@ -14,40 +14,7 @@ public class LeanbackActivity extends Activity {
     private static String TAG = "LeanbackActivity";
 
 
-    @Override
-    public boolean dispatchKeyEvent(KeyEvent event) {
-        int action = event.getAction();
-        int keyCode = event.getKeyCode();
-        switch (keyCode) {
-            case KeyEvent.KEYCODE_PROG_RED:
-                if (action == KeyEvent.ACTION_DOWN) {
-                    //sendBroadcast();
-                    sendShortcutBroadcast(event);
-                }
-                return true;
-            case KeyEvent.KEYCODE_PROG_GREEN:
-                if (action == KeyEvent.ACTION_DOWN) {
-                    //sendBroadcast();
-                    sendShortcutBroadcast(event);
-                }
-                return true;
-            case KeyEvent.KEYCODE_PROG_YELLOW:
-                if (action == KeyEvent.ACTION_DOWN) {
-                    //sendBroadcast();
-                    sendShortcutBroadcast(event);
-                }
-                return true;
-            case KeyEvent.KEYCODE_PROG_BLUE:
-                if (action == KeyEvent.ACTION_DOWN) {
-                    //sendBroadcast();
-                    sendShortcutBroadcast(event);
-                }
-                return true;
 
-            default:
-                return super.dispatchKeyEvent(event);
-        }
-    }
 
     protected void  sendShortcutBroadcast(KeyEvent keyEvent){
         Intent intent = new Intent("activity-says-hi");
