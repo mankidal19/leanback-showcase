@@ -91,6 +91,9 @@ public class IconHeaderItemPresenter  extends RowHeaderPresenter {
         TextView label = (TextView) rootView.findViewById(R.id.header_label);
         label.setText(iconHeaderItem.getName());
 
+        //set content description for testing
+        iconHeaderItem.setContentDescription(iconHeaderItem.getName());
+
         //change margin before displaying login header
         /*if(iconHeaderItem.getName().toLowerCase().equals("login/sign up")){
             FrameLayout.LayoutParams layoutParams =  new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);

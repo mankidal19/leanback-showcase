@@ -26,6 +26,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
     }
 
     buildTypes {
@@ -175,4 +176,9 @@ dependencies {
     implementation 'com.google.apis:google-api-services-youtube:v3-rev182-1.22.0'
     implementation 'com.google.api-client:google-api-client:1.22.0'
     implementation 'com.google.oauth-client:google-oauth-client-jetty:1.22.0'
+
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestImplementation 'androidx.test:rules:1.1.0'
+
 }
