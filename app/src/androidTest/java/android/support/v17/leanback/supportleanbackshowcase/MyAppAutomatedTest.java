@@ -35,6 +35,7 @@ import static androidx.test.core.app.ApplicationProvider.getApplicationContext;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static junit.framework.Assert.assertFalse;
 import static junit.framework.TestCase.assertTrue;
+import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertEquals;
@@ -63,6 +64,10 @@ public class MyAppAutomatedTest {
     private static final String TV_SHOW_CONTENT = "After School Club";
 
     private static final String TV_SHOW = "TV SHOWS";
+
+    private static final String LIVE_TV = "LIVE TV CHANNELS";
+
+    private static final String LIVE_TV_CONTENT = "Arirang TV World";
 
     private static final String NAV_MENU = "Navigation menu";
 
@@ -116,14 +121,61 @@ public class MyAppAutomatedTest {
         //TC005
         //test entering VOD Details Page with network
 
+        String title = null;
+
         //navigate to TV SHOWS
         navigateMenu(TV_SHOW);
 
         //wait until TV SHOW fragment loaded
         mDevice.wait(Until.hasObject(By.desc(TV_SHOW_FRAGMENT)),LAUNCH_TIMEOUT);
 
+        //select the content
         findInGrid(TV_SHOW_CONTENT);
 
+        boolean loadDetailsPage = mDevice.wait(Until.hasObject(By.res(PACKAGE_NAME,"details_root")),LAUNCH_TIMEOUT);
+
+        title = mDevice.findObject(By.res(PACKAGE_NAME,"primary_text")).getText();
+
+        if(title!=null){
+            title = title.toLowerCase();
+        }
+
+
+
+        assertTrue("details fragment not loaded!",loadDetailsPage);
+
+        assertThat("incorrect details fragment loaded", title, containsString(TV_SHOW_CONTENT.toLowerCase()));
+    }
+
+    @Test
+    public void testEnterLiveDetailsWithNetwork() throws UiObjectNotFoundException {
+        //TC007
+        //test entering Live Details Page with network
+
+        String title = null;
+
+        //navigate to TV SHOWS
+        navigateMenu(LIVE_TV);
+
+        //wait until TV SHOW fragment loaded
+        mDevice.wait(Until.hasObject(By.desc(LIVE_TV_FRAGMENT)),LAUNCH_TIMEOUT);
+
+        //select the content
+        findInGrid(LIVE_TV_CONTENT);
+
+        boolean loadDetailsPage = mDevice.wait(Until.hasObject(By.res(PACKAGE_NAME,"details_root")),LAUNCH_TIMEOUT);
+
+        title = mDevice.findObject(By.res(PACKAGE_NAME,"primary_text")).getText();
+
+        if(title!=null){
+            title = title.toLowerCase();
+        }
+
+
+
+        assertTrue("details fragment not loaded!",loadDetailsPage);
+
+        assertThat("incorrect details fragment loaded", title, containsString(LIVE_TV_CONTENT.toLowerCase()));
     }
 
     //method to navigate and choose desired menu on left pane
@@ -182,6 +234,10 @@ public class MyAppAutomatedTest {
                 if(currentTitle.equals(previousTitle)){
                     mDevice.pressDPadDown();
                     mDevice.waitForWindowUpdate(null,500);
+
+                    if(mDevice.hasObject(By.desc(LIVE_TV_FRAGMENT))){
+                        isMovingRight = !isMovingRight;
+                    }
 
                     current = mDevice.findObject(new UiSelector().className(android.widget.FrameLayout.class).focused(true).
                             childSelector(new UiSelector().className(android.widget.TextView.class)));
