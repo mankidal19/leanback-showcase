@@ -18,8 +18,13 @@ import org.junit.runner.RunWith;
 
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.uiautomator.By;
+import androidx.test.uiautomator.UiCollection;
 import androidx.test.uiautomator.UiDevice;
+import androidx.test.uiautomator.UiObject;
 import androidx.test.uiautomator.UiObject2;
+import androidx.test.uiautomator.UiObjectNotFoundException;
+import androidx.test.uiautomator.UiScrollable;
+import androidx.test.uiautomator.UiSelector;
 import androidx.test.uiautomator.Until;
 import nurulaiman.sony.activity.CheckDeviceActivity;
 
@@ -27,8 +32,11 @@ import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static androidx.test.core.app.ApplicationProvider.getApplicationContext;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
+import static junit.framework.Assert.assertFalse;
+import static junit.framework.TestCase.assertTrue;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 @RunWith(AndroidJUnit4.class)
@@ -52,6 +60,10 @@ public class MyAppAutomatedTest {
     private static final String TV_SHOW_FRAGMENT = "TV Show Fragment";
 
     private static final String TV_SHOW_CONTENT = "After School Club";
+
+    private static final String TV_SHOW = "TV SHOWS";
+
+    private static final String NAV_MENU = "Navigation menu";
 
     private static final int LAUNCH_TIMEOUT = 5000;
 
@@ -79,12 +91,11 @@ public class MyAppAutomatedTest {
         // Wait for the app to appear
         mDevice.wait(Until.hasObject(By.pkg(PACKAGE_NAME).depth(0)), LAUNCH_TIMEOUT);
 
+        mDevice.wait(Until.hasObject(By.desc(HOME_FRAGMENT)),LAUNCH_TIMEOUT);
+
 
     }
 
-    @Rule
-    public ActivityTestRule<CheckDeviceActivity> mActivityRule =
-            new ActivityTestRule<>(CheckDeviceActivity.class);
 
 
     @Test
@@ -100,29 +111,37 @@ public class MyAppAutomatedTest {
     }
 
     @Test
-    public void testEnterVODDetailsWithNetwork(){
+    public void testEnterVODDetailsWithNetwork() throws UiObjectNotFoundException {
         //TC005
         //test entering VOD Details Page with network
-        onView(ViewMatchers.withText("TV SHOWS")).perform(ViewActions.scrollTo(),click());
-        //scroll to TV Shows header & choose
-        /*UiObject2 uiObject = mDevice.wait(Until.findObject(By.desc("TV SHOWS")),LAUNCH_TIMEOUT);
-        while(!uiObject.isFocused()){
-            mDevice.pressDPadDown();
+
+        //navigate to TV SHOWS
+        navigateMenu(TV_SHOW);
+
+
+
+    }
+
+    //method to navigate and choose desired menu on left pane
+    private void navigateMenu(String menuName) throws UiObjectNotFoundException {
+
+        UiCollection list = new UiCollection(
+                new UiSelector().description(NAV_MENU));
+
+        String name = null;
+
+        for (int i=0;i<list.getChildCount();i++){
+            UiObject headerName = list.getChild( new UiSelector().index(i))
+                    .getChild(new UiSelector().className(android.widget.TextView.class));
+            name = headerName.getText();
+            if(!name.equals(TV_SHOW)){
+                mDevice.pressDPadDown();
+            }
+            else {
+                mDevice.pressDPadCenter();
+                break;
+            }
         }
-        mDevice.pressDPadCenter();*/
-
-        //select a content
-        while(!mDevice.findObject(By.text(TV_SHOW_CONTENT)).isFocused()){
-            mDevice.pressDPadRight();
-        }
-        mDevice.pressDPadCenter();
-
-        UiObject2 uiObject = mDevice.wait(Until.findObject(By.text(TV_SHOW_CONTENT)), LAUNCH_TIMEOUT);
-
-        assertThat(uiObject,notNullValue());
-
-
-
     }
 
 
