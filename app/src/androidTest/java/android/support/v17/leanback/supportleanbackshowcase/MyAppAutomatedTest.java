@@ -9,7 +9,9 @@ import android.support.test.espresso.ViewAction;
 import android.support.test.espresso.action.ViewActions;
 import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.rule.ActivityTestRule;
+import android.view.KeyEvent;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -56,6 +58,8 @@ public class MyAppAutomatedTest {
 
 
     private static final String NEWS_SPORTS_FRAGMENT = "News & Sports Fragment";
+
+    private static final String NEWS_SPORTS = "NEWS & SPORTS";
 
     private static final String MOVIES_FRAGMENT = "Movies Fragment";
 
@@ -176,6 +180,69 @@ public class MyAppAutomatedTest {
         assertTrue("details fragment not loaded!",loadDetailsPage);
 
         assertThat("incorrect details fragment loaded", title, containsString(LIVE_TV_CONTENT.toLowerCase()));
+    }
+
+    @Test
+    public void testRGYBonMainBrowser(){
+        //TC0013, Red/Green/Yellow/Blue buttons on remote should act as shortcut in main browser UI
+        testRedButton();
+        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+        testGreenButton();
+        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+        testYellowButton();
+        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+        testBlueButton();
+        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+
+    }
+
+    @Test
+    public void testRGYBonDetailsPage() throws UiObjectNotFoundException {
+        //TC0014, Red/Green/Yellow/Blue buttons on remote should act as shortcut in details page UI
+
+        navigateMenu(NEWS_SPORTS);
+    }
+
+    @Test
+    public void testRedButton(){
+        //press the key
+        mDevice.pressKeyCode(KeyEvent.KEYCODE_PROG_RED);
+        UiObject2 uiObject = mDevice.wait(Until.findObject(By.desc(LIVE_TV_FRAGMENT)),LAUNCH_TIMEOUT);
+
+        assertThat("Live TV fragment is not loaded!", uiObject,notNullValue());
+        assertThat("Incorrect fragment obtained!", uiObject.getContentDescription(),equalTo(LIVE_TV_FRAGMENT));
+    }
+
+    @Test
+    public void testGreenButton(){
+
+        //press the key
+        mDevice.pressKeyCode(KeyEvent.KEYCODE_PROG_GREEN);
+        UiObject2 uiObject = mDevice.wait(Until.findObject(By.desc(NEWS_SPORTS_FRAGMENT)),LAUNCH_TIMEOUT);
+
+        assertThat("News & Sports fragment is not loaded!",uiObject,notNullValue());
+        assertThat("Incorrect fragment obtained!", uiObject.getContentDescription(),equalTo(NEWS_SPORTS_FRAGMENT));
+    }
+
+    @Test
+    public void testYellowButton(){
+        //press the key
+        mDevice.pressKeyCode(KeyEvent.KEYCODE_PROG_YELLOW);
+        UiObject2 uiObject = mDevice.wait(Until.findObject(By.desc(TV_SHOW_FRAGMENT)),LAUNCH_TIMEOUT);
+
+        assertThat("TV Shows fragment is not loaded!", uiObject,notNullValue());
+        assertThat("Incorrect fragment obtained!", uiObject.getContentDescription(),equalTo(TV_SHOW_FRAGMENT));
+    }
+
+    @Test
+    public void testBlueButton(){
+
+        //press the key
+        mDevice.pressKeyCode(KeyEvent.KEYCODE_PROG_BLUE);
+        UiObject2 uiObject = mDevice.wait(Until.findObject(By.desc(MOVIES_FRAGMENT)),LAUNCH_TIMEOUT);
+
+        assertThat("Movies fragment is not loaded!", uiObject,notNullValue());
+        assertThat("Incorrect fragment obtained!", uiObject.getContentDescription(),equalTo(MOVIES_FRAGMENT));
     }
 
     //method to navigate and choose desired menu on left pane
