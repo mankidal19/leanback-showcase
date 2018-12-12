@@ -192,16 +192,16 @@ public class MyAppAutomatedTest {
         //TC0013, Red/Green/Yellow/Blue buttons on remote should act as shortcut in main browser UI
         testRedButton();
         mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
-        sleep(20000);
+        sleep(10000);
         testGreenButton();
         mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
-        sleep(20000);
+        sleep(10000);
         testYellowButton();
         mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
-        sleep(20000);
+        sleep(10000);
         testBlueButton();
         mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
-        sleep(20000);
+        sleep(10000);
 
     }
 
@@ -214,7 +214,7 @@ public class MyAppAutomatedTest {
         mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
         testRedButton();
         mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
-
+        sleep(10000);
         mDevice.pressDPadLeft();
 
         navigateMenu(NEWS_SPORTS);
@@ -222,7 +222,7 @@ public class MyAppAutomatedTest {
         mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
         testGreenButton();
         mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
-
+        sleep(10000);
         mDevice.pressDPadLeft();
 
         navigateMenu(NEWS_SPORTS);
@@ -230,7 +230,7 @@ public class MyAppAutomatedTest {
         mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
         testYellowButton();
         mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
-
+        sleep(10000);
         mDevice.pressDPadLeft();
 
         navigateMenu(NEWS_SPORTS);
@@ -238,8 +238,120 @@ public class MyAppAutomatedTest {
         mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
         testBlueButton();
         mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+        sleep(10000);
+    }
+
+    @Test
+    public void testRGYBonVODPlayback() throws UiObjectNotFoundException, InterruptedException {
+        //TC0015
+
+        long sleepTime = 20000;
+
+        navigateMenu(NEWS_SPORTS);
+        findInGrid(NEWS_SPORTS_CONTENT);
+        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+        mDevice.pressDPadCenter();//press watch now
+        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+        sleep(sleepTime);
+        testRedButton();
+        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+        sleep(sleepTime);
 
         mDevice.pressDPadLeft();
+
+        navigateMenu(NEWS_SPORTS);
+        findInGrid(NEWS_SPORTS_CONTENT);
+        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+        mDevice.pressDPadCenter();//press watch now
+        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+        sleep(sleepTime);
+        testGreenButton();
+        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+        sleep(sleepTime);
+        mDevice.pressDPadLeft();
+
+        navigateMenu(NEWS_SPORTS);
+        findInGrid(NEWS_SPORTS_CONTENT);
+        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+        mDevice.pressDPadCenter();//press watch now
+        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+        sleep(sleepTime);
+        testYellowButton();
+        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+        sleep(sleepTime);
+        mDevice.pressDPadLeft();
+
+        navigateMenu(NEWS_SPORTS);
+        findInGrid(NEWS_SPORTS_CONTENT);
+        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+        mDevice.pressDPadCenter();//press watch now
+        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+        sleep(sleepTime);
+        testBlueButton();
+        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+        sleep(sleepTime);
+    }
+
+    @Test
+    public void testBrowseUsingRGYB() throws UiObjectNotFoundException, InterruptedException {
+        //TC0018
+        long sleepTime = 20000;
+
+        UiObject uiObject = new UiObject(new UiSelector().className(android.widget.FrameLayout.class).focused(true).
+                childSelector(new UiSelector().className(android.widget.TextView.class)));
+
+        String title=null;
+
+        navigateMenu("HOME");
+        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+
+        testRedButton();
+        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+        mDevice.pressDPadDown();
+        sleep(10000);
+
+        if(uiObject!=null){
+            title = uiObject.getText();
+        }
+
+
+        assertThat("Cannot focus on thumbnail!", uiObject,notNullValue());
+        assertEquals("thumbnail focused is not the first one","Al Jazeera News (English)",title);
+
+        testGreenButton();
+        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+        mDevice.pressDPadDown();
+        sleep(10000);
+
+        if(uiObject!=null){
+            title = uiObject.getText();
+        }
+        assertThat("Cannot focus on thumbnail!", uiObject,notNullValue());
+        assertEquals("thumbnail focused is not the first one","TIN TỨC 24h",title);
+
+        testYellowButton();
+        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+        mDevice.pressDPadDown();
+        sleep(10000);
+
+        if(uiObject!=null){
+            title = uiObject.getText();
+        }
+        assertThat("Cannot focus on thumbnail!", uiObject,notNullValue());
+        assertEquals("thumbnail focused is not the first one","Nhanh Như Chớp",title);
+
+        testBlueButton();
+        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+        mDevice.pressDPadDown();
+        sleep(10000);
+
+        if(uiObject!=null){
+            title = uiObject.getText();
+        }
+
+        assertThat("Cannot focus on thumbnail!", uiObject,notNullValue());
+        assertEquals("thumbnail focused is not the first one","XÓM TRỌ 3D",title);
+
     }
 
     @Test
@@ -289,10 +401,10 @@ public class MyAppAutomatedTest {
     //method to navigate and choose desired menu on left pane
     private void navigateMenu(String menuName) throws UiObjectNotFoundException {
 
-        UiCollection list = new UiCollection(
-                new UiSelector().description(NAV_MENU));
+        /*UiCollection list = new UiCollection(
+                new UiSelector().description(NAV_MENU));*/
 
-        String name = null;
+        //String name = null;
 
         UiObject current = null;
         UiObject previous = null;
