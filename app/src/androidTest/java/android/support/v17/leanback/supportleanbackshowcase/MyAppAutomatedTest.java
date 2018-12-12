@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.os.RemoteException;
 import android.support.test.espresso.Espresso;
 import android.support.test.espresso.ViewAction;
 import android.support.test.espresso.action.ViewActions;
@@ -35,6 +36,7 @@ import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static androidx.test.core.app.ApplicationProvider.getApplicationContext;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
+import static java.lang.Thread.sleep;
 import static junit.framework.Assert.assertFalse;
 import static junit.framework.TestCase.assertTrue;
 import static org.hamcrest.CoreMatchers.containsString;
@@ -60,6 +62,8 @@ public class MyAppAutomatedTest {
     private static final String NEWS_SPORTS_FRAGMENT = "News & Sports Fragment";
 
     private static final String NEWS_SPORTS = "NEWS & SPORTS";
+
+    private static final String NEWS_SPORTS_CONTENT = "Best Shot";
 
     private static final String MOVIES_FRAGMENT = "Movies Fragment";
 
@@ -109,19 +113,19 @@ public class MyAppAutomatedTest {
 
 
     @Test
-    public void verifyOperatorAppLaunched(){
+    public void verifyOperatorAppLaunched() throws InterruptedException {
         //TC001
         //upon launching, should display HOME fragment
 
         UiObject2 uiObject = mDevice.wait(Until.findObject(By.desc(HOME_FRAGMENT)), LAUNCH_TIMEOUT);
-
+        sleep(20000);
 
         assertThat(uiObject,notNullValue());
         assertThat(uiObject.getContentDescription(),equalTo(HOME_FRAGMENT));
     }
 
     @Test
-    public void testEnterVODDetailsWithNetwork() throws UiObjectNotFoundException {
+    public void testEnterVODDetailsWithNetwork() throws UiObjectNotFoundException, InterruptedException {
         //TC005
         //test entering VOD Details Page with network
 
@@ -144,6 +148,7 @@ public class MyAppAutomatedTest {
             title = title.toLowerCase();
         }
 
+        sleep(20000);
 
 
         assertTrue("details fragment not loaded!",loadDetailsPage);
@@ -183,28 +188,62 @@ public class MyAppAutomatedTest {
     }
 
     @Test
-    public void testRGYBonMainBrowser(){
+    public void testRGYBonMainBrowser() throws InterruptedException {
         //TC0013, Red/Green/Yellow/Blue buttons on remote should act as shortcut in main browser UI
         testRedButton();
         mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+        sleep(20000);
         testGreenButton();
         mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+        sleep(20000);
         testYellowButton();
         mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+        sleep(20000);
         testBlueButton();
         mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+        sleep(20000);
 
     }
 
     @Test
-    public void testRGYBonDetailsPage() throws UiObjectNotFoundException {
+    public void testRGYBonDetailsPage() throws UiObjectNotFoundException, InterruptedException {
         //TC0014, Red/Green/Yellow/Blue buttons on remote should act as shortcut in details page UI
 
         navigateMenu(NEWS_SPORTS);
+        findInGrid(NEWS_SPORTS_CONTENT);
+        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+        testRedButton();
+        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+
+        mDevice.pressDPadLeft();
+
+        navigateMenu(NEWS_SPORTS);
+        findInGrid(NEWS_SPORTS_CONTENT);
+
+        testGreenButton();
+        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+
+        mDevice.pressDPadLeft();
+
+        navigateMenu(NEWS_SPORTS);
+        findInGrid(NEWS_SPORTS_CONTENT);
+
+        testYellowButton();
+        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+
+        mDevice.pressDPadLeft();
+
+        navigateMenu(NEWS_SPORTS);
+        findInGrid(NEWS_SPORTS_CONTENT);
+
+        testBlueButton();
+        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+
+        mDevice.pressDPadLeft();
     }
 
     @Test
-    public void testRedButton(){
+    public void testRedButton() throws InterruptedException {
         //press the key
         mDevice.pressKeyCode(KeyEvent.KEYCODE_PROG_RED);
         UiObject2 uiObject = mDevice.wait(Until.findObject(By.desc(LIVE_TV_FRAGMENT)),LAUNCH_TIMEOUT);
@@ -214,28 +253,30 @@ public class MyAppAutomatedTest {
     }
 
     @Test
-    public void testGreenButton(){
+    public void testGreenButton() throws InterruptedException {
 
         //press the key
         mDevice.pressKeyCode(KeyEvent.KEYCODE_PROG_GREEN);
         UiObject2 uiObject = mDevice.wait(Until.findObject(By.desc(NEWS_SPORTS_FRAGMENT)),LAUNCH_TIMEOUT);
+
 
         assertThat("News & Sports fragment is not loaded!",uiObject,notNullValue());
         assertThat("Incorrect fragment obtained!", uiObject.getContentDescription(),equalTo(NEWS_SPORTS_FRAGMENT));
     }
 
     @Test
-    public void testYellowButton(){
+    public void testYellowButton() throws InterruptedException {
         //press the key
         mDevice.pressKeyCode(KeyEvent.KEYCODE_PROG_YELLOW);
         UiObject2 uiObject = mDevice.wait(Until.findObject(By.desc(TV_SHOW_FRAGMENT)),LAUNCH_TIMEOUT);
+
 
         assertThat("TV Shows fragment is not loaded!", uiObject,notNullValue());
         assertThat("Incorrect fragment obtained!", uiObject.getContentDescription(),equalTo(TV_SHOW_FRAGMENT));
     }
 
     @Test
-    public void testBlueButton(){
+    public void testBlueButton() throws InterruptedException {
 
         //press the key
         mDevice.pressKeyCode(KeyEvent.KEYCODE_PROG_BLUE);
@@ -253,7 +294,15 @@ public class MyAppAutomatedTest {
 
         String name = null;
 
-        for (int i=0;i<list.getChildCount();i++){
+        UiObject current = null;
+        UiObject previous = null;
+
+        String currentName = null;
+        String previousName = null;
+
+        boolean endReached = false;
+
+        /*for (int i=0;i<list.getChildCount();i++){
             UiObject headerName = list.getChild( new UiSelector().index(i))
                     .getChild(new UiSelector().className(android.widget.TextView.class));
             name = headerName.getText();
@@ -264,7 +313,40 @@ public class MyAppAutomatedTest {
                 mDevice.pressDPadCenter();
                 break;
             }
-        }
+        }*/
+
+        do{
+            current = mDevice.findObject(new UiSelector().focused(true)
+                    .childSelector(new UiSelector().className(android.widget.TextView.class)));
+            currentName = current.getText();
+
+            if(currentName.equals(menuName)){
+                mDevice.pressDPadCenter();
+            }
+
+            else if(previous!=null){
+                if(!previousName.equals(currentName)){
+                    if(!endReached){
+                        mDevice.pressDPadDown();
+                    }
+                    else{
+                        mDevice.pressDPadUp();
+                    }
+
+                }
+                else {
+                    endReached = true;
+                }
+            }
+
+            else {
+                mDevice.pressDPadDown();
+            }
+
+            previous = current;
+            previousName = currentName;
+
+        }while(!currentName.equals(menuName));
     }
 
 
