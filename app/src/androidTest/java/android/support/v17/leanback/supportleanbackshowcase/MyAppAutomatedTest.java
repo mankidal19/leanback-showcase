@@ -22,6 +22,7 @@ import org.junit.runner.RunWith;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.uiautomator.By;
 import androidx.test.uiautomator.BySelector;
+import androidx.test.uiautomator.StaleObjectException;
 import androidx.test.uiautomator.UiCollection;
 import androidx.test.uiautomator.UiDevice;
 import androidx.test.uiautomator.UiObject;
@@ -43,6 +44,7 @@ import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertThat;
 
 @RunWith(AndroidJUnit4.class)
@@ -71,6 +73,8 @@ public class MyAppAutomatedTest {
 
     private static final String TV_SHOW_CONTENT = "After School Club";
 
+    private static final String TV_SHOW_CONTENT_2 = "Gundam Build Fighters";
+
     private static final String TV_SHOW = "TV SHOWS";
 
     private static final String LIVE_TV = "LIVE TV CHANNELS";
@@ -78,6 +82,8 @@ public class MyAppAutomatedTest {
     private static final String LIVE_TV_CONTENT = "Arirang TV World";
 
     private static final String NAV_MENU = "Navigation menu";
+
+    private static final String OTHER_EP = "OTHER EPISODES";
 
     private static final int LAUNCH_TIMEOUT = 5000;
 
@@ -355,6 +361,56 @@ public class MyAppAutomatedTest {
     }
 
     @Test
+    public void testSkipNextTvShow() throws UiObjectNotFoundException, InterruptedException {
+        //TC0019
+        navigateMenu(TV_SHOW);
+        findInGrid(TV_SHOW_CONTENT_2);
+        findActionButton(OTHER_EP);
+        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+
+        mDevice.pressDPadCenter();
+
+        mDevice.wait(Until.hasObject(By.res(PACKAGE_NAME,"textView2")),LAUNCH_TIMEOUT);
+
+
+        String currentTitle;
+        String prevTitle = null;
+
+        UiObject2 uiObject = mDevice.findObject(By.res(PACKAGE_NAME,"textView2"));
+        currentTitle = uiObject.getText();
+
+        while (!currentTitle.equals(prevTitle)){
+
+            sleep(20000);
+
+            prevTitle = currentTitle;
+            mDevice.pressKeyCode(KeyEvent.KEYCODE_MEDIA_NEXT);
+
+            boolean found = mDevice.wait(Until.hasObject(By.res(PACKAGE_NAME,"textView2")),LAUNCH_TIMEOUT);
+            UiObject2 uiObject2 = null;
+
+            if(found){
+                uiObject2 = mDevice.findObject(By.res(PACKAGE_NAME,"textView2"));
+            }
+
+            else{
+                mDevice.pressKeyCode(KeyEvent.KEYCODE_MEDIA_PAUSE);
+
+                mDevice.wait(Until.hasObject(By.res(PACKAGE_NAME,"textView2")),LAUNCH_TIMEOUT);
+
+                uiObject2 = mDevice.findObject(By.res(PACKAGE_NAME,"textView2"));
+            }
+
+            currentTitle = uiObject2.getText();
+
+        }
+
+        assertThat("Title view is null!", uiObject,notNullValue());
+        assertEquals("Did not stop at the last episode!",currentTitle,prevTitle);
+
+    }
+
+    @Test
     public void testRedButton() throws InterruptedException {
         //press the key
         mDevice.pressKeyCode(KeyEvent.KEYCODE_PROG_RED);
@@ -401,11 +457,6 @@ public class MyAppAutomatedTest {
     //method to navigate and choose desired menu on left pane
     private void navigateMenu(String menuName) throws UiObjectNotFoundException {
 
-        /*UiCollection list = new UiCollection(
-                new UiSelector().description(NAV_MENU));*/
-
-        //String name = null;
-
         UiObject current = null;
         UiObject previous = null;
 
@@ -413,19 +464,6 @@ public class MyAppAutomatedTest {
         String previousName = null;
 
         boolean endReached = false;
-
-        /*for (int i=0;i<list.getChildCount();i++){
-            UiObject headerName = list.getChild( new UiSelector().index(i))
-                    .getChild(new UiSelector().className(android.widget.TextView.class));
-            name = headerName.getText();
-            if(!name.equals(menuName)){
-                mDevice.pressDPadDown();
-            }
-            else {
-                mDevice.pressDPadCenter();
-                break;
-            }
-        }*/
 
         do{
             current = mDevice.findObject(new UiSelector().focused(true)
@@ -462,6 +500,38 @@ public class MyAppAutomatedTest {
         }while(!currentName.equals(menuName));
     }
 
+    private void findActionButton(String buttonName) throws UiObjectNotFoundException {
+        UiObject current = null;
+        UiObject previous = null;
+
+        String currentName = null;
+        String previousName = null;
+
+        current = mDevice.findObject(new UiSelector().className(android.widget.Button.class).focused(true));
+
+        do{
+           currentName = current.getText();
+
+           System.out.println("Current button: " + currentName + ", prev button: " + previousName);
+
+            if(currentName.equals(buttonName)){
+                mDevice.pressDPadCenter();
+            }
+
+            else{
+                mDevice.pressDPadRight();
+            }
+
+            if(currentName.equals(previousName)){
+                //end of action buttons
+                break;
+            }
+
+            previous = current;
+            previousName = currentName;
+
+        }while(!currentName.equals(buttonName));
+    }
 
     private void findInGrid(String showName) throws UiObjectNotFoundException {
 
