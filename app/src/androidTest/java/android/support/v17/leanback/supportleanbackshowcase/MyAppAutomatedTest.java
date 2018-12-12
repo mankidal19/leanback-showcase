@@ -219,7 +219,7 @@ public class MyAppAutomatedTest {
 
         navigateMenu(NEWS_SPORTS);
         findInGrid(NEWS_SPORTS_CONTENT);
-
+        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
         testGreenButton();
         mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
 
@@ -227,7 +227,7 @@ public class MyAppAutomatedTest {
 
         navigateMenu(NEWS_SPORTS);
         findInGrid(NEWS_SPORTS_CONTENT);
-
+        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
         testYellowButton();
         mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
 
@@ -235,7 +235,7 @@ public class MyAppAutomatedTest {
 
         navigateMenu(NEWS_SPORTS);
         findInGrid(NEWS_SPORTS_CONTENT);
-
+        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
         testBlueButton();
         mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
 
@@ -336,6 +336,7 @@ public class MyAppAutomatedTest {
                 }
                 else {
                     endReached = true;
+                    mDevice.pressDPadUp();
                 }
             }
 
