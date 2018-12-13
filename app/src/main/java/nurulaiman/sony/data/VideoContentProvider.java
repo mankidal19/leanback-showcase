@@ -26,11 +26,8 @@ import android.net.Uri;
 import android.provider.BaseColumns;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v17.leanback.supportleanbackshowcase.R;
 import android.support.v17.leanback.supportleanbackshowcase.models.Card;
 import android.util.Log;
-
-import org.mortbay.resource.Resource;
 
 import java.util.List;
 
@@ -46,7 +43,7 @@ public class VideoContentProvider extends ContentProvider {
 
     private static final String TAG = "VideoContentProvider";
 
-    private static String AUTHORITY;
+    private static final String AUTHORITY = "nurulaiman.sony";
 
     private MockDatabase mDatabase;
 
@@ -76,13 +73,11 @@ public class VideoContentProvider extends ContentProvider {
     public boolean onCreate() {
         mDatabase = new MockDatabase(getContext());
         mUriMatcher = buildUriMatcher();
-        AUTHORITY = getContext().getResources().getString(R.string.content_provider);
         return true;
     }
 
     private UriMatcher buildUriMatcher() {
         UriMatcher uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
-        AUTHORITY = getContext().getResources().getString(R.string.content_provider);
         uriMatcher.addURI(
                 AUTHORITY, "/search/" + SearchManager.SUGGEST_URI_PATH_QUERY, SEARCH_SUGGEST);
         uriMatcher.addURI(
