@@ -14,7 +14,6 @@
   -->
 <resources>
     <string name="content_provider">com.example.android.persistence.ver1</string>
-    <string name="app_name">v1 Operator App</string>
 
 
     
