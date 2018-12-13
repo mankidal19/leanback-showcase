@@ -51,7 +51,7 @@ import static org.junit.Assert.assertThat;
 
 public class MyAppAutomatedTest {
 
-    private static final String PACKAGE_NAME = getApplicationContext().getResources().getString(R.string.content_provider);
+    private static final String PACKAGE_NAME = getApplicationContext().getPackageName();
 
     private static final String HOME_FRAGMENT = "Home Fragment";
 
