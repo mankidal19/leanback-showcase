@@ -1,23 +1,5 @@
-# Leanback Support Library Showcase App for Android TV
+# Operator App Prototype using Leanback Support Library Showcase App for Android TV
 
-This sample app showcases different components that come with Leanback library.
-
-The home screen in this sample app is a BrowseFragment consisting of a set of different cards.
-Each card represents a component in Leanback.
-
-All the cards in this sample app work except the Settings.
-Settings for now crashes due to some internal issue, and we are working on
-resolving that in the next few days.
-
-We will also add a new music example card soon.
-This will be a new PlaybackOverlayFragment that comes with a set of new
-features.
-
-## Introduction
-
-- [Read more about Android TV introduction](http://www.android.com/tv/)
-- [Android TV Developer Documentation](http://developer.android.com/tv)
-- [Android TV apps in Google Play Store][store-apps]
 
 ## Dependencies
 
@@ -52,10 +34,6 @@ If you need additional help, our community might be able to help.
 
 - Android TV Google+ Community: [https://g.co/androidtvdev](https://g.co/androidtvdev)
 - Stack Overflow: http://stackoverflow.com/questions/tagged/android-tv
-
-## Contributing
-
-We love contributions! :smile: Please follow the steps in the [CONTRIBUTING guide][contributing] to get started. If you found a bug, please file it [here][bugs].
 
 ## License
 
