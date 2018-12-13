@@ -412,6 +412,8 @@ public class MyAppAutomatedTest {
 
     @Test
     public void testRedButton() throws InterruptedException {
+        //TC0023
+
         //press the key
         mDevice.pressKeyCode(KeyEvent.KEYCODE_PROG_RED);
         UiObject2 uiObject = mDevice.wait(Until.findObject(By.desc(LIVE_TV_FRAGMENT)),LAUNCH_TIMEOUT);
@@ -422,7 +424,7 @@ public class MyAppAutomatedTest {
 
     @Test
     public void testGreenButton() throws InterruptedException {
-
+        //TC0024
         //press the key
         mDevice.pressKeyCode(KeyEvent.KEYCODE_PROG_GREEN);
         UiObject2 uiObject = mDevice.wait(Until.findObject(By.desc(NEWS_SPORTS_FRAGMENT)),LAUNCH_TIMEOUT);
@@ -434,6 +436,7 @@ public class MyAppAutomatedTest {
 
     @Test
     public void testYellowButton() throws InterruptedException {
+        //TC0025
         //press the key
         mDevice.pressKeyCode(KeyEvent.KEYCODE_PROG_YELLOW);
         UiObject2 uiObject = mDevice.wait(Until.findObject(By.desc(TV_SHOW_FRAGMENT)),LAUNCH_TIMEOUT);
@@ -445,7 +448,7 @@ public class MyAppAutomatedTest {
 
     @Test
     public void testBlueButton() throws InterruptedException {
-
+        //TC0026
         //press the key
         mDevice.pressKeyCode(KeyEvent.KEYCODE_PROG_BLUE);
         UiObject2 uiObject = mDevice.wait(Until.findObject(By.desc(MOVIES_FRAGMENT)),LAUNCH_TIMEOUT);
