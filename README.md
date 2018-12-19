@@ -2,12 +2,12 @@
 Operator App prototype to portrays what an Operator App can deliver using YouTube videos.
 
 ##Features supported
-~Live Videos & Videos on Demand (VODs).
-~Live Videos are demostrated like they're live TV channels. [Can use CH+/CH- buttons to change channels]
-~VODs are demostrated as several categories; News & Sports, TV Shows, & Movies
-~Red/Green/Blue/Yellow buttons are used as shortcut keys to each category respectively.
-~Voice search can be used inside & outside the app.
-~Can play/pause/rewind/fast forward/skip next/skip previous using their respective button on remote control.
+- Live Videos & Videos on Demand (VODs).
+- Live Videos are demostrated like they're live TV channels. [Can use CH+/CH- buttons to change channels]
+- VODs are demostrated as several categories; News & Sports, TV Shows, & Movies
+- Red/Green/Blue/Yellow buttons are used as shortcut keys to each category respectively.
+- Voice search can be used inside & outside the app.
+- Can play/pause/rewind/fast forward/skip next/skip previous using their respective button on remote control.
 
 ## Screenshots
 
