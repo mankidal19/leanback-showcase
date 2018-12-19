@@ -217,7 +217,7 @@ public class MyAppAutomatedTest {
     public void testChannelUpButton() throws UiObjectNotFoundException, InterruptedException {
         //TC0027
 
-        int channelNum = 101;
+        int totalChannelNum = 6;
 
         //navigate to TV SHOWS
         navigateMenu(LIVE_TV);
@@ -234,34 +234,15 @@ public class MyAppAutomatedTest {
         //press watch now
         mDevice.pressDPadCenter();
 
-        String title = null;
 
-        UiObject2 uiObject = mDevice.wait(Until.findObject(By.desc("channel title")),10000);
-        UiObject2 playerFragment = mDevice.wait(Until.findObject(By.text("YouTube Video Player")),10000);
-        title = uiObject.getText();
+        for(int i = 1; i<=totalChannelNum; i++){
+            UiObject2 playerFragment = mDevice.wait(Until.findObject(By.text("YouTube Video Player")),10000);
 
-        do{
-
-            assertThat("Wrong channel loaded!", title, containsString(Integer.toString(channelNum)));
             assertThat("Player not loaded properly!", playerFragment, notNullValue());
-
             mDevice.pressKeyCode(KeyEvent.KEYCODE_CHANNEL_UP);
 
-            uiObject = mDevice.wait(Until.findObject(By.desc("channel title")),10000);
-            playerFragment = mDevice.wait(Until.findObject(By.text("YouTube Video Player")),10000);
-
-
-            while(uiObject == null){
-                mDevice.pressKeyCode(KeyEvent.KEYCODE_MEDIA_PAUSE);
-                uiObject = mDevice.wait(Until.findObject(By.desc("channel title")),10000);
-
-            }
-
-            title = uiObject.getText();
-            channelNum++;
-
-
-        }while (title.contains(Integer.toString(channelNum)));
+            sleep(1000);
+        }
 
     }
 
