@@ -11,7 +11,6 @@ Operator App prototype to portrays what an Operator App can deliver using YouTub
 
 ## Screenshots
 
-<img src="https://bitbucket.org/mankidal19/leanback-showcase/raw/39d37a9f0a933f57ff01728fd112c8593bd4c5ce/Screenshots/new_main.png" width="50%" height="50%">
 ![Main browser](Screenshots/new_main.png)
 ![Live TV Channels](Screenshots/new_livetv_focused.png)
 ![News & Sports](Screenshots/new_news_and_sports.png)
