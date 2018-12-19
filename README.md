@@ -11,12 +11,13 @@ Operator App prototype to portrays what an Operator App can deliver using YouTub
 
 ## Screenshots
 
-![Main browser](Screenshots/new_main.png){:height="50%" width="50%"}
-![Live TV Channels](Screenshots/new_livetv_focused.png){:height="50%" width="50%"}
-![News & Sports](Screenshots/new_news_and_sports.png){:height="50%" width="50%"}
-![VOD Details](Screenshots/new_details.png){:height="50%" width="50%"}
-![VOD Episodes](Screenshots/new_episodes.png){:height="50%" width="50%"}
-![Voice Search](Screenshots/new_search.png){:height="50%" width="50%"}
+<img src="https://bitbucket.org/mankidal19/leanback-showcase/raw/39d37a9f0a933f57ff01728fd112c8593bd4c5ce/Screenshots/new_main.png" width="50%" height="50%">
+![Main browser](Screenshots/new_main.png)
+![Live TV Channels](Screenshots/new_livetv_focused.png)
+![News & Sports](Screenshots/new_news_and_sports.png)
+![VOD Details](Screenshots/new_details.png)
+![VOD Episodes](Screenshots/new_episodes.png)
+![Voice Search](Screenshots/new_search.png)
 
 
 
