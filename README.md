@@ -1,5 +1,5 @@
 # Operator App Prototype using Leanback Support Library Showcase App for Android TV
-Operator App prototype to portrays what an Operator App can deliver using YouTube videos.
+Operator App prototype to portrays what an Operator App can deliver using YouTube videos as our content.
 
 ##Features supported
 - Live Videos & Videos on Demand (VODs).
@@ -11,13 +11,20 @@ Operator App prototype to portrays what an Operator App can deliver using YouTub
 
 ## Screenshots
 
-![Screenshot](screenshots/Showcase-Snapshots.png)
+![Main browser](Screenshots/new_main.png)
+![Live TV Channels](Screenshots/new_livetv_focused.png)
+![News & Sports](Screenshots/new_news_and_sports.png)
+![VOD Details](Screenshots/new_details.png)
+![VOD Episodes](Screenshots/new_episodes.png)
+![Voice Search](Screenshots/new_search.png)
 
-Need more information about getting started with Android TV? Check the [official docs][getting-started].
+
+
+Need more information about using Leanback Support Library? Check the [official docs][getting-started].
 
 ## Support
 
-If you need additional help, our community might be able to help.
+If you need additional help regarding using Leanback Support Library, these community might be able to help.
 
 - Android TV Google+ Community: [https://g.co/androidtvdev](https://g.co/androidtvdev)
 - Stack Overflow: http://stackoverflow.com/questions/tagged/android-tv
