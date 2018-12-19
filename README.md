@@ -1,26 +1,13 @@
 # Operator App Prototype using Leanback Support Library Showcase App for Android TV
+Operator App prototype to portrays what an Operator App can deliver using YouTube videos.
 
-
-## Dependencies
-
-If you use Android Studio as recommended, the following dependencies will **automatically** be installed by Gradle.
-
-- Android SDK v7 appcompat library
-- Android SDK v17 leanback support library
-- Android SDK v7 recyclerview library
-
-## Getting Started
-
-- Clone this repo:
-
-```sh
-git clone https://github.com/googlesamples/leanback-showcase.git
-```
-
-- In the local.properties file add the location to your Android SDK (You need to install Android SDK 'N').
-- Open the project in [Android Studio][studio].
-- Compile and deploy to your Android TV emulator or device (such as a Nexus Player).
-
+##Features supported
+~Live Videos & Videos on Demand (VODs).
+~Live Videos are demostrated like they're live TV channels. [Can use CH+/CH- buttons to change channels]
+~VODs are demostrated as several categories; News & Sports, TV Shows, & Movies
+~Red/Green/Blue/Yellow buttons are used as shortcut keys to each category respectively.
+~Voice search can be used inside & outside the app.
+~Can play/pause/rewind/fast forward/skip next/skip previous using their respective button on remote control.
 
 ## Screenshots
 
