@@ -81,6 +81,8 @@ public class MyAppAutomatedTest {
 
     private static final String LIVE_TV_CONTENT = "Arirang TV World";
 
+    private static final String FIRST_LIVE_TV_CONTENT = "Al Jazeera News (English)";
+
     private static final String NAV_MENU = "Navigation menu";
 
     private static final String OTHER_EP = "OTHER EPISODES";
@@ -198,16 +200,68 @@ public class MyAppAutomatedTest {
         //TC0013, Red/Green/Yellow/Blue buttons on remote should act as shortcut in main browser UI
         testRedButton();
         mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
-        sleep(10000);
+
         testGreenButton();
         mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
-        sleep(10000);
+
         testYellowButton();
         mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
-        sleep(10000);
+
         testBlueButton();
         mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
-        sleep(10000);
+
+
+    }
+
+    @Test
+    public void testChannelUpButton() throws UiObjectNotFoundException, InterruptedException {
+        //TC0027
+
+        int channelNum = 101;
+
+        //navigate to TV SHOWS
+        navigateMenu(LIVE_TV);
+
+        //wait until TV SHOW fragment loaded
+        mDevice.wait(Until.hasObject(By.desc(LIVE_TV_FRAGMENT)),LAUNCH_TIMEOUT);
+
+        //select the content
+        findInGrid(FIRST_LIVE_TV_CONTENT);
+
+        //wait details fragment loaded
+        mDevice.wait(Until.hasObject(By.desc(LIVE_TV_DETAIL_VIEW)),LAUNCH_TIMEOUT);
+
+        //press watch now
+        mDevice.pressDPadCenter();
+
+        String title = null;
+
+        UiObject2 uiObject = mDevice.wait(Until.findObject(By.desc("channel title")),10000);
+        UiObject2 playerFragment = mDevice.wait(Until.findObject(By.text("YouTube Video Player")),10000);
+        title = uiObject.getText();
+
+        do{
+
+            assertThat("Wrong channel loaded!", title, containsString(Integer.toString(channelNum)));
+            assertThat("Player not loaded properly!", playerFragment, notNullValue());
+
+            mDevice.pressKeyCode(KeyEvent.KEYCODE_CHANNEL_UP);
+
+            uiObject = mDevice.wait(Until.findObject(By.desc("channel title")),10000);
+            playerFragment = mDevice.wait(Until.findObject(By.text("YouTube Video Player")),10000);
+
+
+            while(uiObject == null){
+                mDevice.pressKeyCode(KeyEvent.KEYCODE_MEDIA_PAUSE);
+                uiObject = mDevice.wait(Until.findObject(By.desc("channel title")),10000);
+
+            }
+
+            title = uiObject.getText();
+            channelNum++;
+
+
+        }while (title.contains(Integer.toString(channelNum)));
 
     }
 
