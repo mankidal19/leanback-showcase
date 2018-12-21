@@ -1,7 +1,7 @@
 # Operator App Prototype using Leanback Support Library Showcase App for Android TV
 Operator App prototype to portrays what an Operator App can deliver using YouTube videos as our content.
 
-##Features supported
+## Features supported
 - Live Videos & Videos on Demand (VODs).
 - Live Videos are demostrated like they're live TV channels. [Can use CH+/CH- buttons to change channels]
 - VODs are demostrated as several categories; News & Sports, TV Shows, & Movies
