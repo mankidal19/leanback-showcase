@@ -9,55 +9,55 @@
       {
         "type": "MOVIE",
         "title": "Deep Into The Deep Sleep",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "localImageResource": "card_image_movie_01"
       },
       {
         "type": "MOVIE",
         "title": "We",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "localImageResource": "card_image_movie_02"
       },
       {
         "type": "MOVIE",
         "title": "The Fairy Story Of A Legend",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "localImageResource": "card_image_movie_03"
       },
       {
         "type": "MOVIE",
         "title": "Cursed",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "localImageResource": "card_image_movie_04"
       },
       {
         "type": "MOVIE",
         "title": "My Crazy One",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "localImageResource": "card_image_movie_05"
       },
       {
         "type": "MOVIE",
         "title": "Gone",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "localImageResource": "card_image_movie_06"
       },
       {
         "type": "MOVIE",
         "title": "A Cold Night To Stay",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "localImageResource": "card_image_movie_07"
       },
       {
         "type": "MOVIE",
         "title": "The Silence",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "localImageResource": "card_image_movie_08"
       },
       {
         "type": "MOVIE",
         "title": "Hear The Roar",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "localImageResource": "card_image_movie_09"
       }
     ]
@@ -117,7 +117,7 @@
     "cards": [
       {
         "type": "MOVIE_COMPLETE",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "title": "Deep Into The Deep Sleep",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_01"
@@ -125,48 +125,48 @@
       {
         "type": "MOVIE_COMPLETE",
         "title": "We",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_02"
       },
       {
         "type": "MOVIE_COMPLETE",
         "title": "The Fairy",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_03"
       },
       {
         "type": "MOVIE_COMPLETE",
         "title": "Cursed",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_04"
       },
       {
         "type": "MOVIE_COMPLETE",
         "title": "My Crazy One",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_05"
       },
       {
         "type": "MOVIE_COMPLETE",
         "title": "Gone",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_06"
       },
       {
         "type": "MOVIE_COMPLETE",
         "title": "A Cold Night To Stay",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_07"
       },
       {
         "type": "MOVIE_COMPLETE",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "title": "The Silence",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_08"
@@ -174,7 +174,7 @@
       {
         "type": "MOVIE_COMPLETE",
         "title": "Hear The Roar",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_09"
       }

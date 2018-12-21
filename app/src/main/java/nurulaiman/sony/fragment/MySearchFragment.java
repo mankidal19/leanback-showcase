@@ -199,9 +199,7 @@ public class MySearchFragment extends android.support.v17.leanback.app.SearchFra
 
                     }
 
-                    else{
-                        //for sample movie details page
-                        if(selectedCard.getTitle().toLowerCase().contains("gone")||selectedCard.getTitle().toLowerCase().contains("korean")){
+                    else if(selectedCard.getDescription().toLowerCase().contains("movie")){
                             intent = new Intent(getContext(), DetailViewMovieActivity.class);
                             // intent.putExtra("mediaId",id);
                             intent.putExtra("videoId",selectedCard.getVideoId());
@@ -209,14 +207,9 @@ public class MySearchFragment extends android.support.v17.leanback.app.SearchFra
 
                             startActivity(intent);
                             Log.d(TAG,"open movie details page");
-                        }
-                        //for dummy movie
-                        else if(selectedCard.getDescription().toLowerCase().contains("$3.99")){
-                            Toast.makeText(getActivity(), "this is a dummy movie", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getContext(),MainActivity.class));
-                        }
+                    }
 
-                        else{
+                    else{
                             intent = new Intent(getContext(), DetailViewTvShowActivity.class);
                             //intent.putExtra("mediaId",id);
                             intent.putExtra("videoId",selectedCard.getVideoId());
@@ -224,10 +217,10 @@ public class MySearchFragment extends android.support.v17.leanback.app.SearchFra
 
                             startActivity(intent);
                             Log.d(TAG,"open tv show details page");
-                        }
-
-
                     }
+
+
+
 
                 }
             }
