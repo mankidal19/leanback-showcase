@@ -174,8 +174,6 @@ public class MySearchFragment extends android.support.v17.leanback.app.SearchFra
 
                     if(selectedCard.isLive()){
 
-                        //for sample live tv details page
-                        if(selectedCard.getTitle().toLowerCase().contains("jazeera")){
                             intent = new Intent(getContext(), DetailViewLiveBroadcastActivity.class);
                             //intent.putExtra("mediaId",id);
                             intent.putExtra("videoId",selectedCard.getVideoId());
@@ -185,8 +183,8 @@ public class MySearchFragment extends android.support.v17.leanback.app.SearchFra
 
                             startActivity(intent);
                             Log.d(TAG,"open sample live tv details page");
-                        }
-                        //directly play video
+
+                        /*//directly play video
                         else{
                             intent = new Intent(getContext(), LiveActivity.class);
                             //intent.putExtra("mediaId",id);
@@ -197,7 +195,7 @@ public class MySearchFragment extends android.support.v17.leanback.app.SearchFra
 
                             startActivity(intent);
                             Log.d(TAG,"play live video");
-                        }
+                        }*/
 
                     }
 
