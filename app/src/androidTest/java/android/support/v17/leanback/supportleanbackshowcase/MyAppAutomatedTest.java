@@ -79,7 +79,7 @@ public class MyAppAutomatedTest {
 
     private static final String LIVE_TV = "LIVE TV CHANNELS";
 
-    private static final String LIVE_TV_CONTENT = "Arirang TV World";
+    private static final String LIVE_TV_CONTENT = "Arirang TV World - LIVE";
 
     private static final String FIRST_LIVE_TV_CONTENT = "Al Jazeera News (English)";
 

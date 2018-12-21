@@ -82,7 +82,7 @@ public class VideoConsumptionExampleFragment extends VideoFragment {
             mMediaPlayerGlue.getPlayerAdapter().setDataSource(
                     Uri.parse(intentMetaData.getMediaSourcePath()));
         } else {
-            mMediaPlayerGlue.setTitle("Arirang TV World");
+            mMediaPlayerGlue.setTitle("Arirang TV World - LIVE");
             mMediaPlayerGlue.setSubtitle("Arirang TV/Radio is a public service agency that spreads the uniqueness of Korea to the world through cutting-edge broadcasting.");
             mMediaPlayerGlue.getPlayerAdapter().setDataSource(Uri.parse(URL));
         }

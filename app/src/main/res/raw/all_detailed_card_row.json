@@ -1675,19 +1675,19 @@
     "recommended": [
       {
         "type": "DEFAULT",
-        "title": "Arirang TV World",
+        "title": "Arirang TV World - LIVE",
         "description": "Arirang TV/Radio is a public service agency that spreads the uniqueness of Korea to the world through cutting-edge broadcasting.",
         "localImageResource": "arirang"
       },
       {
         "type": "DEFAULT",
-        "title": "Euronews English",
+        "title": "Euronews English - LIVE",
         "description": "Euronews: the most watched news channel in Europe.",
         "localImageResource": "euronews"
       },
       {
         "type": "DEFAULT",
-        "title": "KBSWorld 24",
+        "title": "KBS World 24 - LIVE",
         "description": "700만 해외동포와 함께 하는 KBS World 24!!! ",
         "localImageResource": "kbsworld"
       }
@@ -1705,26 +1705,26 @@
     "recommended": [
       {
         "type": "DEFAULT",
-        "title": "Arirang TV World",
+        "title": "Arirang TV World - LIVE",
         "description": "Arirang TV/Radio is a public service agency that spreads the uniqueness of Korea to the world through cutting-edge broadcasting.",
         "localImageResource": "arirang"
       },
       {
         "type": "DEFAULT",
-        "title": "Euronews English",
+        "title": "Euronews English - LIVE",
         "description": "Euronews: the most watched news channel in Europe.",
         "localImageResource": "euronews"
       },
       {
         "type": "DEFAULT",
-        "title": "KBSWorld 24",
+        "title": "KBS World 24 - LIVE",
         "description": "700만 해외동포와 함께 하는 KBS World 24!!! ",
         "localImageResource": "kbsworld"
       }
     ]
   },
   {
-    "title": "Arirang TV World",
+    "title": "Arirang TV World - LIVE",
     "description": "News Channel",
     "year": "2018",
     "text": "Arirang TV/Radio is a public service agency that spreads the uniqueness of Korea to the world through cutting-edge broadcasting.",
@@ -1741,20 +1741,20 @@
       },
       {
         "type": "DEFAULT",
-        "title": "Euronews English",
+        "title": "Euronews English - LIVE",
         "description": "Euronews: the most watched news channel in Europe.",
         "localImageResource": "euronews"
       },
       {
         "type": "DEFAULT",
-        "title": "KBSWorld 24",
+        "title": "KBS World 24 - LIVE",
         "description": "700만 해외동포와 함께 하는 KBS World 24!!! ",
         "localImageResource": "kbsworld"
       }
     ]
   },
   {
-    "title": "Euronews English",
+    "title": "Euronews English - LIVE",
     "description": "News Channel",
     "year": "2018",
     "text": "Euronews: the most watched news channel in Europe.",
@@ -1765,7 +1765,7 @@
     "recommended": [
       {
         "type": "DEFAULT",
-        "title": "Arirang TV World",
+        "title": "Arirang TV World - LIVE",
         "description": "Arirang TV/Radio is a public service agency that spreads the uniqueness of Korea to the world through cutting-edge broadcasting.",
         "localImageResource": "arirang"
       },
@@ -1777,14 +1777,14 @@
       },
       {
         "type": "DEFAULT",
-        "title": "KBSWorld 24",
+        "title": "KBS World 24 - LIVE",
         "description": "700만 해외동포와 함께 하는 KBS World 24!!! ",
         "localImageResource": "kbsworld"
       }
     ]
   },
   {
-    "title": "KBSWorld 24",
+    "title": "KBS World 24 - LIVE",
     "description": "News Channel",
     "year": "2018",
     "text": "700만 해외동포와 함께 하는 KBS World 24!!!",
@@ -1795,13 +1795,13 @@
     "recommended": [
       {
         "type": "DEFAULT",
-        "title": "Arirang TV World",
+        "title": "Arirang TV World - LIVE",
         "description": "Arirang TV/Radio is a public service agency that spreads the uniqueness of Korea to the world through cutting-edge broadcasting.",
         "localImageResource": "arirang"
       },
       {
         "type": "DEFAULT",
-        "title": "Euronews English",
+        "title": "Euronews English - LIVE",
         "description": "Euronews: the most watched news channel in Europe.",
         "localImageResource": "euronews"
       },
@@ -1814,7 +1814,7 @@
     ]
   },
   {
-    "title": "Mr Bean Cartoon Marathon",
+    "title": "Mr Bean Cartoon Marathon - LIVE",
     "description": "24/7 Cartoon Marathon",
     "year": "2018",
     "text": "Funny Episodes of Mr Bean the Animated Series 24/7",
@@ -1825,19 +1825,19 @@
     "recommended": [
       {
         "type": "DEFAULT",
-        "title": "Arirang TV World",
+        "title": "Arirang TV World - LIVE",
         "description": "Arirang TV/Radio is a public service agency that spreads the uniqueness of Korea to the world through cutting-edge broadcasting.",
         "localImageResource": "arirang"
       },
       {
         "type": "DEFAULT",
-        "title": "Euronews English",
+        "title": "Euronews English - LIVE",
         "description": "Euronews: the most watched news channel in Europe.",
         "localImageResource": "euronews"
       },
       {
         "type": "DEFAULT",
-        "title": "KBSWorld 24",
+        "title": "KBS World 24 - LIVE",
         "description": "700만 해외동포와 함께 하는 KBS World 24!!! ",
         "localImageResource": "kbsworld"
       }

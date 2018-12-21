@@ -21,7 +21,7 @@
     },
     {
       "type": "LIVE_TV",
-      "title": "Arirang TV World",
+      "title": "Arirang TV World - LIVE",
       "description": "Arirang TV/Radio is a public service agency that spreads the uniqueness of Korea to the world through cutting-edge broadcasting.",
       "localImageResource": "arirang",
       "videoId":"AICpOoc4t04",
@@ -29,7 +29,7 @@
     },
     {
       "type": "LIVE_TV",
-      "title": "Euronews English",
+      "title": "Euronews English - LIVE",
       "description": "Euronews: the most watched news channel in Europe.",
       "localImageResource": "euronews",
       "videoId":"V2E-jOUVsd4",
@@ -37,7 +37,7 @@
     },
     {
       "type": "LIVE_TV",
-      "title": "KBSWorld 24",
+      "title": "KBS World 24 - LIVE",
       "description": "700만 해외동포와 함께 하는 KBS World 24!!! ",
       "localImageResource": "kbsworld",
       "videoId":"KkXq2sv6Tos",
@@ -45,7 +45,7 @@
     },
     {
       "type": "LIVE_TV",
-      "title": "Mr Bean Cartoon Marathon",
+      "title": "Mr Bean Cartoon Marathon - LIVE",
       "description": "Funny Episodes of Mr Bean the Animated Series 24/7",
       "localImageResource": "mrbeanc",
       "videoId":"Lvp-lSqHVKc",

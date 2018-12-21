@@ -11,19 +11,19 @@
   "recommended": [
     {
       "type": "LIVE_TV",
-      "title": "Arirang TV World",
+      "title": "Arirang TV World - LIVE",
       "description": "Arirang TV/Radio is a public service agency that spreads the uniqueness of Korea to the world through cutting-edge broadcasting.",
       "localImageResource": "arirang"
     },
     {
       "type": "LIVE_TV",
-      "title": "Euronews English",
+      "title": "Euronews English - LIVE",
       "description": "Euronews: the most watched news channel in Europe.",
       "localImageResource": "euronews"
     },
     {
       "type": "LIVE_TV",
-      "title": "KBSWorld 24",
+      "title": "KBS World 24 - LIVE",
       "description": "700만 해외동포와 함께 하는 KBS World 24!!! ",
       "localImageResource": "kbsworld"
     }
