@@ -289,7 +289,7 @@
     "cards": [
       {
         "type": "DEFAULT",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "title": "Deep Into The Deep Sleep",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_01",
@@ -299,7 +299,7 @@
       {
         "type": "DEFAULT",
         "title": "We",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_02",
         "id":21,
@@ -308,7 +308,7 @@
       {
         "type": "DEFAULT",
         "title": "The Fairy",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "game_fairy",
         "id":22,
@@ -317,7 +317,7 @@
       {
         "type": "DEFAULT",
         "title": "Cursed",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "game_cursed",
         "id":23,
@@ -326,7 +326,7 @@
       {
         "type": "DEFAULT",
         "title": "My Crazy One",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_05",
         "id":24,
@@ -340,7 +340,7 @@
       {
         "type": "DEFAULT",
         "title": "My Crazy One",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_05",
         "id":25,
@@ -349,7 +349,7 @@
       {
         "type": "DEFAULT",
         "title": "Gone",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_06",
         "id":26,
@@ -358,7 +358,7 @@
       {
         "type": "DEFAULT",
         "title": "A Cold Night To Stay",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_07",
         "id":27,
@@ -366,7 +366,7 @@
       },
       {
         "type": "DEFAULT",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "title": "The Silence",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_08",
@@ -376,7 +376,7 @@
       {
         "type": "DEFAULT",
         "title": "Hear The Roar",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_09",
         "id":29,
@@ -389,7 +389,7 @@
     "cards": [
       {
         "type": "DEFAULT",
-        "description": "$3.99 [MOVIE] [ENGLISH MOVIES]",
+        "description": "$3.99 English MOVIE [MOVIE] [ENGLISH MOVIES]",
         "title": "Deep Into The Deep Sleep",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_01",
@@ -399,7 +399,7 @@
       {
         "type": "DEFAULT",
         "title": "We",
-        "description": "$3.99 [MOVIE] [ENGLISH MOVIES]",
+        "description": "$3.99 English MOVIE [MOVIE] [ENGLISH MOVIES]",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_02",
         "id":31,
@@ -408,7 +408,7 @@
       {
         "type": "DEFAULT",
         "title": "The Fairy",
-        "description": "$3.99 [MOVIE] [ENGLISH MOVIES]",
+        "description": "$3.99 English MOVIE [MOVIE] [ENGLISH MOVIES]",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "game_fairy",
         "id":32,
@@ -417,7 +417,7 @@
       {
         "type": "DEFAULT",
         "title": "Cursed",
-        "description": "$3.99 [MOVIE] [ENGLISH MOVIES]",
+        "description": "$3.99 English MOVIE [MOVIE] [ENGLISH MOVIES]",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "game_cursed",
         "id":33,
@@ -426,7 +426,7 @@
       {
         "type": "DEFAULT",
         "title": "My Crazy One",
-        "description": "$3.99 [MOVIE] [ENGLISH MOVIES]",
+        "description": "$3.99 English MOVIE [MOVIE] [ENGLISH MOVIES]",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_05",
         "id":34,
@@ -435,7 +435,7 @@
       {
         "type": "DEFAULT",
         "title": "Gone",
-        "description": "$3.99 [MOVIE] [ENGLISH MOVIES]",
+        "description": "$3.99 English MOVIE [MOVIE] [ENGLISH MOVIES]",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_06",
         "id":35,
@@ -444,7 +444,7 @@
       {
         "type": "DEFAULT",
         "title": "A Cold Night To Stay",
-        "description": "$3.99 [MOVIE] [ENGLISH MOVIES]",
+        "description": "$3.99 English MOVIE [MOVIE] [ENGLISH MOVIES]",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_07",
         "id":36,
@@ -452,7 +452,7 @@
       },
       {
         "type": "DEFAULT",
-        "description": "$3.99 [MOVIE] [ENGLISH MOVIES]",
+        "description": "$3.99 English MOVIE [MOVIE] [ENGLISH MOVIES]",
         "title": "The Silence",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_08",
@@ -462,7 +462,7 @@
       {
         "type": "DEFAULT",
         "title": "Hear The Roar",
-        "description": "$3.99 [MOVIE] [ENGLISH MOVIES]",
+        "description": "$3.99 English MOVIE [MOVIE] [ENGLISH MOVIES]",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_09",
         "id":38,
@@ -549,7 +549,7 @@
       },
       {
         "type": "YOUTUBETV_LIVE",
-        "title": "Al Jazeera English - LIVE",
+        "title": "Al Jazeera News (English)",
         "description": "At Al Jazeera English, we focus on people and events that affect people's lives. [LIVE TV]",
         "localImageResource": "aljazeera",
         "videoId":"7v7VhElje8Q",

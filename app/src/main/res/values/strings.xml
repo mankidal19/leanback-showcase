@@ -123,10 +123,10 @@
     <string name="dialog_channel_list_title">CHANNEL LIST</string>
     <string name="dialog_channel_list_description">Channel list of live broadcasts available.</string>
     <string name="dialog_example_button_channel1">1: Al Jazeera News (English)</string>
-    <string name="dialog_example_button_channel2">2: Arirang TV World</string>
-    <string name="dialog_example_button_channel3">3: Euronews English</string>
-    <string name="dialog_example_button_channel4">4: KBSWorld 24</string>
-    <string name="dialog_example_button_channel5">5: Mr Bean Cartoon Marathon</string>
+    <string name="dialog_example_button_channel2">2: Arirang TV World - LIVE</string>
+    <string name="dialog_example_button_channel3">3: Euronews English - LIVE</string>
+    <string name="dialog_example_button_channel4">4: KBS World 24 - LIVE</string>
+    <string name="dialog_example_button_channel5">5: Mr Bean Cartoon Marathon - LIVE</string>
 
     <string name="search_hint">Search in Operator App</string>
     <string name="search_label">Operator App</string>

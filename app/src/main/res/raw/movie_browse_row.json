@@ -13,28 +13,28 @@
       {
         "type": "DEFAULT",
         "title": "We",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_02"
       },
       {
         "type": "DEFAULT",
         "title": "The Fairy",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "game_fairy"
       },
       {
         "type": "DEFAULT",
         "title": "Cursed",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "game_cursed"
       },
       {
         "type": "DEFAULT",
         "title": "My Crazy One",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "game_crazy_one"
       }
@@ -46,27 +46,27 @@
       {
         "type": "DEFAULT",
         "title": "My Crazy One",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "game_crazy_one"
       },
       {
         "type": "DEFAULT",
         "title": "Gone",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_06"
       },
       {
         "type": "DEFAULT",
         "title": "A Cold Night To Stay",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_07"
       },
       {
         "type": "DEFAULT",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "title": "The Silence",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "game_silence"
@@ -74,7 +74,7 @@
       {
         "type": "DEFAULT",
         "title": "Hear The Roar",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "game_hear_the_roar"
       }
@@ -85,7 +85,7 @@
     "cards": [
       {
         "type": "DEFAULT",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "title": "Deep Into The Deep Sleep",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_01"
@@ -93,48 +93,48 @@
       {
         "type": "DEFAULT",
         "title": "We",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_02"
       },
       {
         "type": "DEFAULT",
         "title": "The Fairy",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "game_fairy"
       },
       {
         "type": "DEFAULT",
         "title": "Cursed",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "game_cursed"
       },
       {
         "type": "DEFAULT",
         "title": "My Crazy One",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "game_crazy_one"
       },
       {
         "type": "DEFAULT",
         "title": "Gone",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_06"
       },
       {
         "type": "DEFAULT",
         "title": "A Cold Night To Stay",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_07"
       },
       {
         "type": "DEFAULT",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "title": "The Silence",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "game_silence"
@@ -142,7 +142,7 @@
       {
         "type": "DEFAULT",
         "title": "Hear The Roar",
-        "description": "$3.99",
+        "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "game_hear_the_roar"
       }
