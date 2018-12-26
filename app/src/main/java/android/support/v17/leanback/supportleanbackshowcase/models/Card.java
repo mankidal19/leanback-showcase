@@ -193,6 +193,10 @@ public class Card implements Serializable {
         return mLive;
     }
 
+    public Provider getContentProvider(){
+        return mContentProvider;
+    }
+
     public enum Type {
 
         MOVIE_COMPLETE,
