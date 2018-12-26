@@ -91,13 +91,13 @@
       },
       {
         "type": "DEFAULT",
-        "title": "Ấn Tượng Thể Thao 7 Ngày",
-        "description": "Ấn tượng thể thao 7 ngày (14/10) - Hiệu ứng U23 Việt Nam tác động mạnh mẽ đến Bóng đá Việt Nam 2018. [TV SHOW] [SPORTS]",
-        "localImageResource": "viet_sports",
+        "title": "Cricket Ki Baat",
+        "description": "Cricket Ki Baat is a show that brings you the inside stories from the dressing room of cricket teams to BCCI politics; from to exclusive interviews with iconic cricket stars to lots of live action and match analysis. [TV SHOW] [SPORTS]",
+        "localImageResource": "hindi_sports",
         "footerIconLocalImageResource": "ic_installed",
         "id":16,
         "live":false,
-        "videoId":"y3_c13_Ly5s"
+        "videoId": "SAWYgMuxYaQ"
       },
       {
         "type": "DEFAULT",

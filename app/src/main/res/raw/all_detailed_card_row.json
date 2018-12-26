@@ -465,19 +465,19 @@
     ]
   },
   {
-    "title": "Ấn Tượng Thể Thao 7 Ngày",
-    "description": "HNTV",
+    "title": "Cricket Ki Baat",
+    "description": "India TV",
     "year": 2018,
-    "text": "Ấn tượng thể thao 7 ngày (14/10) - Hiệu ứng U23 Việt Nam tác động mạnh mẽ đến Bóng đá Việt Nam 2018. [TV SHOW] [SPORTS]",
-    "localImageResource": "viet_sports",
+    "text": "Cricket Ki Baat is a show that brings you the inside stories from the dressing room of cricket teams to BCCI politics; from to exclusive interviews with iconic cricket stars to lots of live action and match analysis. [TV SHOW] [SPORTS]",
+    "localImageResource": "hindi_sports",
     "trailerUrl": "",
     "videoUrl": "",
-    "videoId": "y3_c13_Ly5s",
-    "playlistId":"PLV71sdBgCmhSEtHJxBcEbrSq82zcghc4r",
+    "videoId": "SAWYgMuxYaQ",
+    "playlistId":"PLV71sdBgCmhTYVDhzyZFQBOwVtWc-eHzI",
     "characters": [
       {
         "type": "CHARACTER",
-        "title": "phóng viên thời sự",
+        "title": "Yashpal Sharma",
         "localImageResource": "face_01"
       }
     ]
