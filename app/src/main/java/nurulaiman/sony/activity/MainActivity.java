@@ -61,23 +61,35 @@ public class MainActivity extends LeanbackActivity {
         }
 
 
-        //video background only for enduser of fptplay
-        if(interfaceMode.equals("enduser")&&provider.equals("fptplay")){
-            //video background
-            videoView = (VideoView) findViewById(R.id.videoView);
-            Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.fptplay);
-            videoView.setVideoURI(uri);
-            videoView.setFocusable(false);
+        //video background only for enduser of fptplay & hotstar
+        if(interfaceMode.equals("enduser")){
 
+            if(provider.equals("fptplay")||provider.equals("hotstar")){
 
+                //video background
+                videoView = (VideoView) findViewById(R.id.videoView);
 
-            videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-                @Override
-                public void onPrepared(MediaPlayer mp) {
-                    mp.setLooping(true);
-                    mp.setVolume(0f,0f);
+                if(provider.equals("fptplay")){
+                    Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.fptplay);
+                    videoView.setVideoURI(uri);
                 }
-            });
+
+                else if(provider.equals("hotstar")){
+                    Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.hotstar_promo);
+                    videoView.setVideoURI(uri);
+                }
+
+                videoView.setFocusable(false);
+                videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                    @Override
+                    public void onPrepared(MediaPlayer mp) {
+                        mp.setLooping(true);
+                        mp.setVolume(0f,0f);
+                    }
+                });
+
+            }
+
         }
 
 
@@ -94,7 +106,8 @@ public class MainActivity extends LeanbackActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if(interfaceMode.equals("enduser")&&provider.equals("fptplay")){
+        if(interfaceMode.equals("enduser")&&provider.equals("fptplay")
+                ||interfaceMode.equals("enduser")&&provider.equals("hotstar") ){
             videoView.start();
         }
 
@@ -104,7 +117,8 @@ public class MainActivity extends LeanbackActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        if(interfaceMode.equals("enduser")&&provider.equals("fptplay")){
+        if(interfaceMode.equals("enduser")&&provider.equals("fptplay")
+                ||interfaceMode.equals("enduser")&&provider.equals("hotstar") ){
             videoView.suspend();
         }
 
