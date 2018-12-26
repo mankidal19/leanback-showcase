@@ -262,7 +262,7 @@ public class MainBrowseFragment extends BrowseFragment {
                 break;
             case PREFERENCE_HOTSTAR:
                 //logo = R.drawable.hotstar;
-                logo = R.drawable.hotstar_transparent_small;
+                logo = R.drawable.hotstar_trans;
                 break;
             case PREFERENCE_SONYLIV:
                 logo = R.drawable.sonyliv;
