@@ -27,7 +27,7 @@ public class MainActivity extends LeanbackActivity {
 
     private static String TAG = "MainActivity";
     private  KeyEvent keyEvent;
-    private VideoView videoView;
+    private VideoView videoView = null;
     private String interfaceMode;
     private String provider;
 
@@ -40,6 +40,9 @@ public class MainActivity extends LeanbackActivity {
 
         interfaceMode = MySettingsFragment.getDefaults("pref_interface_key",this);
         provider = MySettingsFragment.getDefaults("pref_providers_key",this);
+
+        videoView = (VideoView) findViewById(R.id.videoView);
+        videoView.setFocusable(false);
 
         Log.d(TAG,"interfaceMode, provider: "+ interfaceMode + ", "+provider);
 
@@ -62,12 +65,11 @@ public class MainActivity extends LeanbackActivity {
 
 
         //video background only for enduser of fptplay & hotstar
-        if(interfaceMode.equals("enduser")){
-
-            if(provider.equals("fptplay")||provider.equals("hotstar")){
+        if(interfaceMode.equals("enduser")&&provider.equals("fptplay")
+                ||interfaceMode.equals("enduser")&&provider.equals("hotstar") ){
 
                 //video background
-                videoView = (VideoView) findViewById(R.id.videoView);
+                //videoView = (VideoView) findViewById(R.id.videoView);
 
                 if(provider.equals("fptplay")){
                     Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.fptplay);
@@ -88,8 +90,6 @@ public class MainActivity extends LeanbackActivity {
                     }
                 });
 
-            }
-
         }
 
 
@@ -106,20 +106,35 @@ public class MainActivity extends LeanbackActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        Log.d(TAG,"onResume called");
+
+
+
         if(interfaceMode.equals("enduser")&&provider.equals("fptplay")
                 ||interfaceMode.equals("enduser")&&provider.equals("hotstar") ){
             videoView.start();
+            Log.d(TAG,"start video");
+
         }
 
+        else if(videoView!=null){
+            videoView.setFocusable(false);
+            Log.d(TAG,"videoview not null, setfocusable to false");
+
+        }
 
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        Log.d(TAG,"onPause called");
+
         if(interfaceMode.equals("enduser")&&provider.equals("fptplay")
                 ||interfaceMode.equals("enduser")&&provider.equals("hotstar") ){
             videoView.suspend();
+            Log.d(TAG,"suspend video");
+
         }
 
     }
