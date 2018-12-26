@@ -4,13 +4,25 @@
     "cards": [
       {
         "type": "DEFAULT",
+        "title": "Nhanh Như Chớp",
+        "description": "Nhanh như chớp nhí là chương trình do Đài Truyền hình Thành phố Hồ Chí Minh và công ty D.I.D TV sản xuất, là phiên bản nhí của chương trình Nhanh như chớp hiện đang phát sóng trên kênh HTV7 của Đài Truyền hình Thành phố Hồ Chí Minh. [TV SHOW] [ENTERTAINMENT]",
+        "localImageResource": "viet_tv_show",
+        "footerIconLocalImageResource": "ic_installed",
+        "live":false,
+        "videoId":"EUWPPNWFrA0",
+        "playlistId":"PL9FSFrcfpxciaU1Lkt9OZXdSJRJ3EqCDm",
+        "provider":"FPTPLAY"
+      },
+      {
+        "type": "DEFAULT",
         "title": "Patiala Babes",
         "description": "Mini, a young girl, encourages her traditional mother, Babita, to realise her worth and fulfil her dreams. [TV SHOW] [ENTERTAINMENT]",
         "localImageResource": "hindi_tvshow",
         "footerIconLocalImageResource": "ic_installed",
         "live":false,
         "videoId": "bK30mUCPeqQ",
-        "playlistId": "PLV71sdBgCmhQXZbgn-WfxhaM3zmdP35GJ"
+        "playlistId": "PLV71sdBgCmhQXZbgn-WfxhaM3zmdP35GJ",
+        "provider": "HOTSTAR"
       },
       {
         "type": "DEFAULT",
@@ -90,6 +102,18 @@
       },
       {
         "type": "DEFAULT",
+        "title": "Phim Hoạt Hình Khoảnh Khắc Kỳ Diệu 2018",
+        "description": "xem phim hoạt hình, hoạt hình, phim hoạt hình, hoạt hình giải trí, phim hoạt hình hay nhất, tổng hợp phim hoạt hình, phim hay, hoạt hình hay, phim hoạt hình hay, hoạt hình việt nam, phim hoạt hình việt nam, phim, hoạt, hình, hay, nhất, 2018, hoat hinh, phim hoat hinh, phim hoat hinh hay nhat, hoat hinh hay, phim hoat hinh hay, hoạt hình anime, tổng hợp phim, khoảnh khắc kỳ diệu. [TV SHOW] [CARTOONS]",
+        "localImageResource": "viet_cartoon",
+        "footerIconLocalImageResource": "ic_installed",
+        "id":9,
+        "live":false,
+        "videoId":"HvIgHzHPEPE",
+        "playlistId":"PL5XdURn1NwtyDMHIWfhiTHOa1QpovYgXP",
+        "provider": "FPTPLAY"
+      },
+      {
+        "type": "DEFAULT",
         "title": "Chhota Bheem",
         "description": "Dholakpur is know for many things: a mighty and benevolent king, fun and big hearted cities and undoubtedly the most scrumptions laddoos. But no tale of Dholakpur is complete without its very own little hero: Chhota Bheem! Young as he may be, Bheem is strong and very smart. Along with his friends, he loves to help in need! Watch Bheem and his friends, Chutki, Raju, Jaggu, Kalia and Dholu-Bholu as they enjoy, explore and protect the sunshine-filled village of Dholakpur. [TV SHOW] [CARTOONS] [HINDI]",
         "localImageResource": "hindi_cartoon",
@@ -97,7 +121,8 @@
         "id":9,
         "live":false,
         "videoId": "sVDgfPbsVDA",
-        "playlistId": "PLV71sdBgCmhT5Fyc4Nnb5YRg9mzXU-PCD"
+        "playlistId": "PLV71sdBgCmhT5Fyc4Nnb5YRg9mzXU-PCD",
+        "provider": "HOTSTAR"
       },
       {
         "type": "DEFAULT",

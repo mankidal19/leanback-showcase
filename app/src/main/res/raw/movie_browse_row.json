@@ -4,11 +4,21 @@
     "cards": [
       {
         "type": "DEFAULT",
+        "description": "Một khu xóm trọ được mệnh danh là “Xóm Trọ 3D” của những người đồng tính nam: Lâm - chủ phòng trọ, mọi người đều gọi Lâm với biệt danh là má. ",
+        "title": "XÓM TRỌ 3D",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "viet_movie",
+        "videoId":"Uy0UElR8t8I",
+        "provider": "FPTPLAY"
+      },
+      {
+        "type": "DEFAULT",
         "description": "Two playboys who hail from different locales come face-to-face and are shocked to discover that they are look-a-likes. [MOVIE] [HINDI MOVIE]",
         "title": "Krishnarjuna Yuddham",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "hindi_movie",
-        "videoId": "jkOhv9VoBu4"
+        "videoId": "jkOhv9VoBu4",
+        "provider": "HOTSTAR"
       },
       {
         "type": "DEFAULT",

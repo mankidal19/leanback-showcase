@@ -4,13 +4,25 @@
     "cards": [
       {
         "type": "DEFAULT",
+        "title": "Nhanh Như Chớp",
+        "description": "Nhanh như chớp nhí là chương trình do Đài Truyền hình Thành phố Hồ Chí Minh và công ty D.I.D TV sản xuất, là phiên bản nhí của chương trình Nhanh như chớp hiện đang phát sóng trên kênh HTV7 của Đài Truyền hình Thành phố Hồ Chí Minh. [TV SHOW] [ENTERTAINMENT]",
+        "localImageResource": "viet_tv_show",
+        "footerIconLocalImageResource": "ic_installed",
+        "live":false,
+        "videoId":"EUWPPNWFrA0",
+        "playlistId":"PL9FSFrcfpxciaU1Lkt9OZXdSJRJ3EqCDm",
+        "provider": "FPTPLAY"
+      },
+      {
+        "type": "DEFAULT",
         "title": "Patiala Babes",
         "description": "Mini, a young girl, encourages her traditional mother, Babita, to realise her worth and fulfil her dreams. [TV SHOW] [ENTERTAINMENT]",
         "localImageResource": "hindi_tvshow",
         "footerIconLocalImageResource": "ic_installed",
         "live":false,
         "videoId": "bK30mUCPeqQ",
-        "playlistId": "PLV71sdBgCmhQXZbgn-WfxhaM3zmdP35GJ"
+        "playlistId": "PLV71sdBgCmhQXZbgn-WfxhaM3zmdP35GJ",
+        "provider": "HOTSTAR"
       },
       {
         "type": "DEFAULT",
@@ -18,7 +30,8 @@
         "title": "Krishnarjuna Yuddham",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "hindi_movie",
-        "videoId": "jkOhv9VoBu4"
+        "videoId": "jkOhv9VoBu4",
+        "provider": "HOTSTAR"
       },
       {
         "type": "DEFAULT",
@@ -48,6 +61,19 @@
     "cards": [
       {
         "type": "DEFAULT",
+        "title": "TIN TỨC 24h",
+        "description": "24h hay Tin tức 24h là một trang tin điện tử tại Việt Nam. [TV SHOW] [NEWS]",
+        "localImageResource": "viet_news",
+        "footerIconLocalImageResource": "ic_installed",
+        "id":10,
+        "live":false,
+        "videoId":"wP0NE4Pcq8M",
+        "playlistId": "PLV71sdBgCmhRdKwGHWOHeEQYZYj1d1seU",
+        "provider": "FPTPLAY"
+
+      },
+      {
+        "type": "DEFAULT",
         "title": "Third Degree",
         "description": "Third Degree is a show where Aaj Tak reporters interrogate people posing serious questions highlighting some of the major issues that are of concern to the nation. [TV SHOW] [NEWS]",
         "localImageResource": "hindi_news",
@@ -55,7 +81,8 @@
         "id":10,
         "live":false,
         "videoId": "3BPmvTM2hv8",
-        "playlistId": "PLV71sdBgCmhS8TnThsTDeM9497OB1WNoe"
+        "playlistId": "PLV71sdBgCmhS8TnThsTDeM9497OB1WNoe",
+        "provider": "HOTSTAR"
 
       },
       {
@@ -105,7 +132,15 @@
   {
     "title": "Favorite",
     "cards": [
-
+      {
+        "type": "DEFAULT",
+        "description": "Một khu xóm trọ được mệnh danh là “Xóm Trọ 3D” của những người đồng tính nam: Lâm - chủ phòng trọ, mọi người đều gọi Lâm với biệt danh là má. ",
+        "title": "XÓM TRỌ 3D",
+        "footerIconLocalImageResource": "stars_red",
+        "localImageResource": "viet_movie",
+        "videoId":"Uy0UElR8t8I",
+        "provider": "FPTPLAY"
+      },
       {
         "type": "DEFAULT",
         "title": "Mr Bean Cartoon Marathon - LIVE",

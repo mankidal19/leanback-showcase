@@ -5,13 +5,25 @@
     "cards": [
       {
         "type": "DEFAULT",
+        "title": "TIN TỨC 24h",
+        "description": "24h hay Tin tức 24h là một trang tin điện tử tại Việt Nam. [TV SHOW] [NEWS]",
+        "localImageResource": "viet_news",
+        "footerIconLocalImageResource": "ic_installed",
+        "id":10,
+        "live":false,
+        "videoId":"wP0NE4Pcq8M",
+        "provider":"FPTPLAY"
+      },
+      {
+        "type": "DEFAULT",
         "title": "Third Degree",
         "description": "Third Degree is a show where Aaj Tak reporters interrogate people posing serious questions highlighting some of the major issues that are of concern to the nation. [TV SHOW] [NEWS]",
         "localImageResource": "hindi_news",
         "footerIconLocalImageResource": "ic_installed",
         "id":10,
         "live":false,
-        "videoId": "3BPmvTM2hv8"
+        "videoId": "3BPmvTM2hv8",
+        "provider": "HOTSTAR"
       },
       {
         "type": "DEFAULT",
@@ -91,13 +103,25 @@
       },
       {
         "type": "DEFAULT",
+        "title": "Ấn Tượng Thể Thao 7 Ngày",
+        "description": "Ấn tượng thể thao 7 ngày (14/10) - Hiệu ứng U23 Việt Nam tác động mạnh mẽ đến Bóng đá Việt Nam 2018. [TV SHOW] [SPORTS]",
+        "localImageResource": "viet_sports",
+        "footerIconLocalImageResource": "ic_installed",
+        "id":16,
+        "live":false,
+        "videoId":"y3_c13_Ly5s",
+        "provider":"FPTPLAY"
+      },
+      {
+        "type": "DEFAULT",
         "title": "Cricket Ki Baat",
         "description": "Cricket Ki Baat is a show that brings you the inside stories from the dressing room of cricket teams to BCCI politics; from to exclusive interviews with iconic cricket stars to lots of live action and match analysis. [TV SHOW] [SPORTS]",
         "localImageResource": "hindi_sports",
         "footerIconLocalImageResource": "ic_installed",
         "id":16,
         "live":false,
-        "videoId": "SAWYgMuxYaQ"
+        "videoId": "SAWYgMuxYaQ",
+        "provider": "HOTSTAR"
       },
       {
         "type": "DEFAULT",
