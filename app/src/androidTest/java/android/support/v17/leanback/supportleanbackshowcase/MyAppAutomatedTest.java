@@ -368,7 +368,7 @@ public class MyAppAutomatedTest {
             title = uiObject.getText();
         }
         assertThat("Cannot focus on thumbnail!", uiObject,notNullValue());
-        assertEquals("thumbnail focused is not the first one","TIN TỨC 24h",title);
+        assertEquals("thumbnail focused is not the first one","Third Degree",title);
 
         testYellowButton();
         mDevice.waitForWindowUpdate(PACKAGE_NAME,500);

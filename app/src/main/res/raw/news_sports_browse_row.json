@@ -5,13 +5,13 @@
     "cards": [
       {
         "type": "DEFAULT",
-        "title": "TIN TỨC 24h",
-        "description": "24h hay Tin tức 24h là một trang tin điện tử tại Việt Nam. [TV SHOW] [NEWS]",
-        "localImageResource": "viet_news",
+        "title": "Third Degree",
+        "description": "Third Degree is a show where Aaj Tak reporters interrogate people posing serious questions highlighting some of the major issues that are of concern to the nation. [TV SHOW] [NEWS]",
+        "localImageResource": "hindi_news",
         "footerIconLocalImageResource": "ic_installed",
         "id":10,
         "live":false,
-        "videoId":"wP0NE4Pcq8M"
+        "videoId": "3BPmvTM2hv8"
       },
       {
         "type": "DEFAULT",
