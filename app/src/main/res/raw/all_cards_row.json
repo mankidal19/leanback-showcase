@@ -59,13 +59,13 @@
       },
       {
         "type": "DEFAULT",
-        "title": "Nhanh Như Chớp",
-        "description": "Nhanh như chớp nhí là chương trình do Đài Truyền hình Thành phố Hồ Chí Minh và công ty D.I.D TV sản xuất, là phiên bản nhí của chương trình Nhanh như chớp hiện đang phát sóng trên kênh HTV7 của Đài Truyền hình Thành phố Hồ Chí Minh. [TV SHOW] [ENTERTAINMENT]",
-        "localImageResource": "viet_tv_show",
+        "title": "Patiala Babes",
+        "description": "Mini, a young girl, encourages her traditional mother, Babita, to realise her worth and fulfil her dreams. [TV SHOW] [ENTERTAINMENT]",
+        "localImageResource": "hindi_tvshow",
         "footerIconLocalImageResource": "ic_installed",
         "live":false,
-        "videoId":"EUWPPNWFrA0",
-        "playlistId":"PL9FSFrcfpxciaU1Lkt9OZXdSJRJ3EqCDm"
+        "videoId": "bK30mUCPeqQ",
+        "playlistId": "PLV71sdBgCmhQXZbgn-WfxhaM3zmdP35GJ"
       }
     ]
   },
