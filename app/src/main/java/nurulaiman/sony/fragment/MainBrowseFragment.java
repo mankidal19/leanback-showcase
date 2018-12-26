@@ -519,8 +519,22 @@ public class MainBrowseFragment extends BrowseFragment {
         private Row createCardRow(CardRow cardRow) {
             PresenterSelector presenterSelector = new CardPresenterSelector(getActivity());
             ArrayObjectAdapter adapter = new ArrayObjectAdapter(presenterSelector);
+
+            //add card based on content provider
+            String provider = MySettingsFragment.getDefaults("pref_providers_key",getContext());
+
+
             for (Card card : cardRow.getCards()) {
-                adapter.add(card);
+                if(card.getContentProvider().equals(Card.Provider.DEFAULT)){
+                    adapter.add(card);
+                }
+                else if(provider.equals("fptplay")&&card.getContentProvider().equals(Card.Provider.FPTPLAY)){
+                    adapter.add(card);
+                }
+                else if(provider.equals("hotstar")&&card.getContentProvider().equals(Card.Provider.HOTSTAR)){
+                    adapter.add(card);
+                }
+
             }
 
             IconHeaderItem headerItem = new IconHeaderItem(cardRow.getTitle(),R.drawable.live_icon_text);
@@ -606,8 +620,21 @@ public class MainBrowseFragment extends BrowseFragment {
         private Row createCardRow(CardRow cardRow) {
             PresenterSelector presenterSelector = new CardPresenterSelector(getActivity());
             ArrayObjectAdapter adapter = new ArrayObjectAdapter(presenterSelector);
+            //add card based on content provider
+            String provider = MySettingsFragment.getDefaults("pref_providers_key",getContext());
+
+
             for (Card card : cardRow.getCards()) {
-                adapter.add(card);
+                if(card.getContentProvider().equals(Card.Provider.DEFAULT)){
+                    adapter.add(card);
+                }
+                else if(provider.equals("fptplay")&&card.getContentProvider().equals(Card.Provider.FPTPLAY)){
+                    adapter.add(card);
+                }
+                else if(provider.equals("hotstar")&&card.getContentProvider().equals(Card.Provider.HOTSTAR)){
+                    adapter.add(card);
+                }
+
             }
 
             IconHeaderItem headerItem;
@@ -707,8 +734,21 @@ public class MainBrowseFragment extends BrowseFragment {
         private Row createCardRow(CardRow cardRow) {
             PresenterSelector presenterSelector = new CardPresenterSelector(getActivity());
             ArrayObjectAdapter adapter = new ArrayObjectAdapter(presenterSelector);
+            //add card based on content provider
+            String provider = MySettingsFragment.getDefaults("pref_providers_key",getContext());
+
+
             for (Card card : cardRow.getCards()) {
-                adapter.add(card);
+                if(card.getContentProvider().equals(Card.Provider.DEFAULT)){
+                    adapter.add(card);
+                }
+                else if(provider.equals("fptplay")&&card.getContentProvider().equals(Card.Provider.FPTPLAY)){
+                    adapter.add(card);
+                }
+                else if(provider.equals("hotstar")&&card.getContentProvider().equals(Card.Provider.HOTSTAR)){
+                    adapter.add(card);
+                }
+
             }
 
             //IconHeaderItem headerItem = new IconHeaderItem(cardRow.getTitle());
@@ -805,8 +845,21 @@ public class MainBrowseFragment extends BrowseFragment {
         private Row createCardRow(CardRow cardRow) {
             PresenterSelector presenterSelector = new CardPresenterSelector(getActivity());
             ArrayObjectAdapter adapter = new ArrayObjectAdapter(presenterSelector);
+            //add card based on content provider
+            String provider = MySettingsFragment.getDefaults("pref_providers_key",getContext());
+
+
             for (Card card : cardRow.getCards()) {
-                adapter.add(card);
+                if(card.getContentProvider().equals(Card.Provider.DEFAULT)){
+                    adapter.add(card);
+                }
+                else if(provider.equals("fptplay")&&card.getContentProvider().equals(Card.Provider.FPTPLAY)){
+                    adapter.add(card);
+                }
+                else if(provider.equals("hotstar")&&card.getContentProvider().equals(Card.Provider.HOTSTAR)){
+                    adapter.add(card);
+                }
+
             }
 
             //IconHeaderItem headerItem = new IconHeaderItem(cardRow.getTitle());
@@ -911,8 +964,21 @@ public class MainBrowseFragment extends BrowseFragment {
         private Row createCardRow(CardRow cardRow) {
             PresenterSelector presenterSelector = new CardPresenterSelector(getActivity());
             ArrayObjectAdapter adapter = new ArrayObjectAdapter(presenterSelector);
+            //add card based on content provider
+            String provider = MySettingsFragment.getDefaults("pref_providers_key",getContext());
+
+
             for (Card card : cardRow.getCards()) {
-                adapter.add(card);
+                if(card.getContentProvider().equals(Card.Provider.DEFAULT)){
+                    adapter.add(card);
+                }
+                else if(provider.equals("fptplay")&&card.getContentProvider().equals(Card.Provider.FPTPLAY)){
+                    adapter.add(card);
+                }
+                else if(provider.equals("hotstar")&&card.getContentProvider().equals(Card.Provider.HOTSTAR)){
+                    adapter.add(card);
+                }
+
             }
 
             IconHeaderItem headerItem = new IconHeaderItem(cardRow.getTitle(),R.drawable.vod_icon_text_blue);
@@ -1047,4 +1113,6 @@ public class MainBrowseFragment extends BrowseFragment {
 
         }
     }
+
+
 }
