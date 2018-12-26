@@ -25,6 +25,7 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.player.YouTubePlayerView;
 import com.pierfrancescosoffritti.androidyoutubeplayer.player.listeners.AbstractYouTubePlayerListener;
 
 import nurulaiman.sony.data.MockDatabase;
+import nurulaiman.sony.fragment.MySettingsFragment;
 
 
 public class LiveActivity extends FragmentActivity {
@@ -48,7 +49,7 @@ public class LiveActivity extends FragmentActivity {
     private ImageView iconView = null;
     private int defaultHideTime = 1000;
 
-
+    private String provider  = MySettingsFragment.getDefaults("pref_providers_key",this);;
 
 
     @Override
@@ -375,7 +376,15 @@ public class LiveActivity extends FragmentActivity {
     private void initChannelList(){
 
         channelArrayList.add("7v7VhElje8Q");
-        channelArrayList.add("bdae9OSA-bA");
+
+        //custom live channels for specific provider
+        if(provider.equals("hotstar")){
+            channelArrayList.add("bdae9OSA-bA");
+        }
+        else if(provider.equals("fptplay")){
+            channelArrayList.add("ryN5slhHZkc");
+        }
+
         channelArrayList.add("AICpOoc4t04");
         channelArrayList.add("V2E-jOUVsd4");
         channelArrayList.add("KkXq2sv6Tos");
