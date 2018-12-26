@@ -540,10 +540,10 @@
 
       {
         "type": "YOUTUBETV_LIVE",
-        "title": "Bản tin 113",
-        "description": "Bản tin 113 Online mới nhất ngày 19/11/2018 | Tin tức An ninh Việt Nam | Tin tức mới nhất | ANTV",
-        "localImageResource": "viet_live",
-        "videoId":"ryN5slhHZkc",
+        "title": "India TV - LIVE",
+        "description": "In a short period of its existence, India TV has earned a repute of credible reporting, courage, espousal of public interest and its unmatched delivery which is of a great value to all stakeholders. The channel has its bureau and sales representation across the country. India TV has state-of-the-art digital connectivity and a new centre covering an area of 80,000 square feet in Noida.",
+        "localImageResource": "hindi_live",
+        "videoId":"bdae9OSA-bA",
         "id":44,
         "live":true
       },
