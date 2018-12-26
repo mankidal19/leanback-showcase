@@ -391,7 +391,7 @@ public class MyAppAutomatedTest {
         }
 
         assertThat("Cannot focus on thumbnail!", uiObject,notNullValue());
-        assertEquals("thumbnail focused is not the first one","XÓM TRỌ 3D",title);
+        assertEquals("thumbnail focused is not the first one","Krishnarjuna Yuddham",title);
 
     }
 
