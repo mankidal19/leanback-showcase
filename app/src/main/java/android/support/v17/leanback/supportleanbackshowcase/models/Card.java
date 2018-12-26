@@ -44,7 +44,7 @@ public class Card implements Serializable {
     @SerializedName("height") private int mHeight;
     @SerializedName("live") private boolean mLive;
     @SerializedName("playlistId") private String mPlaylistId;
-
+    @SerializedName("provider") private Card.Provider mContentProvider = Provider.DEFAULT;
 
     //adding for video id
     @SerializedName("videoId")
@@ -212,6 +212,12 @@ public class Card implements Serializable {
         VIDEO_GRID,
         LIVE_TV
 
+    }
+
+    public enum Provider{
+        DEFAULT,
+        FPTPLAY,
+        HOTSTAR
     }
 
 }
