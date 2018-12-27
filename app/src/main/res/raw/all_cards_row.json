@@ -562,7 +562,15 @@
   {
     "title":"Live TV",
     "cards": [
-
+      {
+        "type": "YOUTUBETV_LIVE",
+        "title": "Bản tin 113",
+        "description": "Bản tin 113 Online mới nhất ngày 19/11/2018 | Tin tức An ninh Việt Nam | Tin tức mới nhất | ANTV",
+        "localImageResource": "viet_live",
+        "videoId":"ryN5slhHZkc",
+        "id":44,
+        "live":true
+      },
       {
         "type": "YOUTUBETV_LIVE",
         "title": "India TV - LIVE",
