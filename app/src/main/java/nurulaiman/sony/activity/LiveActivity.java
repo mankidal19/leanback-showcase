@@ -49,13 +49,16 @@ public class LiveActivity extends FragmentActivity {
     private ImageView iconView = null;
     private int defaultHideTime = 1000;
 
-    private String provider  = MySettingsFragment.getDefaults("pref_providers_key",this);;
+    private String provider  = null;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_live);
+
+        provider  = MySettingsFragment.getDefaults("pref_providers_key",getApplicationContext());
+
 
         initChannelList();
         initYouTubePlayerView();
