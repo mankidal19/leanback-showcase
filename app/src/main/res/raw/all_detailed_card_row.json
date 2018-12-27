@@ -1740,6 +1740,71 @@
       }
     ]
   },
+  ,
+  {
+    "title": "XÓM TRỌ 3D",
+    "description": "Golden Network Official",
+    "year": 2018,
+    "text": "Một khu xóm trọ được mệnh danh là “Xóm Trọ 3D” của những người đồng tính nam: Lâm - chủ phòng trọ, mọi người đều gọi Lâm với biệt danh là má. Má Lâm luôn giang tay mở rộng giúp đỡ những người đồng tính khác có hoàn cảnh khó khăn như: Như Ý (Thái Duy), Bảo Bảo (Hoàng Linh), Hiền, Tú (Nam Cường), Lệ (Xuân Nghị), năm con người với năm hoàn cảnh, năm số phận, năm quá khứ khác nhau nhưng duyên phận đã đưa họ đến với nhau, cùng nhau đứng lên vượt qua khó khăn trong cuộc sống. Năm người họ luôn được sự bảo vệ và che chở của một cô gái “xác cô hồn cậu” tên Na và một anh chàng hàng xóm tốt bụng mang nỗi bất hạnh vì bị nghẹn tiếng tên Hùng. Cùng với má Lâm của Nghệ sĩ Minh Nhí, Xóm Trọ 3D còn có sự tham gia của nữ ca sĩ Maya trong vai nữ chính - Na - một cô “gái thẳng” đầy mạnh mẽ và giỏi võ. [MOVIE] [VIETNAM MOVIE]",
+    "localImageResource": "viet_movie",
+    "price": "FREE",
+    "trailerUrl": "https://storage.googleapis.com/android-tv/Sample videos/Google+/Google+_ Sharing but like real life.mp4",
+    "videoId": "Uy0UElR8t8I",
+    "characters": [
+      {
+        "type": "CHARACTER",
+        "title": "Nam Cường",
+        "localImageResource": "face_01"
+      },
+      {
+        "type": "CHARACTER",
+        "title": "Xuân Nghị",
+        "localImageResource": "face_08"
+      }
+    ],
+    "recommended": [
+      {
+        "type": "DEFAULT",
+        "title": "My Happy Home | 즐거운 나의 집",
+        "description": "Genius scientist Sejeong lives with her cyborg husband Sungmin. She erased Sungmin’s memories and inputted new customized memories and information of her choosing, so she is able to enjoy a blissful marriage. Then someone Sejeong and Sungmin knew before he became a cyborg starts coming to their home. This person tries to correct Sungmin’s distorted memories while Sejeong tries to stop her. Sungmin, in the meantime, starts lying like a human being. What happened before Sungmin was turned into a cyborg? Cast: Son Yeo-eun, Lee Sangyeob, Kim Myungsoo, Lee Ilhwa, Park Hana, Lim Jikyu, Song Yoona, Ok Taecyeon. [MOVIE] [K-MOVIE] [KOREAN MOVIE]",
+        "localImageResource": "happy_home",
+        "footerIconLocalImageResource": "ic_installed",
+        "videoId": "mF_sBcqdEYI",
+        "id": 40,
+        "live": false
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Don't Worry, I'm a Ghost | 걱정마세요, 귀신입니다",
+        "description": " A man wakes up at the hospital following an accident. He can’t remember his name, his family or where he lives. He learns his name and address from the police who ran his fingerprints and goes to his house. He sleeps an uncomfortable sleep and finds a girl looking at him when he wakes up. She says she’s a ghost. Lee Mungi thinks he’s seeing things due to aftereffects of the accident but finds her picture at her funeral. Her name was Kim Yeonhwa and he wants to know why she came to him. He asks her if she wants him to find the suspect and get revenge. But she says the police can do that and tells him he has a more important job to do. She tells him the reason she came to him is in his lost memories. Cast: Bong Tae-gyu, Park Shin-hye, Lee Ha-yool, Park Seo-yeon. [MOVIE] [K-MOVIE] [KOREAN MOVIE]",
+        "localImageResource": "dont_worry",
+        "footerIconLocalImageResource": "ic_installed",
+        "videoId": "aY704gPIeZY",
+        "id": 41,
+        "live": false
+      },
+      {
+        "type": "DEFAULT",
+        "title": "Kang Deoksun's Love History | 강덕순 애정 변천사",
+        "description": "Everyone knows who Yun Bonggil is but not Lee Hwarim, who accompanied him. We know of the Korean Provisional Government, but we don’t know of Jeong Jeonghwa who took care of things inside Korea. We are unfamiliar with their names, but they were female independence activists who really existed. Just because their achievements weren’t recognized and they went different paths, they are being forgotten. This drama depicts the traces of these women. Cast: Kim Sohye, Oh Seungyoon. [MOVIE] [K-MOVIE] [KOREAN MOVIE]",
+        "localImageResource": "kang_love",
+        "footerIconLocalImageResource": "ic_installed",
+        "videoId": "PIBdfdz98iU",
+        "id": 42,
+        "live": false
+      },
+      {
+        "type": "DEFAULT",
+        "title": "If We Were a Season | 우리가 계절이라면",
+        "description": "Two high school students were born and raised together as neighbors. This boy and girl are more like a married couple. They don’t say it, but they are precious to each other. Then one day, a new student appears. Unlike these two who don’t express their hearts, he’s brave and bold in expressing his feelings. He was enough to shake up the relationship of these two students. It was when everything was yet immature and clumsy. Let’s think about our forgotten past. Cast: Chae Soobin, Jang Dongyoon, Jinyoung. [MOVIE] [K-MOVIE] [KOREAN MOVIE]",
+        "localImageResource": "if_we",
+        "footerIconLocalImageResource": "ic_installed",
+        "videoId": "vZ7EMIH0oHw",
+        "id": 39,
+        "live": false
+      }
+    ]
+  },
   {
     "title": "Al Jazeera News (English)",
     "description": "News Channel",
