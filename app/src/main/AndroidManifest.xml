@@ -237,6 +237,15 @@
             android:exported="true"
             tools:ignore="ExportedContentProvider" />
 
+        <receiver
+            android:name="nurulaiman.sony.recommendations.RecommendationReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
         <activity
             android:name="nurulaiman.sony.activity.YoutubePlayerActivity"
             android:noHistory="true"
@@ -305,6 +314,12 @@
         </intent-filter>
         </activity>
 
-    </application>
+        <service
+            android:name="nurulaiman.sony.recommendations.UpdateRecommendationsService"
+            android:enabled="true" />
+
+
+
+</application>
 
 </manifest>
