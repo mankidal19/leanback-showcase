@@ -32,7 +32,7 @@ public class LiveActivity extends FragmentActivity {
 
     private final String TAG = "LiveActivity";
     //default live TV
-    private String liveVideoId = "7v7VhElje8Q";
+    private String liveVideoId = "wp-R57ZaiXY";
     private YouTubePlayerView youTubePlayerView = null;
     //to implement play/pause
     private YouTubePlayer youTubePlayer = null;
@@ -378,7 +378,7 @@ public class LiveActivity extends FragmentActivity {
     //initialize channel list ArrayList
     private void initChannelList(){
 
-        channelArrayList.add("7v7VhElje8Q");
+        channelArrayList.add("wp-R57ZaiXY");
 
         //custom live channels for specific provider
         if(provider.equals("hotstar")){
@@ -388,9 +388,9 @@ public class LiveActivity extends FragmentActivity {
             channelArrayList.add("ryN5slhHZkc");
         }
 
-        channelArrayList.add("AICpOoc4t04");
-        channelArrayList.add("V2E-jOUVsd4");
-        channelArrayList.add("KkXq2sv6Tos");
+        channelArrayList.add("uopc-rWT1nw");
+        channelArrayList.add("GtoIMPrppUY");
+        channelArrayList.add("u7aE36v9xg8");
         channelArrayList.add("Lvp-lSqHVKc");
     }
 
