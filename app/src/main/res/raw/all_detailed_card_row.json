@@ -1813,6 +1813,7 @@
     "trailerUrl": "",
     "videoUrl": "",
     "type": "LIVE_TV",
+    "live":true,
     "recommended": [
       {
         "type": "DEFAULT",
@@ -1843,6 +1844,7 @@
     "trailerUrl": "",
     "videoUrl": "",
     "type": "LIVE_TV",
+    "live":true,
     "recommended": [
       {
         "type": "DEFAULT",
@@ -1873,6 +1875,7 @@
     "trailerUrl": "",
     "videoUrl": "",
     "type": "LIVE_TV",
+    "live":true,
     "recommended": [
       {
         "type": "DEFAULT",
@@ -1903,6 +1906,7 @@
     "trailerUrl": "",
     "videoUrl": "",
     "type": "LIVE_TV",
+    "live":true,
     "recommended": [
       {
         "type": "DEFAULT",
@@ -1933,6 +1937,7 @@
     "trailerUrl": "",
     "videoUrl": "",
     "type": "LIVE_TV",
+    "live":true,
     "recommended": [
       {
         "type": "DEFAULT",
@@ -1963,6 +1968,7 @@
     "trailerUrl": "",
     "videoUrl": "",
     "type": "LIVE_TV",
+    "live":true,
     "recommended": [
       {
         "type": "DEFAULT",
@@ -1993,6 +1999,7 @@
     "trailerUrl": "",
     "videoUrl": "",
     "type": "LIVE_TV",
+    "live":true,
     "recommended": [
       {
         "type": "DEFAULT",
