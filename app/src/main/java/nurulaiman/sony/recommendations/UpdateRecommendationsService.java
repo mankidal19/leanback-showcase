@@ -29,7 +29,7 @@ public class UpdateRecommendationsService extends IntentService {
 
     private static final String TAG = "UpdateRecommendationsService";
     private static final String CONTENT_TAG = "OperatorApp_";
-    private static final int MAX_RECOMMENDATIONS = 3;
+    private static final int MAX_RECOMMENDATIONS = 6;
     private Intent intent = null;
 
 
@@ -88,11 +88,12 @@ public class UpdateRecommendationsService extends IntentService {
             chosenShows[i] = shows[list.get(i)];
 
             builder.setBackgroundImageUri(chosenShows[i].getLocalImageResource())
-                    .setIdTag(CONTENT_TAG + Integer.toString(i))
+                    .setIdTag(CONTENT_TAG + Long.toString(chosenShows[i].hashCode()))
                     .setTitle(chosenShows[i].getTitle())
-                    .setText(description.get(i))
+                    .setText(description.get(i%description.size()))//random desc chosen
                     .setContentImage(BitmapFactory.decodeResource(res,chosenShows[i].getLocalImageResourceId(getApplicationContext())))
                     .setContentIntentData(ContentRecommendation.INTENT_TYPE_ACTIVITY,buildPendingIntent(chosenShows[i]), 0, null)
+                    .setColor(res.getColor(R.color.custom_info_selected))
                     .build();
 
             // Create an object holding all the information used to recommend the content.
@@ -120,7 +121,7 @@ public class UpdateRecommendationsService extends IntentService {
 
         }
 
-        else if(show.getDescription().toLowerCase().contains("movie")){
+        else if(show.getText().toLowerCase().contains("movie")){
             intent = new Intent(getApplicationContext(), DetailViewMovieActivity.class);
             // intent.putExtra("mediaId",id);
             intent.putExtra("videoId",show.getVideoId());
