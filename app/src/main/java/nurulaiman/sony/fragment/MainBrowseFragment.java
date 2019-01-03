@@ -565,9 +565,40 @@ public class MainBrowseFragment extends BrowseFragment {
                     Card selectedCard = (Card)item;
 
 
-                    intent.putExtra("videoId",selectedCard.getVideoId());
-                    startActivity(intent);
-                    Log.d(TAG,"play non-live youtube video");
+                    if(selectedCard.isLive()){
+
+                        intent = new Intent(getContext(), DetailViewLiveBroadcastActivity.class);
+                        //intent.putExtra("mediaId",id);
+                        intent.putExtra("videoId",selectedCard.getVideoId());
+
+                        //to set video title
+                        intent.putExtra("videoTitle",selectedCard.getTitle());
+
+                        startActivity(intent);
+                        Log.d(TAG,"open sample live tv details page");
+
+
+                    }
+
+                    else if(selectedCard.getDescription().toLowerCase().contains("movie")){
+                        intent = new Intent(getContext(), DetailViewMovieActivity.class);
+                        // intent.putExtra("mediaId",id);
+                        intent.putExtra("videoId",selectedCard.getVideoId());
+                        intent.putExtra("videoTitle",selectedCard.getTitle());
+
+                        startActivity(intent);
+                        Log.d(TAG,"open movie details page");
+                    }
+
+                    else{
+                        intent = new Intent(getContext(), DetailViewTvShowActivity.class);
+                        //intent.putExtra("mediaId",id);
+                        intent.putExtra("videoId",selectedCard.getVideoId());
+                        intent.putExtra("videoTitle",selectedCard.getTitle());
+
+                        startActivity(intent);
+                        Log.d(TAG,"open tv show details page");
+                    }
                 }
             });
         }
