@@ -670,7 +670,7 @@ public class MainBrowseFragment extends BrowseFragment {
 
             IconHeaderItem headerItem;
 
-            if(cardRow.getTitle().toLowerCase().contains("recommended")||cardRow.getTitle().toLowerCase().contains("popular")){
+            if(cardRow.getTitle().toLowerCase().contains("recommended")||cardRow.getTitle().toLowerCase().contains("last watched")){
                 headerItem = new IconHeaderItem(cardRow.getTitle(),R.drawable.vod_icon_text);
             }
             else{
