@@ -64,10 +64,13 @@
     <color name="semi_transparent_background">#e6282727</color>
     <color name="semi_transparent_fastlane_background">#eb383635</color>
 
-    <color name="custom_detail_view_actionbar_background">#faef360e</color>
-    <color name="custom_detail_view_background">#dc593d</color>
+    <color name="fptplay_detail_view_actionbar_background">#faef360e</color>
+    <color name="fptplay_detail_view_background">#dc593d</color>
     <color name="custom_info">#ffffff</color>
     <color name="custom_info_selected">#c70081</color>
+
+    <color name="hotstar_detail_view_actionbar_background">#fa116D5C</color>
+    <color name="hotstar_detail_view_background">#2A9679</color>
 
     <color name="custom_title">#000000</color>
     <color name="custom_description">#515050</color>

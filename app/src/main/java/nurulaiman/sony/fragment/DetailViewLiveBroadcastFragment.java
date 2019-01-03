@@ -127,21 +127,31 @@ public class DetailViewLiveBroadcastFragment extends MyDetailsFragment implement
                 View actionsView = viewHolder.view.
                         findViewById(R.id.details_overview_actions_background);
 
-                if(interfaceMode.equals("developer")){
+                if(provider.equals("fptplay")){
+                    actionsView.setBackgroundColor(getActivity().getResources().
+                            getColor(R.color.fptplay_detail_view_actionbar_background));
+
+                    View detailsView = viewHolder.view.findViewById(R.id.details_frame);
+                    detailsView.setBackgroundColor(
+                            getResources().getColor(R.color.fptplay_detail_view_background));
+                }
+
+                else if(provider.equals("hotstar")){
+                    actionsView.setBackgroundColor(getActivity().getResources().
+                            getColor(R.color.hotstar_detail_view_actionbar_background));
+
+                    View detailsView = viewHolder.view.findViewById(R.id.details_frame);
+                    detailsView.setBackgroundColor(
+                            getResources().getColor(R.color.hotstar_detail_view_background));
+                }
+
+                else{
                     actionsView.setBackgroundColor(getActivity().getResources().
                             getColor(R.color.detail_view_actionbar_background));
 
                     View detailsView = viewHolder.view.findViewById(R.id.details_frame);
                     detailsView.setBackgroundColor(
                             getResources().getColor(R.color.detail_view_background));
-                }
-                else{
-                    actionsView.setBackgroundColor(getActivity().getResources().
-                            getColor(R.color.custom_detail_view_actionbar_background));
-
-                    View detailsView = viewHolder.view.findViewById(R.id.details_frame);
-                    detailsView.setBackgroundColor(
-                            getResources().getColor(R.color.custom_detail_view_background));
                 }
 
 
