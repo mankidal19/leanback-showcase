@@ -51,6 +51,7 @@ import com.google.gson.Gson;
 import nurulaiman.sony.activity.DetailViewMovieActivity;
 import nurulaiman.sony.activity.YoutubePlayerActivity;
 import nurulaiman.sony.activity.YoutubeTvViewActivity;
+import nurulaiman.sony.utils.AppUiUtils;
 import nurulaiman.sony.utils.MatchingCardUtils;
 
 /**
@@ -131,32 +132,9 @@ public class DetailViewMovieFragment extends MyDetailsFragment implements OnItem
 
                 View actionsView = viewHolder.view.
                         findViewById(R.id.details_overview_actions_background);
-                if(provider.equals("fptplay")){
-                    actionsView.setBackgroundColor(getActivity().getResources().
-                            getColor(R.color.fptplay_detail_view_actionbar_background));
 
-                    View detailsView = viewHolder.view.findViewById(R.id.details_frame);
-                    detailsView.setBackgroundColor(
-                            getResources().getColor(R.color.fptplay_detail_view_background));
-                }
-
-                else if(provider.equals("hotstar")){
-                    actionsView.setBackgroundColor(getActivity().getResources().
-                            getColor(R.color.hotstar_detail_view_actionbar_background));
-
-                    View detailsView = viewHolder.view.findViewById(R.id.details_frame);
-                    detailsView.setBackgroundColor(
-                            getResources().getColor(R.color.hotstar_detail_view_background));
-                }
-
-                else{
-                    actionsView.setBackgroundColor(getActivity().getResources().
-                            getColor(R.color.detail_view_actionbar_background));
-
-                    View detailsView = viewHolder.view.findViewById(R.id.details_frame);
-                    detailsView.setBackgroundColor(
-                            getResources().getColor(R.color.detail_view_background));
-                }
+                AppUiUtils appUiUtils = new AppUiUtils(getContext());
+                appUiUtils.setDetailsPageBg(actionsView,viewHolder);
 
                 return viewHolder;
             }
