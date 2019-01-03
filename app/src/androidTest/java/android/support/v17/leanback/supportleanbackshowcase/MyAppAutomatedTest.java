@@ -198,18 +198,10 @@ public class MyAppAutomatedTest {
     @Test
     public void testRGYBonMainBrowser() throws InterruptedException {
         //TC0013, Red/Green/Yellow/Blue buttons on remote should act as shortcut in main browser UI
-        testRedButton();
-        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
-
-        testGreenButton();
-        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
-
-        testYellowButton();
-        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
-
-        testBlueButton();
-        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
-
+        testButton(KeyEvent.KEYCODE_PROG_RED,LIVE_TV_FRAGMENT);
+        testButton(KeyEvent.KEYCODE_PROG_GREEN,NEWS_SPORTS_FRAGMENT);
+        testButton(KeyEvent.KEYCODE_PROG_YELLOW,TV_SHOW_FRAGMENT);
+        testButton(KeyEvent.KEYCODE_PROG_BLUE,MOVIES_FRAGMENT);
 
     }
 
@@ -346,8 +338,7 @@ public class MyAppAutomatedTest {
         navigateMenu("HOME");
         mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
 
-        testRedButton();
-        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+        testButton(KeyEvent.KEYCODE_PROG_RED,LIVE_TV_FRAGMENT);
         mDevice.pressDPadDown();
         sleep(10000);
 
@@ -359,8 +350,7 @@ public class MyAppAutomatedTest {
         assertThat("Cannot focus on thumbnail!", uiObject,notNullValue());
         assertEquals("thumbnail focused is not the first one","Al Jazeera News (English)",title);
 
-        testGreenButton();
-        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+        testButton(KeyEvent.KEYCODE_PROG_GREEN,NEWS_SPORTS_FRAGMENT);
         mDevice.pressDPadDown();
         sleep(10000);
 
@@ -370,8 +360,7 @@ public class MyAppAutomatedTest {
         assertThat("Cannot focus on thumbnail!", uiObject,notNullValue());
         assertEquals("thumbnail focused is not the first one","Third Degree",title);
 
-        testYellowButton();
-        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+        testButton(KeyEvent.KEYCODE_PROG_YELLOW,TV_SHOW_FRAGMENT);
         mDevice.pressDPadDown();
         sleep(10000);
 
@@ -381,8 +370,7 @@ public class MyAppAutomatedTest {
         assertThat("Cannot focus on thumbnail!", uiObject,notNullValue());
         assertEquals("thumbnail focused is not the first one","Patiala Babes",title);
 
-        testBlueButton();
-        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
+        testButton(KeyEvent.KEYCODE_PROG_BLUE,MOVIES_FRAGMENT);
         mDevice.pressDPadDown();
         sleep(10000);
 
@@ -490,6 +478,17 @@ public class MyAppAutomatedTest {
 
         assertThat("Movies fragment is not loaded!", uiObject,notNullValue());
         assertThat("Incorrect fragment obtained!", uiObject.getContentDescription(),equalTo(MOVIES_FRAGMENT));
+    }
+
+    //redesigned testRed/Blue/Green/YellowButton to eliminate redundant codes
+    public void testButton(int keyCode, String desc){
+        mDevice.pressKeyCode(keyCode);
+        UiObject2 uiObject = mDevice.wait(Until.findObject(By.desc(desc)),LAUNCH_TIMEOUT);
+
+        assertThat("Fragment is not loaded!", uiObject,notNullValue());
+        assertThat("Incorrect fragment obtained!", uiObject.getContentDescription(),equalTo(desc));
+
+        mDevice.waitForWindowUpdate(PACKAGE_NAME,500);
     }
 
     //method to navigate and choose desired menu on left pane
