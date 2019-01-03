@@ -39,6 +39,7 @@ public class DetailedCard implements Serializable {
     @SerializedName("playlistId") private String mPlaylistId;
     @SerializedName("type") private Card.Type mType;
 
+    @SerializedName("live") private boolean mLive;
 
     public String getPrice() {
         return mPrice;
@@ -105,5 +106,13 @@ public class DetailedCard implements Serializable {
 
     public String getPlaylistId() {
         return mPlaylistId;
+    }
+
+    public void setIsLive(boolean set){
+        this.mLive=set;
+    }
+
+    public boolean isLive() {
+        return mLive;
     }
 }
