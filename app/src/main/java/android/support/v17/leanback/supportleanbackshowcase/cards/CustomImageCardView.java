@@ -1,3 +1,14 @@
+/*
+ * Created by Nurul Aiman, as an Open Source Project
+ * Documented on 04/01/2019
+ * Other interesting source code can be found at https://bitbucket.org/mankidal19/
+ *
+ *
+ * This class extends BaseCardView and is a customized version of ImageCardView class
+ * provided by leanback library. This class is created to customized how ImageCardView
+ * behaves and looks like.
+ */
+
 package android.support.v17.leanback.supportleanbackshowcase.cards;
 
 import android.content.Context;
@@ -41,6 +52,7 @@ public class CustomImageCardView extends BaseCardView {
         interfaceMode = MySettingsFragment.getDefaults("pref_interface_key",getContext());
 
 
+        //if interface mode is enduser, customized the card view
         if(interfaceMode.equals("enduser")){
             //default, hide info
             mInfoArea.setBackgroundColor(getResources().getColor(R.color.custom_info));
@@ -195,15 +207,8 @@ public class CustomImageCardView extends BaseCardView {
         }
     }
 
-    public void showInfoArea(boolean show){
-        if(show){
-            mInfoArea.setVisibility(VISIBLE);
-        }
-        else{
-            mInfoArea.setVisibility(GONE);
-        }
-    }
 
+    //method to change info area color when current thumbnail is on focus
     public void changeInfoAreaColor(boolean hasFocus){
 
         if(interfaceMode.equals("enduser")){
@@ -226,7 +231,6 @@ public class CustomImageCardView extends BaseCardView {
 
     public void showContent(boolean show){
 
-        //mTitleView.setVisibility(VISIBLE);
 
         if(show){
             mContentView.setVisibility(VISIBLE);

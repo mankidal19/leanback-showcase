@@ -1,4 +1,4 @@
-package android.support.v17.leanback.supportleanbackshowcase.cards.presenters;
+package android.support.v17.leanback.supportleanbackshowcase.models.presenters;
 
 import android.content.Context;
 import android.graphics.Color;

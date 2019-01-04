@@ -1,6 +1,7 @@
-package android.support.v17.leanback.supportleanbackshowcase.cards.presenters;
+package android.support.v17.leanback.supportleanbackshowcase.models.presenters;
 
 import android.support.v17.leanback.supportleanbackshowcase.app.details.ShadowRowPresenterSelector;
+import android.support.v17.leanback.supportleanbackshowcase.models.presenters.UnfocusableIconHeaderItemPresenter;
 import android.support.v17.leanback.widget.ListRowPresenter;
 import android.support.v17.leanback.widget.Presenter;
 

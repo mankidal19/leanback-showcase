@@ -1,3 +1,12 @@
+/*
+ * Created by Nurul Aiman, as an Open Source Project
+ * Documented on 04/01/2019
+ * Other interesting source code can be found at https://bitbucket.org/mankidal19/
+ *
+ *
+ * This class extends AbstractCardPresenter<CustomImageCardView>
+ * and is the Presenter class for CustomImageCardView
+ */
 package android.support.v17.leanback.supportleanbackshowcase.cards.presenters;
 
 import android.content.Context;
@@ -37,15 +46,14 @@ public class CustomImageCardViewPresenter extends AbstractCardPresenter<CustomIm
     @Override
     protected CustomImageCardView onCreateView() {
         CustomImageCardView imageCardView = new CustomImageCardView(getContext());
-        //imageCardView.setInfoVisibility(CARD_REGION_VISIBLE_SELECTED);
         imageCardView.showInfo(false);
-        //imageCardView.showInfoArea(false);
 
         //only show info for card in focus
         imageCardView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean hasFocus) {
 
+                //change thumbnail's look accordingly when focus changes
                 imageCardView.showInfo(hasFocus);
                 imageCardView.changeInfoAreaColor(hasFocus);
 
