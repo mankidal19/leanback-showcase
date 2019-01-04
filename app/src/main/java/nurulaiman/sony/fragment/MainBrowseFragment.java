@@ -53,19 +53,10 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 
-//implement voice interaction
-import android.app.VoiceInteractor;
-import android.app.VoiceInteractor.PickOptionRequest;
-import android.app.VoiceInteractor.PickOptionRequest.Option;
 
-import nurulaiman.sony.activity.DetailViewLiveBroadcastActivity;
-import nurulaiman.sony.activity.DetailViewMovieActivity;
-import nurulaiman.sony.activity.DetailViewTvShowActivity;
-import nurulaiman.sony.activity.LiveActivity;
-import nurulaiman.sony.activity.MainActivity;
+import nurulaiman.sony.activity.DetailViewActivity;
 import nurulaiman.sony.activity.MySettingsActivity;
 import nurulaiman.sony.activity.SearchActivity;
-import nurulaiman.sony.activity.YoutubePlayerActivity;
 import nurulaiman.sony.models.IconHeaderItem;
 import nurulaiman.sony.ui.presenter.CustomShadowRowPresenterSelector;
 import nurulaiman.sony.ui.presenter.IconHeaderItemPresenter;
@@ -445,15 +436,12 @@ public class MainBrowseFragment extends BrowseFragment {
                         Object item,
                         RowPresenter.ViewHolder rowViewHolder,
                         Row row) {
-                    Intent intent;
-                    Card card = (Card)item;
+                    Card selectedCard = (Card)item;
+                    Intent intent = new Intent(getContext(), DetailViewActivity.class);
+                    intent.putExtra("videoId",selectedCard.getVideoId());
 
-
-
-                        intent = new Intent(getContext(), DetailViewLiveBroadcastActivity.class);
-                        intent.putExtra("videoId",card.getVideoId());
-                        //to set video title
-                        intent.putExtra("videoTitle",card.getTitle());
+                    //to set video title
+                    intent.putExtra("videoTitle",selectedCard.getTitle());
                         startActivity(intent);
                         Log.d(TAG,"open live tv details page");
 
@@ -560,45 +548,15 @@ public class MainBrowseFragment extends BrowseFragment {
                         Object item,
                         RowPresenter.ViewHolder rowViewHolder,
                         Row row) {
-                    //.makeText(getActivity(), "Implement click handler", Toast.LENGTH_SHORT.show();
-                    Intent intent = new Intent(getContext(), YoutubePlayerActivity.class);
+
                     Card selectedCard = (Card)item;
+                    Intent intent = new Intent(getContext(), DetailViewActivity.class);
+                    intent.putExtra("videoId",selectedCard.getVideoId());
+
+                    //to set video title
+                    intent.putExtra("videoTitle",selectedCard.getTitle());
 
 
-                    if(selectedCard.isLive()){
-
-                        intent = new Intent(getContext(), DetailViewLiveBroadcastActivity.class);
-                        //intent.putExtra("mediaId",id);
-                        intent.putExtra("videoId",selectedCard.getVideoId());
-
-                        //to set video title
-                        intent.putExtra("videoTitle",selectedCard.getTitle());
-
-                        startActivity(intent);
-                        Log.d(TAG,"open sample live tv details page");
-
-
-                    }
-
-                    else if(selectedCard.getDescription().toLowerCase().contains("movie")){
-                        intent = new Intent(getContext(), DetailViewMovieActivity.class);
-                        // intent.putExtra("mediaId",id);
-                        intent.putExtra("videoId",selectedCard.getVideoId());
-                        intent.putExtra("videoTitle",selectedCard.getTitle());
-
-                        startActivity(intent);
-                        Log.d(TAG,"open movie details page");
-                    }
-
-                    else{
-                        intent = new Intent(getContext(), DetailViewTvShowActivity.class);
-                        //intent.putExtra("mediaId",id);
-                        intent.putExtra("videoId",selectedCard.getVideoId());
-                        intent.putExtra("videoTitle",selectedCard.getTitle());
-
-                        startActivity(intent);
-                        Log.d(TAG,"open tv show details page");
-                    }
                 }
             });
         }
@@ -698,11 +656,11 @@ public class MainBrowseFragment extends BrowseFragment {
                         RowPresenter.ViewHolder rowViewHolder,
                         Row row) {
 
-                    Intent intent = null;
                     Card selectedCard = (Card)item;
-
-                    intent = new Intent(getContext(), DetailViewTvShowActivity.class);
+                    Intent intent = new Intent(getContext(), DetailViewActivity.class);
                     intent.putExtra("videoId",selectedCard.getVideoId());
+
+                    //to set video title
                     intent.putExtra("videoTitle",selectedCard.getTitle());
 
 
@@ -810,16 +768,16 @@ public class MainBrowseFragment extends BrowseFragment {
                         Row row) {
                     /*Toast.makeText(getActivity(), "Implement click handler", Toast.LENGTH_SHORT)
                             .show();*/
-                    Intent intent = null;
                     Card selectedCard = (Card)item;
 
-                    intent = new Intent(getContext(), DetailViewTvShowActivity.class);
+                    Intent intent = new Intent(getContext(), DetailViewActivity.class);
                     intent.putExtra("videoId",selectedCard.getVideoId());
+
+                    //to set video title
                     intent.putExtra("videoTitle",selectedCard.getTitle());
 
 
                     startActivity(intent);
-                    Log.d(TAG,"open tv show details page");
 
 
 
@@ -920,16 +878,12 @@ public class MainBrowseFragment extends BrowseFragment {
                         Row row) {
 
 
-                    Intent intent = new Intent(getContext(), DetailViewMovieActivity.class);
                     Card selectedCard = (Card)item;
+                    Intent intent = new Intent(getContext(), DetailViewActivity.class);
+                    intent.putExtra("videoId",selectedCard.getVideoId());
 
-
-
-                    //if(selectedCard.getDescription().toLowerCase().contains("korean")||selectedCard.getTitle().toLowerCase().contains("gone")) {
-
-                        intent.putExtra("videoId",selectedCard.getVideoId());
-                        intent.putExtra("videoTitle",selectedCard.getTitle());
-                        //intent.putExtra("cardType",selectedCard.getType().toString());
+                    //to set video title
+                    intent.putExtra("videoTitle",selectedCard.getTitle());
 
                         Log.d(TAG,"open movie details page");
 
