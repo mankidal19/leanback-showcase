@@ -25,12 +25,7 @@ import android.widget.Toast;
 import java.util.List;
 
 import nurulaiman.sony.activity.DetailViewActivity;
-import nurulaiman.sony.activity.DetailViewLiveBroadcastActivity;
-import nurulaiman.sony.activity.DetailViewMovieActivity;
-import nurulaiman.sony.activity.DetailViewTvShowActivity;
-import nurulaiman.sony.activity.LiveActivity;
 import nurulaiman.sony.activity.MainActivity;
-import nurulaiman.sony.activity.YoutubePlayerActivity;
 import nurulaiman.sony.data.MockDatabase;
 
 
