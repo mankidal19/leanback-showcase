@@ -16,16 +16,12 @@
 package android.support.v17.leanback.supportleanbackshowcase.app.details;
 
 import android.support.v17.leanback.supportleanbackshowcase.models.CardRow;
-import android.support.v17.leanback.supportleanbackshowcase.utils.CardListRow;
+import android.support.v17.leanback.supportleanbackshowcase.models.CardListRow;
 import android.support.v17.leanback.widget.FocusHighlight;
-import android.support.v17.leanback.widget.HeaderItem;
 import android.support.v17.leanback.widget.ListRowPresenter;
 import android.support.v17.leanback.widget.Presenter;
 import android.support.v17.leanback.widget.PresenterSelector;
 import android.util.Log;
-
-import nurulaiman.sony.models.IconHeaderItem;
-import nurulaiman.sony.ui.presenter.IconHeaderItemPresenter;
 
 /**
  * This {@link PresenterSelector} will return a {@link ListRowPresenter} which has shadow support

@@ -3,11 +3,8 @@ package android.support.v17.leanback.supportleanbackshowcase.cards;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.Nullable;
 import android.support.v17.leanback.supportleanbackshowcase.R;
 import android.support.v17.leanback.widget.BaseCardView;
-import android.support.v17.leanback.widget.ImageCardView;
-import android.support.v7.widget.CardView;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -16,10 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import nurulaiman.sony.fragment.MySettingsFragment;
+import android.support.v17.leanback.supportleanbackshowcase.app.settings.MySettingsFragment;
 
 public class CustomImageCardView extends BaseCardView {
 

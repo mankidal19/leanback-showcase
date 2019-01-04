@@ -4,25 +4,11 @@ import android.content.Context;
 import android.support.v17.leanback.supportleanbackshowcase.R;
 import android.support.v17.leanback.supportleanbackshowcase.cards.CustomImageCardView;
 import android.support.v17.leanback.supportleanbackshowcase.models.Card;
-import android.support.v17.leanback.widget.ImageCardView;
-import android.support.v17.leanback.widget.OnItemViewSelectedListener;
-import android.support.v17.leanback.widget.Presenter;
-import android.support.v17.leanback.widget.Row;
-import android.support.v17.leanback.widget.RowPresenter;
-import android.support.v17.leanback.widget.ShadowOverlayContainer;
-import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.View;
 
 import com.bumptech.glide.Glide;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import nurulaiman.sony.fragment.MySettingsFragment;
-
-import static android.support.v17.leanback.widget.BaseCardView.CARD_REGION_VISIBLE_SELECTED;
 
 public class CustomImageCardViewPresenter extends AbstractCardPresenter<CustomImageCardView> {
 

@@ -29,10 +29,9 @@ import android.widget.ImageView;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
-import nurulaiman.sony.fragment.MySettingsFragment;
+import android.support.v17.leanback.supportleanbackshowcase.app.settings.MySettingsFragment;
 
 /**
  * Custom title view to be used in {@link android.support.v17.leanback.app.BrowseFragment}.
