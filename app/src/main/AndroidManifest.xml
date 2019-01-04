@@ -192,6 +192,10 @@
             android:exported="true"
             android:theme="@style/Theme.Example.LeanbackPreferences" />
         <activity
+            android:name="nurulaiman.sony.activity.DetailViewActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Example.Leanback.CustomTitle" />
+        <activity
             android:name="nurulaiman.sony.activity.DetailViewLiveBroadcastActivity"
             android:exported="true"
             android:theme="@style/Theme.Example.Leanback.CustomTitle" />
