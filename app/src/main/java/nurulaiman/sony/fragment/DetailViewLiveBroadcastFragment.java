@@ -49,7 +49,6 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 
 import nurulaiman.sony.activity.DetailViewActivity;
-import nurulaiman.sony.activity.DetailViewLiveBroadcastActivity;
 import nurulaiman.sony.activity.LiveActivity;
 import nurulaiman.sony.utils.AppUiUtils;
 import nurulaiman.sony.utils.MatchingCardUtils;
