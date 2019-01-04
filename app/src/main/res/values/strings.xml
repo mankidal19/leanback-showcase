@@ -122,7 +122,7 @@
     <string name="action_other_ep">OTHER EPISODES</string>
     <string name="dialog_channel_list_title">CHANNEL LIST</string>
     <string name="dialog_channel_list_description">Channel list of live broadcasts available.</string>
-    <string name="dialog_example_button_channel1">1: Al Jazeera News (English)</string>
+    <string name="dialog_example_button_channel1">1: Al Jazeera News - LIVE</string>
     <string name="dialog_example_button_channel2">2: Arirang TV World - LIVE</string>
     <string name="dialog_example_button_channel3">3: Euronews English - LIVE</string>
     <string name="dialog_example_button_channel4">4: KBS World 24 - LIVE</string>

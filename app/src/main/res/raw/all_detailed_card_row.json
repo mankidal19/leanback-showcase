@@ -1821,7 +1821,7 @@
     ]
   },
   {
-    "title": "Al Jazeera News (English)",
+    "title": "Al Jazeera News - LIVE",
     "description": "News Channel",
     "year": "2018",
     "text": "At Al Jazeera English, we focus on people and events that affect people's lives.",
@@ -1926,7 +1926,7 @@
     "recommended": [
       {
         "type": "DEFAULT",
-        "title": "Al Jazeera News (English)",
+        "title": "Al Jazeera News - LIVE",
         "description": "At Al Jazeera English, we focus on people and events that affect people's lives.",
         "localImageResource": "aljazeera"
       },
@@ -1963,7 +1963,7 @@
       },
       {
         "type": "DEFAULT",
-        "title": "Al Jazeera News (English)",
+        "title": "Al Jazeera News - LIVE",
         "description": "At Al Jazeera English, we focus on people and events that affect people's lives.",
         "localImageResource": "aljazeera"
       },
@@ -2000,7 +2000,7 @@
       },
       {
         "type": "DEFAULT",
-        "title": "Al Jazeera News (English)",
+        "title": "Al Jazeera News - LIVE",
         "description": "At Al Jazeera English, we focus on people and events that affect people's lives.",
         "localImageResource": "aljazeera"
       }
