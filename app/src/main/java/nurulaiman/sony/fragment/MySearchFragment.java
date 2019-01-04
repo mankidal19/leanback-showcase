@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import nurulaiman.sony.activity.DetailViewActivity;
 import nurulaiman.sony.activity.DetailViewLiveBroadcastActivity;
 import nurulaiman.sony.activity.DetailViewMovieActivity;
 import nurulaiman.sony.activity.DetailViewTvShowActivity;
@@ -171,55 +172,15 @@ public class MySearchFragment extends android.support.v17.leanback.app.SearchFra
 
                 if(item instanceof Card){
                     Card selectedCard = (Card)item;
+                    intent = new Intent(getContext(), DetailViewActivity.class);
+                    intent.putExtra("videoId",selectedCard.getVideoId());
 
-                    if(selectedCard.isLive()){
+                    //to set video title
+                    intent.putExtra("videoTitle",selectedCard.getTitle());
 
-                            intent = new Intent(getContext(), DetailViewLiveBroadcastActivity.class);
-                            //intent.putExtra("mediaId",id);
-                            intent.putExtra("videoId",selectedCard.getVideoId());
+                    startActivity(intent);
 
-                            //to set video title
-                            intent.putExtra("videoTitle",selectedCard.getTitle());
-
-                            startActivity(intent);
-                            Log.d(TAG,"open sample live tv details page");
-
-                        /*//directly play video
-                        else{
-                            intent = new Intent(getContext(), LiveActivity.class);
-                            //intent.putExtra("mediaId",id);
-                            intent.putExtra("videoId",selectedCard.getVideoId());
-
-                            //to set video title
-                            intent.putExtra("videoTitle",selectedCard.getTitle());
-
-                            startActivity(intent);
-                            Log.d(TAG,"play live video");
-                        }*/
-
-                    }
-
-                    else if(selectedCard.getDescription().toLowerCase().contains("movie")){
-                            intent = new Intent(getContext(), DetailViewMovieActivity.class);
-                            // intent.putExtra("mediaId",id);
-                            intent.putExtra("videoId",selectedCard.getVideoId());
-                            intent.putExtra("videoTitle",selectedCard.getTitle());
-
-                            startActivity(intent);
-                            Log.d(TAG,"open movie details page");
-                    }
-
-                    else{
-                            intent = new Intent(getContext(), DetailViewTvShowActivity.class);
-                            //intent.putExtra("mediaId",id);
-                            intent.putExtra("videoId",selectedCard.getVideoId());
-                            intent.putExtra("videoTitle",selectedCard.getTitle());
-
-                            startActivity(intent);
-                            Log.d(TAG,"open tv show details page");
-                    }
-
-
+                    Log.d(TAG,"open DetailViewActivity");
 
 
                 }
