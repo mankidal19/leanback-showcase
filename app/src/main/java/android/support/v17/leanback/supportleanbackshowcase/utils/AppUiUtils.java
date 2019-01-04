@@ -1,3 +1,16 @@
+/*
+* Created by Nurul Aiman, as an Open Source Project
+* Documented on 04/01/2019
+* Other interesting source code can be found at https://bitbucket.org/mankidal19/
+*
+*
+* This AppUiUtils purpose is to customized details page background color
+* based on content provider selected.
+* Currently only FPTPlay & Hotstar will display different background color
+* respectively, other providers will use default color
+*/
+
+
 package android.support.v17.leanback.supportleanbackshowcase.utils;
 
 import android.content.Context;
@@ -10,7 +23,7 @@ import android.support.v17.leanback.supportleanbackshowcase.app.settings.MySetti
 
 public class AppUiUtils {
 
-    private Context context = null;
+    private Context context;
     private String provider;
     private String interfaceMode;
 

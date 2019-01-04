@@ -1,3 +1,13 @@
+/*
+ * Created by Nurul Aiman, as an Open Source Project
+ * Documented on 04/01/2019
+ * Other interesting source code can be found at https://bitbucket.org/mankidal19/
+ *
+ *
+ * This MatchingCardUtils acts as a utility class that provide multiple methods to
+ * find matching detailed card
+ */
+
 package android.support.v17.leanback.supportleanbackshowcase.utils;
 
 import android.content.Context;
@@ -17,14 +27,13 @@ public class MatchingCardUtils {
         this.context = context;
     }
 
-
+    //match a Card with its DetailedCard
     public DetailedCard findMatchingCard(Card card){
 
 
         String json = Utils.inputStreamToString(context.getResources().openRawResource(
                 R.raw.all_detailed_card_row));
 
-        //DetailedCardRow detailedCardRow = new Gson().fromJson(json, DetailedCardRow.class);
         DetailedCard[] rows = new Gson().fromJson(json, DetailedCard[].class);
         for(DetailedCard detailedCard:rows){
             if(card.getTitle().toLowerCase().equals(detailedCard.getTitle().toLowerCase())
@@ -38,23 +47,7 @@ public class MatchingCardUtils {
 
     }
 
-    public DetailedCard findMatchingCardUsingVideoId(String videoId){
-
-        String json = Utils.inputStreamToString(context.getResources().openRawResource(
-                R.raw.all_detailed_card_row));
-
-        DetailedCard[] rows = new Gson().fromJson(json, DetailedCard[].class);
-        for(DetailedCard detailedCard:rows){
-            if(videoId.equals(detailedCard.getVideoId())){
-                chosenDetailedCard = detailedCard;
-                return chosenDetailedCard;
-            }
-        }
-
-        return chosenDetailedCard;
-    }
-
-    //for movies
+    //find the DetailedCard with title exactly matching the string passed
     public DetailedCard findExactTitleMatchingCard(String videoTitle){
 
 
@@ -85,6 +78,7 @@ public class MatchingCardUtils {
 
     }
 
+    //find the DetailedCard with title almost matching the string passed
     public DetailedCard findMatchingCard(String videoTitle){
 
 
@@ -115,21 +109,6 @@ public class MatchingCardUtils {
 
     }
 
-    public boolean matchTwoCards(String a,String b){
-        if(a.toLowerCase().contains(b.toLowerCase()) || b.toLowerCase().contains(a.toLowerCase())
-                ||a.regionMatches(true,10,b,10,10)
-                ||a.regionMatches(true,12,b,12,10)){
-
-            Log.d("MatchingCardUtils","Two title matched: "+a+", "+b);
-            return true;
-        }
-
-        else{
-            Log.d("MatchingCardUtils","Two title not matched: "+a+", "+b);
-
-            return false;
-        }
-    }
 
 
 
