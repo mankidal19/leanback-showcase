@@ -282,8 +282,6 @@ public class DetailViewTvShowFragment extends MyDetailsFragment implements OnIte
             }
             else if(action.getId()==ACTION_WATCHNOW){
                 Intent intent = new Intent(getContext(), YoutubePlayerActivity.class);
-                //Intent intent = new Intent(getContext(), YoutubeTvViewActivity.class);
-                //Intent intent = new Intent(getContext(), YoutubeActivityFragment.class);
                 String videoId = data.getVideoId();
                 String videoTitle = data.getTitle();
                 String playlistId = data.getPlaylistId();
@@ -309,7 +307,6 @@ public class DetailViewTvShowFragment extends MyDetailsFragment implements OnIte
 
         else if(item instanceof Card && ((Card)item).getType().equals(Card.Type.DEFAULT)){
             Intent intent = new Intent(getContext(), YoutubePlayerActivity.class);
-            //Intent intent = new Intent(getContext(), YoutubeTvViewActivity.class);
 
             Card selectedCard = (Card)item;
 
