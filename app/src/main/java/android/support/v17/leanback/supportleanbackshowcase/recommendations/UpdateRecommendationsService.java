@@ -1,3 +1,16 @@
+/*
+ * Created by Nurul Aiman, as an Open Source Project
+ * Documented on 04/01/2019
+ * Other interesting source code can be found at https://bitbucket.org/mankidal19/
+ *
+ *
+ * This class is called by RecommendationReceiver class to provide recommendations
+ * update service.
+ * Current implementation is random recommendation, with max recommendations is
+ * set to 6 at a time with description is randomly selected between "New", "Popular"
+ * or "Similar Show".
+ */
+
 package android.support.v17.leanback.supportleanbackshowcase.recommendations;
 
 import android.app.IntentService;
@@ -56,6 +69,8 @@ public class UpdateRecommendationsService extends IntentService {
 
         int count = 0;
 
+
+        //dummy description
         ArrayList<String> description = new ArrayList<String>();
         description.add("New");
         description.add("Popular");
