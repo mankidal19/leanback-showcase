@@ -8,7 +8,7 @@
         "description": "After School Club, often shortened to ASC, is a South Korean internet-based live-music request television talk show co-hosted by Park Jimin, Seungmin and Heejun. [TV SHOW] [ENTERTAINMENT]",
         "localImageResource": "asc_club",
         "footerIconLocalImageResource": "ic_installed",
-        "id":0,
+        "id":1001,
         "live":false,
         "videoId":"j92a1CAk0uU",
         "playlistId":"PLV71sdBgCmhSQwckYsNtNn7e5CGUnldJk"
@@ -19,7 +19,7 @@
         "description": "New singing program from Astro. [TV SHOW] [ENTERTAINMENT]",
         "localImageResource": "big_stage",
         "footerIconLocalImageResource": "ic_installed",
-        "id":1,
+        "id":1002,
         "live":false,
         "videoId":"iD_i7enDjtY",
         "playlistId": "PLV71sdBgCmhSqotsspKrNPENicHFMMp3e"
@@ -30,7 +30,7 @@
         "description": "A local spin-off version from Korea's famous variety show. [TV SHOW] [ENTERTAINMENT]",
         "localImageResource": "icsyv",
         "footerIconLocalImageResource": "ic_installed",
-        "id":2,
+        "id":1003,
         "live":false,
         "videoId":"FsLCzW6t2bc",
         "playlistId": "PLV71sdBgCmhRywMhzrCQ5sFcaeEquUDK2"
@@ -41,7 +41,7 @@
         "description": "Music Bank is a South Korean music program which airs every Friday at 17:00 KST on KBS2. [TV SHOW] [ENTERTAINMENT]",
         "localImageResource": "music_bank",
         "footerIconLocalImageResource": "ic_installed",
-        "id":3,
+        "id":1004,
         "live":false,
         "videoId":"OE-EnnWODT4",
         "playlistId": "PLV71sdBgCmhTCsQ_9uIr990DgL1DtTrtx"
@@ -52,7 +52,7 @@
         "description": "The Return of Superman is a South Korean reality-variety show that airs on KBS2. Casts: Lee Dong-gook, Sam Hammington, Ko Ji-yong [TV SHOW] [ENTERTAINMENT]",
         "localImageResource": "tros",
         "footerIconLocalImageResource": "ic_installed",
-        "id":4,
+        "id":1005,
         "live":false,
         "videoId":"50eg9SXUDwA",
         "playlistId":"PLV71sdBgCmhR0ukwiie3LkO5TDADc7lq3"
@@ -66,7 +66,8 @@
         "live":false,
         "videoId": "bK30mUCPeqQ",
         "playlistId": "PLV71sdBgCmhQXZbgn-WfxhaM3zmdP35GJ",
-        "provider": "HOTSTAR"
+        "provider": "HOTSTAR",
+        "id": 1006
       },
       {
         "type": "DEFAULT",
@@ -77,7 +78,8 @@
         "live":false,
         "videoId":"EUWPPNWFrA0",
         "playlistId":"PL9FSFrcfpxciaU1Lkt9OZXdSJRJ3EqCDm",
-        "provider":"FPTPLAY"
+        "provider":"FPTPLAY",
+        "id":1006
       }
     ]
   },
@@ -90,7 +92,7 @@
         "description": "Gundam Build Fighters is a 2013 Japanese science fiction anime television series based on Sunrise's long-running Gundam franchise. [TV SHOW] [ANIME & CARTOONS]",
         "localImageResource": "gbf",
         "footerIconLocalImageResource": "ic_installed",
-        "id":5,
+        "id":2001,
         "live":false,
         "videoId":"R9H1u1zFVNc",
         "playlistId": "PLJV1h9xQ7Hx-0WipavLDd3mFSLJL1r2XQ"
@@ -101,7 +103,7 @@
         "description": "Mobile Suit Gundam SEED is an anime series developed by Sunrise and directed by Mitsuo Fukuda. [TV SHOW] [ANIME & CARTOONS]",
         "localImageResource": "gundam_seed",
         "footerIconLocalImageResource": "ic_installed",
-        "id":6,
+        "id":2002,
         "live":false,
         "videoId":"EWtuU5H6BdQ",
         "playlistId": "PLJV1h9xQ7Hx89jH49IgnVuKyuRNTj11PK"
@@ -112,7 +114,7 @@
         "description": "Following the animated adventures of the clueless yet brilliant Mr. Bean and his faithful sidekick Teddy. [TV SHOW] [CARTOONS]",
         "localImageResource": "mr_bean_animated",
         "footerIconLocalImageResource": "ic_installed",
-        "id":7,
+        "id":2003,
         "live":false,
         "videoId":"qfg4aSLxFcI",
         "playlistId": "PLC1EDzqtkrh-2763ug-ABi8LWh5om2nkK"
@@ -123,7 +125,7 @@
         "description": "Centers on a rivalry between its two title characters, Tom, a cat, and Jerry, a mouse. [TV SHOW] [CARTOONS]",
         "localImageResource": "tom_jerry",
         "footerIconLocalImageResource": "ic_installed",
-        "id":8,
+        "id":2004,
         "live":false,
         "videoId":"cqyziA30whE",
         "playlistId": "PLJYf0JdTApCqAbZImkQagXEuByh-b_7To"
@@ -134,7 +136,7 @@
         "description": "Curious and fun-loving 5-year-old twin brothers Upin and Ipin learn and explore new things. [TV SHOW] [CARTOONS]",
         "localImageResource": "upin_ipin",
         "footerIconLocalImageResource": "ic_installed",
-        "id":9,
+        "id":2005,
         "live":false,
         "videoId":"E4R_e9bkLgg",
         "playlistId":"PLdm4JCUOHx85iurzIvwQywGu5B8BtibN4"
@@ -145,7 +147,7 @@
         "description": "Dholakpur is know for many things: a mighty and benevolent king, fun and big hearted cities and undoubtedly the most scrumptions laddoos. But no tale of Dholakpur is complete without its very own little hero: Chhota Bheem! Young as he may be, Bheem is strong and very smart. Along with his friends, he loves to help in need! Watch Bheem and his friends, Chutki, Raju, Jaggu, Kalia and Dholu-Bholu as they enjoy, explore and protect the sunshine-filled village of Dholakpur. [TV SHOW] [CARTOONS] [HINDI]",
         "localImageResource": "hindi_cartoon",
         "footerIconLocalImageResource": "ic_installed",
-        "id":9,
+        "id":2006,
         "live":false,
         "videoId": "sVDgfPbsVDA",
         "playlistId": "PLV71sdBgCmhT5Fyc4Nnb5YRg9mzXU-PCD",
@@ -157,7 +159,7 @@
         "description": "xem phim hoạt hình, hoạt hình, phim hoạt hình, hoạt hình giải trí, phim hoạt hình hay nhất, tổng hợp phim hoạt hình, phim hay, hoạt hình hay, phim hoạt hình hay, hoạt hình việt nam, phim hoạt hình việt nam, phim, hoạt, hình, hay, nhất, 2018, hoat hinh, phim hoat hinh, phim hoat hinh hay nhat, hoat hinh hay, phim hoat hinh hay, hoạt hình anime, tổng hợp phim, khoảnh khắc kỳ diệu. [TV SHOW] [CARTOONS]",
         "localImageResource": "viet_cartoon",
         "footerIconLocalImageResource": "ic_installed",
-        "id":9,
+        "id":2007,
         "live":false,
         "videoId":"HvIgHzHPEPE",
         "playlistId":"PL5XdURn1NwtyDMHIWfhiTHOa1QpovYgXP",
@@ -174,7 +176,7 @@
         "description": "Third Degree is a show where Aaj Tak reporters interrogate people posing serious questions highlighting some of the major issues that are of concern to the nation. [TV SHOW] [NEWS]",
         "localImageResource": "hindi_news",
         "footerIconLocalImageResource": "ic_installed",
-        "id":10,
+        "id":3001,
         "live":false,
         "videoId": "3BPmvTM2hv8",
         "playlistId": "PLV71sdBgCmhS8TnThsTDeM9497OB1WNoe"
@@ -186,7 +188,7 @@
         "description": "Al Jazeera, also known as JSC, is a state-funded broadcaster in Doha, Qatar, owned by the Al Jazeera Media Network. [TV SHOW] [NEWS]",
         "localImageResource": "aljazeera_news",
         "footerIconLocalImageResource": "ic_installed",
-        "id":10,
+        "id":3002,
         "live":false,
         "videoId":"qwKi5kZPME8",
         "playlistId": "PLzGHKb8i9vTxYYfgnuGEdzr6Tlp3cb7hS"
@@ -197,7 +199,7 @@
         "description": "Arirang TV is a global, English-language television network based in Seoul, South Korea. [TV SHOW] [NEWS]",
         "localImageResource": "arirang_news",
         "footerIconLocalImageResource": "ic_installed",
-        "id":11,
+        "id":3003,
         "live":false,
         "videoId":"1ARLUNkn2kE",
         "playlistId": "PLWdVPk7xgPCATZnQg3mouESJABEBuyFoD"
@@ -208,7 +210,7 @@
         "description": "Astro Awani is the in-house rolling television news and current affairs channel providing 24-hour news coverage including news in Malay. [TV SHOW] [NEWS]",
         "localImageResource": "buletin_awani",
         "footerIconLocalImageResource": "ic_installed",
-        "id":12,
+        "id":3004,
         "live":false,
         "videoId":"sDOv5TurUJY",
         "playlistId":"PLV71sdBgCmhR8i7YjoAtDgEFTgEvLxrlC"
@@ -219,7 +221,7 @@
         "description": "Euronews is a multilingual news media service, headquartered in Lyon, France. [TV SHOW] [NEWS]",
         "localImageResource": "euro_news",
         "footerIconLocalImageResource": "ic_installed",
-        "id":13,
+        "id":3005,
         "live":false,
         "videoId":"0BIm3FE5xfk",
         "playlistId": "PLV71sdBgCmhSxGf6YK18cFE1EfX1Vivxn"
@@ -230,7 +232,7 @@
         "description": "KBS Nine O'Clock News is the flagship newscast that airs on KBS1 every night at 9:00pm KST. [TV SHOW] [NEWS]",
         "localImageResource": "kbs_news",
         "footerIconLocalImageResource": "ic_installed",
-        "id":14,
+        "id":3006,
         "live":false,
         "videoId":"zlds3jwi8sc",
         "playlistId": "PLV71sdBgCmhSaDWhMFZZXsNRNlmSYKFYh"
@@ -247,7 +249,7 @@
         "description": "The 2018 All England Open, officially YONEX All England Open 2018 was a badminton tournament which took place at Arena Birmingham in England from 14 to 18 March 2018 and had a total purse of $1,000,000. [TV SHOW] [SPORTS]",
         "localImageResource": "all_england",
         "footerIconLocalImageResource": "ic_installed",
-        "id": 15,
+        "id": 4001,
         "live": false,
         "videoId":"ge3g-GT9j00",
         "playlistId": "PLV71sdBgCmhScOPUZKwFTaIE2k78lsXLo"
@@ -258,7 +260,7 @@
         "description": "Process to determine the teams that will participate at the 2019 FIBA Basketball World Cup. [TV SHOW] [SPORTS]",
         "localImageResource": "fiba_basketball",
         "footerIconLocalImageResource": "ic_installed",
-        "id":16,
+        "id":4002,
         "live":false,
         "videoId":"XM0BYUt5cmM",
         "playlistId":"PLV71sdBgCmhQ9uNXW9Pf-LS-4_nMsBejN"
@@ -269,7 +271,7 @@
         "description": "Cricket Ki Baat is a show that brings you the inside stories from the dressing room of cricket teams to BCCI politics; from to exclusive interviews with iconic cricket stars to lots of live action and match analysis. [TV SHOW] [SPORTS]",
         "localImageResource": "hindi_sports",
         "footerIconLocalImageResource": "ic_installed",
-        "id":16,
+        "id":4003,
         "live":false,
         "videoId": "SAWYgMuxYaQ",
         "playlistId":"PLV71sdBgCmhTYVDhzyZFQBOwVtWc-eHzI"
@@ -280,7 +282,7 @@
         "description": "The Asian Netball Championship is a netball competition held every two years with teams from across Asia competing. [TV SHOW] [SPORTS]",
         "localImageResource": "asian_netball",
         "footerIconLocalImageResource": "ic_installed",
-        "id":17,
+        "id":4004,
         "live":false,
         "videoId":"48as9V-47Po",
         "playlistId": "PLV71sdBgCmhQ52TF6NXzyzWMkKfsJ7g8o"
@@ -291,7 +293,7 @@
         "description": "'Best Shot,' a documentary series co-produced by Lebron James about an inner city basketball team, is available on the NBA YouTube channel. [TV SHOW] [SPORTS]",
         "localImageResource": "best_shot",
         "footerIconLocalImageResource": "ic_installed",
-        "id":18,
+        "id":4005,
         "live":false,
         "videoId":"NdkLOwYYfpA",
         "playlistId": "PLlVlyGVtvuVnYpLKwy4Nz7QgTV69B54By"
@@ -302,7 +304,7 @@
         "description": "Get to know Chelsea like no one ever did before. [TV SHOW] [SPORTS]",
         "localImageResource": "chelsea_film",
         "footerIconLocalImageResource": "ic_installed",
-        "id":19,
+        "id":4006,
         "live":false,
         "videoId":"z8t4iylW-nM",
         "playlistId": "PLx6bGx4zt6Ekz7CEhqHUeBbeoo_VxiVpa"
@@ -318,7 +320,7 @@
         "title": "Deep Into The Deep Sleep",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_01",
-        "id":20,
+        "id":5001,
         "live":false
       },
       {
@@ -327,7 +329,7 @@
         "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_02",
-        "id":21,
+        "id":5002,
         "live":false
       },
       {
@@ -336,7 +338,7 @@
         "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "game_fairy",
-        "id":22,
+        "id":5003,
         "live":false
       },
       {
@@ -345,7 +347,7 @@
         "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "game_cursed",
-        "id":23,
+        "id":5004,
         "live":false
       },
       {
@@ -354,7 +356,7 @@
         "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_05",
-        "id":24,
+        "id":5005,
         "live":false
       }
     ]
@@ -368,7 +370,7 @@
         "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_05",
-        "id":25,
+        "id":6001,
         "live":false
       },
       {
@@ -377,7 +379,7 @@
         "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_06",
-        "id":26,
+        "id":6002,
         "live":false
       },
       {
@@ -386,7 +388,7 @@
         "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_07",
-        "id":27,
+        "id":6003,
         "live":false
       },
       {
@@ -395,7 +397,7 @@
         "title": "The Silence",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_08",
-        "id":28,
+        "id":6004,
         "live":false
       },
       {
@@ -404,7 +406,7 @@
         "description": "$3.99 English MOVIE",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_09",
-        "id":29,
+        "id":6005,
         "live":false
       }
     ]
@@ -418,7 +420,7 @@
         "title": "Deep Into The Deep Sleep",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_01",
-        "id":30,
+        "id":7001,
         "live":false
       },
       {
@@ -427,7 +429,7 @@
         "description": "$3.99 English MOVIE [MOVIE] [ENGLISH MOVIES]",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_02",
-        "id":31,
+        "id":7002,
         "live":false
       },
       {
@@ -436,7 +438,7 @@
         "description": "$3.99 English MOVIE [MOVIE] [ENGLISH MOVIES]",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "game_fairy",
-        "id":32,
+        "id":7003,
         "live":false
       },
       {
@@ -445,7 +447,7 @@
         "description": "$3.99 English MOVIE [MOVIE] [ENGLISH MOVIES]",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "game_cursed",
-        "id":33,
+        "id":7004,
         "live":false
       },
       {
@@ -454,7 +456,7 @@
         "description": "$3.99 English MOVIE [MOVIE] [ENGLISH MOVIES]",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_05",
-        "id":34,
+        "id":7005,
         "live":false
       },
       {
@@ -463,7 +465,7 @@
         "description": "$3.99 English MOVIE [MOVIE] [ENGLISH MOVIES]",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_06",
-        "id":35,
+        "id":7006,
         "live":false
       },
       {
@@ -472,7 +474,7 @@
         "description": "$3.99 English MOVIE [MOVIE] [ENGLISH MOVIES]",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_07",
-        "id":36,
+        "id":7007,
         "live":false
       },
       {
@@ -481,7 +483,7 @@
         "title": "The Silence",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_08",
-        "id":37,
+        "id":7008,
         "live":false
       },
       {
@@ -490,7 +492,7 @@
         "description": "$3.99 English MOVIE [MOVIE] [ENGLISH MOVIES]",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "card_image_movie_09",
-        "id":38,
+        "id":7009,
         "live":false
       }
     ]
@@ -506,7 +508,7 @@
         "localImageResource": "if_we",
         "footerIconLocalImageResource":"ic_installed" ,
         "videoId":"vZ7EMIH0oHw",
-        "id":39,
+        "id":8001,
         "live":false
       },
       {
@@ -516,7 +518,7 @@
         "localImageResource": "happy_home",
         "footerIconLocalImageResource": "ic_installed",
         "videoId":"mF_sBcqdEYI",
-        "id":40,
+        "id":8002,
         "live":false
       },
       {
@@ -526,7 +528,7 @@
         "localImageResource": "dont_worry",
         "footerIconLocalImageResource": "ic_installed",
         "videoId":"aY704gPIeZY",
-        "id":41,
+        "id":8003,
         "live":false
       },
       {
@@ -536,7 +538,7 @@
         "localImageResource": "kang_love",
         "footerIconLocalImageResource": "ic_installed",
         "videoId":"PIBdfdz98iU",
-        "id":42,
+        "id":8004,
         "live":false
       },
       {
@@ -546,7 +548,7 @@
         "localImageResource": "middle_school",
         "footerIconLocalImageResource":"ic_installed",
         "videoId":"7j7Wn0-9JJs",
-        "id":43,
+        "id":8005,
         "live":false
       },
       {
@@ -555,7 +557,9 @@
         "title": "Krishnarjuna Yuddham",
         "footerIconLocalImageResource": "stars_red",
         "localImageResource": "hindi_movie",
-        "videoId": "jkOhv9VoBu4"
+        "videoId": "jkOhv9VoBu4",
+        "id":8006,
+        "live":false
       }
     ]
   },
@@ -568,7 +572,7 @@
         "description": "Bản tin 113 Online mới nhất ngày 19/11/2018 | Tin tức An ninh Việt Nam | Tin tức mới nhất | ANTV",
         "localImageResource": "viet_live",
         "videoId":"ryN5slhHZkc",
-        "id":44,
+        "id":9001,
         "live":true
       },
       {
@@ -577,7 +581,7 @@
         "description": "In a short period of its existence, India TV has earned a repute of credible reporting, courage, espousal of public interest and its unmatched delivery which is of a great value to all stakeholders. The channel has its bureau and sales representation across the country. India TV has state-of-the-art digital connectivity and a new centre covering an area of 80,000 square feet in Noida.",
         "localImageResource": "hindi_live",
         "videoId":"bdae9OSA-bA",
-        "id":44,
+        "id":9002,
         "live":true
       },
       {
@@ -586,7 +590,7 @@
         "description": "At Al Jazeera English, we focus on people and events that affect people's lives. [LIVE TV]",
         "localImageResource": "aljazeera",
         "videoId":"wp-R57ZaiXY",
-        "id":44,
+        "id":9003,
         "live":true
       },
 
@@ -596,7 +600,7 @@
         "description": "Arirang TV/Radio is a public service agency that spreads the uniqueness of Korea to the world through cutting-edge broadcasting. [LIVE TV]",
         "localImageResource": "arirang",
         "videoId":"uopc-rWT1nw",
-        "id":45,
+        "id":9004,
         "live":true
       },
 
@@ -606,7 +610,7 @@
         "description": "Euronews: the most watched news channel in Europe Subscribe!  [LIVE TV]",
         "localImageResource": "euronews",
         "videoId":"GtoIMPrppUY",
-        "id":47,
+        "id":9005,
         "live":true
       },
 
@@ -616,7 +620,7 @@
         "description": "700만 해외동포와 함께 하는 KBS World 24!!!  [LIVE TV]",
         "localImageResource": "kbsworld",
         "videoId":"u7aE36v9xg8",
-        "id":48,
+        "id":9006,
         "live":true
       },
 
@@ -626,7 +630,7 @@
         "description": "Funny Episodes of Mr. Bean the Animated Series 24/7.  [LIVE TV]",
         "localImageResource": "mrbeanc",
         "videoId":"Lvp-lSqHVKc",
-        "id":49,
+        "id":9007,
         "live":true
       }
 
