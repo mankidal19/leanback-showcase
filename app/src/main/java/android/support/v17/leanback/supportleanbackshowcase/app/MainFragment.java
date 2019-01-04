@@ -48,8 +48,8 @@ import android.support.v17.leanback.supportleanbackshowcase.app.settings.MySetti
 import android.support.v17.leanback.supportleanbackshowcase.app.room.controller.search.SearchActivity;
 import android.support.v17.leanback.supportleanbackshowcase.app.settings.MySettingsFragment;
 import android.support.v17.leanback.supportleanbackshowcase.models.IconHeaderItem;
-import android.support.v17.leanback.supportleanbackshowcase.cards.presenters.CustomShadowRowPresenterSelector;
-import android.support.v17.leanback.supportleanbackshowcase.cards.presenters.IconHeaderItemPresenter;
+import android.support.v17.leanback.supportleanbackshowcase.models.presenters.CustomShadowRowPresenterSelector;
+import android.support.v17.leanback.supportleanbackshowcase.models.presenters.IconHeaderItemPresenter;
 import android.support.v17.leanback.supportleanbackshowcase.utils.MatchingCardUtils;
 
 public class MainFragment extends BrowseFragment {
