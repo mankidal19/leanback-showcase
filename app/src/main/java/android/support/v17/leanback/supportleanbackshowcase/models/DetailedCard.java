@@ -37,7 +37,7 @@ public class DetailedCard implements Serializable {
     @SerializedName("videoUrl") private String mVideoUrl = null;
     @SerializedName("videoId") private String mVideoId = null;
     @SerializedName("playlistId") private String mPlaylistId;
-    @SerializedName("type") private Card.Type mType;
+    @SerializedName("type") private Card.Type mType = Card.Type.DEFAULT;
 
     @SerializedName("live") private boolean mLive;
 
@@ -115,4 +115,5 @@ public class DetailedCard implements Serializable {
     public boolean isLive() {
         return mLive;
     }
+
 }
