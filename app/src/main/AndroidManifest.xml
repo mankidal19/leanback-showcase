@@ -200,7 +200,6 @@
             android:name="nurulaiman.sony.activity.ChannelListActivity"
             android:exported="true"
             android:theme="@style/Theme.Example.Leanback.CustomTitle" />
-        <activity android:name="nurulaiman.sony.VideoPlaybackActivity" />
         <activity
             android:name="nurulaiman.sony.activity.LiveActivity"
             android:exported="true"

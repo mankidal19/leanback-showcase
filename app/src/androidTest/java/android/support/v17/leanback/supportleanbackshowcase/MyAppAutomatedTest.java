@@ -81,7 +81,7 @@ public class MyAppAutomatedTest {
 
     private static final String LIVE_TV_CONTENT = "Arirang TV World - LIVE";
 
-    private static final String FIRST_LIVE_TV_CONTENT = "Al Jazeera News (English)";
+    private static final String FIRST_LIVE_TV_CONTENT = "Al Jazeera News - LIVE";
 
     private static final String NAV_MENU = "Navigation menu";
 
@@ -348,7 +348,7 @@ public class MyAppAutomatedTest {
 
 
         assertThat("Cannot focus on thumbnail!", uiObject,notNullValue());
-        assertEquals("thumbnail focused is not the first one","Al Jazeera News (English)",title);
+        assertEquals("thumbnail focused is not the first one","Al Jazeera News - LIVE",title);
 
         testButton(KeyEvent.KEYCODE_PROG_GREEN,NEWS_SPORTS_FRAGMENT);
         mDevice.pressDPadDown();
