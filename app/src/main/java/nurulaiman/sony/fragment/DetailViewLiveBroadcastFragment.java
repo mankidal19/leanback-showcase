@@ -48,6 +48,7 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 
+import nurulaiman.sony.activity.DetailViewActivity;
 import nurulaiman.sony.activity.DetailViewLiveBroadcastActivity;
 import nurulaiman.sony.activity.LiveActivity;
 import nurulaiman.sony.utils.AppUiUtils;
@@ -238,7 +239,7 @@ public class DetailViewLiveBroadcastFragment extends MyDetailsFragment implement
         }
 
         else if(item instanceof Card && ((Card)item).getType().equals(Card.Type.DEFAULT)){
-            Intent intent = new Intent(getContext(), DetailViewLiveBroadcastActivity.class);
+            Intent intent = new Intent(getContext(), DetailViewActivity.class);
             Card selectedCard = (Card)item;
 
 

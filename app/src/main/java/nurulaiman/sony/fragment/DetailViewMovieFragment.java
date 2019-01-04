@@ -48,6 +48,7 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 
+import nurulaiman.sony.activity.DetailViewActivity;
 import nurulaiman.sony.activity.DetailViewMovieActivity;
 import nurulaiman.sony.activity.YoutubePlayerActivity;
 import nurulaiman.sony.activity.YoutubeTvViewActivity;
@@ -261,7 +262,7 @@ public class DetailViewMovieFragment extends MyDetailsFragment implements OnItem
 
         else if(item instanceof Card && ((Card)item).getType().equals(Card.Type.DEFAULT)
                 ||((Card)item).getType().equals(Card.Type.MOVIE)){
-            Intent intent = new Intent(getContext(), DetailViewMovieActivity.class);
+            Intent intent = new Intent(getContext(), DetailViewActivity.class);
             Card selectedCard = (Card)item;
             Bundle extras = new Bundle();
 
