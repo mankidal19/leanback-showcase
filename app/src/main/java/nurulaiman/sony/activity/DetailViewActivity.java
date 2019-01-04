@@ -26,7 +26,7 @@ public class DetailViewActivity extends LeanbackActivity {
         super.onCreate(savedInstanceState);
 
         matchingCardUtils = new MatchingCardUtils(this);
-        chosenCard = matchingCardUtils.findMatchingCard(getIntent().getExtras().getString("videoTitle"));
+        chosenCard = matchingCardUtils.findExactTitleMatchingCard(getIntent().getExtras().getString("videoTitle"));
 
         setContentView(R.layout.activity_detail_example);
 
