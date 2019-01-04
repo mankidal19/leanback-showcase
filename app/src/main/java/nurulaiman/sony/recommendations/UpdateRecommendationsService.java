@@ -3,7 +3,6 @@ package nurulaiman.sony.recommendations;
 import android.app.IntentService;
 import android.app.Notification;
 import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.app.TaskStackBuilder;
 import android.content.Context;
 import android.content.Intent;
@@ -15,7 +14,6 @@ import android.support.v17.leanback.supportleanbackshowcase.R;
 import android.support.app.recommendation.ContentRecommendation;
 import android.support.v17.leanback.supportleanbackshowcase.models.DetailedCard;
 import android.support.v17.leanback.supportleanbackshowcase.utils.Utils;
-import android.util.Log;
 
 import com.google.gson.Gson;
 
@@ -23,9 +21,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import nurulaiman.sony.activity.DetailViewActivity;
-import nurulaiman.sony.activity.DetailViewLiveBroadcastActivity;
-import nurulaiman.sony.activity.DetailViewMovieActivity;
-import nurulaiman.sony.activity.DetailViewTvShowActivity;
 
 public class UpdateRecommendationsService extends IntentService {
 
