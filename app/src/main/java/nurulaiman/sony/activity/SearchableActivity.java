@@ -50,84 +50,28 @@ public class SearchableActivity extends Activity {
             int id = Integer.valueOf(uri.getLastPathSegment());
             MockDatabase mockDatabase = new MockDatabase(this);
             Card selectedCard = mockDatabase.findMovieWithId(id);
-
             boolean startPlayback = getIntent().getBooleanExtra(EXTRA_START_PLAYBACK, false);
             Log.d(TAG, "Should start playback? " + (startPlayback ? "yes" : "no"));
             Log.i(TAG,uri.toString());
 
-            if (startPlayback) {
+            Intent intent = new Intent(this, DetailViewActivity.class);
+            intent.putExtra("videoId",selectedCard.getVideoId());
+            intent.putExtra("mediaId",id);
+            //to set video title
+            intent.putExtra("videoTitle",selectedCard.getTitle());
 
-                //startActivity(LiveActivity.createIntent(this, id));
-                Intent intent = new Intent(this, LiveActivity.class);
-                intent.putExtra("mediaId",id);
-                intent.putExtra("liveVideoId",selectedCard.getVideoId());
-                startActivity(intent);
-
-                Log.d(TAG,"startplayback");
-
-            } else {
-                /*Movie movie = MockDatabase.findMovieWithId(id);
-                startActivity(VideoDetailsActivity.createIntent(this, movie));*/
-
-                // intent = new Intent(this, LiveActivity.class);
-                //startActivity(intent);
-                //startActivity(LiveActivity.createIntent(this, id));
-
-
-                play(selectedCard,id);
-
-
-                Log.d(TAG,"notstartplayback");
-            }
+            startActivity(intent);
         }
         finish();
     }
 
-    public void play(Card selectedCard,int id){
-        if(selectedCard.isLive()){
+    /*public void play(Card selectedCard,int id){
 
+        Intent intent = new Intent(this, DetailViewActivity.class);
+        intent.putExtra("videoId",selectedCard.getVideoId());
+        intent.putExtra("mediaId",id);
+        //to set video title
+        intent.putExtra("videoTitle",selectedCard.getTitle());
 
-                Intent intent = new Intent(this, LiveActivity.class);
-                intent.putExtra("mediaId",id);
-                intent.putExtra("videoId",selectedCard.getVideoId());
-
-                //to set video title
-                intent.putExtra("videoTitle",selectedCard.getTitle());
-
-                startActivity(intent);
-                Log.d(TAG,"play live video");
-
-        }
-
-        else{
-            //for movie details page
-            if(selectedCard.getTitle().toLowerCase().contains("movie")){
-                Intent intent = new Intent(this, DetailViewMovieActivity.class);
-                intent.putExtra("mediaId",id);
-                intent.putExtra("videoId",selectedCard.getVideoId());
-                intent.putExtra("videoTitle",selectedCard.getTitle());
-
-
-                startActivity(intent);
-                Log.d(TAG,"open movie details page");
-            }
-            //for VOD
-            else{
-                Intent intent = new Intent(this, DetailViewTvShowActivity.class);
-                intent.putExtra("mediaId",id);
-                intent.putExtra("videoId",selectedCard.getVideoId());
-                intent.putExtra("videoTitle",selectedCard.getTitle());
-
-
-                //to set video playlistId
-                intent.putExtra("playlistId",selectedCard.getPlaylistId());
-
-
-                startActivity(intent);
-                Log.d(TAG,"open tv show details page");
-            }
-
-
-        }
-    }
+    }*/
 }
