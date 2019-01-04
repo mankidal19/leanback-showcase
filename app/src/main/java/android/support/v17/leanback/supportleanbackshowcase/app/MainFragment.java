@@ -982,12 +982,10 @@ public class MainFragment extends BrowseFragment {
 
                     switch (settings.getId()){
                         case SETTINGS_INTERFACE:
-                            //TODO change between developer/user interface
                             getActivity().startActivityForResult(intent,1);
 
                             break;
                         case SETTINGS_PROVIDERS:
-                            //TODO change provider's logo
                             getActivity().startActivityForResult(intent,1);
                             break;
 
