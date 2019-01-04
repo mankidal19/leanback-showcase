@@ -195,18 +195,7 @@
             android:name="nurulaiman.sony.activity.DetailViewActivity"
             android:exported="true"
             android:theme="@style/Theme.Example.Leanback.CustomTitle" />
-        <activity
-            android:name="nurulaiman.sony.activity.DetailViewLiveBroadcastActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Example.Leanback.CustomTitle" />
-        <activity
-            android:name="nurulaiman.sony.activity.DetailViewMovieActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Example.Leanback.CustomTitle" />
-        <activity
-            android:name="nurulaiman.sony.activity.DetailViewTvShowActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Example.Leanback.CustomTitle" />
+
         <activity
             android:name="nurulaiman.sony.activity.ChannelListActivity"
             android:exported="true"
