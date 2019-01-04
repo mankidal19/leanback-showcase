@@ -253,17 +253,7 @@
                 <category android:name="android.intent.category.VOICE" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="nurulaiman.sony.activity.YoutubeTvViewActivity"
-            android:hardwareAccelerated="true"
-            android:theme="@style/Theme.Example.Leanback.CustomTitle">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.VOICE" />
-            </intent-filter>
-        </activity>
         <activity
             android:name="nurulaiman.sony.activity.SearchActivity"
             android:exported="true"

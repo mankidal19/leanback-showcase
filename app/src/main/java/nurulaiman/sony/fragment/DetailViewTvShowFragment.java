@@ -54,8 +54,6 @@ import com.google.gson.Gson;
 import java.util.ArrayList;
 
 import nurulaiman.sony.activity.YoutubePlayerActivity;
-import nurulaiman.sony.activity.YoutubeTvViewActivity;
-import nurulaiman.sony.testpackage.media.YoutubeActivityFragment;
 import nurulaiman.sony.utils.AppUiUtils;
 import nurulaiman.sony.utils.JsonParseTask;
 import nurulaiman.sony.utils.MatchingCardUtils;
