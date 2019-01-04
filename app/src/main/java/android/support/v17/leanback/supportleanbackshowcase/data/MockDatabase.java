@@ -12,6 +12,8 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * Modified by Nurul Aiman, Documented on 04/01/2019
  */
 
 package android.support.v17.leanback.supportleanbackshowcase.data;
@@ -80,9 +82,6 @@ public class MockDatabase {
                     Log.i("get card:",c.getTitle());
                 }
             }
-
-            //this.cards = row.getCards();
-            //Log.i("CARD:",cards.get(0).getTitle());
 
         }
         return cards;
@@ -155,6 +154,8 @@ public class MockDatabase {
 
     }
 
+
+    //method to remove redundant card, i.e., cards with same title
    protected void removeRedundantCard(List<Card> results){
 
         List<Card> toRemove = new ArrayList<Card>();

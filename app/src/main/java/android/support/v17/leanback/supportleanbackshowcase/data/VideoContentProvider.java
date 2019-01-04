@@ -38,6 +38,10 @@ import java.util.List;
  * Note: If you provide WatchAction feeds to Google, then you do not need this class. You should
  * still handle the playback intent and media controls in your fragment. This class enables <a
  * href="https://developer.android.com/training/tv/discovery/searchable.html">on-device search.</a>.
+ *
+ *
+ *
+ * Modified by Nurul Aiman, Documented on 04/01/2019
  */
 public class VideoContentProvider extends ContentProvider {
 
