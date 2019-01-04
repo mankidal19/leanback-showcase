@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.v17.leanback.supportleanbackshowcase.R;
+import android.support.v17.leanback.supportleanbackshowcase.app.settings.MySettingsFragment;
 import android.support.v17.leanback.widget.BaseCardView;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -12,8 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import android.support.v17.leanback.supportleanbackshowcase.app.settings.MySettingsFragment;
 
 public class CustomImageCardView extends BaseCardView {
 

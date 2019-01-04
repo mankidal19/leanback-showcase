@@ -3,6 +3,7 @@ package android.support.v17.leanback.supportleanbackshowcase.cards.presenters;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.support.v17.leanback.supportleanbackshowcase.R;
+import android.support.v17.leanback.supportleanbackshowcase.models.IconHeaderItem;
 import android.support.v17.leanback.widget.ListRow;
 import android.support.v17.leanback.widget.PageRow;
 import android.support.v17.leanback.widget.Presenter;
@@ -12,8 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import android.support.v17.leanback.supportleanbackshowcase.models.IconHeaderItem;
 
 public class UnfocusableIconHeaderItemPresenter extends RowHeaderPresenter {
 

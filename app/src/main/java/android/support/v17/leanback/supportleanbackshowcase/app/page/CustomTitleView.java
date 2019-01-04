@@ -18,20 +18,19 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.v17.leanback.supportleanbackshowcase.R;
+import android.support.v17.leanback.supportleanbackshowcase.app.settings.MySettingsFragment;
 import android.support.v17.leanback.widget.SearchOrbView;
 import android.support.v17.leanback.widget.TitleViewAdapter;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.ImageView;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import android.support.v17.leanback.supportleanbackshowcase.app.settings.MySettingsFragment;
 
 /**
  * Custom title view to be used in {@link android.support.v17.leanback.app.BrowseFragment}.

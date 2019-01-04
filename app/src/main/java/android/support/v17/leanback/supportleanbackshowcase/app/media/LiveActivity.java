@@ -4,15 +4,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v17.leanback.supportleanbackshowcase.R;
+import android.support.v17.leanback.supportleanbackshowcase.app.settings.MySettingsFragment;
+import android.support.v17.leanback.supportleanbackshowcase.data.MockDatabase;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.KeyEvent;
-
-
-
-import java.util.ArrayList;
-
-import android.support.v17.leanback.supportleanbackshowcase.R;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,8 +20,7 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.player.YouTubePlayer;
 import com.pierfrancescosoffritti.androidyoutubeplayer.player.YouTubePlayerView;
 import com.pierfrancescosoffritti.androidyoutubeplayer.player.listeners.AbstractYouTubePlayerListener;
 
-import android.support.v17.leanback.supportleanbackshowcase.data.MockDatabase;
-import android.support.v17.leanback.supportleanbackshowcase.app.settings.MySettingsFragment;
+import java.util.ArrayList;
 
 
 public class LiveActivity extends FragmentActivity {

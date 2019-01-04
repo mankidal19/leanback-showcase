@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v17.leanback.supportleanbackshowcase.R;
+import android.support.v17.leanback.supportleanbackshowcase.app.mobile.utils.CardsAdapter;
 import android.support.v17.leanback.supportleanbackshowcase.models.Card;
 import android.support.v17.leanback.supportleanbackshowcase.models.CardRow;
 import android.support.v17.leanback.supportleanbackshowcase.utils.Utils;
@@ -23,8 +24,6 @@ import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import android.support.v17.leanback.supportleanbackshowcase.app.mobile.utils.CardsAdapter;
 
 public class MobileMainActivity extends AppCompatActivity {
 

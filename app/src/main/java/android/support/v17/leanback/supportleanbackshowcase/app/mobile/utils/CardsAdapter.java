@@ -3,7 +3,10 @@ package android.support.v17.leanback.supportleanbackshowcase.app.mobile.utils;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v17.leanback.supportleanbackshowcase.R;
+import android.support.v17.leanback.supportleanbackshowcase.chromecast.ChromecastActivity;
+import android.support.v17.leanback.supportleanbackshowcase.chromecast.utils.PlaybackUtils;
 import android.support.v17.leanback.supportleanbackshowcase.models.Card;
+import android.support.v17.leanback.supportleanbackshowcase.utils.MatchingCardUtils;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,12 +16,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
- 
-import java.util.List;
 
-import android.support.v17.leanback.supportleanbackshowcase.chromecast.ChromecastActivity;
-import android.support.v17.leanback.supportleanbackshowcase.utils.MatchingCardUtils;
-import android.support.v17.leanback.supportleanbackshowcase.chromecast.utils.PlaybackUtils;
+import java.util.List;
 
 /**
  * Created by Ravi Tamada on 18/05/16.
