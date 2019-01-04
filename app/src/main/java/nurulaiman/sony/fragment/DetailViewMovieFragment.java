@@ -49,9 +49,7 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 
 import nurulaiman.sony.activity.DetailViewActivity;
-import nurulaiman.sony.activity.DetailViewMovieActivity;
 import nurulaiman.sony.activity.YoutubePlayerActivity;
-import nurulaiman.sony.activity.YoutubeTvViewActivity;
 import nurulaiman.sony.utils.AppUiUtils;
 import nurulaiman.sony.utils.MatchingCardUtils;
 
