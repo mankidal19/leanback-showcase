@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.support.v17.leanback.supportleanbackshowcase.R;
 import android.support.app.recommendation.ContentRecommendation;
@@ -21,6 +22,7 @@ import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import nurulaiman.sony.activity.DetailViewActivity;
 import nurulaiman.sony.activity.DetailViewLiveBroadcastActivity;
 import nurulaiman.sony.activity.DetailViewMovieActivity;
 import nurulaiman.sony.activity.DetailViewTvShowActivity;
@@ -87,7 +89,7 @@ public class UpdateRecommendationsService extends IntentService {
         for (int i=0; i<MAX_RECOMMENDATIONS; i++) {
             chosenShows[i] = shows[list.get(i)];
 
-            builder.setBackgroundImageUri(chosenShows[i].getLocalImageResource())
+            builder.setBackgroundImageUri(Uri.parse(chosenShows[i].getLocalImageResource()).toString())
                     .setIdTag(CONTENT_TAG + Long.toString(chosenShows[i].hashCode()))
                     .setTitle(chosenShows[i].getTitle())
                     .setText(description.get(i%description.size()))//random desc chosen
@@ -110,32 +112,12 @@ public class UpdateRecommendationsService extends IntentService {
 
     private Intent buildPendingIntent(DetailedCard show) {
 
-        if(show.isLive()){
+        intent = new Intent(getApplicationContext(), DetailViewActivity.class);
+        //intent.putExtra("mediaId",id);
+        intent.putExtra("videoId",show.getVideoId());
 
-            intent = new Intent(getApplicationContext(), DetailViewLiveBroadcastActivity.class);
-            //intent.putExtra("mediaId",id);
-            intent.putExtra("videoId",show.getVideoId());
-
-            //to set video title
-            intent.putExtra("videoTitle",show.getTitle());
-
-        }
-
-        else if(show.getText().toLowerCase().contains("movie")){
-            intent = new Intent(getApplicationContext(), DetailViewMovieActivity.class);
-            // intent.putExtra("mediaId",id);
-            intent.putExtra("videoId",show.getVideoId());
-            intent.putExtra("videoTitle",show.getTitle());
-
-        }
-
-        else{
-            intent = new Intent(getApplicationContext(), DetailViewTvShowActivity.class);
-            //intent.putExtra("mediaId",id);
-            intent.putExtra("videoId",show.getVideoId());
-            intent.putExtra("videoTitle",show.getTitle());
-
-        }
+        //to set video title
+        intent.putExtra("videoTitle",show.getTitle());
 
 
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
