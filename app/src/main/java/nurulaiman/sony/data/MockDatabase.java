@@ -118,6 +118,7 @@ public class MockDatabase {
             Log.i("search card:",c.getTitle());
         }
 
+        removeRedundantCard(results);
         return results;
     }
 
@@ -154,42 +155,26 @@ public class MockDatabase {
 
     }
 
-   /* public Card searchCardByTitle(String query){
-        query = query.toLowerCase();
+   protected void removeRedundantCard(List<Card> results){
 
-        String[] title = query.split("]");
+        List<Card> toRemove = new ArrayList<Card>();
 
+        for(Card card:results){
+            String currTitle = card.getTitle();
+            int times = 0;
 
-        Card card = null;
-
-        for (Card c : getAllCard()) {
-
-            String[] cardTitle = c.getTitle().toLowerCase().split("] ");
-
-            if(c.getTitle()!=null){
-                if(title[title.length-1].contains(cardTitle[cardTitle.length-1])){
-
-                    Log.d("found title for:",c.getTitle());
-
-                    card = c;
-                    return card;
-
-
+            for(int i=0;i<results.size();i++){
+                if(currTitle.equals(results.get(i).getTitle())){
+                    times++;
                 }
-
+                if(times>1){
+                    toRemove.add(results.get(i));
+                }
             }
-
-            else{
-                Log.d("title not found for:",query);
-            }
-
-
-
         }
 
-        return card;
-
-    }*/
+        results.removeAll(toRemove);
+   }
 
     /**
      * Finds a particular movie with the given id.
