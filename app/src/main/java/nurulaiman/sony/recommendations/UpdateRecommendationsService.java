@@ -113,7 +113,6 @@ public class UpdateRecommendationsService extends IntentService {
     private Intent buildPendingIntent(DetailedCard show) {
 
         intent = new Intent(getApplicationContext(), DetailViewActivity.class);
-        //intent.putExtra("mediaId",id);
         intent.putExtra("videoId",show.getVideoId());
 
         //to set video title
