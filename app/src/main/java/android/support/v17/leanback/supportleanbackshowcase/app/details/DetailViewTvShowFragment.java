@@ -52,7 +52,7 @@ import android.support.v17.leanback.supportleanbackshowcase.app.player.YoutubePl
 import android.support.v17.leanback.supportleanbackshowcase.app.settings.MySettingsFragment;
 
 import android.support.v17.leanback.supportleanbackshowcase.utils.AppUiUtils;
-import android.support.v17.leanback.supportleanbackshowcase.app.room.api.youtubeParser;
+import android.support.v17.leanback.supportleanbackshowcase.app.room.api.YoutubeParser;
 import android.support.v17.leanback.supportleanbackshowcase.utils.MatchingCardUtils;
 
 /**
@@ -124,7 +124,7 @@ public class DetailViewTvShowFragment extends MyDetailsFragment implements OnIte
         if (playlistId != null) {
             Log.d(TAG, "PLAYLIST ID NOT NULL");
 
-            youtubeParser youtubeParser = (youtubeParser) new youtubeParser(new youtubeParser.AsyncResponse() {
+            YoutubeParser youtubeParser = (YoutubeParser) new YoutubeParser(new YoutubeParser.AsyncResponse() {
                 @Override
                 public void processFinish(ArrayList<Card> output) {
                     //titleArrayList.addAll(output);

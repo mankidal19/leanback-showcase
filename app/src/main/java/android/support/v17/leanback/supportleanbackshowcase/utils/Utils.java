@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * A collection of utility methods, all static.
+ * A collection of static utility methods.
  */
 public class Utils {
 

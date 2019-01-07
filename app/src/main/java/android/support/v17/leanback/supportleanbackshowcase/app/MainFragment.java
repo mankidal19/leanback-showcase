@@ -523,7 +523,7 @@ public class MainFragment extends BrowseFragment {
     }
 
     /**
-     * Fragment for the default landing page (Home)
+     * Fragment for the default landing page (Home).
      */
     public static class FragmentHome extends RowsFragment {
         private final ArrayObjectAdapter mRowsAdapter;
@@ -635,7 +635,7 @@ public class MainFragment extends BrowseFragment {
     }
 
     /**
-     * Fragment for category TV Shows
+     * Fragment for category TV Shows.
      */
     public static class FragmentTvShow extends RowsFragment {
         private final ArrayObjectAdapter mRowsAdapter;
@@ -753,7 +753,7 @@ public class MainFragment extends BrowseFragment {
     }
 
     /**
-     * Fragment for category Nesw & Sports
+     * Fragment for category Nesw & Sports.
      */
     public static class FragmentNewsSports extends RowsFragment {
         private final ArrayObjectAdapter mRowsAdapter;
@@ -869,7 +869,7 @@ public class MainFragment extends BrowseFragment {
     }
 
     /**
-     * Fragment for category Movies
+     * Fragment for category Movies.
      */
     public static class FragmentMovie extends RowsFragment {
         private final ArrayObjectAdapter mRowsAdapter;
@@ -985,7 +985,7 @@ public class MainFragment extends BrowseFragment {
     }
 
     /**
-     * Fragment for Settings menu
+     * Fragment for Settings menu.
      */
     public static class SettingsFragment extends RowsFragment {
         private final ArrayObjectAdapter mRowsAdapter;
@@ -1072,7 +1072,7 @@ public class MainFragment extends BrowseFragment {
     }
 
     /**
-     * Fragment for Login and Signup menu
+     * Fragment for Login and Sign-up menu.
      */
     public static class FragmentLoginSignUp extends Fragment implements MainFragmentAdapterProvider {
         private MainFragmentAdapter mMainFragmentAdapter = new MainFragmentAdapter(this);

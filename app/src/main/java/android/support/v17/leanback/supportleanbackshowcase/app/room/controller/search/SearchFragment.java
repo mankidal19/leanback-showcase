@@ -45,7 +45,6 @@ public class SearchFragment extends android.support.v17.leanback.app.SearchFragm
 
     private Intent intent = null;
 
-    /*private MockDatabase mockDatabase = new MockDatabase(getContext());*/
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
