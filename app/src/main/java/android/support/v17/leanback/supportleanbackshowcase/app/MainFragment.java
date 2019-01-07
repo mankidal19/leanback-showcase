@@ -162,13 +162,15 @@ public class MainFragment extends BrowseFragment {
 
 // Register to receive messages.
 // We are registering an observer (mMessageReceiver) to receive Intents
-// with actions named "custom-event-name".
+// with actions named "activity-says-hi".
         LocalBroadcastManager.getInstance(getContext()).registerReceiver(mMessageReceiver,
                 new IntentFilter("activity-says-hi"));
     }
 
-    // Our handler for received Intents. This will be called whenever an Intent
-    // with an action named "custom-event-name" is broadcasted.
+    /**
+     * Our handler for received Intents. This will be called whenever an Intent
+     * with an action named "custom-event-name" is broadcasted.
+     */
     private BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -224,8 +226,9 @@ public class MainFragment extends BrowseFragment {
     };
 
 
-
-
+    /**
+     * Setup main fragment UI based on content provider and interface mode set.
+     */
     private void setupUi() {
         setHeadersState(HEADERS_ENABLED);
         setHeadersTransitionOnBackEnabled(true);
@@ -306,6 +309,9 @@ public class MainFragment extends BrowseFragment {
         }, 2000);
     }
 
+    /**
+     * Setup main menu header title and link to their respective fragment.
+     */
     private void createRows() {
 
 
@@ -396,8 +402,9 @@ public class MainFragment extends BrowseFragment {
     }
 
 
-
-
+    /**
+     * Fragment for category Live TV Channels.
+     */
     public static class FragmentLiveBroadcast extends RowsFragment {
         private final ArrayObjectAdapter mRowsAdapter;
 
@@ -472,6 +479,9 @@ public class MainFragment extends BrowseFragment {
            super.onTransitionEnd();
        }
 
+        /**
+         * Create rows based on cards data declared in {@link android.support.v17.leanback.supportleanbackshowcase.R.raw#grid_live_broadcast}
+         */
         private void createRows() {
             String json = Utils.inputStreamToString(getResources().openRawResource(
                     R.raw.grid_live_broadcast));
@@ -513,7 +523,7 @@ public class MainFragment extends BrowseFragment {
     }
 
     /**
-     * Page fragment embeds a rows fragment.
+     * Fragment for the default landing page (Home)
      */
     public static class FragmentHome extends RowsFragment {
         private final ArrayObjectAdapter mRowsAdapter;
@@ -576,6 +586,9 @@ public class MainFragment extends BrowseFragment {
             super.onTransitionEnd();
         }
 
+        /**
+         * Create rows based on cards data declared in {@link android.support.v17.leanback.supportleanbackshowcase.R.raw#home_browse_row}
+         */
         private void createRows() {
             String json = Utils.inputStreamToString(getResources().openRawResource(
                     R.raw.home_browse_row));
@@ -621,6 +634,9 @@ public class MainFragment extends BrowseFragment {
         }
     }
 
+    /**
+     * Fragment for category TV Shows
+     */
     public static class FragmentTvShow extends RowsFragment {
         private final ArrayObjectAdapter mRowsAdapter;
 
@@ -690,6 +706,9 @@ public class MainFragment extends BrowseFragment {
             super.onTransitionEnd();
         }
 
+        /**
+         * Create rows based on cards data declared in {@link android.support.v17.leanback.supportleanbackshowcase.R.raw#tvshow_browse_row}
+         */
         private void createRows() {
             String json = Utils.inputStreamToString(getResources().openRawResource(
                     R.raw.tvshow_browse_row));
@@ -733,6 +752,9 @@ public class MainFragment extends BrowseFragment {
         }
     }
 
+    /**
+     * Fragment for category Nesw & Sports
+     */
     public static class FragmentNewsSports extends RowsFragment {
         private final ArrayObjectAdapter mRowsAdapter;
 
@@ -801,6 +823,9 @@ public class MainFragment extends BrowseFragment {
             super.onTransitionEnd();
         }
 
+        /**
+         * Create rows based on cards data declared in {@link android.support.v17.leanback.supportleanbackshowcase.R.raw#news_sports_browse_row}
+         */
         private void createRows() {
             String json = Utils.inputStreamToString(getResources().openRawResource(
                     R.raw.news_sports_browse_row));
@@ -843,6 +868,9 @@ public class MainFragment extends BrowseFragment {
         }
     }
 
+    /**
+     * Fragment for category Movies
+     */
     public static class FragmentMovie extends RowsFragment {
         private final ArrayObjectAdapter mRowsAdapter;
 
@@ -916,6 +944,9 @@ public class MainFragment extends BrowseFragment {
             super.onTransitionEnd();
         }
 
+        /**
+         * Create rows based on cards data declared in {@link android.support.v17.leanback.supportleanbackshowcase.R.raw#movie_browse_row}
+         */
         private void createRows() {
             String json = Utils.inputStreamToString(getResources().openRawResource(
                     R.raw.movie_browse_row));
@@ -953,6 +984,9 @@ public class MainFragment extends BrowseFragment {
         }
     }
 
+    /**
+     * Fragment for Settings menu
+     */
     public static class SettingsFragment extends RowsFragment {
         private final ArrayObjectAdapter mRowsAdapter;
 
@@ -1037,6 +1071,9 @@ public class MainFragment extends BrowseFragment {
 
     }
 
+    /**
+     * Fragment for Login and Signup menu
+     */
     public static class FragmentLoginSignUp extends Fragment implements MainFragmentAdapterProvider {
         private MainFragmentAdapter mMainFragmentAdapter = new MainFragmentAdapter(this);
         private WebView mWebview;
@@ -1070,8 +1107,8 @@ public class MainFragment extends BrowseFragment {
         @Override
         public void onResume() {
             super.onResume();
-            //mWebview.loadUrl("https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Fnext%3D%252Faccount%26action_handle_signin%3Dtrue%26feature%3Dredirect_login%26hl%3Den%26app%3Ddesktop&hl=en&service=youtube&flowName=GlifWebSignIn&flowEntry=ServiceLogin");
-            mWebview.loadUrl("https://chromecast-5545d.firebaseapp.com/");
+            mWebview.loadUrl("https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Fnext%3D%252Faccount%26action_handle_signin%3Dtrue%26feature%3Dredirect_login%26hl%3Den%26app%3Ddesktop&hl=en&service=youtube&flowName=GlifWebSignIn&flowEntry=ServiceLogin");
+            //mWebview.loadUrl("https://chromecast-5545d.firebaseapp.com/");
             getMainFragmentAdapter().getFragmentHost().notifyDataReady(getMainFragmentAdapter());
 
 
