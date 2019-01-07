@@ -16,9 +16,9 @@ import java.util.ArrayList;
 
 import javax.net.ssl.HttpsURLConnection;
 
-public class youtubeParser extends AsyncTask<String, Void, ArrayList<Card>> {
+public class YoutubeParser extends AsyncTask<String, Void, ArrayList<Card>> {
 
-    private final static String TAG = youtubeParser.class.getSimpleName();
+    private final static String TAG = YoutubeParser.class.getSimpleName();
 
     private static final String apiKey = "AIzaSyCEfmvLPr2q4esyG2ow0XQRTaYGmApjxMQ";
     private String playlistId;
@@ -96,7 +96,7 @@ public class youtubeParser extends AsyncTask<String, Void, ArrayList<Card>> {
 
     public AsyncResponse delegate = null;
 
-    public youtubeParser(AsyncResponse delegate){
+    public YoutubeParser(AsyncResponse delegate){
         this.delegate = delegate;
     }
 
