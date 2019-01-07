@@ -57,7 +57,7 @@ import android.support.v17.leanback.supportleanbackshowcase.app.room.api.youtube
 import android.support.v17.leanback.supportleanbackshowcase.utils.MatchingCardUtils;
 
 /**
- * Displays a card with more details using a {@link DetailsFragment}.
+ * Displays a VOD with episodes card with more details using a {@link MyDetailsFragment}.
  */
 public class DetailViewTvShowFragment extends MyDetailsFragment implements OnItemViewClickedListener,
         OnItemViewSelectedListener {

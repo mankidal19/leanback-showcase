@@ -14,7 +14,11 @@ import android.support.v17.leanback.supportleanbackshowcase.app.media.LiveActivi
 import android.support.v17.leanback.supportleanbackshowcase.utils.MatchingCardUtils;
 
 
-//reconstruct code by combining 3 detailView activity for each content type into 1 activity only
+/**
+ *Activity class to render the specific details view fragment based on type of content chosen.
+ *Fragments could be either {@link DetailViewTvShowFragment} for VOD with episodes,
+ *{@link DetailViewMovieFragment} for Movie VOD, or {@link DetailViewLiveBroadcastFragment} for live TV channel.
+ */
 public class DetailViewActivity extends LeanbackActivity {
     //for finding matching detailed card
     private MatchingCardUtils matchingCardUtils = null;
@@ -53,6 +57,12 @@ public class DetailViewActivity extends LeanbackActivity {
         }
     }
 
+    /**
+     *Overrides onKeyDown method for handling KEYCODE_ESCAPE to exit the application
+     * @param KeyCode KeyCode of the key pressed
+     * @param event KeyEvent of the key pressed
+     * @return boolean value either key is handled or not
+     */
     @Override
     public boolean onKeyDown(int KeyCode, KeyEvent event){
 

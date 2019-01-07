@@ -53,7 +53,7 @@ import android.support.v17.leanback.supportleanbackshowcase.utils.AppUiUtils;
 import android.support.v17.leanback.supportleanbackshowcase.utils.MatchingCardUtils;
 
 /**
- * Displays a card with more details using a {@link DetailsFragment}.
+ * Displays a Live TV channel card with more details using a {@link MyDetailsFragment}.
  */
 public class DetailViewLiveBroadcastFragment extends MyDetailsFragment implements OnItemViewClickedListener,
         OnItemViewSelectedListener {

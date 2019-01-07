@@ -27,8 +27,8 @@ import android.widget.TextView;
 import javax.inject.Inject;
 
 /**
- * This presenter is used to render a {@link DetailedCard} in the {@link
- * DetailViewExampleFragment}.
+ * This presenter is used to render a {@link DetailedCard} in the {@link DetailViewTvShowFragment},
+ * {@link DetailViewMovieFragment}, and {@link DetailViewLiveBroadcastFragment}.
  */
 public class DetailsDescriptionPresenter extends Presenter {
 

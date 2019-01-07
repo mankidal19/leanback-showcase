@@ -54,7 +54,7 @@ import android.support.v17.leanback.supportleanbackshowcase.utils.AppUiUtils;
 import android.support.v17.leanback.supportleanbackshowcase.utils.MatchingCardUtils;
 
 /**
- * Displays a card with more details using a {@link DetailsFragment}.
+ * Displays a Movie card with more details using a {@link MyDetailsFragment}.
  */
 public class DetailViewMovieFragment extends MyDetailsFragment implements OnItemViewClickedListener,
         OnItemViewSelectedListener {

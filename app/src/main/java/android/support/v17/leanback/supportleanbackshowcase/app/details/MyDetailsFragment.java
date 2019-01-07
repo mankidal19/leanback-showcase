@@ -11,6 +11,9 @@ import android.support.v17.leanback.widget.OnItemViewClickedListener;
 import android.support.v17.leanback.widget.OnItemViewSelectedListener;
 import android.widget.Toast;
 
+/**
+ * A child class of {@link DetailsFragment} that will check the internet availability before loading the fragment.
+ */
 public class MyDetailsFragment extends DetailsFragment  {
 
     @Override
@@ -28,6 +31,10 @@ public class MyDetailsFragment extends DetailsFragment  {
     }
 
 
+    /**
+     * Method to check either internet connection is currently available or not.
+     * @return boolean of network availability
+     */
     private boolean isInternetAvailable() {
         ConnectivityManager connectivityManager = (ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
