@@ -1,3 +1,8 @@
+/*
+ * Created by Nurul Aiman, as an Open Source Project
+ * Documented on 04/01/2019
+ * Other interesting source code can be found at https://bitbucket.org/mankidal19/
+ */
 package android.support.v17.leanback.supportleanbackshowcase.app;
 
 import android.app.Activity;
@@ -9,6 +14,11 @@ import android.util.Log;
 
 import android.support.v17.leanback.supportleanbackshowcase.app.mobile.activity.MobileMainActivity;
 
+/**
+ * This class is the first activity launched when the app is first opened
+ * to check either the device is an Android TV or not. If the device is an
+ * Android TV, start activity MainActivity. Else, start activity MobileMainActivity.
+ */
 public class CheckDeviceActivity extends Activity {
 
     private static String TAG = "CheckDeviceActivity";

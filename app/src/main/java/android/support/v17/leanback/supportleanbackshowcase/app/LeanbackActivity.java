@@ -1,3 +1,9 @@
+/*
+ * Created by Nurul Aiman, as an Open Source Project
+ * Documented on 04/01/2019
+ * Other interesting source code can be found at https://bitbucket.org/mankidal19/
+ */
+
 package android.support.v17.leanback.supportleanbackshowcase.app;
 
 import android.app.Activity;
@@ -6,6 +12,12 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.view.KeyEvent;
 
+
+/**
+ *This class is the parent activity to other activity classes in this project
+ * to receive and send the RGYB button input when available to its child class
+ * currently in display.
+ */
 public class LeanbackActivity extends Activity {
 
     private static String TAG = "LeanbackActivity";

@@ -9,7 +9,7 @@ import android.support.v17.leanback.supportleanbackshowcase.models.DetailedCard;
 import android.util.Log;
 import android.view.KeyEvent;
 
-import android.support.v17.leanback.supportleanbackshowcase.app.media.LiveActivity;
+import android.support.v17.leanback.supportleanbackshowcase.app.player.LiveActivity;
 
 import android.support.v17.leanback.supportleanbackshowcase.utils.MatchingCardUtils;
 

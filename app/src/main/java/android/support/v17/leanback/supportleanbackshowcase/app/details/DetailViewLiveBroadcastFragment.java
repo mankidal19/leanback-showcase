@@ -18,7 +18,6 @@ import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v17.leanback.app.DetailsFragment;
 import android.support.v17.leanback.app.DetailsFragmentBackgroundController;
 import android.support.v17.leanback.supportleanbackshowcase.R;
 import android.support.v17.leanback.supportleanbackshowcase.cards.presenters.CardPresenterSelector;
@@ -46,7 +45,7 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 
-import android.support.v17.leanback.supportleanbackshowcase.app.media.LiveActivity;
+import android.support.v17.leanback.supportleanbackshowcase.app.player.LiveActivity;
 import android.support.v17.leanback.supportleanbackshowcase.app.settings.MySettingsFragment;
 
 import android.support.v17.leanback.supportleanbackshowcase.utils.AppUiUtils;

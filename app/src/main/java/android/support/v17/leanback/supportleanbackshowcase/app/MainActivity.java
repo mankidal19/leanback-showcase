@@ -1,3 +1,12 @@
+/*
+ * Created by Nurul Aiman, as an Open Source Project
+ * Documented on 04/01/2019
+ * Other interesting source code can be found at https://bitbucket.org/mankidal19/
+ *
+ *
+
+ */
+
 package android.support.v17.leanback.supportleanbackshowcase.app;
 
 import android.app.Activity;
@@ -17,10 +26,16 @@ import android.widget.VideoView;
 import android.support.v17.leanback.supportleanbackshowcase.app.room.controller.search.SearchableActivity;
 import android.support.v17.leanback.supportleanbackshowcase.app.settings.MySettingsFragment;
 
+/**
+ * This class is started by CheckDeviceActivity when the current device is an Android TV.
+ * This class will then load the MainFragment that holds the main landing UI of the app.
+ * If currently selected content provider is either FPTPlay or Hotstar, a promo video
+ * will be played in the background.
+ * */
+
 public class MainActivity extends LeanbackActivity {
 
     private static String TAG = "MainActivity";
-    private  KeyEvent keyEvent;
     private VideoView videoView = null;
     private String interfaceMode;
     private String provider;
@@ -28,7 +43,6 @@ public class MainActivity extends LeanbackActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.fragment_main_browse);
         setContentView(R.layout.activity_main);
 
 
