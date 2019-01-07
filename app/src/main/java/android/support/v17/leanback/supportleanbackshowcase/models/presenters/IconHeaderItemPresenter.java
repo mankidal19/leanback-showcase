@@ -16,6 +16,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+/**
+ * Presenter class for {@link IconHeaderItem}
+ */
 public class IconHeaderItemPresenter  extends RowHeaderPresenter {
 
     private static final String TAG = IconHeaderItemPresenter.class.getSimpleName();
@@ -43,12 +46,10 @@ public class IconHeaderItemPresenter  extends RowHeaderPresenter {
 
                     view.setBackgroundColor(viewGroup.getResources().getColor(R.color.custom_header_select));
 
-                    //view.getBackground().setVisible(true,false);
+
 
                 }
                 else {
-                    //view.getBackground().setVisible(false,false);
-                    //set bg to transparent
                     view.setBackgroundColor(Color.TRANSPARENT);
 
                 }

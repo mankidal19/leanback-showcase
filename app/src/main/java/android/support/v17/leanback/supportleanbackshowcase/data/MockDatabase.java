@@ -58,9 +58,9 @@ public class MockDatabase {
     private static List<Card> cards = new ArrayList<>();
 
     /**
-     * Returns a list of all of the movies in the database.
+     * Returns a list of all of the contents in the database.
      *
-     * @return All of the movies.
+     * @return All of the contents.
      */
     public List<Card> getAllCard() {
         Log.i("getAllCard:","enter function");
@@ -96,10 +96,10 @@ public class MockDatabase {
     }
 
     /**
-     * Searches for a movie whose title or description can match against the query parameter.
+     * Searches for a content whose title or description can match against the query parameter.
      *
      * @param query Search string.
-     * @return A list of movies that match the query string.
+     * @return A list of contents that match the query string.
      */
 
     public List<Card> search(String query) {
@@ -155,7 +155,10 @@ public class MockDatabase {
     }
 
 
-    //method to remove redundant card, i.e., cards with same title
+    /**
+     * Method to remove redundant card, i.e., cards with same title
+     * @param results list of current search results
+     */
    protected void removeRedundantCard(List<Card> results){
 
         List<Card> toRemove = new ArrayList<Card>();

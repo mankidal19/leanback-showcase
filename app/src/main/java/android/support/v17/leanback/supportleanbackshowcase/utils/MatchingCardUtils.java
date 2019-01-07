@@ -56,7 +56,6 @@ public class MatchingCardUtils {
 
         Log.d("MatchingCardUtils","Finding for title: "+videoTitle.toLowerCase());
 
-        //DetailedCardRow detailedCardRow = new Gson().fromJson(json, DetailedCardRow.class);
         DetailedCard[] rows = new Gson().fromJson(json, DetailedCard[].class);
         for(DetailedCard detailedCard:rows){
             Log.d("MatchingCardUtils","Searched title: "+detailedCard.getTitle().toLowerCase());
@@ -85,7 +84,6 @@ public class MatchingCardUtils {
         String json = Utils.inputStreamToString(context.getResources().openRawResource(
                 R.raw.all_detailed_card_row));
 
-        //DetailedCardRow detailedCardRow = new Gson().fromJson(json, DetailedCardRow.class);
         DetailedCard[] rows = new Gson().fromJson(json, DetailedCard[].class);
         Log.d("MatchingCardUtils","Finding for title: "+videoTitle.toLowerCase());
 

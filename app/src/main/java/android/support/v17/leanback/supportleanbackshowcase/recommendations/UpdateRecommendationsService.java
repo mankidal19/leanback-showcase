@@ -2,13 +2,6 @@
  * Created by Nurul Aiman, as an Open Source Project
  * Documented on 04/01/2019
  * Other interesting source code can be found at https://bitbucket.org/mankidal19/
- *
- *
- * This class is called by RecommendationReceiver class to provide recommendations
- * update service.
- * Current implementation is random recommendation, with max recommendations is
- * set to 6 at a time with description is randomly selected between "New", "Popular"
- * or "Similar Show".
  */
 
 package android.support.v17.leanback.supportleanbackshowcase.recommendations;
@@ -35,6 +28,13 @@ import java.util.Collections;
 
 import android.support.v17.leanback.supportleanbackshowcase.app.details.DetailViewActivity;
 
+/**
+ * This class is called by RecommendationReceiver class to provide recommendations
+ * update service.
+ * Current implementation is random recommendation, with max recommendations is
+ * set to 6 at a time with description is randomly selected between "New", "Popular"
+ * or "Similar Show".
+ */
 public class UpdateRecommendationsService extends IntentService {
 
     private static final String TAG = "UpdateRecommendationsService";
@@ -120,6 +120,10 @@ public class UpdateRecommendationsService extends IntentService {
 
     }
 
+    /**Build a pending intent based on {@link DetailedCard} passed.
+     * @param show Object of a {@link DetailedCard}
+     * @return Intent built
+     */
     private Intent buildPendingIntent(DetailedCard show) {
 
         intent = new Intent(getApplicationContext(), DetailViewActivity.class);

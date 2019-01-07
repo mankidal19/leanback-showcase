@@ -4,8 +4,6 @@
  * Other interesting source code can be found at https://bitbucket.org/mankidal19/
  *
  *
- * This class extends AbstractCardPresenter<CustomImageCardView>
- * and is the Presenter class for CustomImageCardView
  */
 package android.support.v17.leanback.supportleanbackshowcase.cards.presenters;
 
@@ -19,6 +17,10 @@ import android.view.View;
 
 import com.bumptech.glide.Glide;
 
+/**
+ * This class extends {@link AbstractCardPresenter}
+ * and is the Presenter class for CustomImageCardView
+ */
 public class CustomImageCardViewPresenter extends AbstractCardPresenter<CustomImageCardView> {
 
     private Card.Type mType;

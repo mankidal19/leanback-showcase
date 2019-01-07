@@ -13,7 +13,7 @@
  *
  */
 
-package android.support.v17.leanback.supportleanbackshowcase.app.details;
+package android.support.v17.leanback.supportleanbackshowcase.models.presenters;
 
 import android.support.v17.leanback.supportleanbackshowcase.models.CardRow;
 import android.support.v17.leanback.supportleanbackshowcase.models.CardListRow;

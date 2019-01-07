@@ -19,7 +19,7 @@ import android.support.v17.leanback.supportleanbackshowcase.cards.CharacterCardV
 import android.support.v17.leanback.supportleanbackshowcase.models.Card;
 
 /**
- * This Presenter is used to display the characters card row in the DetailView examples.
+ * This Presenter is used to display the characters card row in the DetailView.
  */
 public class CharacterCardPresenter extends AbstractCardPresenter<CharacterCardView> {
 

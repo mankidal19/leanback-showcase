@@ -4,9 +4,6 @@
  * Other interesting source code can be found at https://bitbucket.org/mankidal19/
  *
  *
- * This class extends BaseCardView and is a customized version of ImageCardView class
- * provided by leanback library. This class is created to customized how ImageCardView
- * behaves and looks like.
  */
 
 package android.support.v17.leanback.supportleanbackshowcase.cards;
@@ -25,6 +22,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+/**
+ * This class extends {@link BaseCardView} and is a customized version of {@link android.support.v17.leanback.widget.ImageCardView} class
+ * provided by leanback library. This class is created to customized how {@link android.support.v17.leanback.widget.ImageCardView}
+ * behaves and looks like.
+ */
 public class CustomImageCardView extends BaseCardView {
 
     private ImageView mImageView;
@@ -184,6 +186,11 @@ public class CustomImageCardView extends BaseCardView {
         }
     }
 
+    /**
+     * To toggle between showing and hiding the card's info area.
+     * Only usable when interface mode is set for end user.
+     * @param show boolean to show the info or not
+     */
     public void showInfo(boolean show){
 
 
@@ -208,7 +215,10 @@ public class CustomImageCardView extends BaseCardView {
     }
 
 
-    //method to change info area color when current thumbnail is on focus
+    /**
+     * Method to change info area color when current thumbnail is on focus
+     * @param hasFocus boolean value is the card currently has focus or not
+     */
     public void changeInfoAreaColor(boolean hasFocus){
 
         if(interfaceMode.equals("enduser")){
@@ -229,6 +239,10 @@ public class CustomImageCardView extends BaseCardView {
 
     }
 
+    /**
+     * Method to show card's content or not. Is called by method showInfo.
+     * @param show boolean to show the info or not
+     */
     public void showContent(boolean show){
 
 

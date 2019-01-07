@@ -19,8 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 /**
- * This class represents a row of cards. In a real world application you might want to store more
- * data than in this example.
+ * This class represents a row of cards.
  */
 public class CardRow {
 

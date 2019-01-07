@@ -23,6 +23,10 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * A more detailed data object than {@link Card}, to be used in details view
+ * i.e., {@link android.support.v17.leanback.supportleanbackshowcase.app.details.DetailViewActivity}.
+ */
 public class DetailedCard implements Serializable {
 
     @SerializedName("title") private String mTitle = "";

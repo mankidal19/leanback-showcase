@@ -2,6 +2,10 @@ package android.support.v17.leanback.supportleanbackshowcase.models;
 
 import android.support.v17.leanback.widget.HeaderItem;
 
+/**
+ * A child class of {@link HeaderItem}, an object to display header title with
+ * a custom icon besides it.
+ */
 public class IconHeaderItem extends HeaderItem {
 
 

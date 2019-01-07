@@ -15,7 +15,7 @@
 
 package android.support.v17.leanback.supportleanbackshowcase.models;
 
-import android.support.v17.leanback.supportleanbackshowcase.app.details.ShadowRowPresenterSelector;
+import android.support.v17.leanback.supportleanbackshowcase.models.presenters.ShadowRowPresenterSelector;
 import android.support.v17.leanback.widget.HeaderItem;
 import android.support.v17.leanback.widget.ListRow;
 import android.support.v17.leanback.widget.ObjectAdapter;
@@ -33,15 +33,6 @@ public class CardListRow extends ListRow {
         super(header, adapter);
         setCardRow(cardRow);
     }
-
-    //for CustomCardListRowUsage
-    public CardListRow(ObjectAdapter adapter, CardRow cardRow) {
-        super(adapter);
-        setCardRow(cardRow);
-
-
-    }
-
 
     public CardRow getCardRow() {
         return mCardRow;
