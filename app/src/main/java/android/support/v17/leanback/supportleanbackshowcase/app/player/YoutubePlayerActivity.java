@@ -1,4 +1,4 @@
-package android.support.v17.leanback.supportleanbackshowcase.app.media;
+package android.support.v17.leanback.supportleanbackshowcase.app.player;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -24,6 +24,9 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.utils.YouTubePlayerTracke
 
 import java.util.ArrayList;
 
+/**
+ * Activity to play non-live YouTube video
+ */
 public class YoutubePlayerActivity extends FragmentActivity {
 
     private static String TAG = "YoutubePlayerActivity";
@@ -125,6 +128,9 @@ public class YoutubePlayerActivity extends FragmentActivity {
 
    }
 
+    /**
+     * Initialize the {@link YouTubePlayerView} for playing the non-live YouTube video
+     */
     private void initYouTubePlayerView() {
         youTubePlayerView = findViewById(R.id.youtube_player_view);
         youTubePlayerView.getPlayerUIController().showFullscreenButton(false);
@@ -196,6 +202,14 @@ public class YoutubePlayerActivity extends FragmentActivity {
     }
 
 
+    /**
+     * Overrides onKeyDown method to handle several remote keys such as
+     * KEYCODE_CHANNEL_DOWN, KEYCODE_CHANNEL_UP,KEYCODE_ESCAPE and more
+     * to behave uniquely in VOD video player activity only.
+     * @param KeyCode KeyCode of the key pressed
+     * @param event KeyEvent of the key pressed
+     * @return boolean value either key is handled or not
+     */
     @Override
     public boolean onKeyDown(int KeyCode, KeyEvent event){
 
@@ -376,7 +390,10 @@ public class YoutubePlayerActivity extends FragmentActivity {
         //return handled;
     }
 
-    //hide icon
+    /**
+     * To hide icon
+     * @param time time delay before icon is hidden
+     */
     public void hideIconView(int time){
         iconView.postDelayed(new Runnable() {
             public void run() {
@@ -387,7 +404,9 @@ public class YoutubePlayerActivity extends FragmentActivity {
 
 
 
-    //to display next video title
+    /**
+     * To initialize the video's title
+     */
     public void initVideoTitle(){
 
         if(youtubeVideoTitle!=null){
@@ -396,12 +415,6 @@ public class YoutubePlayerActivity extends FragmentActivity {
             textView.setVisibility(View.VISIBLE);
             textView.setText(youtubeVideoTitle);
 
-            //hide after 5 seconds
-           /* textView.postDelayed(new Runnable() {
-                public void run() {
-                    textView.setVisibility(View.GONE);
-                }
-            }, 5000);*/
         }
     }
 

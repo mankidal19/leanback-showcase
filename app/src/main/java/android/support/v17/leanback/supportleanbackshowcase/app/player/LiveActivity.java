@@ -1,4 +1,4 @@
-package android.support.v17.leanback.supportleanbackshowcase.app.media;
+package android.support.v17.leanback.supportleanbackshowcase.app.player;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -23,6 +23,9 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.player.listeners.Abstract
 import java.util.ArrayList;
 
 
+/**
+ * Activity to play live YouTube video
+ */
 public class LiveActivity extends FragmentActivity {
 
     private final String TAG = "LiveActivity";
@@ -85,6 +88,9 @@ public class LiveActivity extends FragmentActivity {
 
     }
 
+    /**
+     * Releases the current YouTube player view.
+     */
     @Override
     protected void onDestroy(){
 
@@ -103,7 +109,14 @@ public class LiveActivity extends FragmentActivity {
     }
 
 
-    //to handle channel up & down button
+    /**
+     * Overrides onKeyDown method to handle several remote keys such as
+     * KEYCODE_CHANNEL_DOWN, KEYCODE_CHANNEL_UP,KEYCODE_ESCAPE and more
+     * to behave uniquely in live video player activity only.
+     * @param KeyCode KeyCode of the key pressed
+     * @param event KeyEvent of the key pressed
+     * @return boolean value either key is handled or not
+     */
     @Override
     public boolean onKeyDown(int KeyCode, KeyEvent event){
 
@@ -282,9 +295,9 @@ public class LiveActivity extends FragmentActivity {
     }
 
 
-
-
-
+    /**
+     * Initialize the {@link YouTubePlayerView} for playing the live YouTube video
+     */
     private void initYouTubePlayerView() {
 
         youTubePlayerView = findViewById(R.id.youtube_player_view);
@@ -338,7 +351,9 @@ public class LiveActivity extends FragmentActivity {
         this.youTubePlayer = youTubePlayer;
     }
 
-    //to display next video title
+    /**
+     * To initialize the channel's title
+     */
     public void initVideoTitle(){
         videoTitle = mockDatabase.searchCard(liveVideoId).getTitle();
         if(videoTitle!=null){
@@ -348,18 +363,16 @@ public class LiveActivity extends FragmentActivity {
             textView.setVisibility(View.VISIBLE);
             textView.setText(displayText);
 
-            //hide after 6 seconds
-            /*textView.postDelayed(new Runnable() {
-                public void run() {
-                    textView.setVisibility(View.INVISIBLE);
-                }
-            }, 6000);*/
+
         }
 
 
     }
 
-    //hide icon
+    /**
+     * To hide icon
+     * @param time time delay before icon is hidden
+     */
     public void hideIconView(int time){
         iconView.postDelayed(new Runnable() {
             public void run() {
@@ -369,8 +382,9 @@ public class LiveActivity extends FragmentActivity {
     }
 
 
-
-    //initialize channel list ArrayList
+    /**
+     * To initialize channel list ArrayList
+     */
     private void initChannelList(){
 
         channelArrayList.add("wp-R57ZaiXY");
