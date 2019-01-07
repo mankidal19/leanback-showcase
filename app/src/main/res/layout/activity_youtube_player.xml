@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".app.media.YoutubePlayerActivity">
+    tools:context=".app.player.YoutubePlayerActivity">
 
     <com.pierfrancescosoffritti.androidyoutubeplayer.player.YouTubePlayerView
         android:id="@+id/youtube_player_view"
