@@ -29,23 +29,8 @@ public class LeanbackActivity extends Activity {
         int keyCode = event.getKeyCode();
         switch (keyCode) {
             case KeyEvent.KEYCODE_PROG_RED:
-                if (action == KeyEvent.ACTION_DOWN) {
-                    //sendBroadcast();
-                    sendShortcutBroadcast(event);
-                }
-                return true;
             case KeyEvent.KEYCODE_PROG_GREEN:
-                if (action == KeyEvent.ACTION_DOWN) {
-                    //sendBroadcast();
-                    sendShortcutBroadcast(event);
-                }
-                return true;
             case KeyEvent.KEYCODE_PROG_YELLOW:
-                if (action == KeyEvent.ACTION_DOWN) {
-                    //sendBroadcast();
-                    sendShortcutBroadcast(event);
-                }
-                return true;
             case KeyEvent.KEYCODE_PROG_BLUE:
                 if (action == KeyEvent.ACTION_DOWN) {
                     //sendBroadcast();
